@@ -7,3 +7,4 @@
 * [chellos.rar](chellos.rar)
 * [MCT-version.PNG](MCT-version.PNG)
 * [refal.pdf — Статья Скоробогатова о Рефале-7](refal.pdf)
+* [matbalance.png](matbalance.png)
