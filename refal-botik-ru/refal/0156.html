@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.net)">
+<META NAME="Subject" CONTENT="Re: Re: Re: Как следует компилировать рфаль скую  операциюотождествлени">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Re: Re: Как следует компилировать рфаль скую  операциюотождествлени</H1>
+<HR>
+<P>
+<!-- received="Wed Dec  6 23:05:16 2000" -->
+<!-- isoreceived="20001206200516" -->
+<!-- sent="Wed, 6 Dec 2000 22:44:46 +0300" -->
+<!-- isosent="20001206194446" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.net" -->
+<!-- subject="Re: Re: Re: Как следует компилировать рфаль скую  операциюотождествлени" -->
+<!-- id="002501c05fbd$6e63b620$929943c2@swan" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="3A2E1426.7020500@msu.ru" -->
+<STRONG>Subject: </STRONG>Re: Re: Re: Как следует компилировать рфаль скую  операциюотождествлени<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.net</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Dec 06 2000 - 22:44:46 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#156">[ date ]</A>
+<A HREF="index.html#156">[ thread ]</A>
+<A HREF="subject.html#156">[ subject ]</A>
+<A HREF="author.html#156">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0157.html">Andrey Slepuhin: "Re: Re: Re: Re:  Как следует компилировать ре фаль скую  операциюотождествления"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0155.html">Andrey Slepuhin: "Re: Re: Re:  Как следует компилировать рефаль скую  операциюотождествления"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0155.html">Andrey Slepuhin: "Re: Re: Re:  Как следует компилировать рефаль скую  операциюотождествления"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0157.html">Andrey Slepuhin: "Re: Re: Re: Re:  Как следует компилировать ре фаль скую  операциюотождествления"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0155.html">Arkady Klimov: "Re: Re: Re: Как следует компилировать рфаль скую  операциюотождествлени"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+----- Original Message -----
+<BR>
+From: Andrey Slepuhin &lt;pooh@msu.ru&gt;
+<BR>
+To: Arkady Klimov &lt;klark@bagirra.net&gt;
+<BR>
+Cc: Sergei M. Abramov &lt;abram@botik.ru&gt;; &lt;refal@botik.ru&gt;; Anton Yu. Orlov &lt;orlov@mccme.ru&gt;
+<BR>
+Sent: Wednesday, December 06, 2000 1:25 PM
+<BR>
+Subject: Re: Re: Re: Как следует компилировать рефаль скую операциюотождествления
+<BR>
+<P><P>| Arkady Klimov wrote:
+<BR>
+|
+<BR>
+| &gt; ----- Original Message -----
+<BR>
+| &gt; From: Andrey Slepuhin &lt;pooh@msu.ru&gt;
+<BR>
+| &gt; To: Arkady Klimov &lt;klark@bagirra.net&gt;
+<BR>
+| &gt; Cc: Sergei M. Abramov &lt;abram@botik.ru&gt;; &lt;refal@botik.ru&gt;; Anton Yu. Orlov &lt;orlov@mccme.ru&gt;
+<BR>
+| &gt; Sent: Wednesday, December 06, 2000 11:05 AM
+<BR>
+| &gt; Subject: Re: Re: Как следует компилировать рефальскую операцию отождествления
+<BR>
+| &gt;
+<BR>
+| &gt;
+<BR>
+| &gt; | Arkady Klimov wrote:
+<BR>
+| &gt; |
+<BR>
+| &gt; | &gt; Сергей Михайлович, привет,
+<BR>
+| &gt; | &gt; привет участникам дискуссии!
+<BR>
+| &gt; | &gt; Спасибо за инициативу и интересные материалы.
+<BR>
+| &gt; | &gt; Прошу прощения, что долго не включался, отвечать было недосуг, но я все
+<BR>
+| &gt; | &gt; читал и более-менее разбирался. Все очень интересно. Для Р+ и вообще
+<BR>
+| &gt; | &gt; отображение в массивное представление это то, что надо. Но в первом письме
+<BR>
+| &gt; | &gt; ты писал, что эти методы будут также интересны для реализаторов Р-5 и т.п.,
+<BR>
+| &gt; | &gt; то есть рефалов на списковом представлении. У меня есть в этом сомнения,
+<BR>
+| &gt; | &gt; попробуй их развеять. Ты справедливо замечаешь, что сложность операций может быть
+<BR>
+| &gt; | &gt; (и будет для списков) O(L). Но дальше ты писал, что алгоритм от этого не зависит.
+<BR>
+| &gt; | &gt; Согласен, алгоритм не зависит, но сложность его зависит и возможно радикально.
+<BR>
+| &gt; | &gt; Рассмотрим пример такого образца (из функции доступа к копилке):
+<BR>
+| &gt; | &gt;
+<BR>
+| &gt; | &gt; (e.name) (e.1 (e.name '=' e.value) e2)
+<BR>
+| &gt; | &gt;
+<BR>
+| &gt; | &gt; При существующей реализации его сложность - это объем символов из содержимого
+<BR>
+| &gt; | &gt; правого списка, которые надо просмотреть при поиске. Когда сравнение неудачное,
+<BR>
+| &gt; | &gt; это обычно 1-2 символа на одно имя. То есть время будет грубо пропорционально
+<BR>
+| &gt; | &gt; количеству имен. Если же перед сравнением мы будет сначала вычислять длину,
+<BR>
+| &gt; | &gt; тратя O(L), то время поиска резко увеличится в разы - пропорционально средней
+<BR>
+| &gt; | &gt; длине имени.
+<BR>
+| &gt; |
+<BR>
+| &gt; | С моей точки зрения правильная списковая реализация для рефал-выражений
+<BR>
+| &gt; | должна отслеживать их длину при конкатенациях и отщеплениях - это
+<BR>
+| &gt; | не вносит никакого оверхеда. Также могут существуют другие полезные
+<BR>
+| &gt; | инварианты, следить за которыми не мешало бы. Так, в новом рантайме
+<BR>
+| &gt; | рефала+ реализован флаг, указывающий, что выражение является &quot;flat&quot;,
+<BR>
+| &gt; | т.е. не содержит скобочных термов.
+<BR>
+| &gt;
+<BR>
+| &gt; Что значит &quot;отслеживать&quot;, &quot;следить&quot;? Хранить (длину содержимого)
+<BR>
+| &gt; внутри всех термов? В принципе, это, наверно, возможно. Правда,
+<BR>
+| &gt; по всей видимости, тогда придется смириться с таким минусом, как то,
+<BR>
+| &gt; что в следующей функции
+<BR>
+| &gt;
+<BR>
+| &gt; Dela
+<BR>
+| &gt;
+<BR>
+| &gt;     'a' e.1 = &lt;Dela e.1&gt;;
+<BR>
+| &gt;     s.a e.1 = s.a &lt;Dela e1&gt;;
+<BR>
+| &gt;     =;
+<BR>
+| &gt;     }
+<BR>
+| &gt;
+<BR>
+| &gt; рекурсия уже не будет концевой. Не дорога ли цена?
+<BR>
+|
+<BR>
+| В первом случае будет нормальный хвостовой вызов и ничто этому
+<BR>
+| не помешает, а во втором случае его не будет - куда конкатенацию девать?
+<BR>
+| Хвостовой вызов там может быть, только если у нас семантика ленивая -
+<BR>
+| сначала делаем конкатенацию с неготовым выражением, а потом вычисляем выражение.
+<BR>
+|
+<BR>
+Да, точнее, если реализация конкатенации у нас ленивая
+<BR>
+(на семантику-то языка это не влияет),
+<BR>
+а еще точнее - нестрогая (то есть выполняется раньше своих аргументов).
+<BR>
+Именно такая сейчас в рефалах 5 и 6. Поэтому не будет большой проблемой
+<BR>
+запустить указанную функцию над последовательностью из 1000000 символов.
+<BR>
+(Пример - парсер/преобразователь файла, читающий файл заранее целиком).
+<BR>
+При строгой конкатенации весь вопрос в том, где будут копиться незавершенные
+<BR>
+конкатенации - не будет ли там ограничения на их количество (сверх общего
+<BR>
+ограничения на размер всей памяти).
+<BR>
+Я это пишу не к тому, что возражаю, а к тому, что все эти детали должны
+<BR>
+учитываться.
+<BR>
+Аркадий.
+<BR>
+<P>| Андрей(С)
+<BR>
+|
+<BR>
+| --
+<BR>
+| A right thing should be simple (tm)
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0157.html">Andrey Slepuhin: "Re: Re: Re: Re:  Как следует компилировать ре фаль скую  операциюотождествления"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0155.html">Andrey Slepuhin: "Re: Re: Re:  Как следует компилировать рефаль скую  операциюотождествления"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0155.html">Andrey Slepuhin: "Re: Re: Re:  Как следует компилировать рефаль скую  операциюотождествления"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0157.html">Andrey Slepuhin: "Re: Re: Re: Re:  Как следует компилировать ре фаль скую  операциюотождествления"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0155.html">Arkady Klimov: "Re: Re: Re: Как следует компилировать рфаль скую  операциюотождествлени"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

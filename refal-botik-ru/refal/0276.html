@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="korlyukov (korlyukov@grsu.grodno.by)">
+<META NAME="Subject" CONTENT="Re: Who has a fish?">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Who has a fish?</H1>
+<HR>
+<P>
+<!-- received="Mon, 8 Apr 2002 21:10:15 +0300" -->
+<!-- isoreceived="20020408181015" -->
+<!-- sent="Mon, 8 Apr 2002 21:10:15 +0300" -->
+<!-- isosent="20020408181015" -->
+<!-- name="korlyukov" -->
+<!-- email="korlyukov@grsu.grodno.by" -->
+<!-- subject="Re: Who has a fish?" -->
+<!-- id="000f01c1df28$e2c12840$c80d32c3@home" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="001401c1defc$d95d9bc0$07aee8c1@botik.ru" -->
+<STRONG>Subject: </STRONG>Re: Who has a fish?<BR>
+<STRONG>From: </STRONG>korlyukov (<EM>korlyukov@grsu.grodno.by</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Apr 08 2002 - 22:10:15 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#276">[ date ]</A>
+<A HREF="index.html#276">[ thread ]</A>
+<A HREF="subject.html#276">[ subject ]</A>
+<A HREF="author.html#276">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0277.html">korlyukov: "JScp - Who has a fish?"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0275.html">Sergei M. Abramov: "Re: Who has a fish?"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0275.html">Sergei M. Abramov: "Re: Who has a fish?"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0277.html">korlyukov: "JScp - Who has a fish?"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0275.html">korlyukov: "Re: Who has a fish?"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Сергей, спасибо.
+<BR>
+<P><EM>&gt; Интересно узнать, как зависит время суперкомпиляции программы при
+</EM><BR>
+изменении
+<BR>
+<EM>&gt; порядка фильтров (я имею в виду всех двадцати: 15+5).  Например, на
+</EM><BR>
+<EM>&gt; прямо-противоположный порядок (вхутри F, снаружи Z)...
+</EM><BR>
+<P>При работе над этим примером я пробовал менять местами Z и F - из двух
+<BR>
+вариантов я выбрал более лучший.
+<BR>
+Был у меня и соблазн менять порядок внутри Z. Я испугался обвинений в том,
+<BR>
+что буду делать подсказки суперкомпилятору.
+<BR>
+<P>Сейчас попробовал изменить порядок внутри Z - результат оказался совершенно
+<BR>
+неожиданным для меня. Время суперкомпиляции снизилось с полутора часов до 5
+<BR>
+мин 35 секунд !!!
+<BR>
+<P>Привожу тот порядок, который был у меня. Почему я выбрал именно такой
+<BR>
+порядок? Из соображений очевидности, наверное. Сначала расположил те
+<BR>
+подсказки, которые несут больше информации. Человек именно так и поступает.
+<BR>
+<P>9. Норвежец живет в первом доме.
+<BR>
+7. Жилец из среднего дома пьет молоко.
+<BR>
+<P>1. Англичанин живет в красном доме.
+<BR>
+<P>2. Швед держит собаку.
+<BR>
+<P>3. Датчанин пьет чай.
+<BR>
+<P>5. Жилец зеленого дома пьет кофе.
+<BR>
+<P>6. Человек, который курит Pall Mall, держит птицу.
+<BR>
+<P>8. Жилец из желтого дома курит Dunhill.
+<BR>
+<P>14. Немец курит Rothmans.
+<BR>
+<P>12. Курильщик сигарет Winfield пьет пиво.
+<BR>
+<P>10. Курильщик Marlboro живет около того, кто держит кошку.
+<BR>
+<P>11. Человек, который держит лошадь, живет около того, кто курит Dunhill.
+<BR>
+<P>13. Норвежец живет около голубого дома.
+<BR>
+<P>15. Курильщик Marlboro живет по соседству с человеком, который пьет воду.
+<BR>
+<P>4. Зеленый дом стоит слева от белого.
+<BR>
+<P>Александр
+<BR>
+<P><P>----- Original Message -----
+<BR>
+From: &quot;Sergei M. Abramov&quot; &lt;abram@botik.ru&gt;
+<BR>
+To: &quot;korlyukov&quot; &lt;korlyukov@grsu.grodno.by&gt;; &quot;refal&quot; &lt;refal@botik.ru&gt;
+<BR>
+Cc: &quot;Andrei P. Nemytykh&quot; &lt;nemytykh@whu.edu.cn&gt;;
+<BR>
+&lt;Aleksey_Korlukov@atlantm.com&gt;
+<BR>
+Sent: Monday, 08 April 2002 15:56
+<BR>
+Subject: Re: Who has a fish?
+<BR>
+<P><P><EM>&gt; День добрый, всем!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; По адресу <A HREF="http://www.refal.net/~korlukov/pearls/ryba/">http://www.refal.net/~korlukov/pearls/ryba/</A>
+</EM><BR>
+<EM>&gt; &gt; (имеется выход со страницы <A HREF="http://www.refal.net/~korlukov/pearls/">http://www.refal.net/~korlukov/pearls/</A> )
+</EM><BR>
+<EM>&gt; &gt; размещен еще один пример применения суперкомпилятора Scp4.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Отличная жемчужина...
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; Суперкомпилируемая программа состоит из 20 вложенных фильтров -
+</EM><BR>
+<EM>&gt; &gt; 15 фильтров соответствуют 15 подсказкам в условии задачи,
+</EM><BR>
+<EM>&gt; &gt; оставшиеся 5 фильтров проверяют наличие каждого объекта из
+</EM><BR>
+<EM>&gt; &gt; условия по одному разу.
+</EM><BR>
+<EM>&gt; ...
+</EM><BR>
+<EM>&gt; &gt; Предлагается программа, при суперкомпиляции которай за 1 час
+</EM><BR>
+<EM>&gt; &gt; 30 минут получается решение задачи.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Интересно узнать, как зависит время суперкомпиляции программы при
+</EM><BR>
+изменении
+<BR>
+<EM>&gt; порядка фильтров (я имею в виду всех двадцати: 15+5).  Например, на
+</EM><BR>
+<EM>&gt; прямо-противоположный порядок (вхутри F, снаружи Z)...
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Ведь с логической точки зрения вложенные фильтры это просто &quot;И&quot;?  То есть
+</EM><BR>
+<EM>&gt; операция вроде как коммутативная?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Но мне кажется, что при перемене порядка вложения будет некий эффект со
+</EM><BR>
+<EM>&gt; временем счета...
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; ... перебору 525 случаев. Это число равно 298023223876953125,
+</EM><BR>
+<EM>&gt; &gt; примерно 1018 , т.е. миллиард миллиардов. Поэтому очень
+</EM><BR>
+<EM>&gt; &gt; затруднительно измерить время
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Удачи
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Сергей
+</EM><BR>
+<EM>&gt; PS. Интересно эту задачу сделать на последних X-URA-х для XSG.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Из общих соображений там можно использовать справедливую (fair) операцию
+</EM><BR>
+AND
+<BR>
+<EM>&gt; (mgu-based) для 20 фильтров. То есть (кажется) там можно получить 20
+</EM><BR>
+<EM>&gt; невложенных предикатов и независимость от порядка.
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0277.html">korlyukov: "JScp - Who has a fish?"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0275.html">Sergei M. Abramov: "Re: Who has a fish?"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0275.html">Sergei M. Abramov: "Re: Who has a fish?"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0277.html">korlyukov: "JScp - Who has a fish?"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0275.html">korlyukov: "Re: Who has a fish?"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

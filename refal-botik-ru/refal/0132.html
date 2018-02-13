@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (at home) (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: unarnoe vychitanie">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: unarnoe vychitanie</H1>
+<HR>
+<P>
+<!-- received="Wed Oct 18 12:27:45 2000" -->
+<!-- isoreceived="20001018082745" -->
+<!-- sent="Sun, 15 Oct 2000 18:53:29 +0300" -->
+<!-- isosent="20001015155329" -->
+<!-- name="Sergei M. Abramov (at home)" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: unarnoe vychitanie" -->
+<!-- id="00f901c036c0$105069a0$32e1d0c3@abrhome.polnet.botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="unarnoe vychitanie" -->
+<STRONG>Subject: </STRONG>Re: unarnoe vychitanie<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (at home) (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sun Oct 15 2000 - 19:53:29 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#132">[ date ]</A>
+<A HREF="index.html#132">[ thread ]</A>
+<A HREF="subject.html#132">[ subject ]</A>
+<A HREF="author.html#132">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0133.html">Andrei P. Nemytykh: "Refal-5's news."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0131.html">Sergei M. Abramov (at home): "References"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, Валентин Федорович!
+<BR>
+<P>Я позволил себе копию для общественности...
+<BR>
+<P><EM>&gt;Ja vernulsja iz otpuska i pogruzilsja v e-mail.
+</EM><BR>
+<P>Рад Вас слышать!
+<BR>
+<P><EM>&gt;Pravil'no li ja ponjal chto u tebja s Antonom
+</EM><BR>
+<EM>&gt;proshlo URA-obrashchenije unarnogo
+</EM><BR>
+<EM>&gt;slozhenija v vychitanije?
+</EM><BR>
+<P>Да, похоше на то--прошло.
+<BR>
+Автор Антон, и я не сильно понимаю детали (реализации).
+<BR>
+<P>Н примерно так.
+<BR>
+<P>(1) Ура для язычка TSG бы переписан с Хаскеля на Рефал-5;
+<BR>
+<P>(2) Потом была двухмесячная война, чтобы Scp4 &quot;прожевал&quot; эту суперкомпиляцию.
+<BR>
+<P>Здесь очень помогла поддержка АНдрея!
+<BR>
+<P>Думаю, Антону, и АНдрею, и Scp4 -- всем было полезно: как я понял на этой задаче
+<BR>
+вылезли явные новый ошибки в Scp4 и АНдрей их исправил.
+<BR>
+<P>Короче говоря: с любой стороны -- серьезный и полезный тест на суперкомпиляцию.
+<BR>
+<P>Ну и Ура &quot;подкручивался&quot; -- сначала из него выкинули все, что не используется в
+<BR>
+задаче унарбного сложения...  Потом, вроде бы, возвращали все это обратно (но не
+<BR>
+уверен, что все вернули ;-).
+<BR>
+<P>Вот эту деталь я и не ведаю:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;1?. насколько сегодня Ура TSG/Рефал-5 далек от исходного (Ура TSG/Хаскелл)?
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;2?. Не выкинуто ли теперь из Ура чего-то важного, так, что теперь Ура не
+<BR>
+универсальный (способен работать только для бинарного сложения, например? ;-)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;3?. Вообще говоря, на данной задаче исконный (Хаскелный) Ура ведет себя так:
+<BR>
+выдает (единственный) ответ, а затем ищет (бесконечно) другие ответы (которых
+<BR>
+нету).  Меня удивило, что Scp-4 преобразовало &quot;это самое&quot; в Рефал-программу,
+<BR>
+которая всегда терминируется.
+<BR>
+<P>(3) Но это детали (разберемся).  А факт, что после суперкомпиляции Ура (внутри
+<BR>
+которого стояло TSG-программа унарного сложения) автоматически получена
+<BR>
+Рефал-программа, которая действительно делает унарное вычитание...
+<BR>
+<P>Прилагаю таблицу вычитания [0..3]x[0..3] и  текст программы (все что ниже
+<BR>
+&quot;=========&quot; -- построил Scp-4, выше--я написал &quot;пускач&quot;).
+<BR>
+<P>У программки забавная структура: два невложенных цикла с аккамулятором.
+<BR>
+&quot;Чистое&quot; вычитание построить способен только ScpWalk (слияние двых невложенных
+<BR>
+циклов).  По этому поводу я в конце цитирую себя (из переписки с Робертом: прдон
+<BR>
+за варварский английский, Роберт терпит...)
+<BR>
+<P><EM>&gt;Eto gde-nibud' izlozheno? Mozhno posmotret'?
+</EM><BR>
+<P>Пока это нигде не изложено, кроме как в письмах (которые Вы видели).
+<BR>
+<P>Я очень хочу, чтобы Антон добил это до публикуемого вида.
+<BR>
+<P>А для застолбления приоритета я готов в одну из двух (до конца года) пишущихся
+<BR>
+мною с Робертом статей вставить (попробовать вставить) секцию (два-три-четыре
+<BR>
+абзаца)---сухой отчет о том, что:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&quot;Тогда-то и тогда-то... на Scp-4 ...те-то и те-то... сделали ...то-то и
+<BR>
+то-то...  Результат--см. на картинке.&quot;
+<BR>
+<P>Но это требует небольшого &quot;до&quot;-вылизывания результата.
+<BR>
+<P>Удачи, низкий поклон Вам и Татьяне Ивановне!
+<BR>
+<P>Сергей
+<BR>
+=================== 1 ====================
+<BR>
+(1) A student ---a yang refalists from Moscow State
+<BR>
+University,--was fighting during last two months (after the Summer school)
+<BR>
+with:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scp4 &lt;Ura AddUn  [ e.1, Xe_1 ]::Class  e.2&gt;
+<BR>
+<P>where
+<BR>
+<P>&nbsp;&nbsp;&nbsp;Scp4 -- current version of (Refal5-&gt;Refal5/Refal5)-supercompiler;
+<BR>
+<P>(*** In fact, there are two backends, so it's possible output Refal5 or Refal+
+<BR>
+code from Scp4.  I prefer Refal+ dialect ***)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;Ura  -- (TSG/Refal5)-ura: manually rewritten ura from Haskell to Refal5;
+<BR>
+<P>&nbsp;&nbsp;&nbsp;AddUn-- unary addition.
+<BR>
+<P>Today the result is:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Scp4 returns small enough Refal+ program, that is unary-subtraction.
+<BR>
+<P>The structure of the program is:
+<BR>
+<P>INV-REF tX tY -- main function;
+<BR>
+<P>F1  ...Z... ...X... ...Y... -- first loop
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;F1 is decreasing Y, increasing Z (initialized as (&quot;XE&quot; 1) ;-)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when Y==0, the F2 is started
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Thus F1 is just &quot;reverse&quot; of Y, and Z == Y in F2 (in some sense).
+<BR>
+<P>F2  ...Z... ...X... -- second loop
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;F1 is decreasing X and Z by one
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when Z is (&quot;XE&quot; 1) the rest of X is the result.
+<BR>
+<P>Please note:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;F1-loop is residual for ppt development recursion;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;F2-loop is residual for Clash (unification) recursion.
+<BR>
+<P>A one-loop subtraction program cannot be achieved by Scp4 -- for this goal we
+<BR>
+need... Yes, ScpWalk-technology!
+<BR>
+<P>I am not sure in the details, and I need a discussion with the student:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-- is Ura the perfectly rewritten from Haskell (may be some
+<BR>
+``simplification'' was made);
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-- is it possible improve the result to support automatic TSG-backend for
+<BR>
+Scp4 (to output Refal-graph as TSG-program)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-- etc.
+<BR>
+<P>After then, maybe in some paper we can just add a few words about ``the first
+<BR>
+inverse compilation was .... by ....''.
+<BR>
+<P>=================== 2 ====================
+<BR>
+<EM>&gt;&gt;         Scp4 &lt;Ura AddUn  [ e.1, Xe_1 ]::Class  e.2&gt;
+</EM><BR>
+[...]
+<BR>
+<P><EM>&gt;&gt;Please note:
+</EM><BR>
+<EM>&gt;&gt;     F1-loop is residual for ppt development recursion;
+</EM><BR>
+<EM>&gt;&gt;     F2-loop is residual for Clash (unification) recursion.
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt;A one-loop subtraction program cannot be achieved by Scp4 -- for this goal we
+</EM><BR>
+<EM>&gt;&gt;need... Yes, ScpWalk-technology!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;Very interesting structure. There may be several sources for this effect...
+</EM><BR>
+<P>The ura structure is following:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-- regursion(s) from root to the leaves with &gt;&gt;accamulating&lt;&lt; all splits;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;-- then clash -- also recursion, if $d_out$ is not atom
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(is a list [_, _, ....]).
+<BR>
+<P>Thus we have classic ``two unnested iteration with accamulator'' -- this is
+<BR>
+subject for ScpWalk.
+<BR>
+<P><EM>&gt;... for example, is URA flat itself a flat/recursive program, is it
+</EM><BR>
+<EM>&gt;organized breadth/depth-first, how is unary addition written
+</EM><BR>
+<EM>&gt;(flat/recursive) ...
+</EM><BR>
+<P>Yes!  I know that the student has a lot of experiments of this kinds and try all
+<BR>
+permutations over Scp4 options (lazy/strict, etc...)  In most cases he has huge
+<BR>
+residual program...
+<BR>
+<P>This is the best what he reached now.
+<BR>
+<P><P><P><HR>
+<UL>
+<LI>text/plain attachment: <A HREF="att-0132/01-rura.txt">rura.txt</A>
+</UL>
+<!-- attachment="01-rura.txt" -->
+<P><HR>
+<UL>
+<LI>text/plain attachment: <A HREF="att-0132/02-res.txt">res.txt</A>
+</UL>
+<!-- attachment="02-res.txt" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0133.html">Andrei P. Nemytykh: "Refal-5's news."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0131.html">Sergei M. Abramov (at home): "References"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

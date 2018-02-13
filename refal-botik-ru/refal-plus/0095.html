@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klimovark@mail.ru)">
+<META NAME="Subject" CONTENT="Re: About new Refal+ release">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: About new Refal+ release</H1>
+<HR>
+<P>
+<!-- received="Thu Dec  9 15:44:48 1999 MSK" -->
+<!-- sent="Thu, 9 Dec 1999 15:45:47 +0300" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klimovark@mail.ru" -->
+<!-- subject="Re: About new Refal+ release" -->
+<!-- id="007e01bf4243$51f165c0$97925bc3@bagirra.rinet.ru" -->
+<!-- inreplyto="384E8535.2C730D6A@msu.ru" -->
+<STRONG>Arkady Klimov</STRONG> (<A HREF="mailto:klimovark@mail.ru?subject=Re:%20About%20new%20Refal%2B%20release"><EM>klimovark@mail.ru</EM></A>)<BR>
+<EM>Thu, 9 Dec 1999 15:45:47 +0300</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#95">[ date ]</A>
+<A HREF="index.html#95">[ thread ]</A>
+<A HREF="subject.html#95">[ subject ]</A>
+<A HREF="author.html#95">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0096.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0094.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0092.html">Andrey Slepuhin: "About new Refal+ release"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0096.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Андрей,
+<BR>
+<P>----- Original Message -----
+<BR>
+From: Andrey Slepuhin &lt;<A HREF="mailto:pooh@msu.ru?subject=Re:%20About%20new%20Refal%2B%20release">pooh@msu.ru</A>&gt;
+<BR>
+To: Arkady Klimov &lt;<A HREF="mailto:klark@bagirra.rinet.ru?subject=Re:%20About%20new%20Refal%2B%20release">klark@bagirra.rinet.ru</A>&gt;
+<BR>
+Cc: &lt;<A HREF="mailto:refal-plus@botik.ru?subject=Re:%20About%20new%20Refal%2B%20release">refal-plus@botik.ru</A>&gt;
+<BR>
+Sent: Thursday, December 09, 1999 2:32 PM
+<BR>
+Subject: Re: About new Refal+ release
+<BR>
+<P><P><EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; 2) Генерация виртуального кода.
+</EM><BR>
+<EM>&gt; &gt; &gt;    Новая версия Рефала+ может генерировать виртуальный код. Для
+</EM><BR>
+<EM>&gt; &gt; &gt;    этого нужно указать опцию -vc. Сгенерированный виртуальный код
+</EM><BR>
+<EM>&gt; &gt; &gt;    будет выведен в файл с расширением .rvc (Refal Virtual Code) в
+</EM><BR>
+<EM>&gt; &gt; &gt;    виде объектного выражения, которое может затем быть считано
+</EM><BR>
+<EM>&gt; &gt; &gt;    одним вызовом функции Read. Виртуальный код соответствует описанию
+</EM><BR>
+<EM>&gt; &gt; &gt;    в  статье &quot;Принципы реализации Рефала+&quot;) со следующими
+</EM><BR>
+расширениями:
+<BR>
+<EM>&gt; &gt; &gt;    а) Новые команды LEIS/LVIS/LES,REIS/RVIS/RES - семантика
+</EM><BR>
+<EM>&gt; &gt; &gt;       следующая (на примере LEIS/LVIS/LES):
+</EM><BR>
+<EM>&gt; &gt; &gt;       &lt; LEIS m : LES : C, S, D, E &gt;  =&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;         { S/m = Oe и Oe : S =S' } &lt; C, S', (LES : C, S') : D, E&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;       &lt; LVIS m : LES : C, S, D, E &gt;  =&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;         { S/m = Oe } &lt; LES : C, Oe : S, D, E&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;       &lt; LES : C, OtOe' : S, D, E &gt;  =&gt; { Oe' : S = S' } &lt; C, S', (LES
+</EM><BR>
+<EM>:
+</EM><BR>
+<EM>&gt; &gt; &gt; C : S') D, E&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;       &lt; LES : C, p : S, D, E &gt;  =&gt; &lt; FAIL : [], S, D, E&gt;
+</EM><BR>
+<EM>&gt; &gt; - это оптимизированные команды удлинения. Используются в случае, когда
+</EM><BR>
+<EM>&gt; &gt; просмотренная часть (e1 в образце e1 sA e2) далее в теле функции не
+</EM><BR>
+<EM>&gt; &gt; используется.
+</EM><BR>
+<EM>&gt; &gt; (Если конечно, я это правильно понял. Андрей, поправь меня, если это не
+</EM><BR>
+<EM>&gt; &gt; так).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Абсолютно точно. На самом деле я бы кое-что поменял в командах
+</EM><BR>
+<EM>&gt; отщепления - уж больно они запутанные, и мне совсем не нравится
+</EM><BR>
+<EM>&gt; требование, чтобы LEI/LE всегда были рядом. На самом деле все
+</EM><BR>
+<EM>&gt; можно сделать более прозрачно с явными ALT'ами, и обойтись вообще
+</EM><BR>
+<EM>&gt; без команд типа LEI. Если что - я могу подробно описать то, как я
+</EM><BR>
+<EM>&gt; все это вижу.
+</EM><BR>
+Да, это интересно. Если получается, это будет, наверно, лучше. Напиши,
+<BR>
+пожалуйста.
+<BR>
+<P><EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;       SWAP -
+</EM><BR>
+<EM>&gt; &gt; &gt;         &lt; SWAP m n : C, Oe_0 : ... : Oe_m : ... : Oe_n : S, D, E &gt; =&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;           &lt; C, Oe_0 : ... : S/n : ... : S/m : S, D, E &gt;
+</EM><BR>
+<EM>&gt; &gt; - совсем непонятно. (Вообще-то, когда пишешь для людей, лучше
+</EM><BR>
+использовать
+<BR>
+<EM>&gt; &gt; русский язык).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Просто поменять m-й и n-й элементы местами.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; И обязательно ли, что m&lt;n?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Нет конечно. Я просто не знаю, как это правильно записать формально.
+</EM><BR>
+Наверно, можно так: { S'/m = S/n и S'/n = S/m и (если k/=m и k/=n то
+<BR>
+S'/k=S/k) }
+<BR>
+Формально еще хорошо бы написать что-то вроде size(S)=size(S'), но можно
+<BR>
+это и замять, полагая. что из (для всех k: S/k=S'/k) это следует.
+<BR>
+<P><EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;       FUNFAIL Fname == PUSHQ Fname &quot;Unexpected fail&quot;; ERROR
+</EM><BR>
+<EM>&gt; &gt; &gt;       FUNEND == NOP , но всегда в конце функции.
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;    в) Директивы:
+</EM><BR>
+<EM>&gt; &gt; &gt;       IMPORT/EXPORT/LOCAL FUNC/BOX/TABLE/VECTOR/STRING/CHANNEL -
+</EM><BR>
+<EM>&gt; &gt; &gt;       семантика очевидна.
+</EM><BR>
+<EM>&gt; &gt; А какой синтаксис? (Речь идет ведь не о рефале, а о виртуальном коде,
+</EM><BR>
+да?)
+<BR>
+<EM>&gt; &gt; Какая семантика LOCAL FUNC (в отличие от FUNC)? Это два слова?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Просто FUNC нету. Т.е. синтаксис директивы _всегда_ содержит два
+</EM><BR>
+<EM>&gt; слова - linkage class (не знаю, как это сказать по русски) и тип
+</EM><BR>
+<EM>&gt; объекта.
+</EM><BR>
+<EM>&gt; Это как раз спорное место, которое я хотел обсудить. Не стоит ли разбить
+</EM><BR>
+<EM>&gt; каждую директиву на две?
+</EM><BR>
+Ох, я совсем ничего не понял, можно поподробнее?
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; 3) Функции ввода-вывода теперь правильно работают с
+</EM><BR>
+символами-ссылками
+<BR>
+<EM>&gt; &gt; Есть ли возможность управлять таблицей соответствий имя-ссылка (задать
+</EM><BR>
+ее
+<BR>
+<EM>&gt; &gt; начальное содержимое, например)? Получить ее конечное содержимое?
+</EM><BR>
+Является
+<BR>
+<EM>&gt; &gt; ли композиция ввод;вывод тождественной операцией. (Хотя бы на тех
+</EM><BR>
+файлах,
+<BR>
+<EM>&gt; &gt; которые сами получены выводом).
+</EM><BR>
+?
+<BR>
+<P>Аркадий.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0096.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0094.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0092.html">Andrey Slepuhin: "About new Refal+ release"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0096.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Thu Dec 09 1999 - 15:44:49 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

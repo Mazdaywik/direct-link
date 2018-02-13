@@ -1,0 +1,406 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ abstract syntax">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ abstract syntax</H1>
+<HR>
+<P>
+<!-- received="Tue Nov 23 12:22:17 1999" -->
+<!-- isoreceived="19991123092217" -->
+<!-- sent="Tue, 23 Nov 1999 09:54:43 +0300" -->
+<!-- isosent="19991123065443" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: Refal+ abstract syntax" -->
+<!-- id="001b01bf357f$9f009f00$07aee8c1@rcms.botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Refal+ abstract syntax" -->
+<STRONG>Subject: </STRONG>Re: Refal+ abstract syntax<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Nov 23 1999 - 09:54:43 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#29">[ date ]</A>
+<A HREF="index.html#29">[ thread ]</A>
+<A HREF="subject.html#29">[ subject ]</A>
+<A HREF="author.html#29">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0030.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0028.html">Leonid F. Belous: "обновления на refal.net"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0030.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, Андрей!
+<BR>
+День добрый, всем!
+<BR>
+<P>Вот, дополз до &quot;Subject: Refal+ abstract syntax&quot;....
+<BR>
+<P><EM>&gt;Ниже прилагается проект описания абстрактного синтаксиса Рефала+
+</EM><BR>
+<EM>&gt;в виде объектного выражения. За основу взято описание абстрактного
+</EM><BR>
+<EM>&gt;синтаксиса из статьи Романенко &quot;Компиляция Рефал-программ в
+</EM><BR>
+<EM>&gt;виртуальный код&quot; (файл rbvcomp.tex). Убедительная просьба всем
+</EM><BR>
+<EM>&gt;Рефал-гуру посмотреть внимательно на предмет ошибок и прочих замечаний.
+</EM><BR>
+<P><EM>&gt;6) Просьба особенно обратить внимание на следующие моменты:
+</EM><BR>
+...
+<BR>
+<EM>&gt;   - действительно ли даннное описание однозначно позволяет
+</EM><BR>
+<EM>&gt;     произвести разбор программы? (т.е. не нужно ли где-нибудь
+</EM><BR>
+<EM>&gt;     добавить ключевые слова или лишние скобки)
+</EM><BR>
+<P>Мне кажется, что контроль за однозначностью разбора программы сильно
+<BR>
+упростится, если нетерминалы снабдить рефальскими типами (s., t., v.,
+<BR>
+e.). В этом случае однозначность разбора можно определить как
+<BR>
+несовместность клэша двух разных алтернатив описания, что легко
+<BR>
+проверяется и формально (можно написать программу), и визуально...
+<BR>
+<P>Это и упростит написание (а возможно и генерацию) программ:
+<BR>
+можно с каждой переменной x.ZZZZZ связать функцию-предикат
+<BR>
+<P>&nbsp;&nbsp;$func? &lt;ZZZZZ? x.ZZZZZ&gt; = ;
+<BR>
+<P>===========================================================
+<BR>
+<P>Строчки я пометил &quot;*&quot; (старое), &quot;+&quot; (новое), &quot;#&quot; (изменное)
+<BR>
+<P>+ t.ProgramFile ::= (e.Program)
+<BR>
+<P>Программа--терм, может быть считана одним &lt;Read ...&gt;
+<BR>
+<P>* e.Program ::= t.ProgramItem | t.ProgramItem e.Program--
+<BR>
+* t.ProgramItem ::= t.FuncDef | t.BoxDef | t.TableDef | t.VectorDef
+<BR>
+*                 | t.StringDef
+<BR>
++                 | t.ConstDef | t.Pragma | t.ImportDef | t.Export
+<BR>
+<P>Пропущено:
+<BR>
+&nbsp;&nbsp;&nbsp;-- определение константы (тут возможна большая дискуссия--надо/не надо;
+<BR>
+&nbsp;&nbsp;&nbsp;-- прагмы ($trace, $traceall, думаю может быть полезна поддержка аналога
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#file/#line из Си--сохранять позиционирование на исходный текст, для
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;поддержки серьеаных обработчиков/оптимайзеров и/или экранных
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;отладчиков--трасировщиков с возможностью остановки брек-поинтов на &quot;,&quot;,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;=&quot;, &quot;{&quot; и т.п.;-),
+<BR>
+&nbsp;&nbsp;&nbsp;-- импорт/экспорт.
+<BR>
+<P>* t.FuncDef ::= (&quot;Function&quot; s.FunctionName  (e.FunctionFormat)
+<BR>
+*                            (t.FunctionBody))
+<BR>
+*             | (&quot;Function?&quot; s.FunctionName (e.FunctionFormat)
+<BR>
+*                            (t.FunctionBody))
+<BR>
+<P>Можно опустить ВСЕ внутренние скобки (формат и так жесткий).
+<BR>
+И не только в этом месте.  Это стало видно теперь, когда приписаны
+<BR>
+рефальские типы...
+<BR>
+<P>*
+<BR>
+* e.FunctionFormat ::= (e.InputFormat) (e.OutputFormat)
+<BR>
+*
+<BR>
+* e.InputFormat ::= e.HardExpression
+<BR>
+*
+<BR>
+* e.OutputFormat ::= e.HardExpression
+<BR>
+*
+<BR>
+* e.HardExpression ::= e.HardTerms
+<BR>
+*                    | e.HardTerms t.VVar e.HardTerms
+<BR>
+*                    | e.HardTerms t.EVar e.HardTerms
+<BR>
+*
+<BR>
+# e.HardTerms ::= e.Empty | t.HardTerm e.HardTerms
+<BR>
+*
+<BR>
++ e.Empty ::= /* empty */
+<BR>
+*
+<BR>
+* t.HardTerm ::= t.Symbol | (e.HardExpression) | t.SVar | t.TVar
+<BR>
+*
+<BR>
+* t.FunctionBody ::= t.Sentence | t.PAlt
+<BR>
+*
+<BR>
+* t.PAlt ::= t.HardPAlt | t.SoftPAlt
+<BR>
+*
+<BR>
+* t.HardPAlt ::= (&quot;HardPAlt&quot; e.PAltBody)
+<BR>
+*
+<BR>
+* t.SoftPAlt ::= (&quot;SoftPAlt&quot; e.PAltBody)
+<BR>
+*
+<BR>
+* e.PAltBody ::= t.Sentence | t.Sentence e.BlockBody
+<BR>
+<P>? e.PAltBody : e.Empty может быть ?
+<BR>
+<P>* t.Sentence ::= (t.Pattern t.Tail)
+<BR>
+*
+<BR>
+* t.Pattern ::= (&quot;Left&quot; e.PatternExpression) | (&quot;Right&quot; e.PatternExpression)
+<BR>
+*
+<BR>
+# e.PatternExpression ::= e.Empty | t.Term PatternExpression
+<BR>
+*
+<BR>
+* t.Term ::= t.Symbol | (e.PatternExpression) | t.Variable
+<BR>
+*
+<BR>
+* t.Symbol ::= (&quot;Symbol&quot; SymbolValue)
+<BR>
+*
+<BR>
+* t.Variable ::= t.EVar | t.VVar | t.TVar | t.SVar
+<BR>
+*
+<BR>
+* t.EVar ::= (&quot;EVar&quot; s.Name)
+<BR>
+*
+<BR>
+* t.VVar ::= (&quot;VVar&quot; s.Name)
+<BR>
+*
+<BR>
+* t.TVar ::= (&quot;TVar&quot; s.Name)
+<BR>
+*
+<BR>
+* t.SVar ::= (&quot;SVar&quot; s.Name)
+<BR>
+*
+<BR>
+* t.Tail ::= (&quot;Comma&quot; t.Path) | (&quot;Not&quot; t.Source t.Tail) | (&quot;Stake&quot; t.Path) |
+<BR>
+*        (&quot;Cut&quot; t.Path) | (&quot;Fail&quot;) | (&quot;Equal&quot; t.Path) | (&quot;Error&quot; t.Path) |
+<BR>
+*        (&quot;Trap&quot; t.Path t.PAlt)
+<BR>
+*
+<BR>
+* t.Path ::= (Source t.Tail) | (&quot;DColon&quot; t.Source (e.HardExpression) t.Tail) |
+<BR>
+*         (&quot;Iter&quot; t.Source t.Source (e.HardExpression) t.Tail) |
+<BR>
+*         (&quot;Colon&quot; t.Source t.Sentence)
+<BR>
+*
+<BR>
+* t.Source ::= t.HardBlock | t.SoftBlock | (&quot;Colon&quot; Source PAlt) |
+<BR>
+*           (ResultExpression)
+<BR>
+*
+<BR>
+* t.HardBlock ::= (&quot;HardBlock&quot; e.BlockBody)
+<BR>
+*
+<BR>
+* t.SoftBlock ::= (&quot;SoftBlock&quot; e.BlockBody)
+<BR>
+*
+<BR>
+# e.BlockBody ::= t.Path | t.Path e.BlockBody
+<BR>
+<P>? e.BlockBody : e.Empty может быть ?
+<BR>
+<P># e.ResultExpression ::= t.ResultTerm | t.ResultTerm e.ResultExpression
+<BR>
+<P>? ResultExpression : e.Empty может быть ?  Кажется &quot;да&quot;...
+<BR>
+<P>* t.ResultTerm ::= t.Symbol | (e.ResultExpression) | t.Variable |
+<BR>
+*                  (&quot;Call&quot; s.FunctionName (e.ResultExpression))
+<BR>
+<P>? конечно в этом месте Рефал-?? потребует возможности опускать имя функции:
+<BR>
+?    &lt; &lt;GetFname&gt; &lt;GetFarg&gt; &gt; .... ?
+<BR>
+<P>* t.BoxDef ::= (&quot;Box&quot; s.BoxName)
+<BR>
+*
+<BR>
+* t.TableDef ::= (&quot;Table&quot; s.TableName)
+<BR>
+*
+<BR>
+* t.VectorDef ::= (&quot;Vector&quot; s.VectorName)
+<BR>
+*
+<BR>
+* t.StringDef ::= (&quot;String&quot; s.StringName)
+<BR>
+*
+<BR>
+# s.BoxName      ::= s.Name  , &lt;WORD? s.Name&gt;
+<BR>
+# s.TableName    ::= s.Name  , &lt;WORD? s.Name&gt;
+<BR>
+# s.VectorName   ::= s.Name  , &lt;WORD? s.Name&gt;
+<BR>
+# s.StringName   ::= s.Name  , &lt;WORD? s.Name&gt;
+<BR>
+# s.FunctionName ::= s.Name  , &lt;WORD? s.Name&gt;
+<BR>
++ s.SymbolValue  ::= s
+<BR>
+<P><EM>&gt;Некоторые комментарии к файлу:
+</EM><BR>
+<EM>&gt;1) круглые скобки в описании - рефальские, то что заключено в кавычки -
+</EM><BR>
+<EM>&gt;   рефальские &quot;слова&quot;.
+</EM><BR>
+<P>Да, я еще поддерживаю использование Рефал конструкций в описании
+<BR>
+синтаксиса.  В том числе: использование типизации нетерминалов и
+<BR>
+уточнений типов за счет предикатов
+<BR>
+(см. например: &quot;s.Name  , &lt;WORD? s.Name&gt;&quot;).
+<BR>
+<P><EM>&gt;2) В файле не определены понятия Name - это по смыслу строка символов,
+</EM><BR>
+<P>А мне кажется--это символ-слово ;-)
+<BR>
+<P><EM>&gt;   означающая то или иное имя, и SymbolValue - это соответствующий
+</EM><BR>
+<EM>&gt;   рефальский символ.
+</EM><BR>
+<P><EM>&gt;3) Вместо форматного выражения используется жесткое; понятно,
+</EM><BR>
+<EM>&gt;   что форматное выражение можно получить отбрасыванием у жесткого
+</EM><BR>
+<EM>&gt;   имен переменных.
+</EM><BR>
+<P>Да, конечно.
+<BR>
+<P><EM>&gt;4) HardBlock, HardPAlt - это то что начинается с &quot;{&quot;,
+</EM><BR>
+<EM>&gt;   SoftBlock, SoftPAlt - это то что начинается с &quot;\{&quot;
+</EM><BR>
+<EM>&gt;   Cut и Stake - это \! и \? соответственно (по предложению
+</EM><BR>
+<EM>&gt;   Аркадия Климова).
+</EM><BR>
+<P>Да, конечно.
+<BR>
+<P><EM>&gt;5) В конструкциях типа :, ::, $iter ключевое слово вынесено вперед
+</EM><BR>
+<EM>&gt;   (т.е. (&quot;Colon&quot; Source Sentence) а не (Source &quot;Colon&quot; Sentence))
+</EM><BR>
+<P>Да, конечно.
+<BR>
+<P><EM>&gt;6) Просьба особенно обратить внимание на следующие моменты:
+</EM><BR>
+<EM>&gt;   - Нет ли где пропущенной альтернативной записи и что с ней делать
+</EM><BR>
+<EM>&gt;     (например, тело функции может быть одним предложением; надо ли при
+</EM><BR>
+<EM>&gt;     генерации абстрактного синтаксиса превращать его в образцовое
+</EM><BR>
+<EM>&gt;     распутье из одного предложения?).
+</EM><BR>
+<EM>&gt;   - Где по смыслу может стоять Empty, т.е. &quot;пусто&quot;? Кое-где я
+</EM><BR>
+<EM>&gt;     Empty вставил, но, возможно, не везде.
+</EM><BR>
+<EM>&gt;   - Насколько хорошо вписываются другие рефалы в этот синтаксис?
+</EM><BR>
+<EM>&gt;     Все-таки хотелось бы иметь абстракный синтаксис универсальным;
+</EM><BR>
+<EM>&gt;     если что - пока описание можно поправить.
+</EM><BR>
+<EM>&gt;   - действительно ли даннное описание однозначно позволяет
+</EM><BR>
+<EM>&gt;     произвести разбор программы? (т.е. не нужно ли где-нибудь
+</EM><BR>
+<EM>&gt;     добавить ключевые слова или лишние скобки)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;Буду крайне признателен за всяческую критику. Думаю, что до
+</EM><BR>
+<EM>&gt;семинара в понедельник можно успеть провести предварительное
+</EM><BR>
+<EM>&gt;обсуждение по почте, а на семинаре зафиксировать результаты.
+</EM><BR>
+<P>Увы, я поздно дополз до текста.
+<BR>
+<P>Сергей
+<BR>
+П.С. Андрей (Слепухин)!  Я сегодня буду на семинаре в МГУ (18:05, ауд. 1013).
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0030.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0028.html">Leonid F. Belous: "обновления на refal.net"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0030.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

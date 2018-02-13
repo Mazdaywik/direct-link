@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Mikhail Kovtun (mkovtun@mindspring.com)">
+<META NAME="Subject" CONTENT="О типизации рефальских выражений">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>О типизации рефальских выражений</H1>
+<HR>
+<P>
+<!-- received="Sun Aug 19 22:32:52 2001" -->
+<!-- isoreceived="20010819183252" -->
+<!-- sent="Sun, 19 Aug 2001 10:55:10 -0400" -->
+<!-- isosent="20010819145510" -->
+<!-- name="Mikhail Kovtun" -->
+<!-- email="mkovtun@mindspring.com" -->
+<!-- subject="О типизации рефальских выражений" -->
+<!-- id="3B7FD34E.18B5BDAE@mindspring.com" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>О типизации рефальских выражений<BR>
+<STRONG>From: </STRONG>Mikhail Kovtun (<EM>mkovtun@mindspring.com</EM>)<BR>
+<STRONG>Date: </STRONG>Sun Aug 19 2001 - 18:55:10 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#222">[ date ]</A>
+<A HREF="index.html#222">[ thread ]</A>
+<A HREF="subject.html#222">[ subject ]</A>
+<A HREF="author.html#222">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0223.html">Arkady Klimov: "Re: О типизации рефальских выражени"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0221.html">korlyukov: "Re: Ленивость, бесконечные структура и супекомпиляция"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0223.html">Arkady Klimov: "Re: О типизации рефальских выражени"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+
+Привет всем!
+<p>Мне пришла в голову одна мысль, которой я бы хотел поделиться -- может
+быть, здесь есть что-то стоящее.
+<p>В качестве типов рефальских выражений предлагается использовать <i>регулярные
+выражения</i>, построенные из <i>регулярных языков деревьев</i>.
+<p>Регулярные языки деревьев (чтобы было не страшно:-) -- это ML-евские
+datatype.
+<p>Несколько фактов об регулярных языках деревьев:
+<p>-- Распознаются конечными автоматами.
+<p>-- Обладают практически всеми свойствами регулярных строковых языков
+(замкнутось относительно теоретико-множественных операций, разрешимость
+проблем непустоты, эквивалентности, и т.п.).
+<p>-- Мощнее регулярных строковых языков; в некотором смысле, эквивалентны
+контекстно-свободным языкам. Именно: для любого контекстно-свободного языка
+L можно построить регулярный язык деревьев T такой, что множество предложений
+языка L -- это в точности множество строк, являющихся списками терминалов
+деревьев из T. (Кстати, по-английски такая строка называется yield -- а
+как по-русски? Я бы воздержался от транслитерации. А интересно, как этот
+термин переведут любители "рестрикций на перфектных деревьях"? Эх, был
+бы жив адмирал Шишков, я бы отправил в его журнал статью под названием
+"К чему могут привести попытки перевода иностранных слов путем <i>транслитерации</i>":-).
+Другими словами, множество деревьев синтаксического разбора некоторого
+строкового контекстно-свободного языка образует регулярный язык деревьев.
+<p>При "грамматическом" подходе, регулярный язык деревьев задается с помощью
+системы правил вида:
+<p>Phylum => Constructor(Phylum<sub>1</sub>,...,Phylum<sub>n</sub>)
+<p>Phyla (Шишков, прости!) служат нетерминалами в выводе. В сгенерированном
+дереве есть только конструкторы, причем 0-местные конструкторы являются
+терминалами. В приложении к типизации, 0-местные конструкторы естественно
+отождествить с примитивными типами.
+<p>Например, двоичные деревья, в которых каждому нетерминалу приписано
+целое число, могут быть описаны как:
+<p>BinTree => NonTerminal(Integer,BinTree,BinTree)
+<br>BinTree => Terminal()
+<br>Integer => int()
+<p>Нетрудно видеть, что с точностью до обозначений и естественных сокращений,
+это ML-евское определение datatype.
+<p>Применительно к рефалу, добавим новую форму правила:
+<p>Phylum => <i>регулярное выражение, составленное из phyla</i>
+<p>и разрешим только 1- и 0-местные конструкторы (многоместные конструкторы
+теперь выразимы как одноместные конструкторы, имеющие аргументом регулярное
+выражение вида "конкатенация").
+<p>(Я бы мог привести формальное определение, но на данном этапе это только
+запутало бы дело.)
+<p>В качестве примера рассмотрим двоичные деревья, нетерминальным вершинам
+которых приприсаны целые числа так, что обход "левое поддерево -- корень
+-- правое поддерево" выдает упорядоченную последовательность чисел. Рассмотрим
+также функцию, которая добавляет к дереву новое число с сохранением порядка.
+<p>На "нетипизированном рефале" эта функция выглядит так:
+<p><tt>AddNode</tt>
+<br><tt>{</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; s.new () = (s.new () ());</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; s.new (s.root t.left t.right),</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;GreaterThen s.new
+s.root> : {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+True&nbsp; = (s.root t.left &lt;AddNode s.new t.right>);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+False = (s.root &lt;AddNode s.new t.left> t.right);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
+<br><tt>};</tt>
+<p>(Я надеюсь, что здесь не слишком много синтаксических ошибок.)
+<p>Теперь добавим типовую информацию (я ни в коем случае не настаиваю на
+синтаксисе; это дело будущего):
+<p><b><i><tt><font color="#993300">datatype</font></tt></i></b>
+<br><i><tt><font color="#993300">T1 => (T2):nt | ():t;</font></tt></i>
+<br><i><tt><font color="#993300">T2 => int T1 T1;</font></tt></i>
+<br><i><tt><font color="#993300">T3 => int T1</font></tt></i>
+<br><i><tt><font color="#993300"><b>enddatatype</b>;</font></tt></i>
+<p><tt>AddNode<i><font color="#993300"> : T3 -> T1</font></i></tt>
+<br><tt>{</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; s<i><font color="#993300">:int</font></i>.new
+()<i><font color="#993300">:T1</font></i> = (s<i><font color="#993300">:int</font></i>.new
+()<i><font color="#993300">:t</font></i> ()<i><font color="#993300">:t</font></i>)<i><font color="#990000">:nt</font></i>;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; s<i><font color="#993300">:int</font></i>.new
+(s<i><font color="#993300">:int</font></i>.root t<i><font color="#993300">:T1</font></i>.left
+t<i><font color="#993300">:T1</font></i>.right)<i><font color="#993300">:T1</font></i>,</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;GreaterThen s<i><font color="#993300">:int</font></i>.new
+s<i><font color="#993300">:int</font></i>.root><i><font color="#993300">:bool</font></i>
+: {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+True<i><font color="#993300">:bool</font></i>&nbsp; = (s<i><font color="#993300">:int</font></i>.root
+t<i><font color="#993300">:T1</font></i>.left &lt;AddNode s<i><font color="#993300">:int</font></i>.new
+t<i><font color="#993300">:T1</font></i>.right><i><font color="#993300">:T1</font></i>)<i><font color="#993300">:nt</font></i>;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+False<i><font color="#993300">:bool</font></i> = (s<i><font color="#993300">:int</font></i>.root
+&lt;AddNode s<i><font color="#993300">:int</font></i>.new t<i><font color="#993300">:T1</font></i>.left><i><font color="#993300">:T1</font></i>
+t<i><font color="#993300">:T1</font></i>.right)<i><font color="#993300">:nt</font></i>;</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; };</tt>
+<br><tt>};</tt>
+<p>Здесь:
+<ul>
+<li>
+Вся типовая информация выделена курсивом и цветом.</li>
+
+<li>
+В определении типов имена конструкторов записаны через двоеточие после
+аргументов.</li>
+</ul>
+Несколько замечаний:
+<p>1. Типами помечены все термы; при этом пометки в левой части -- это
+phyla, а пометки в правой части -- конструкторы. (Примитивные типы при
+подходящей формализации попадают в обе категории).
+<p>2. Как мне кажется, любую данную типизацию можно <i>проверить</i> (т.е.
+существует алгоритм проверки).
+<p>3. В общем случае, восстановить типы по нетипизируемой программе невозможно.
+Достаточно того, что любую рефальскую функцию можно доопределить до всюду
+определенной с помощью предложения "e.x=e.x" -- и такое предложение часто
+используется в реальных программах "не по делу". Однако кажется, что по
+достаточно богатой частичной типизации восстановить полную типизацию можно.
+Вопрос: можно ли разумным способом определить понятие "минимальной типизации",
+по которой можно однозначно восстановить полную типизацию?
+<p>4. Можно представить себе реализацию, в которой каждый терм хранит при
+себе тип, и программа должна быть полностью типизирована. В такой реализации
+отождествление будет происходить по-другому: например, образец "e.x s.1
+ey" в стандартной реализации отождествляется с выражением "1'A'" (целое
+и литера) как e.x=пусто, s.1=1, e.y='A'; типизированный же образец "e<i><font color="#993300">:Any</font></i>.x
+s<i><font color="#993300">:char</font></i>.1 e<i><font color="#993300">:Any</font></i>.y"
+как e.x=1, s.1='A', e.y=пусто. Но, может быть, это и лучше?
+<p>Другой пример (где встречаются открытые переменные) -- слегка модифицированная
+функция Next из примера "Paths in graph" книги по Рефалу-5:
+<p><tt>Next</tt>
+<br><tt>{</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; s.V e.x s.V(e.N) e.y = e.N</tt>
+<br><tt>};</tt>
+<p>Типизированный вариант:
+<p><b><i><tt><font color="#993300">datatype</font></tt></i></b>
+<br><i><tt><font color="#993300">Vx => char;&nbsp;&nbsp;&nbsp; /* Vertex
+*/</font></tt></i>
+<br><i><tt><font color="#993300">Vxs => Vx*;&nbsp;&nbsp;&nbsp; /* Vertices
+*/</font></tt></i>
+<br><i><tt><font color="#993300">T1 => (Vxs):vxs;&nbsp;&nbsp;&nbsp; /*
+List of vertices in parentheses */</font></tt></i>
+<br><i><tt><font color="#993300">T2 => Vx T1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* Vertex with a list of successors */</font></tt></i>
+<br><i><tt><font color="#993300">Gr => T2*;&nbsp;&nbsp;&nbsp;&nbsp; /*
+Graph */</font></tt></i>
+<br><i><tt><font color="#993300">Arg => Vx Gr&nbsp;&nbsp; /* Argument of
+Next function */</font></tt></i>
+<br><i><tt><font color="#993300"><b>enddatatype</b>;</font></tt></i>
+<p><tt>Next<i><font color="#993300"> : Arg -> Vxs</font></i></tt>
+<br><tt>{</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; s<i><font color="#993300">:Vx</font></i>.V e<i><font color="#993300">:Gr</font></i>.x
+s<i><font color="#993300">:Vx</font></i>.V(e<i><font color="#993300">:Vxs</font></i>.N)<i><font color="#993300">:T1</font></i>
+e<i><font color="#993300">:Gr</font></i>.y = e<i><font color="#993300">:Vxs</font></i>.N</tt>
+<br><tt>};</tt>
+<p>Кстати, последний пример показывает, что для проверки правильности типизации
+требуется распознавать эквивалентность регулярных выражений (что является
+разрешимой задачей, но сложной).
+<p>Оба примера не очень хороши, поскольку в первом нет открытых переменных,
+а во втором -- не рекурсивная структура данных. Не знает ли кто-нибудь
+хорошего примера, в котором есть все?
+<p>Очень хотелось бы услышать ваше мнение. Если это кажется интересным,
+можно было бы рассмотреть формализацию этого подхода.
+<p>P.S. Представление графа в последнем примере, конечно, является "ужасным"
+с точки зрения времени исполнения функции: имея вершину, мы каждый раз
+<i>ищем</i> связанную с ней информацию -- вместо того, чтобы связать ее
+один раз при построении графа. В рефале одним из разумных способов представить
+граф является использование ящиков. Однако образцы не могут заглядывать
+в ящики, что усложняет программирование. Были ли какие-нибудь интересные
+мысли по этому поводу?
+<p>--
+<br>Best regards,
+<p>Mikhail
+<br>&nbsp;
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0223.html">Arkady Klimov: "Re: О типизации рефальских выражени"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0221.html">korlyukov: "Re: Ленивость, бесконечные структура и супекомпиляция"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0223.html">Arkady Klimov: "Re: О типизации рефальских выражени"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

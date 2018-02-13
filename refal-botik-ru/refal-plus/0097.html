@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.rinet.ru)">
+<META NAME="Subject" CONTENT="Re: About new Refal+ release">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: About new Refal+ release</H1>
+<HR>
+<P>
+<!-- received="Thu Dec  9 18:31:30 1999 MSK" -->
+<!-- sent="Thu, 9 Dec 1999 18:32:59 +0300" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.rinet.ru" -->
+<!-- subject="Re: About new Refal+ release" -->
+<!-- id="00a901bf425a$ac1af180$97925bc3@bagirra.rinet.ru" -->
+<!-- inreplyto="384E8535.2C730D6A@msu.ru" -->
+<STRONG>Arkady Klimov</STRONG> (<A HREF="mailto:klark@bagirra.rinet.ru?subject=Re:%20About%20new%20Refal%2B%20release"><EM>klark@bagirra.rinet.ru</EM></A>)<BR>
+<EM>Thu, 9 Dec 1999 18:32:59 +0300</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#97">[ date ]</A>
+<A HREF="index.html#97">[ thread ]</A>
+<A HREF="subject.html#97">[ subject ]</A>
+<A HREF="author.html#97">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0098.html">Andrey Slepuhin: "Announce: Refal+ v1.8.1 and future plans"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0096.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0092.html">Andrey Slepuhin: "About new Refal+ release"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+----- Original Message -----
+<BR>
+From: Andrey Slepuhin &lt;<A HREF="mailto:pooh@msu.ru?subject=Re:%20About%20new%20Refal%2B%20release">pooh@msu.ru</A>&gt;
+<BR>
+To: Arkady Klimov &lt;<A HREF="mailto:klark@bagirra.rinet.ru?subject=Re:%20About%20new%20Refal%2B%20release">klark@bagirra.rinet.ru</A>&gt;
+<BR>
+Cc: &lt;<A HREF="mailto:refal-plus@botik.ru?subject=Re:%20About%20new%20Refal%2B%20release">refal-plus@botik.ru</A>&gt;
+<BR>
+Sent: Thursday, December 09, 1999 4:21 PM
+<BR>
+Subject: Re: About new Refal+ release
+<BR>
+<P><P><EM>&gt; Arkady Klimov wrote:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; [snip]
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;    а) Новые команды LEIS/LVIS/LES,REIS/RVIS/RES - семантика
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;       следующая (на примере LEIS/LVIS/LES):
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;       &lt; LEIS m : LES : C, S, D, E &gt;  =&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;         { S/m = Oe и Oe : S =S' } &lt; C, S', (LES : C, S') : D, E&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;       &lt; LVIS m : LES : C, S, D, E &gt;  =&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;         { S/m = Oe } &lt; LES : C, Oe : S, D, E&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;       &lt; LES : C, OtOe' : S, D, E &gt;  =&gt; { Oe' : S = S' } &lt; C, S',
+</EM><BR>
+(LES
+<BR>
+<EM>&gt; &gt; :
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt; C : S') D, E&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;       &lt; LES : C, p : S, D, E &gt;  =&gt; &lt; FAIL : [], S, D, E&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; - это оптимизированные команды удлинения. Используются в случае,
+</EM><BR>
+когда
+<BR>
+<EM>&gt; &gt; &gt; &gt; просмотренная часть (e1 в образце e1 sA e2) далее в теле функции не
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; используется.
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; (Если конечно, я это правильно понял. Андрей, поправь меня, если
+</EM><BR>
+это не
+<BR>
+<EM>&gt; &gt; &gt; &gt; так).
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; Абсолютно точно. На самом деле я бы кое-что поменял в командах
+</EM><BR>
+<EM>&gt; &gt; &gt; отщепления - уж больно они запутанные, и мне совсем не нравится
+</EM><BR>
+<EM>&gt; &gt; &gt; требование, чтобы LEI/LE всегда были рядом. На самом деле все
+</EM><BR>
+<EM>&gt; &gt; &gt; можно сделать более прозрачно с явными ALT'ами, и обойтись вообще
+</EM><BR>
+<EM>&gt; &gt; &gt; без команд типа LEI. Если что - я могу подробно описать то, как я
+</EM><BR>
+<EM>&gt; &gt; &gt; все это вижу.
+</EM><BR>
+<EM>&gt; &gt; Да, это интересно. Если получается, это будет, наверно, лучше. Напиши,
+</EM><BR>
+<EM>&gt; &gt; пожалуйста.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; LE предлагается изменить следующим образом (я обзову эту команду LX,
+</EM><BR>
+<EM>&gt; чтобы
+</EM><BR>
+<EM>&gt; не было путаницы):
+</EM><BR>
+<EM>&gt;   &lt; LX : C, OtOe&quot; : Oe' : S, D, E &gt;  =&gt;  &lt; C, Oe&quot; : Oe'Ot : S, D, E &gt;
+</EM><BR>
+<EM>&gt;   &lt; LX : C, p : Oe : S, D, E &gt;  =&gt;  &lt; FAIL : [], S, D, E &gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Тогда пара команд LEI m : LE заменяется на
+</EM><BR>
+<EM>&gt;   PUSHEMP
+</EM><BR>
+<EM>&gt;   PUSH m+1
+</EM><BR>
+<EM>&gt;   JUMP L2
+</EM><BR>
+<EM>&gt;   LABEL L1
+</EM><BR>
+<EM>&gt;   LX
+</EM><BR>
+<EM>&gt;   LABEL L2
+</EM><BR>
+<EM>&gt;   ALT L1
+</EM><BR>
+<EM>&gt;   ...
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; A LVI m : LE заменяется на
+</EM><BR>
+<EM>&gt;   PUSHEMP
+</EM><BR>
+<EM>&gt;   PUSH m+1
+</EM><BR>
+<EM>&gt;   LABEL L1
+</EM><BR>
+<EM>&gt;   LX
+</EM><BR>
+<EM>&gt;   ALT L1
+</EM><BR>
+<EM>&gt;   ...
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Аналогично поступаем с LEIS/LES и с отщеплениями справа.
+</EM><BR>
+<EM>&gt; Кстати сказать, в реальной жизни так отщепления в ассемблер и
+</EM><BR>
+<EM>&gt; компилируются.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; [snip]
+</EM><BR>
+Да, это очень красиво. Мне нравится.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;    в) Директивы:
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;       IMPORT/EXPORT/LOCAL FUNC/BOX/TABLE/VECTOR/STRING/CHANNEL -
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;       семантика очевидна.
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; А какой синтаксис? (Речь идет ведь не о рефале, а о виртуальном
+</EM><BR>
+коде,
+<BR>
+<EM>&gt; &gt; да?)
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; Какая семантика LOCAL FUNC (в отличие от FUNC)? Это два слова?
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; Просто FUNC нету. Т.е. синтаксис директивы _всегда_ содержит два
+</EM><BR>
+<EM>&gt; &gt; &gt; слова - linkage class (не знаю, как это сказать по русски) и тип
+</EM><BR>
+<EM>&gt; &gt; &gt; объекта.
+</EM><BR>
+<EM>&gt; &gt; &gt; Это как раз спорное место, которое я хотел обсудить. Не стоит ли
+</EM><BR>
+разбить
+<BR>
+<EM>&gt; &gt; &gt; каждую директиву на две?
+</EM><BR>
+<EM>&gt; &gt; Ох, я совсем ничего не понял, можно поподробнее?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Я сделал так - возьмем для примера функцию, для нее возможны
+</EM><BR>
+<EM>&gt; три директивы:
+</EM><BR>
+<EM>&gt;    IMPORT FUNC &lt;fname&gt; - функция определена где-то в другом модуле
+</EM><BR>
+<EM>&gt;    EXPORT FUNC &lt;fname&gt; - функция определена в нашем модуле и является
+</EM><BR>
+<EM>&gt; глобальной
+</EM><BR>
+<EM>&gt;    LOCAL FUNC &lt;fname&gt;  - функция определена в нашем модуле и является
+</EM><BR>
+<EM>&gt; локальной
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; То же самое для других объектов, для них, кроме того, объявления EXPORT
+</EM><BR>
+<EM>&gt; и
+</EM><BR>
+<EM>&gt; LOCAL являются сразу и определениями.
+</EM><BR>
+<EM>&gt; Другой возможный вариант - разнести это по разным директивам. Тогда
+</EM><BR>
+<EM>&gt; мы будем писать, скажем
+</EM><BR>
+<EM>&gt;   BOX &lt;name&gt;
+</EM><BR>
+<EM>&gt;   EXPORT &lt;name&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Почему я объединил определение объекта и его linkage вместе?
+</EM><BR>
+<EM>&gt; Потому что тогда очень легко по одной директиве сразу построить
+</EM><BR>
+<EM>&gt; необходимое объявление при компиляции, скажем в С, да и виртуальный код
+</EM><BR>
+<EM>&gt; меньше загромождается. Например:
+</EM><BR>
+<EM>&gt;   IMPORT BOX Box    =&gt;
+</EM><BR>
+<EM>&gt;      extern rf_box_t Box;
+</EM><BR>
+<EM>&gt;   EXPORT BOX Box    =&gt;
+</EM><BR>
+<EM>&gt;      rf_box_t Box;
+</EM><BR>
+<EM>&gt;   LOCAL BOX Box    =&gt;
+</EM><BR>
+<EM>&gt;      static rf_box_t Box;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Однако, здесь могут быть другие мнения, и я с радостью их
+</EM><BR>
+<EM>&gt; выслушаю.
+</EM><BR>
+Выглядит разумно.
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; Андрей.
+</EM><BR>
+Спасибо.
+<BR>
+Аркадий.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0098.html">Andrey Slepuhin: "Announce: Refal+ v1.8.1 and future plans"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0096.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0092.html">Andrey Slepuhin: "About new Refal+ release"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Thu Dec 09 1999 - 18:31:32 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

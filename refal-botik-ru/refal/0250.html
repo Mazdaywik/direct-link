@@ -1,0 +1,730 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Nikolai Kondratiev (Nikolai.Kondratiev@gmx.de)">
+<META NAME="Subject" CONTENT="Re: Компиляция Refal6 для Linux (commens on data striucrture">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Компиляция Refal6 для Linux (commens on data striucrture</H1>
+<HR>
+<P>
+<!-- received="Fri Nov  2 12:03:04 2001" -->
+<!-- isoreceived="20011102090304" -->
+<!-- sent="Fri, 2 Nov 2001 09:17:19 +0100" -->
+<!-- isosent="20011102081719" -->
+<!-- name="Nikolai Kondratiev" -->
+<!-- email="Nikolai.Kondratiev@gmx.de" -->
+<!-- subject="Re: Компиляция Refal6 для Linux (commens on data striucrture" -->
+<!-- id="000701c16376$e13ee210$0200a8c0@srv2" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="000301c162e4$985ef4f0$110d040a@Bagirra" -->
+<STRONG>Subject: </STRONG>Re: Компиляция Refal6 для Linux (commens on data striucrture<BR>
+<STRONG>From: </STRONG>Nikolai Kondratiev (<EM>Nikolai.Kondratiev@gmx.de</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Nov 02 2001 - 11:17:19 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#250">[ date ]</A>
+<A HREF="index.html#250">[ thread ]</A>
+<A HREF="subject.html#250">[ subject ]</A>
+<A HREF="author.html#250">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0251.html">Mike Potanin: "Ядро Рефал"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0249.html">Arkady Klimov: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0249.html">Arkady Klimov: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0251.html">Mike Potanin: "Ядро Рефал"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0249.html">Nikolai Kondratiev: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Привет!
+<BR>
+<P>Я использовал обработку сигналов только для отлова Ctl-C, чтобы можно было
+<BR>
+выдать нормальную рефальскую диагностику в случае зацикливания.
+<BR>
+<P>Ниже - выдержки из сохранившейся у меня версии Рефала-6
+<BR>
+<P>refcom.h:
+<BR>
+<P>#define  BRKINIT       signal(SIGINT,handint);
+<BR>
+<P>rfserv.c:
+<BR>
+<P>void handint()
+<BR>
+{
+<BR>
+&nbsp;&nbsp;&nbsp;while (BRKTEST) getch();
+<BR>
+&nbsp;&nbsp;&nbsp;if (rftrcmode) {
+<BR>
+&nbsp;&nbsp;&nbsp;if (rftrace) trcsigfl = TRUE;
+<BR>
+&nbsp;&nbsp;&nbsp;BRKINIT;
+<BR>
+&nbsp;&nbsp;&nbsp;return;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<BR>
+&nbsp;&nbsp;&nbsp;rf_error = ERRBRK;
+<BR>
+}
+<BR>
+<P>Использовался, помнится, борландовский компилятор С.
+<BR>
+<P>Ниже - выдержка из Help'a C-Builder 3.0, к сожалению, по-немецки.
+<BR>
+<P>Syntax
+<BR>
+<P>#include &lt;signal.h&gt;
+<BR>
+void (_USERENTRY *signal(int sig, void (_USERENTRY *func)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int sig[, int subcode])))(int);
+<BR>
+<P>Beschreibung
+<BR>
+<P>Legt fest, wie das Programm auf Signale reagiert.
+<BR>
+<P>Uber die Funktion signal konnen Sie festlegen, wie Ihr Programm auf die
+<BR>
+Auslosung des Signals sig reagiert. Sie konnen durch das Argument func eine
+<BR>
+eigene Routine zur Bearbeitung des Signals (einen Signal-Handler) definieren
+<BR>
+oder auch eine der beiden in signal.h vordefinierten Routinen SIG_DEFL und
+<BR>
+SIG_IGN einsetzen. Die Funktion func mu? mit der Aufrufkonvention _USERENTRY
+<BR>
+benutzt werden.
+<BR>
+<P>Eine Routine, die ein Signal auffangt (wie zum Beispiel eine
+<BR>
+Gleitkommazahl), loscht auch das Signal. Um den Empfang von Signalen
+<BR>
+fortsetzen zu konnen, mu? eine Signalbehandlung durch den erneuten Aufruf
+<BR>
+von signal reinstalliert werden.
+<BR>
+<P>Funktionszeiger Bedeutung
+<BR>
+<P>SIG_DFL  Das Programm wird beendet.
+<BR>
+SIG_ERR  Zeigt an, da? signal einen Fehler ergeben hat.
+<BR>
+SIG_IGN  Dieser Signaltyp wird ignoriert.
+<BR>
+<P>In der folgenden Tabelle finden Sie Signaltypen zusammen mit den von ihnen
+<BR>
+ausgelosten Standardaktionen:
+<BR>
+<P>Signaltyp Bedeutung
+<BR>
+<P>SIGBREAK Tastatur mu? sich im Modus &quot;raw&quot; (Zeichen nicht interpretieren)
+<BR>
+befinden
+<BR>
+SIGARBRT Anormales Ende. Standardaktion entspricht dem Aufruf von _exit(3).
+<BR>
+SIGFPE  Arithmetischer Fehler aufgrund einer Division durch Null, einer
+<BR>
+ungultigen Operation usw. Standardaktion entspricht Aufruf von _exit(1).
+<BR>
+SIGILL Unzulassige Operation. Standardaktion entspricht Aufruf von _exit(1).
+<BR>
+SIGINT Strg+C-Interrupt. Standardaktion ist Aufruf von INT 23h.
+<BR>
+<P>SIGSEGV Ungultiger Speicherzugriff. Standardaktion entspricht Aufruf von
+<BR>
+_exit
+<BR>
+(1).
+<BR>
+SIGTERM Beendigung des Programms wird angefordert. Standardaktion entspricht
+<BR>
+Aufruf von _exit(1).
+<BR>
+SIGUSR1, SIGUSR2, SIGUSR3 Benutzerdefinierte Signale (nur in Win32
+<BR>
+verfugbar), die nur durch den Aufruf von raise erzeugt werden konnen.
+<BR>
+Standardaktion: Das Signal wird ignoriert.
+<BR>
+<P>signal.h definiert einen Datentyp sig_atomic_t als gro?ten atomaren
+<BR>
+Speicherzugriff, den der Prozessor automatisch laden oder speichern kann und
+<BR>
+der auch durch asynchrone Interrupts nicht unterbrochen werden kann. Fur die
+<BR>
+Prozessoren der 8086-Familie ist dies ein Wort der Lange 16 Bit, fur 80386
+<BR>
+und hoher ist es ein Wort der Lange 32 Bit, also ein Borland C++ Integer.
+<BR>
+<P>Wenn ein Signal durch die Funktion raise oder ein externes Ereignis erzeugt
+<BR>
+wird, geschieht folgendes:
+<BR>
+<P>Wurde fur das Signal ein benutzerdefinierter Signal-Handler installiert,
+<BR>
+wird die Aktion fur diesen Signaltyp auf SIG_DFL gesetzt.
+<BR>
+&nbsp;Der benutzerdefinierte Handler wird aufgerufen. Der Signaltyp wird dabei
+<BR>
+als Parameter ubergeben.
+<BR>
+<P>Benutzerdefinerte Handler konnen mit einem Aufruf von abort, _exit, exit
+<BR>
+oder longjmp enden oder auch mit einem normalen Rucksprung zum
+<BR>
+unterbrochenen Programm. Soll Ihre Handler-Funktion weitere Signale
+<BR>
+empfangen und verarbeiten, so mussen Sie signal innerhalb der
+<BR>
+Handler-Funktion erneut aufrufen.
+<BR>
+<P>Borland C++ implementiert bei den Signaltypen SIGFPE, SIGSEGV und SIGILL
+<BR>
+eine Erweiterung von ANSI C. Die entsprechenden benutzerdefinierten
+<BR>
+Signal-Handler erhalten nicht nur den Signaltyp, sondern auch noch einen
+<BR>
+oder zwei zusatzliche Parameter. Wenn einer dieser drei Signaltypen uber
+<BR>
+raise ausgelost wird, erhalt der Handler einen der in der nachfolgenden
+<BR>
+Tabelle aufgefuhrten Werte als zusatzlichen Parameter (und kann daran
+<BR>
+erkennen, da? er explizit aufgerufen wurde). Die explizit aktivierenden
+<BR>
+Werte fur SIGFPE, SIGSEGV und SIGILL sind:
+<BR>
+<P>Hinweis: Deklarationen dieser Typen sind in float.h definiert.
+<BR>
+<P>Signal Parameter
+<BR>
+<P>SIGFPE FPE_EXPLICITGEN
+<BR>
+SIGSEGV SEGV_EXPLICITGEN
+<BR>
+SIGILL ILL_EXPLICITGEN
+<BR>
+<P>Wird ein Signal des Typs SIGFPE als Folge einer Gleitkomma-Exception
+<BR>
+ausgelost, bekommt der benutzerdefinierte Handler die Art dieses Fehlers als
+<BR>
+einen zusatzlichen Parameter ubergeben, das den Typ FPE_xxx des Signals
+<BR>
+festlegt. Wenn die Signaltypen SIGSEGV und SIGILL oder Varianten des Typs
+<BR>
+SIGFPE (FPE_INTOVFLOW oder FPE_INTDIV0) als Folge einer Prozessor-Exception
+<BR>
+auftauchen, wird der Handler mit zwei zusatzlichen Parametern aufgerufen:
+<BR>
+<P>1. Die Exception-Typen SIGSEGV, SIGILL oder SIGFPE (siehe float.h fur diese
+<BR>
+Typen). Dieser erste Parameter ist der gewohnliche Signaltyp von ANSI.
+<BR>
+2. Einen Integer-Zeiger in den Stack der interrupt-Routine, die den
+<BR>
+benutzerdefinierten Signal-Handler aufgerufen hat. Dieser Zeiger zeigt auf
+<BR>
+eine Liste der Prozessorregister, die beim Auftreten des Fehlers gespeichert
+<BR>
+wurden. Die Register sind in derselben Reihenfolge wie die Parameter der
+<BR>
+Interrupt-Funktion (BP, DI, SI, DS, ES, DX, CX, BX, AX, IP, CS, FLAGS)
+<BR>
+gespeichert. Um bei der Ruckgabe des Handlers einen veranderten Registerwert
+<BR>
+geandert zu erhalten, andern sie einen der Platze in dieser Liste.
+<BR>
+<P>Um beispielsweise einen neuen SI-Wert zu erhalten, konnten Sie so etwas tun:
+<BR>
+<P>*((int*)list_pointer + 2) = new_SI_value;
+<BR>
+<P>Auf diese Weise kann der Handler die Register uberprufen und alle von Ihnen
+<BR>
+gewunschten Einstellungen vornehmen.
+<BR>
+<P>Die folgenden Signale des SIGFPE-Typs konnen auftreten (bzw. generiert
+<BR>
+werden). Sie entsprechen den Fehlern, die der 8087-Prozessor erkennen kann,
+<BR>
+sowie INTEGER DIVIDE BY ZERO und INTERRUPT ON OVERFLOW bei der Haupt-CPU.
+<BR>
+(Die entsprechenden Deklarationen befinden sich in float.h.)
+<BR>
+<P>SIGFPE-Signal Bedeutung
+<BR>
+<P>FPE_INTOVFLOW INTO-Befehl mit gesetztem OF-Flag
+<BR>
+FPE_INTDIV0 Integer duch 0 geteilt
+<BR>
+FPE_INVALID Ungultige Operation
+<BR>
+FPE_ZERODIVIDE Division durch Null
+<BR>
+FPE_OVERFLOW Numerischer Uberlauf
+<BR>
+FPE_UNDERFLOW Numerischer Unterlauf
+<BR>
+FPE_INEXACT Ungenaues Ergebnis
+<BR>
+FPE_EXPLICITGEN Anwendungsprogramm fuhrte raise(SIGFPE) aus
+<BR>
+FPE_STACKFAULT Uber-/Unterlauf des Gleitkomma-Stack
+<BR>
+FPE_STACKFAULT Stack-Uberlauf
+<BR>
+<P>Die Signale FPE_INTOVFLOW und FPE_INTDIV0 werden durch Integer-Operationen
+<BR>
+ausgelost, die restlichen Signale durch Gleitkommaoperationen. Ob eine
+<BR>
+Gleitkomma-Exception ein Signal setzt, hangt vom Steuerwort des Koprozessors
+<BR>
+ab, das uber die Routine _control87
+<BR>
+&nbsp;verandert werden kann. Denormalisierte Exceptions werden direkt von Borland
+<BR>
+C++ behandelt und nicht an den Handler ubergeben.
+<BR>
+<P>Folgende Signale des Typs SEGSEGV konnen auftreten:
+<BR>
+<P>SEGV_BOUND ausgelost durch BOUND-Befehl
+<BR>
+SEGV_EXPLICITGEN ausgelost durch die Ausfuhrung von raise(SIGSEGV
+<BR>
+)
+<BR>
+<P>Der Prozessorbefehl BOUND ist fur die Prozessortypen 8088/86 nicht
+<BR>
+definiert. Die Prozessoren 186, 286, 386 sowie NEC V kennen diesen Befehl.
+<BR>
+Auf 80088/86 Prozessoren kann daher der Type SEGV_BOUND des Signals SIGSEGV
+<BR>
+nicht auftreten. Borland C++ generiert den BOUND-Befehl nicht, doch kann er
+<BR>
+in Inline-Assemblercode sowie separat assemblierten und eingebundenen
+<BR>
+Routinen verwendet werden.
+<BR>
+<P>Fur Signale des Typs SIGILL sind die folgenden Konstanten definiert:
+<BR>
+<P>ILL_EXECUTION ungultige Operationsanforderung
+<BR>
+ILL_EXPLICITGEN ausgelost durch Ausfuhrung von raise(SIGILL)
+<BR>
+<P>Die Prozessortypen 8088/86, NEC V20 und NEC V30 losen bei illegalen Befehlen
+<BR>
+keinen Interrupt aus - SIGILL kann hier nur durch einen Aufruf von raise
+<BR>
+ausgelost werden. Die Prozessortypen 186, 286, 386, NECV40 und NECV50
+<BR>
+hingegen haben diesen Exception-Typ. Auf 8088-, 8086-, NEC V20- und NEC
+<BR>
+V30-Systemen kann der ILL_EXECUTION-Typ von SIGILL nicht auftreten.
+<BR>
+<P>Bei den Signalen SIGFPE, SIGSEGV oder SIGILL ist ein Rucksprung des
+<BR>
+Signal-Handler im allgemeinen nicht zu empfehlen, wenn der Koprozessorstatus
+<BR>
+fehlerhaft, das Ergebnis einer Integer-Division falsch, ein zu vermeidender
+<BR>
+Uberlauf entstanden, ein BOUND-Befehl erfolglos oder eine Operation
+<BR>
+unzulassig ist. Ein Rucksprung ist nur dann empfehlenswert, wenn der
+<BR>
+Signal-Handler die Register so verandert, da? ein sinnvoller
+<BR>
+Rucksprungkontext existiert oder wenn sich anhand des Signaltyps
+<BR>
+(beispielsweise FPE_EXPLICITGEN, SEG_EXPLICITGEN oder ILL_EXPLICITGEN)
+<BR>
+erkennen la?t, da? das Signal explizit erzeugt wurde. Im allgemeinen sollten
+<BR>
+Sie jedoch eine Fehlermeldung ausgeben und das Programm mit _exit, exit oder
+<BR>
+abort beenden. Wird dennoch ein Rucksprung vorgenommen, sind die Folgen kaum
+<BR>
+vorhersehbar.
+<BR>
+<P>Hinweis: Seien Sie besonders vorsichtig, wenn sie die Funktion signal in
+<BR>
+einem Multithread-Programm verwenden. Die Signale SIGINT, SIGTERM und
+<BR>
+SIGBREAK sind in einer Nicht-Win32-Anwendung nur im Haupt-Thread (Thread 1)
+<BR>
+verwendbar. Wenn eines dieser Signale auftritt, wird der aktuell ausgefuhrte
+<BR>
+Thread angehalten, und die Kontrolle wechselt zu dem von Thread 1
+<BR>
+eingerichteten Signal-Handler (falls vorhanden). Andere Signale konnen durch
+<BR>
+jeden Thread verarbeitet werden.
+<BR>
+<P>Ein Signal-Handler sollte keine Laufzeitbibliotheksfunktionen von C++
+<BR>
+verwenden, weil ein Deadlock von Semaphoren auftreten konnte. Statt dessen
+<BR>
+sollte der Handler einfach ein Flag oder einen Semaphor setzen und sofort
+<BR>
+zuruckkehren.
+<BR>
+<P>Ruckgabewert
+<BR>
+<P>Bei fehlerfreier Ausfuhrung liefert signal einen Zeiger auf die Routine, die
+<BR>
+zuvor als Handler fur Signale des angegebenen Typs gesetzt war.
+<BR>
+<P>Bei einem Fehler ist das Ergebnis von signal der Zeiger SIG_ERR, und errno
+<BR>
+&nbsp;wird auf den Wert EINVAL gesetzt.
+<BR>
+<P><P>Успехов,
+<BR>
+<P>Николай Кондратьев
+<BR>
+<P>----- Original Message -----
+<BR>
+From: &quot;Arkady Klimov&quot; &lt;klark@bagirra.net&gt;
+<BR>
+To: &quot;Andrey Slepuhin&quot; &lt;pooh@msu.ru&gt;; &lt;dmsidorov@mtu-net.ru&gt;
+<BR>
+Cc: &quot;refal&quot; &lt;refal@botik.ru&gt;
+<BR>
+Sent: Thursday, November 01, 2001 3:32 PM
+<BR>
+Subject: Re: Компиляция Refal6 для Linux (comments on data striucrture)
+<BR>
+<P><P><EM>&gt; Посылаю ответ также в группу refal для архива, так как здесь содержится
+</EM><BR>
+<EM>&gt; полезная информация о структурах данных реализации Рефала-6 и
+</EM><BR>
+<EM>&gt; ее использовании на уровне С.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; ----- Original Message -----
+</EM><BR>
+<EM>&gt; From: &lt;dmsidorov@mtu-net.ru&gt;
+</EM><BR>
+<EM>&gt; To: Arkady Klimov &lt;klark@bagirra.net&gt;; Andrey Slepuhin &lt;pooh@msu.ru&gt;
+</EM><BR>
+<EM>&gt; Sent: Wednesday, October 31, 2001 9:30 PM
+</EM><BR>
+<EM>&gt; Subject: Re: Компиляция Refal6 для Linux
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; | On Sun, Oct 28, 2001 at 06:24:25PM +0300, Arkady Klimov wrote:
+</EM><BR>
+<EM>&gt; | &gt; matherr - это, как говорят, callback-функция для перехвата
+</EM><BR>
+арифметических ошибок
+<BR>
+<EM>&gt; | &gt; (типа деления на 0). Она должна иметь определенный заголовок.
+</EM><BR>
+<EM>&gt; | &gt; Можете попробовать поставить тот, который тут написан (вероятно,
+</EM><BR>
+нижний,
+<BR>
+<EM>&gt; | &gt; поскольку используется С, а не С++).
+</EM><BR>
+<EM>&gt; |
+</EM><BR>
+<EM>&gt; | On Mon, Oct 29, 2001 at 01:13:00PM +0300, Andrey Slepuhin wrote:
+</EM><BR>
+<EM>&gt; | &gt; То есть использовать эту функцию не рекомендуется. Вместо этого
+</EM><BR>
+<EM>&gt; | &gt; предлагается использовать стандартные механизмы обработки сигналов -
+</EM><BR>
+<EM>&gt; | &gt; при исключительных ситуациях во время операций с плавающей точкой
+</EM><BR>
+<EM>&gt; | &gt; вырабатывается сигнал SIGFPE.
+</EM><BR>
+<EM>&gt; |
+</EM><BR>
+<EM>&gt; | Замена в строке 252 _exception на exception позволила скомпилировать
+</EM><BR>
+файл,
+<BR>
+<EM>&gt; | но хотелось бы знать, что Вы думаете насчет предложения Andrey Slepuhin
+</EM><BR>
+<EM>&gt; | о перехвате сигнала ошибки арифметической операции вместо использования
+</EM><BR>
+<EM>&gt; | matherr? Насколько я понимаю, в DOS сигналов нет. Но, может, в
+</EM><BR>
+компиляторах
+<BR>
+<EM>&gt; | DOS есть функция назначения обработчиков сигналов signal, тогда какой у
+</EM><BR>
+нее
+<BR>
+<EM>&gt; | интерфейс?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Что-то в этом роде, кажется там есть. И даже, если мне не изменяет память,
+</EM><BR>
+этот вариант
+<BR>
+<EM>&gt; у меня в системе когда-то был, возможно сделанный еще начальным автором -
+</EM><BR>
+Николаем
+<BR>
+<EM>&gt; Кондратьевым. Потом я сделал почему-то иначе, но уже не помню почему.
+</EM><BR>
+Сейчас можно
+<BR>
+<EM>&gt; тоже переделать, главное, чтобы со знанием дела.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; |
+</EM><BR>
+<EM>&gt; | On Mon, Oct 29, 2001 at 01:13:00PM +0300, Andrey Slepuhin wrote:
+</EM><BR>
+<EM>&gt; | &gt; &gt; Сообщение об ошибке в rfarm.c совершенно непонятно:
+</EM><BR>
+<EM>&gt; | &gt; &gt;
+</EM><BR>
+<EM>&gt; | &gt; &gt; rfarm.c: In function `rf_cgetnumb':
+</EM><BR>
+<EM>&gt; | &gt; &gt; rfarm.c:289: Unable to generate reloads for:
+</EM><BR>
+<EM>&gt; | &gt; &gt; (insn 45 43 47 (parallel[
+</EM><BR>
+<EM>&gt; | &gt; &gt;             (set (reg:SI 0 %eax)
+</EM><BR>
+<EM>&gt; | &gt; &gt;                 (fix:SI (fix:SF (reg/v:SF 0 %eax))))
+</EM><BR>
+<EM>&gt; | &gt; &gt;             (clobber (mem:HI (plus:SI (reg:SI 6 %ebp)
+</EM><BR>
+<EM>&gt; | &gt; &gt;                         (const_int -2 [0xfffffffe])) 0))
+</EM><BR>
+<EM>&gt; | &gt; &gt;             (clobber (mem:HI (plus:SI (reg:SI 6 %ebp)
+</EM><BR>
+<EM>&gt; | &gt; &gt;                         (const_int -4 [0xfffffffc])) 0))
+</EM><BR>
+<EM>&gt; | &gt; &gt;             (clobber (mem:SI (plus:SI (reg:SI 6 %ebp)
+</EM><BR>
+<EM>&gt; | &gt; &gt;                         (const_int -8 [0xfffffff8])) 0))
+</EM><BR>
+<EM>&gt; | &gt; &gt;             (clobber (scratch:HI))
+</EM><BR>
+<EM>&gt; | &gt; &gt;         ] ) 145 {fix_truncsfsi2+1} (insn_list 92 (nil))
+</EM><BR>
+<EM>&gt; | &gt; &gt;     (expr_list:REG_EQUIV (mem:SI (reg/v:SI 3 %ebx) 0)
+</EM><BR>
+<EM>&gt; | &gt; &gt;         (expr_list:REG_DEAD (reg/v:SF 0 %eax)
+</EM><BR>
+<EM>&gt; | &gt; &gt;             (expr_list:REG_UNUSED (scratch:HI)
+</EM><BR>
+<EM>&gt; | &gt; &gt;                 (nil)))))
+</EM><BR>
+<EM>&gt; | &gt; &gt; make: *** [rfarm.o] Error 1
+</EM><BR>
+<EM>&gt; | &gt; &gt;
+</EM><BR>
+<EM>&gt; | &gt;
+</EM><BR>
+<EM>&gt; | &gt; Здесь однозначно ошибка компилятора, который не смог справиться с
+</EM><BR>
+перегрузкой
+<BR>
+<EM>&gt; | &gt; значений регистров (в силу малого их количества в x86 архитектуре). В
+</EM><BR>
+качестве
+<BR>
+<EM>&gt; | &gt; воркэраунда вокруг таких ситуаций обычно достаточно немного потасовать
+</EM><BR>
+код
+<BR>
+<EM>&gt; | &gt; функции, не меняя ее смысл. Хотя лично я посоветовал бы переходить на
+</EM><BR>
+<EM>&gt; | &gt; gcc-3.0.2. По крайней мере многие вещи там сделаны идеологически
+</EM><BR>
+намного более
+<BR>
+<EM>&gt; | &gt; правильно.
+</EM><BR>
+<EM>&gt; |
+</EM><BR>
+<EM>&gt; | Функция rf_cgetnumb оказалось весьма интересной. Посмотрев определения
+</EM><BR>
+<EM>&gt; | использованных в ней макросов IS_REF, IS_REAL, IS_SNUMB, CVAL, CTYPE
+</EM><BR>
+<EM>&gt; | CREF00 в refelem.h, я не понял, что они делают. Наверно, тут виновато
+</EM><BR>
+<EM>&gt; | мое плохое знание C, но каков смысл выражения типа
+</EM><BR>
+<EM>&gt; | int t = ((unsigned short) (unsigned) (cc))
+</EM><BR>
+<EM>&gt; | в отношении нетипизированной ссылки cc? Какое назначение у всех
+</EM><BR>
+<EM>&gt; | этих макросов и у rf_cgetnumb? Без этого непонятно, как ее нужно
+</EM><BR>
+<EM>&gt; | перекраивать, чтобы скормить компилятору.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Аргумент здесь - значение звена (терма) типа cvalue, которое представляет
+</EM><BR>
+собой упакованное
+<BR>
+<EM>&gt; в одно слово размеченное объединение, включающее указатели (скобки или
+</EM><BR>
+символы ссылки),
+<BR>
+<EM>&gt; числа,  слова, литеры, ... .В качестве дискриминанта используются
+</EM><BR>
+последние два бита, которые
+<BR>
+<EM>&gt; в указателях на звено всегда нулевые. Отсюда мнемоника CREF00 - взять (из
+</EM><BR>
+cvalue) значение указателя,
+<BR>
+<EM>&gt; с обнулением младших двух битов. Вышенаписанное выражение, похоже,
+</EM><BR>
+использовано для
+<BR>
+<EM>&gt; извлечения младшей (содержащей тег) двухбайтной части значение
+</EM><BR>
+(CTYPE(cc)).
+<BR>
+<EM>&gt; Функция rf_getnumb проверяет, что терм есть символ-число
+</EM><BR>
+<EM>&gt; и вырабатывает значение этого числа (типа long, то есть с усечением до
+</EM><BR>
+32-разрядов). Применяется
+<BR>
+<EM>&gt; в системе обычно для извлечения значений, которые заведомо невелики -
+</EM><BR>
+номера каналов,
+<BR>
+<EM>&gt; индексы элементов и т.п.
+</EM><BR>
+<EM>&gt; elemptr p - указатель на звено (типа elem или elemstr), содержащее
+</EM><BR>
+32-разрядное значение info
+<BR>
+<EM>&gt; и пару ссылок вперед и назад.
+</EM><BR>
+<EM>&gt; DATA(p) выдает значение info, типизированное как cvalue.
+</EM><BR>
+<EM>&gt; Абстрактно, значение cvalue состоит из типа и собственно значения.
+</EM><BR>
+<EM>&gt; TYPE(p), CTYPE(c) выдают типовую часть t значения в виде short.
+</EM><BR>
+<EM>&gt; Перечисленные макросы вида IS_...(t) служат для распознания категорий
+</EM><BR>
+символов, запакованных
+<BR>
+<EM>&gt; в значении.
+</EM><BR>
+<EM>&gt; VAL(p), CVAL(c) выдает само значение в виде short, при условии, что оно
+</EM><BR>
+туда помещается
+<BR>
+<EM>&gt; (например, короткое целое - IS_SNUMB).
+</EM><BR>
+<EM>&gt; Более крупные значения извлекаются специфическими макросами, типа CREF00,
+</EM><BR>
+SWDBODY,
+<BR>
+<EM>&gt; или функциями, типа rf_cgetnumb.
+</EM><BR>
+<EM>&gt; Важно заметить, что система допускает генерацию с несколькими различными
+</EM><BR>
+вариантами
+<BR>
+<EM>&gt; представления звена и адреса звена, поэтому, чтобы не нарушить этого
+</EM><BR>
+свойства, ковыряться
+<BR>
+<EM>&gt; в звеньях нужно только через упомянутые макросы и функции. К сожалению,
+</EM><BR>
+компилятор С
+<BR>
+<EM>&gt; не защищает от ошибок в этом деле. Фактическое расположение частей
+</EM><BR>
+значения зависит
+<BR>
+<EM>&gt; также от архитектуры компьютера - big endian или little endian.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Обращаю внимание, что большие числа с произвольной разрядностью
+</EM><BR>
+представляются
+<BR>
+<EM>&gt; в системе как массивы коротких 16-разрядных чисел (short) - макроцифр:
+</EM><BR>
+x[0]- младшая часть,
+<BR>
+<EM>&gt; x[l-1] - знак (0 или -1), где l- длина массива (l&gt;=1). Учитывая
+</EM><BR>
+зависимость от архитектуры,
+<BR>
+<EM>&gt; следует заметить, что пара младших макроцифр не обязательно образует
+</EM><BR>
+вместе
+<BR>
+<EM>&gt; младшую часть типа long, но ее всегда можно получить выражением
+</EM><BR>
+x[1]&lt;&lt;16+x[0], которое
+<BR>
+<EM>&gt; и используется при реализации функции rf_cgetnumb (для длинных чисел).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Аркадий
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; |
+</EM><BR>
+<EM>&gt; | Дмитрий
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0251.html">Mike Potanin: "Ядро Рефал"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0249.html">Arkady Klimov: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0249.html">Arkady Klimov: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0251.html">Mike Potanin: "Ядро Рефал"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0249.html">Nikolai Kondratiev: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

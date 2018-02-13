@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Mike Potanin (potanin@mccme.ru)">
+<META NAME="Subject" CONTENT="Re: О типизации рефальских выражений">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: О типизации рефальских выражений</H1>
+<HR>
+<P>
+<!-- received="Mon Aug 20 13:44:53 2001" -->
+<!-- isoreceived="20010820094453" -->
+<!-- sent="Mon, 20 Aug 2001 11:55:56 +0400 (MSD)" -->
+<!-- isosent="20010820075556" -->
+<!-- name="Mike Potanin" -->
+<!-- email="potanin@mccme.ru" -->
+<!-- subject="Re: О типизации рефальских выражений" -->
+<!-- id="Pine.LNX.4.21.0108201127170.25857-100000@mccme.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="3B7FD34E.18B5BDAE@mindspring.com" -->
+<STRONG>Subject: </STRONG>Re: О типизации рефальских выражений<BR>
+<STRONG>From: </STRONG>Mike Potanin (<EM>potanin@mccme.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Aug 20 2001 - 11:55:56 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#224">[ date ]</A>
+<A HREF="index.html#224">[ thread ]</A>
+<A HREF="subject.html#224">[ subject ]</A>
+<A HREF="author.html#224">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0225.html">Sergei M. Abramov: "Re: О типизации рефальских выражений"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0223.html">Arkady Klimov: "Re: О типизации рефальских выражени"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0222.html">Mikhail Kovtun: "О типизации рефальских выражений"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0225.html">Sergei M. Abramov: "Re: О типизации рефальских выражений"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0222.html">Mike Potanin: "Re: О типизации рефальских выражений"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+On Sun, 19 Aug 2001, Mikhail Kovtun wrote:
+<BR>
+<P><EM>&gt; P.S. Представление графа в последнем примере, конечно, является &quot;ужасным&quot;
+</EM><BR>
+<EM>&gt; с точки зрения времени исполнения функции: имея вершину, мы каждый раз
+</EM><BR>
+<EM>&gt; ищем связанную с ней информацию -- вместо того, чтобы связать ее один раз
+</EM><BR>
+<EM>&gt; при построении графа. В рефале одним из разумных способов представить
+</EM><BR>
+<EM>&gt; граф является использование ящиков. Однако образцы не могут заглядывать в
+</EM><BR>
+<EM>&gt; ящики, что усложняет программирование. Были ли какие-нибудь интересные
+</EM><BR>
+<EM>&gt; мысли по этому поводу?
+</EM><BR>
+Использование &quot;ящиков&quot; с моей точки зрения не самое удачное решение. Во
+<BR>
+первых это отход от функционального стиля. Во вторых, на сколько я помню,
+<BR>
+суперкомпилятор это не любит (и по первой причине врядли полюбит).
+<BR>
+Мне кажется имеет смысл более радикальное решение - расширить набор
+<BR>
+элементарных вырожений произвольными объектами. Сейчас это символы и
+<BR>
+числа. Я бы хотел иметь возможность помещать туда произвольный набор пар
+<BR>
+аттрибут=значение, при этом операции с этими объектами не должны быть чем
+<BR>
+то более общим чем работа с символами и числами. То есть должны быть
+<BR>
+проверки на строгое равенство и на равенство фиксированных на момент
+<BR>
+компиляции атрибутов (и конечно создание). Конечно это реализуется на
+<BR>
+базовом рефале, но уж очень не эффективно. Имена и значения атрибутов по
+<BR>
+моему можно считать атомарными и позволить компилятору выбирать для них
+<BR>
+наиболее удобное представление. Кажется такое расширение решит указаную
+<BR>
+проблему и допускает суперкомпиляцию.
+<BR>
+Что касается типизации, то ее действительно не хватает. Я начал писать
+<BR>
+интерпретатор рефала на haskell (пепрвая моя программа на этом языке), и
+<BR>
+был очень удивлен что отладка сводится переводу сообщений об ошибках
+<BR>
+компилятора :-). С рефалом у меня так не получилось.
+<BR>
+Интерпретатор я начал писать, что бы проверить на сколько ревалу подойдет
+<BR>
+ленивость. И здесь тоже возникла потребность в типизации. Например
+<BR>
+сопоставление 
+<BR>
+Test {
+<BR>
+&nbsp;e.a '@' e.b = e.b;
+<BR>
+}
+<BR>
+Main {
+<BR>
+&nbsp;= &lt;Test 'qwe' &lt;F1&gt; '@' &lt;F2&gt;&gt;;
+<BR>
+}
+<BR>
+Позволяет отложить вычисление F2 до подходящего случая, но не позволяет
+<BR>
+поступить так же с F1. Решить эту проблему можно задав тип F1, так что
+<BR>
+компилятор мог бы понять что '@' не может встретится в том что вернет эта
+<BR>
+функция. Другое решение - не гарантировать что сопоставится первое
+<BR>
+вхождение '@' - приведет к несовместимости и может усложнить отладку.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0225.html">Sergei M. Abramov: "Re: О типизации рефальских выражений"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0223.html">Arkady Klimov: "Re: О типизации рефальских выражени"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0222.html">Mikhail Kovtun: "О типизации рефальских выражений"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0225.html">Sergei M. Abramov: "Re: О типизации рефальских выражений"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0222.html">Mike Potanin: "Re: О типизации рефальских выражений"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

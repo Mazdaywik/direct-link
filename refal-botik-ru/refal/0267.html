@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Alexander P. Konyshev (shura@shura.botik.ru)">
+<META NAME="Subject" CONTENT="RE: Статус Рефала-">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>RE: Статус Рефала-</H1>
+<HR>
+<P>
+<!-- received="Thu Nov 15 10:38:23 2001" -->
+<!-- isoreceived="20011115073823" -->
+<!-- sent="Wed, 14 Nov 2001 20:10:34 +0300" -->
+<!-- isosent="20011114171034" -->
+<!-- name="Alexander P. Konyshev" -->
+<!-- email="shura@shura.botik.ru" -->
+<!-- subject="RE: Статус Рефала-" -->
+<!-- id="F28E432C797FBD4CA0E380B026CF24F502DDAE@guiness.ixcel.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Pine.LNX.4.05.10111140028340.275-100000@home.croco.net" -->
+<STRONG>Subject: </STRONG>RE: Статус Рефала-<BR>
+<STRONG>From: </STRONG>Alexander P. Konyshev (<EM>shura@shura.botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Nov 14 2001 - 20:10:34 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#267">[ date ]</A>
+<A HREF="index.html#267">[ thread ]</A>
+<A HREF="subject.html#267">[ subject ]</A>
+<A HREF="author.html#267">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0268.html">Andrey V Stolyarov: "RE: Статус Рефала-"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0266.html">Leonid Belous: "Re: Статус Рефала-5"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0265.html">Andrey V Stolyarov: "Статус Рефала-"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0268.html">Andrey V Stolyarov: "RE: Статус Рефала-"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0265.html">Alexander P. Konyshev: "RE: Статус Рефала-"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый вечер, Андрей!
+<BR>
+<EM>&gt; у меня созрел вопрос по поводу текущего статуса Рефала-5.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; При попытке более-менее боевого применения транслятора Рефала-5,
+</EM><BR>
+взятого с
+<BR>
+<EM>&gt; год назад с сайта, я столкнулся с тем, что все функции вывода считают
+</EM><BR>
+<EM>&gt; своим долгом вставлять где можно и где нельзя переводы строки
+</EM><BR>
+(особенно
+<BR>
+<EM>&gt; это классно смотрится, когда программа предназначена для генерации
+</EM><BR>
+кода и
+<BR>
+<EM>&gt; система вставляет перевод строки в середине имени идентификатора).
+</EM><BR>
+<EM>&gt; Собственно, эту проблему я решил довольно быстро, отыскав в файле
+</EM><BR>
+refio.c
+<BR>
+<EM>&gt; константу LINELEN и изменив ее значение на 30000 (можно было сделать и
+</EM><BR>
+<EM>&gt; побольше, но там, как я понял, есть и буфера такого размера...). Но
+</EM><BR>
+вот
+<BR>
+<EM>&gt; обойтись без перекомпиляции транслятора я не смог. В том смысле, что
+</EM><BR>
+не
+<BR>
+<EM>&gt; нашел функций, которые бы позволяли производить обычный raw output без
+</EM><BR>
+<EM>&gt; выкрутасов.
+</EM><BR>
+Я исправлял эту ситуацию в свое время, но похоже эта версия не вошла в
+<BR>
+релиз, который лежит на сайте (и потом с какого Вы сайта брали).
+<BR>
+С другой стороны это можно обойтись просто дописыванием функции вывода в
+<BR>
+бибилотеку (это было бы намного проще и лучше).
+<BR>
+
+<BR>
+<EM>&gt; Вопрос у меня в связи с этим такой. Пробовал ли кто-нибудь
+</EM><BR>
+когда-нибудь
+<BR>
+<EM>&gt; использовать этот транслятор в &quot;боевых условиях&quot; и поддерживается ли
+</EM><BR>
+он
+<BR>
+<EM>&gt; кем-нибудь в настоящее время, или его следует забыть как страшный сон
+</EM><BR>
+и
+<BR>
+<EM>&gt; пользоваться чем-нибудь более &quot;модным&quot; типа Рефала-плюс (чего лично
+</EM><BR>
+мне
+<BR>
+<EM>&gt; очень бы не хотелось в силу специфики проекта).
+</EM><BR>
+Я лично использовал в боевых условиях. Так же приходилось выводить в
+<BR>
+файл сгенерированную программу на Си. Полтора года назад я был тем
+<BR>
+человеком, кто поддерживал его (Рефал-5) и развивал.  На текущий момент
+<BR>
+мне не известны люди, кто активно бы поддерживал его.  Я сейчас работаю
+<BR>
+в одной комерческой организации, посему я Рефал-5 поддерживаю пасивно.
+<BR>
+К тому же в моих планах полностью переписать весь компилятор и
+<BR>
+runtime-часть Рефала-5 из-за давно созревших идей Андрея Немытых и моих.
+<BR>
+Работа пока движется не очень быстро, как хотелось бы.
+<BR>
+
+<BR>
+<EM>&gt; Если транслятор уже unsupported, буду благодарен за рекомендации, что
+</EM><BR>
+<EM>&gt; взять вместо него.
+</EM><BR>
+Лично я, очень даже за.  По край ней мере мне нужен человек, с кем можно
+<BR>
+поделится проблемами :) и идеями их решения и кому это интересно.  
+<BR>
+Могу помочь Вам быстрее понять организацию данных и их взаимодействие.
+<BR>
+
+<BR>
+<EM>&gt; Вообще, можно ли считать диалект Рефал-5 живым? Очень хочется (мне
+</EM><BR>
+именно
+<BR>
+<EM>&gt; этот диалект нравится), но реальность, увы, не всегда совпадает с
+</EM><BR>
+<EM>&gt; желаниями.
+</EM><BR>
+Считайте и Вы не один.  Он живой.  Конкретно он используется в
+<BR>
+построение серверных приложениях для Web.
+<BR>
+
+<BR>
+С уважением,
+<BR>
+Алексадр Конышев.
+<BR>
+
+<BR>
+P.S.: Сейчас я территориально нахожусь в Москве, если Вы тоже из Москвы,
+<BR>
+то мы может встретится и обсудить все вопросы, связанные с Рефалом-5.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0268.html">Andrey V Stolyarov: "RE: Статус Рефала-"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0266.html">Leonid Belous: "Re: Статус Рефала-5"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0265.html">Andrey V Stolyarov: "Статус Рефала-"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0268.html">Andrey V Stolyarov: "RE: Статус Рефала-"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0265.html">Alexander P. Konyshev: "RE: Статус Рефала-"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

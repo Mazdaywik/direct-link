@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: Refal &amp; XML - possible tasks">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal &amp; XML - possible tasks</H1>
+<HR>
+<P>
+<!-- received="Wed Dec 22 20:00:55 1999" -->
+<!-- isoreceived="19991222170055" -->
+<!-- sent="Tue, 21 Dec 1999 18:31:10 +0300" -->
+<!-- isosent="19991221153110" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: Refal &amp; XML - possible tasks" -->
+<!-- id="385F9D3E.26706E28@msu.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="385F9CE7.F7BBD8EE@niisi.msk.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal & XML - possible tasks<BR>
+<STRONG>From: </STRONG>Andrey Slepuhin (<EM>pooh@msu.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Dec 21 1999 - 18:31:10 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#82">[ date ]</A>
+<A HREF="index.html#82">[ thread ]</A>
+<A HREF="subject.html#82">[ subject ]</A>
+<A HREF="author.html#82">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0083.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0081.html">Vladimir A. Roganov: "Re: Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0081.html">Vladimir A. Roganov: "Re: Refal &amp; XML - possible tasks"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0113.html">Andrei Klimov: "Re: Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0081.html">Andrey Slepuhin: "Re: Refal &amp; XML - possible tasks"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&quot;Vladimir A. Roganov&quot; wrote:
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Andrey Slepuhin wrote:
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; День добрый всем!
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Я тут на днях поставил XP/XT - соответственно XML-парсер и
+</EM><BR>
+<EM>&gt; &gt; имплементация XSL/XSLT от J.Clark'а, написанные исключительно
+</EM><BR>
+<EM>&gt; &gt; на Java. Все это дело, конечно, работает, но результаты удручающие -
+</EM><BR>
+<EM>&gt; &gt; даже на моем Dual PIII-450 преобразование тестового XML-файла
+</EM><BR>
+<EM>&gt; &gt; из 120 строк в HTML занимает около 5.5 секунд с использованием JIT,
+</EM><BR>
+<EM>&gt; &gt; и почти 8 секунд без оного (JDK1.2.2)!!! В связи с этим я вспомнил
+</EM><BR>
+<EM>&gt; &gt; про то, что Рефал надо увязывать с обработкой XML и после некоторых
+</EM><BR>
+<EM>&gt; &gt; размышлений пришел к следующему набору задач в этой области.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Java (from my experience) is ugly tool for parsers
+</EM><BR>
+<EM>&gt; (considering both language features and performance of resulting code).
+</EM><BR>
+<P>Несомненно :-))) Но больше посмотреть не на что -
+<BR>
+насколько мне известно XT - единственная свободно доступная
+<BR>
+имплементация XSL/XSLT, которая находится в состоянии когда ее
+<BR>
+можно использовать.
+<BR>
+<P><EM>&gt; I think J.Clark's first goal is a portability of his program.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; BTW, are You measuring java performance properly ?
+</EM><BR>
+<EM>&gt; Under _Linux_ (JDK 1.1.x installed without manual efforts)
+</EM><BR>
+<EM>&gt; java takes up to few seconds unpacking zipped JDK class files,
+</EM><BR>
+<EM>&gt; so test how long works trivial &quot;Hello, World !&quot; at Your Dual PIII-450.
+</EM><BR>
+<EM>&gt; (?! may be this effect fixed in JDK 1.2.x ?!)
+</EM><BR>
+<P>Хм... Довольно тяжело аккуратно измерить эффективность, поскольку
+<BR>
+классы извлекаются по мере надобности. Могу лишь сказать, что
+<BR>
+&quot;Hello, World!&quot; на моей машине выполняется порядка 0.4 сек.
+<BR>
+Также замечу, что Jade (имплементация DSSSL, написанная на C++) -
+<BR>
+тоже далеко не быстрое приложение.
+<BR>
+<P><EM>&gt; Please sorry for humor, but second processor of Your Dual PIII-450
+</EM><BR>
+<EM>&gt; looks useless for this test :-)
+</EM><BR>
+<P>Возможно, хотя я не уверен в этом на 100%. Насколько я понимаю,
+<BR>
+Linux JDK 1.2.2 по умолчанию использует native threads, поэтому
+<BR>
+некоторые вещи, скажем, GC или загрузка классов вполне могут
+<BR>
+выполняться параллельно. Хотя, конечно, основной код программы
+<BR>
+выполняется на одном CPU :-))
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; 1) XML-парсер. Читает XML-документ и представляет его в виде
+</EM><BR>
+<EM>&gt; &gt;    объектного выражения.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 2) DTD-парсер. Читает XML DTD и представляет в виде объектного
+</EM><BR>
+<EM>&gt; &gt;    выражения.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 3) XML Validator. Берет XML-документ и соответствующий DTD (уже
+</EM><BR>
+<EM>&gt; &gt;    в виде объектных выражений) и производит проверку документа на
+</EM><BR>
+<EM>&gt; &gt;    соответствие DTD.
+</EM><BR>
+<EM>&gt; &gt;    Внимание!!! Задача на суперкомпиляцию: оптимизация XML Validator
+</EM><BR>
+<EM>&gt; &gt;    для конкретного DTD.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 4) XSL-парсер. Читает XSL-стиль и представляет в виде объектного
+</EM><BR>
+<EM>&gt; &gt;    выражения.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 5) XSL-интерпретатор. Берет XSL-стиль и XML-документ (уже в виде
+</EM><BR>
+<EM>&gt; &gt;    объектных выражений) и производит необходимое преобразование
+</EM><BR>
+<EM>&gt; &gt;    XML-документа.
+</EM><BR>
+<EM>&gt; &gt;    Внимание!!! Задача на суперкомпиляцию: оптимизация XSL-интерпретатора
+</EM><BR>
+<EM>&gt; &gt;    для конкретного стиля.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 6) В случае, если суперкомпиляция в 5) не даст желаемого результата,
+</EM><BR>
+<EM>&gt; &gt;    можно поставить отдельную задачу по написанию XSL-компилятора,
+</EM><BR>
+<EM>&gt; &gt;    который по XSL-стилю будет выдавать Рефал-программу преобразования
+</EM><BR>
+<EM>&gt; &gt;    XML-документов в соответствии с конкретным стилем.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Володя (Роганов), тут есть хорошие задачи для твоих студентов -
+</EM><BR>
+<EM>&gt; &gt; 1) - 4) вполне годятся для курсовой, а 5) и 6) могут и на диплом
+</EM><BR>
+<EM>&gt; &gt; потянуть. Так что можешь взять на заметку.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Tasks looks nice, and I really need a tasks for students.
+</EM><BR>
+<EM>&gt; My brother said that he is planning to involve most powerful students
+</EM><BR>
+<EM>&gt; for interesting real projects after 1-2 month. MSIU plan to assign some
+</EM><BR>
+<EM>&gt; money for students working for these projects.
+</EM><BR>
+<EM>&gt; So, any such tasks are very welcoming !
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; I think, however, that allmost all MSIU students are able
+</EM><BR>
+<EM>&gt; to execute only some more or less simple/technical task, so we should be
+</EM><BR>
+<EM>&gt; preparing to unsatisfactory result ...
+</EM><BR>
+<P>Некоторые задачи однако, например 1), кажутся весьма простыми... 
+<BR>
+<P>Всего доброго,
+<BR>
+Андрей.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0083.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0081.html">Vladimir A. Roganov: "Re: Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0081.html">Vladimir A. Roganov: "Re: Refal &amp; XML - possible tasks"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0113.html">Andrei Klimov: "Re: Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0081.html">Andrey Slepuhin: "Re: Refal &amp; XML - possible tasks"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

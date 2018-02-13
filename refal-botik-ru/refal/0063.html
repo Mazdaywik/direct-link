@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Nikolai Kondratiev (Nikolai.Kondratiev@gmx.de)">
+<META NAME="Subject" CONTENT="Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !</H1>
+<HR>
+<P>
+<!-- received="Fri Dec 10 17:48:02 1999" -->
+<!-- isoreceived="19991210144802" -->
+<!-- sent="Fri, 10 Dec 1999 14:48:41 +0100" -->
+<!-- isosent="19991210134841" -->
+<!-- name="Nikolai Kondratiev" -->
+<!-- email="Nikolai.Kondratiev@gmx.de" -->
+<!-- subject="Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !" -->
+<!-- id="00b101bf4315$4c073c20$c8c8ffc0@nk.de" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="00fb01bf4308$0c44d460$07aee8c1@rcms.botik.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal -> Java?  РефалАС-->АСАИЯ !<BR>
+<STRONG>From: </STRONG>Nikolai Kondratiev (<EM>Nikolai.Kondratiev@gmx.de</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Dec 10 1999 - 16:48:41 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#63">[ date ]</A>
+<A HREF="index.html#63">[ thread ]</A>
+<A HREF="subject.html#63">[ subject ]</A>
+<A HREF="author.html#63">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0064.html">Arkady Klimov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0062.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0062.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0065.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0062.html">Nikolai Kondratiev: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Сергей,
+<BR>
+<P>я пока не против ничего из того, что ты пишешь. Но мне кажется преждевременным обсуждение этих тем до того, как приняты основные цели, иначе мы скатимся к нашим предпочтениям и версия языка будет эклектичной.
+<BR>
+<P>Мое утверждение заключается лишь в том, что конкретный синтасис Refal-J и выбор основных используемых конструкций должен быть сделан исходя из интересов Ява-пользователя и простоты и эффективности интерфейса между рефалом и Явой. Боже упаси нас также от разработки рефал-68 (по аналогии с алгол-68). 
+<BR>
+<P>Николай Кондратьев
+<BR>
+&nbsp;&nbsp;----- Original Message ----- 
+<BR>
+&nbsp;&nbsp;From: Sergei M. Abramov 
+<BR>
+&nbsp;&nbsp;To: Nikolai Kondratiev ; Refal 
+<BR>
+&nbsp;&nbsp;Sent: Friday, December 10, 1999 1:14 PM
+<BR>
+&nbsp;&nbsp;Subject: Re: Refal -&gt; Java? РефалАС--&gt;АСАИЯ ! 
+<BR>
+<P><P>&nbsp;&nbsp;Привет, всем!
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;я хочу еще раз подчеркнуть именно важность интеграции с Явой. Я бы все рассматривал именно с этой точки зрения.
+<BR>
+&nbsp;&nbsp;Я это понимаю и не собираюсь спорить с этим утверждением.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;На мой взгляд даже сам принцип отображения функция -&gt; функия, выражение -&gt; массив важен именно потому, что интерфейс с Явой крайне упрощается. 
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Все верно, и вместо Явы можно подставить любой язык, в котором поддержаны все понятия, которые используются при синтаксическом отображении  РефалАС--&gt;Ява.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;В частности, легко может быть подставлен:
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1- Си/Си++ -- вот вся разница: в Яве более просто описать run-time support -- описал объекты терм, массив термов, вырезка массива термов--и все! А сборка муссора дается даром.  В Си/Си++ все примерно также, только сборку мусора надо писать самим.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-2- Т-язык (имеется и работает) -- тут разницы вообще нету, более того уже сейчас в Т-сситеме не только поддержана сборка мусора, но и еще и рефальские структуры данных...
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;В Яве мы можем получить хороший &quot;тягач&quot; для рефала. Все, что будет мешать интегрировать рефал с Явой я бы безжалостно отбросил. Даже ценой потери универсальности отображения по отношению к другим императивным языкам.
+<BR>
+<P>&nbsp;&nbsp;Я не верю, что при реализации &quot;Рефал--&gt;Ява&quot; не будет фаз:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1- Рефал--&gt;РефалАС
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-2- РефалАС --&gt; ЯваАС
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-3- ЯваАС --&gt; Ява (файл)
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;где буковки &quot;АС&quot; можно произносить как &quot;Абстрактный Синтаксис&quot; и/или &quot;внутреннее представление в виде рефальского выражения&quot;.
+<BR>
+&nbsp;&nbsp;При этом, &quot;ЯваАС&quot; будет совсем маленький язычек -- то мизерное подмножество Явы, которое и потребуется для реализации Рефала.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Так вот, можешь считать, что &quot;ЯваАС&quot; это и есть, что я назвал АСАИЯ.  
+<BR>
+&nbsp;&nbsp;То что требуется для отображения Рефала в Яву есть во всех современных императивных языках (по крайней мере есть в Си, Си++, Т-системе).
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;ОК, я соглашаюсь в дальнейшем называть АСАИЯ словом ЯваАС и включать в это понятие только то, что
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-а- абсолютно необходимо для отображения рефал программ в Яву и
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-б- эффективно поддержано Явой;
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;От такого определения ЯваАС ничем не будет отличаться от АСАИ.  Так получится само получится, что в ЯваАС будет то, и только то, что:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-а- абсолютно необходимо для отображения рефал программ в любой современный императивный язык (Ява, Си, Си++, Т-язык) и
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-б- эффективно поддержано в любом современном императивном языке (Ява, Си, Си++, Т-язык);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Второе, что бы я безжалостно отбросил - это преемственность по отношению с существующим и существовавшим реализациям рефала. Версию языка необходимо определить заново. Если она войдет в противоречие с существующими реализациями на уровне АС, тем хуже для этих реализаций и для АС.
+<BR>
+<P>&nbsp;&nbsp;Не соглашусь ;-) 
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;АС для того и разрабатывается, чтобы в него вписывались все сегодняшние и будущие рефалы...
+<BR>
+&nbsp;&nbsp;Если это не получилось -- надо расширять АС, а не выбрасывать его.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Это не означает, что новая версия не возьмет ничего от старых, но мы не должны быть связаны никакими нашими исторически сложившимися предпочтениями. Версия рефала для Явы (Refal-J) должна на мой взгляд разрабатываться так, чтобы быть наиболее естественной для знатоков Явы, а не рефала.
+<BR>
+<P>&nbsp;&nbsp;Прекрасно.  Значит надо начать с разработки языка Refal-J ?  Есть какие-либо идеи, с чего следует начинать писать этот документ (Описание языка...) ?
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Я нисколько не против, если кто-то сейчас займется таким документом (я поучаствую в дискуссии!!!).   Я нисколько не против того, что возможно после разработки Refal-J потребуется расширять тот РефалАС, который вот-вот сложится сегодня...
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Ну вот совсем уж я &quot;ЗА&quot; то, чтобы сегодня, немедленно, иметь:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-0- хоть какую-то версию РефалАС-а, покрывающего Рефал Плюс;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1- версию РефалПлюс компилятора, который выдает в файл РефалАС;
+<BR>
+<P>&nbsp;&nbsp;Это все, что мне надо, чтобы быстро и по уму сделать три двухфазных компилятора:
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;(1) Рефал Плюс--&gt;РефалАС 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;РефалАС --&gt; ЯваАС
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ЯваАС --&gt; Ява (файл)
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;(2) Рефал Плюс--&gt;РефалАС
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;РефалАС --&gt; ЯваАС
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ЯваАС --&gt; Си++
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;(3) Рефал Плюс--&gt;РефалАС
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;РефалАС --&gt; ЯваАС
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ЯваАС --&gt; Си++
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Ну, а после разработки описания Refal-J и возможно расширения РефалАС --&gt; Рефала-J-АС я думаю новый компилятор:
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;(4) RefalJ--&gt;Рефал-J-АС
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Рефал-J-АС --&gt; ЯваАС+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ЯваАС+ --&gt; Ява
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;будет каждой своей фазой на 75...100% кода совпадать с компилятором номер (1).  Разве нет?
+<BR>
+&nbsp;&nbsp;Именно это я и называл разумной организацией работы.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Эта тематика мне кажется важной, как относящаяся к первому уровню иерархии целей.
+<BR>
+<P>&nbsp;&nbsp;Абсолютно согласен.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Сергей
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0064.html">Arkady Klimov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0062.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0062.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0065.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0062.html">Nikolai Kondratiev: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

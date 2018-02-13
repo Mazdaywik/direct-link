@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: Рефал и Лисп на Си+">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Рефал и Лисп на Си+</H1>
+<HR>
+<P>
+<!-- received="Mon Oct 22 17:01:19 2001" -->
+<!-- isoreceived="20011022130119" -->
+<!-- sent="Mon, 22 Oct 2001 17:01:07 +0400" -->
+<!-- isosent="20011022130107" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: Рефал и Лисп на Си+" -->
+<!-- id="00a501c15af9$9f1cb5e0$07aee8c1@botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="20011022131100.C30940@glade.nmd.msu.ru" -->
+<STRONG>Subject: </STRONG>Re: Рефал и Лисп на Си+<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Oct 22 2001 - 17:01:07 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#166">[ date ]</A>
+<A HREF="index.html#166">[ thread ]</A>
+<A HREF="subject.html#166">[ subject ]</A>
+<A HREF="author.html#166">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0167.html">Sergei M. Abramov: "Fwd:"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0165.html">var@msu.ru: "Re: Рефал и Лисп на Си+"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0164.html">Andrey Slepuhin: "Re: Рефал и Лисп на Си+"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0164.html">Sergei M. Abramov: "Re: Рефал и Лисп на Си+"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P>Андрей (Столяров), спасибо за ясное изложение сути Вашей работы.
+<BR>
+<P><EM>&gt; &gt; Кстати, мне тоже стало интересно. Так что, если позволите, задам
+</EM><BR>
+<EM>&gt; &gt; несколько вопросов.
+</EM><BR>
+<P>Андрей (Слепухин) на большинство вопросов ответил и у меня почти нечего
+<BR>
+добавить.  По мелочам:
+<BR>
+<P><EM>&gt; &gt; 1) Почему Вы избрали именно Си++?
+</EM><BR>
+<P>Добавлю: выделение в компиляторе интерфейсов &quot;Абстрактный синтаксис&quot; и
+<BR>
+&quot;Абстрактный Императивный Язык&quot; позволит (я надеюсь) пореюзать 90% кода, при
+<BR>
+написании компиляторов (если кому-то это будет надо):
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Рефал Плюс ---&gt; Ява
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Рефал Плюс ---&gt; Т-язык
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Рефал ???? ---&gt; { C++ | Ява | Т-язык }
+<BR>
+<P><EM>&gt; &gt; 2) Ставили ли Вы целью проекта создание мультипарадигмальной системы
+</EM><BR>
+<EM>&gt; &gt; программирования?
+</EM><BR>
+<P>Нет, явно такой цели не ставилось.  Что получилось--получилось (почти
+<BR>
+получилось ;-), то, что ожидали (плюс см. ответы Андрея 4.1 .. 4.3).
+<BR>
+<P><EM>&gt; &gt; 3) Если нет, то какие цели преследовались?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; В первую очередь преследовалась цель навести некоторый порядок в
+</EM><BR>
+<EM>&gt; рефальском хозяйстве.... Вторая цель - зафиксировать некий единый
+</EM><BR>
+<EM>&gt; интерфейс для работы с рефальскими объектами, чтобы, например,
+</EM><BR>
+<EM>&gt; можно было экспериментировать с различными рантаймами,
+</EM><BR>
+<EM>&gt; не меняя при этом компилятор и библиотеки.
+</EM><BR>
+<P>Ну и еще добавлю:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;=1= давно хотелось воплотить в компиляторе несколько озвученных (явно
+<BR>
+или не явно, с хорошей проработкой или на уровне &quot;мимики и жестов&quot;) красивых
+<BR>
+идей (и трюков), как компилировать Рефал в императивные языки.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;=2= давно хотелось сделать платформу снизу (АС + бэкэнд) для
+<BR>
+экспериментов и реализации не менее красивых идей на &quot;верхних этажах&quot;---то
+<BR>
+есть, над самим входным языком (см. кучу идей вокруг &quot;типизированный рефал&quot;,
+<BR>
+например).
+<BR>
+<P><EM>&gt; &gt; 5) (возможно, не совсем в тему) каков предполагаемый статус вашего
+</EM><BR>
+<EM>&gt; &gt; компилятора с точки зрения лицензирования (проприетарный, GPL, LGPL,
+</EM><BR>
+<EM>&gt; &gt; BSD, иное?)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; GPL. Библиотека, по-видимому, будет LGPL.
+</EM><BR>
+<P>Мы будем рады любому участию в проекте добровольцев.  Более того,
+<BR>
+добровольцы могут по результатам поощряться (обсуждения не в мэйл-листе).
+<BR>
+<P>От участникоя требуются хорошие знания положительных (т.е. со знаком &quot;+&quot; или
+<BR>
+&quot;++&quot;) языков программирования:
+<BR>
+<P>-- на Си++ написан рантайм (и надо писать библиотеки);
+<BR>
+<P>-- на Рефал Плюс -- весь компилятор (и надо читать, тестировать,
+<BR>
+дописывать).
+<BR>
+<P>Удачи
+<BR>
+<P>Сергей
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0167.html">Sergei M. Abramov: "Fwd:"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0165.html">var@msu.ru: "Re: Рефал и Лисп на Си+"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0164.html">Andrey Slepuhin: "Re: Рефал и Лисп на Си+"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0164.html">Sergei M. Abramov: "Re: Рефал и Лисп на Си+"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 22 2001 - 17:01:24 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

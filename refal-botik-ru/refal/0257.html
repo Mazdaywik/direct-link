@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Mike Potanin (potanin@mccme.ru)">
+<META NAME="Subject" CONTENT="Re: Ядро Рефал">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Ядро Рефал</H1>
+<HR>
+<P>
+<!-- received="Sat Nov  3 00:56:10 2001" -->
+<!-- isoreceived="20011102215610" -->
+<!-- sent="Fri, 2 Nov 2001 15:24:08 +0300 (MSK)" -->
+<!-- isosent="20011102122408" -->
+<!-- name="Mike Potanin" -->
+<!-- email="potanin@mccme.ru" -->
+<!-- subject="Re: Ядро Рефал" -->
+<!-- id="Pine.LNX.4.21.0111021507380.24289-100000@mccme.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="005601c16396$7ae72f20$110d040a@Bagirra" -->
+<STRONG>Subject: </STRONG>Re: Ядро Рефал<BR>
+<STRONG>From: </STRONG>Mike Potanin (<EM>potanin@mccme.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Nov 02 2001 - 15:24:08 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#257">[ date ]</A>
+<A HREF="index.html#257">[ thread ]</A>
+<A HREF="subject.html#257">[ subject ]</A>
+<A HREF="author.html#257">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0258.html">Sergei Romanenko: "Re: Ядро Рефал"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0256.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0256.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0258.html">Sergei Romanenko: "Re: Ядро Рефал"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0256.html">Mike Potanin: "Re: Ядро Рефал"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+On Fri, 2 Nov 2001, Arkady Klimov wrote:
+<BR>
+<P><EM>&gt; | &gt; Если кто-то когда-то использовал &quot;ящики&quot; не по существу, - это еще не повод
+</EM><BR>
+<EM>&gt; | Не ясно какое их использование будет &quot;по существу&quot;. Возможно то для чего
+</EM><BR>
+<EM>&gt; | нужны ящики проще запрограмировать на другом языке, а из него вызвать
+</EM><BR>
+<EM>&gt; | Рефал. Сам я на Рефале писал мало и мне ящики ни разу не понадобились.
+</EM><BR>
+<EM>&gt; | Задачи я выбирал простые и ориентированые на Рефал, и придумать случай в
+</EM><BR>
+<EM>&gt; | котором ящик уместен я не могу.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Одно из важных применений ящиков, где я не знаю, как обойтись без них - это
+</EM><BR>
+<EM>&gt; имитация &quot;ленивости&quot; = задержка + мемоизация. Вычисленные по первому
+</EM><BR>
+<EM>&gt; запросу значения затем помещаются в динамический, созданный заблаговременно,
+</EM><BR>
+<EM>&gt; ящик для последующих использований.
+</EM><BR>
+Ленивость я давно предлагою ввести в язык (в моей haskellной реализации
+<BR>
+была ленивость термов и правого хвоста, для более сложной надо придумывать
+<BR>
+сложное представление строк). Мемоизация тоже там к месту - при
+<BR>
+программировании в функциональном стиле на семантику она не влияет, а
+<BR>
+эффективность может поднять.
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Кроме того, есть многие алгоритмы, которые в чисто функциональных терминах
+</EM><BR>
+<EM>&gt; выражаются просто плохо: топологическая сортировка, унификация, анализ ML-типов,
+</EM><BR>
+<EM>&gt; волновой метод поиска кратчайшего пути и т.п. Все это - разные частные случаи
+</EM><BR>
+<EM>&gt; инкрементного (=эффективного) вычисления неподвижной точки. Сейчас мы
+</EM><BR>
+<EM>&gt; предпочитаем программировать их императивно, то есть с переменными, или ящиками.
+</EM><BR>
+<EM>&gt; Когда-нибудь, наверно, и на эти задачи найдется свой Дейкстра, который научит нас делать
+</EM><BR>
+<EM>&gt; то же самое функционально (и столь же эфффективно). Не могу не вспомнить по этому
+</EM><BR>
+<EM>&gt; случаю &quot;монотонные объекты&quot; Андрея Климова. А для всяких экспериментов на эту тему
+</EM><BR>
+<EM>&gt; опять же нужны ящики.
+</EM><BR>
+А эти задачи адекватны языку? Может в каких-то случаях удобнее для них
+<BR>
+иметь библиотеку написанную на C/C++?
+<BR>
+К тому же итерации легко програмировать через остаточную рекурсию, которая
+<BR>
+реализуется эффективно. Мне кажется что многое к ней сведется - хотя надо
+<BR>
+еще подумать.
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; | По моему анализ был бы очень полезен для развития языка.
+</EM><BR>
+<EM>&gt; Да, конечно.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; | &gt; для их изгнания из языка. Насчет GOTO тоже не все так просто. В результате
+</EM><BR>
+<EM>&gt; | &gt; суперкомпиляции например, как и специализации, получаются существенно
+</EM><BR>
+<EM>&gt; | &gt; &quot;goto-ориентированные&quot; программы, и еще неизвестно, во что нам обойдется
+</EM><BR>
+<EM>&gt; | &gt; отсутствие GOTO в базовом языке их отображения (Яве).
+</EM><BR>
+<EM>&gt; | Для Явы ни кто не мешает порождать не текст на Яве, а сразу байт-код.
+</EM><BR>
+<EM>&gt; | Или еще какое-нибудь промежуточное представление. Получение Ява-текста
+</EM><BR>
+<EM>&gt; | ценно только своей наглядностью (в том числе и для инвесторов :-)).
+</EM><BR>
+<EM>&gt; Вот-вот. Кроме того,  думаю, никто не станет использовать JScp, если не будет
+</EM><BR>
+<EM>&gt; иметь понятия о том, что у него на выходе.
+</EM><BR>
+Можно расширить язык этим goto и написать компилятор (с открытыми
+<BR>
+исходниками). И волки сыты и овцы целы.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0258.html">Sergei Romanenko: "Re: Ядро Рефал"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0256.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0256.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0258.html">Sergei Romanenko: "Re: Ядро Рефал"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0256.html">Mike Potanin: "Re: Ядро Рефал"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

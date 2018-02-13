@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klimovark@mail.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ abstract syntax">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ abstract syntax</H1>
+<HR>
+<P>
+<!-- received="Mon Dec  6 12:19:58 1999" -->
+<!-- isoreceived="19991206091958" -->
+<!-- sent="Sun, 5 Dec 1999 19:09:01 +0300" -->
+<!-- isosent="19991205160901" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klimovark@mail.ru" -->
+<!-- subject="Re: Refal+ abstract syntax" -->
+<!-- id="003101bf3f3b$0bedafd0$97925bc3@bagirra.rinet.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="383E87BC.AE3233A8@msu.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal+ abstract syntax<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klimovark@mail.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sun Dec 05 1999 - 19:09:01 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#50">[ date ]</A>
+<A HREF="index.html#50">[ thread ]</A>
+<A HREF="subject.html#50">[ subject ]</A>
+<A HREF="author.html#50">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0051.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0049.html">Andrei P. Nemytykh: "Still another reference."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0040.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0051.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0040.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Андрей, добрый день.
+<BR>
+<P>Как я понял, то что ты здесь предлагаешь, это - средство, позволяющее
+<BR>
+смешивать результатные выражения с блоками (тоже, видимо,
+<BR>
+результатными), чтобы их результаты объединялись в одно значение путем
+<BR>
+конкатенации, да? В принципе, это интересная возможность, и о ней
+<BR>
+стоит подумать, но, на мой взгляд это никак не связано с вопросами АС,
+<BR>
+которые мы обсуждали. Тем не менее давайте обсудим и эту возможность.
+<BR>
+<P>1. А какие средства в исходном синтаксите будут ей отвечать?
+<BR>
+<P>2. А почему мы ограничиваемся только возможностью конкатенации
+<BR>
+выражения с блоком, для полноты счастья было бы неплохо уметь
+<BR>
+использовать блок как произвольную часть результатного выражения,
+<BR>
+например брать его в скобки, передавать аргументом в функции и т.п.,
+<BR>
+например (в условном внешнем синтаксисе):
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;F e1 ({&lt;G e2&gt;:t3 e4=t3})&gt;
+<BR>
+Но тогда и в АС нужно иметь возможность просто поместить блок как один
+<BR>
+из элементов результатного выражения. В АС это ведь ничему не
+<BR>
+противоречит, поскольку там все скобки помечены тегами и все
+<BR>
+однозначно разбираемо. С семантикой, думаю, тоже больших проблем не
+<BR>
+будет, также как и с компиляцией в виртуальный код. Но, подчеркну еще
+<BR>
+раз, это все замечательно в АС, но во внешнем синтаксисе могут быть
+<BR>
+синтаксические проблемы. Но лично я не вижу ничего против того, чтобы
+<BR>
+уже сейчас это ввести в АС, не обязательно думая о том, как это будет
+<BR>
+во внешнем. Хотя бы для тех приложений, где нужно будет порождать
+<BR>
+программы в АС динамически.
+<BR>
+<P>Аркадий.
+<BR>
+<P>PS. Продолжаешь ли ты работать над АС? Мне хотелось бы получить твои
+<BR>
+комментарии по сути предложенного мной в
+<BR>
+<A HREF="http://inet.keldysh.ru/dpt_16/arklimov/RefalAbstractSyntax.htm">http://inet.keldysh.ru/dpt_16/arklimov/RefalAbstractSyntax.htm</A>
+<BR>
+<P><P><P>----- Original Message -----
+<BR>
+From: Andrey Slepuhin &lt;pooh@msu.ru&gt;
+<BR>
+To: Arkady Klimov &lt;klark@bagirra.rinet.ru&gt;
+<BR>
+Cc: Sergei M. Abramov &lt;abram@botik.ru&gt;; &lt;refal@botik.ru&gt;
+<BR>
+Sent: Friday, November 26, 1999 4:14 PM
+<BR>
+Subject: Re: Refal+ abstract syntax
+<BR>
+<P><P><EM>&gt; День добрый!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Насчет &quot;трех источников и трех составных частей&quot;:
+</EM><BR>
+<EM>&gt; похоже, что это t.Pattern, t.Format и t.Result :-)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Семантику, на мой взгляд, нужно понимать так:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 1) t.Pattern сравнивает текущее значение результата с образцом,
+</EM><BR>
+<EM>&gt; изменяя при этом значения переменных. Текущее значение результата
+</EM><BR>
+<EM>&gt; при этом не изменяется (в Рефале+ оно сейчас обнуляется).
+</EM><BR>
+<EM>&gt; Т.е. если R - результатное выражение, то запись вида
+</EM><BR>
+<EM>&gt;   R : e1, R : e2
+</EM><BR>
+<EM>&gt; можно представить как
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; t.Result t.Pattern t.Pattern
+</EM><BR>
+<EM>&gt;    R        e1       e2
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 2) t.Format запихивает текущее значение результата в жесткий
+</EM><BR>
+образец,
+<BR>
+<EM>&gt; изменяя при этом значения переменных. Текущее значение результата
+</EM><BR>
+<EM>&gt; при этом не изменяется (в Рефале+ оно сейчас обнуляется).
+</EM><BR>
+<EM>&gt; Т.е. если R - результатное выражение, то запись вида
+</EM><BR>
+<EM>&gt;   R :: e1, R :: e2
+</EM><BR>
+<EM>&gt; можно представить как
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; t.Result t.Format t.Format
+</EM><BR>
+<EM>&gt;    R        e1       e2
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 3) С t.Result дело обстоит чуть-чуть сложнее. Рассмотрим
+</EM><BR>
+<EM>&gt; последовательность
+</EM><BR>
+<EM>&gt; t.Result t.Block
+</EM><BR>
+<EM>&gt; Вопрос: будет ли вычисление t.Block заменять значение результата
+</EM><BR>
+<EM>&gt; или конкатенироваться с уже существующим? Хотелось бы иметь и то
+</EM><BR>
+<EM>&gt; и другое. Предложение: ввести тег &quot;Flush&quot;, который будет сбрасывать
+</EM><BR>
+<EM>&gt; текущее значение результата. Тогда t.Result и t.Block будут
+</EM><BR>
+<EM>&gt; всегда конкатенироваться с текущим результатом.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; То есть, в гипотетическом  Рефале-X (с точки зрения существующих
+</EM><BR>
+<EM>&gt; рефалов приведенный ниже код некорректный, хотя интуитивно понятный)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 'a' {'b';}    -&gt;    t.Result t.Block
+</EM><BR>
+<EM>&gt;                        'a'    {'b';}
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 'a', {'b';}    -&gt;    t.Result &quot;Flush&quot; t.Block
+</EM><BR>
+<EM>&gt;                        'a'             {'b';}
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Таким образом любая запятая будет переходить во &quot;Flush&quot;
+</EM><BR>
+<EM>&gt; (за исключением возможных оптимизаций - см. ниже)
+</EM><BR>
+<EM>&gt; Сейчас в Рефале+ перед запятой выходной формат должен быть
+</EM><BR>
+<EM>&gt; пустым, т.е. если перед запятой стоит результатное выражение R
+</EM><BR>
+<EM>&gt; с непустым выходным форматом, то надо писать, скажем, R::e,
+</EM><BR>
+<EM>&gt; что, в общем-то не очень эстетично.
+</EM><BR>
+<EM>&gt; Замечание. Выражение вида R : e1, R : e2 дословно преобразуется в
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; t.Result t.Pattern &quot;Flush&quot; t.Result t.Pattern
+</EM><BR>
+<EM>&gt;     R        e1                R        e2
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; хотя может быть соптимизировано до
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; t.Result t.Pattern t.Pattern
+</EM><BR>
+<EM>&gt;     R        e1       e2
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Далее. &quot;Not&quot; все-таки относится к e.Statement и запись должна быть
+</EM><BR>
+<EM>&gt; &quot;Not&quot; (e.Statement)
+</EM><BR>
+<EM>&gt; Тогда
+</EM><BR>
+<EM>&gt; &quot;Not&quot; (&quot;Not&quot; (e.Statement))
+</EM><BR>
+<EM>&gt; имеет вполне понятную семантику.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; В целом, конечно, синтаксис получается шире, чем позволяют
+</EM><BR>
+существующие
+<BR>
+<EM>&gt; рефалы.
+</EM><BR>
+<EM>&gt; В выходные попробую еще подумать (в частности мне все-таки не
+</EM><BR>
+нравятся
+<BR>
+<EM>&gt; метки), а пока переключаюсь на текущие дела.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; Андрей.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0051.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0049.html">Andrei P. Nemytykh: "Still another reference."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0040.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0051.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0040.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

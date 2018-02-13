@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.rinet.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ abstract syntax">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ abstract syntax</H1>
+<HR>
+<P>
+<!-- received="Tue Dec  7 20:41:18 1999" -->
+<!-- isoreceived="19991207174118" -->
+<!-- sent="Mon, 6 Dec 1999 14:15:43 +0300" -->
+<!-- isosent="19991206111543" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.rinet.ru" -->
+<!-- subject="Re: Refal+ abstract syntax" -->
+<!-- id="008c01bf3fdb$3cd51b10$97925bc3@bagirra.rinet.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="384B7F94.5F9869C3@msu.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal+ abstract syntax<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.rinet.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Dec 06 1999 - 14:15:43 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#52">[ date ]</A>
+<A HREF="index.html#52">[ thread ]</A>
+<A HREF="subject.html#52">[ subject ]</A>
+<A HREF="author.html#52">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0053.html">Andrei P. Nemytykh: "Flac/PZ. MS-DOS. Intel-386, protected mode."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0051.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0051.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0071.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0051.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+----- Original Message -----
+<BR>
+From: Andrey Slepuhin &lt;pooh@msu.ru&gt;
+<BR>
+To: Arkady Klimov &lt;klark@bagirra.rinet.ru&gt;
+<BR>
+Cc: Sergei M. Abramov &lt;abram@botik.ru&gt;; &lt;refal@botik.ru&gt;
+<BR>
+Sent: Monday, December 06, 1999 12:19 PM
+<BR>
+Subject: Re: Refal+ abstract syntax
+<BR>
+<P><P><EM>&gt; Arkady Klimov wrote:
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Андрей, добрый день.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Добрый день!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Как я понял, то что ты здесь предлагаешь, это - средство,
+</EM><BR>
+позволяющее
+<BR>
+<EM>&gt; &gt; смешивать результатные выражения с блоками (тоже, видимо,
+</EM><BR>
+<EM>&gt; &gt; результатными), чтобы их результаты объединялись в одно значение
+</EM><BR>
+путем
+<BR>
+<EM>&gt; &gt; конкатенации, да? В принципе, это интересная возможность, и о ней
+</EM><BR>
+<EM>&gt; &gt; стоит подумать, но, на мой взгляд это никак не связано с вопросами
+</EM><BR>
+АС,
+<BR>
+<EM>&gt; &gt; которые мы обсуждали. Тем не менее давайте обсудим и эту
+</EM><BR>
+возможность.
+<BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 1. А какие средства в исходном синтаксите будут ей отвечать?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Речь пока не идет об исходном синтаксисе. Мысли, высказанные в
+</EM><BR>
+письме,
+<BR>
+<EM>&gt; были просто результатом размышлений на тему семантики всевозможных
+</EM><BR>
+<EM>&gt; комбинаций того, чем может быть t.Action.
+</EM><BR>
+Хм, тогда, наверно я не вполне понял эти размышления. Как я уже
+<BR>
+писал,мне интересны вопросы типа: а какая семантика такой-то
+<BR>
+комбинации. Мне кажется, есть общая семантика (я тоже писал о ней) и
+<BR>
+из нее по-моему все следует. Но если возникают сомнения и
+<BR>
+контрпримеры - давайте рассматривать.
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; 2. А почему мы ограничиваемся только возможностью конкатенации
+</EM><BR>
+<EM>&gt; &gt; выражения с блоком, для полноты счастья было бы неплохо уметь
+</EM><BR>
+<EM>&gt; &gt; использовать блок как произвольную часть результатного выражения,
+</EM><BR>
+<EM>&gt; &gt; например брать его в скобки, передавать аргументом в функции и
+</EM><BR>
+т.п.,
+<BR>
+<EM>&gt; &gt; например (в условном внешнем синтаксисе):
+</EM><BR>
+<EM>&gt; &gt;         &lt;F e1 ({&lt;G e2&gt;:t3 e4=t3})&gt;
+</EM><BR>
+<EM>&gt; &gt; Но тогда и в АС нужно иметь возможность просто поместить блок как
+</EM><BR>
+один
+<BR>
+<EM>&gt; &gt; из элементов результатного выражения. В АС это ведь ничему не
+</EM><BR>
+<EM>&gt; &gt; противоречит, поскольку там все скобки помечены тегами и все
+</EM><BR>
+<EM>&gt; &gt; однозначно разбираемо. С семантикой, думаю, тоже больших проблем
+</EM><BR>
+не
+<BR>
+<EM>&gt; &gt; будет, также как и с компиляцией в виртуальный код.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Думаю, да.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; Но, подчеркну еще
+</EM><BR>
+<EM>&gt; &gt; раз, это все замечательно в АС, но во внешнем синтаксисе могут
+</EM><BR>
+быть
+<BR>
+<EM>&gt; &gt; синтаксические проблемы. Но лично я не вижу ничего против того,
+</EM><BR>
+чтобы
+<BR>
+<EM>&gt; &gt; уже сейчас это ввести в АС, не обязательно думая о том, как это
+</EM><BR>
+будет
+<BR>
+<EM>&gt; &gt; во внешнем.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Абсолютно согласен. Если что, я готов писать программы прямо на АС -
+</EM><BR>
+<EM>&gt; это не сложно ;-)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; Хотя бы для тех приложений, где нужно будет порождать
+</EM><BR>
+<EM>&gt; &gt; программы в АС динамически.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Аркадий.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; PS. Продолжаешь ли ты работать над АС? Мне хотелось бы получить
+</EM><BR>
+твои
+<BR>
+<EM>&gt; &gt; комментарии по сути предложенного мной в
+</EM><BR>
+<EM>&gt; &gt; <A HREF="http://inet.keldysh.ru/dpt_16/arklimov/RefalAbstractSyntax.htm">http://inet.keldysh.ru/dpt_16/arklimov/RefalAbstractSyntax.htm</A>
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Я сейчас хочу как можно быстрее выложить новую версию Рефала+, в
+</EM><BR>
+которой
+<BR>
+<EM>&gt; уже будет компиляция в виртуальный код, поэтому временно над АС не
+</EM><BR>
+<EM>&gt; работаю. Кроме того, очень хотелось бы услышать мнение авторов
+</EM><BR>
+Рефала+
+<BR>
+<EM>&gt; (т.е. Сергея Романенко и Рутена Гурина). В целом мое мнение такое:
+</EM><BR>
+<EM>&gt; С большей частью я в принципе согласен, мне не нравится только
+</EM><BR>
+<EM>&gt; раскрытие NOT и ITER - с моей точки зрения это ход в сторону
+</EM><BR>
+приближения
+<BR>
+<EM>&gt; к виртуальному коду (то как они раскрываются - просто один в один
+</EM><BR>
+<EM>&gt; совпадает с тем, как они отображаются в виртуальном коде).
+</EM><BR>
+Ну, это (замечание в скобках) можно считать также и аргументом ЗА
+<BR>
+раскрытие.
+<BR>
+Но тут я не хочу ничего навязывать. Может, есть также резон в том,
+<BR>
+чтобы сделать несколько уровней АС на пути от внешнего к виртуальному
+<BR>
+коду.
+<BR>
+<P><EM>&gt; Есть над чем подумать в отношении import/export и pragma, но это
+</EM><BR>
+<EM>&gt; все-таки не основное. И еще: с моей точки зрения было бы неплохо
+</EM><BR>
+<EM>&gt; сразу описывать семантику.
+</EM><BR>
+Согласен. И еще надо добавить const (и ссылки), которые также должны
+<BR>
+быть увязаны с import/export.
+<BR>
+<P>Пока давай возьмем тайм-аут, пусть отлежится. Еще будут обсуждения в
+<BR>
+связи с трансляцией Рефала в ЯВУ (Язык Высокого Уровня), которые тоже
+<BR>
+могут наложить свой отпечаток на работу по АС.
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; Андрей.
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0053.html">Andrei P. Nemytykh: "Flac/PZ. MS-DOS. Intel-386, protected mode."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0051.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0051.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0071.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0051.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

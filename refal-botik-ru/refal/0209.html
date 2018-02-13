@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.net)">
+<META NAME="Subject" CONTENT="Re: SURA: от нас с Робертом всем -- трократное, симметричное URA">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: SURA: от нас с Робертом всем -- трократное, симметричное URA</H1>
+<HR>
+<P>
+<!-- received="Sun May 13 09:22:42 2001" -->
+<!-- isoreceived="20010513052242" -->
+<!-- sent="Wed, 9 May 2001 21:54:21 +0300" -->
+<!-- isosent="20010509185421" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.net" -->
+<!-- subject="Re: SURA: от нас с Робертом всем -- трократное, симметричное URA" -->
+<!-- id="004801c0d8b9$9c348190$929943c2@Bagirra" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="007301c0d884$bfb0eda0$32e1d0c3@abrhome.polnet.botik.ru" -->
+<STRONG>Subject: </STRONG>Re: SURA: от нас с Робертом всем -- трократное, симметричное URA<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.net</EM>)<BR>
+<STRONG>Date: </STRONG>Wed May 09 2001 - 22:54:21 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#209">[ date ]</A>
+<A HREF="index.html#209">[ thread ]</A>
+<A HREF="subject.html#209">[ subject ]</A>
+<A HREF="author.html#209">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0210.html">korlyukov: "pearls (new Scp4 examples) - 2"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0208.html">Sergei M. Abramov (at home): "Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0208.html">Sergei M. Abramov (at home): "Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0208.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;----- Original Message ----- 
+<BR>
+&nbsp;&nbsp;From: Sergei M. Abramov (at home) 
+<BR>
+&nbsp;&nbsp;To: Arkady Klimov ; refal 
+<BR>
+&nbsp;&nbsp;Sent: Wednesday, May 09, 2001 3:36 PM
+<BR>
+&nbsp;&nbsp;Subject: Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!
+<BR>
+<P><P>&nbsp;&nbsp;День добрый, всем!
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Я попробую начать с самого простого примера. Но может реальные УРА, и старый и новый, уже такие, что это для них не проблема, не знаю, я исхожу из отстоявшегося у меня с 70-х образа &quot;простого&quot; УРА.
+<BR>
+&nbsp;&nbsp;Как будет ясно ниже, твой образ простого УРА намного серьезнее, чем то, что я всегда называл УРА.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Имеем функцию 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Rev {
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1 e2 = &lt;Rev e2&gt; s1;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(прошу прощения, мне лень ставить точки в переменных)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Сначала рассмотрим задачу: &lt;Rev ex&gt; = 'abc'. Очевидно, что любой УРА с ней легко справляется и выдает, что есть одно и только одно решение: ex = 'cba'.
+<BR>
+<P>&nbsp;&nbsp;Увы, УРА как он есть (без суперкомпиляции) с задачей справляться-то справляется (ответ находит), но после этого занимается бесконечно долгой работой--той самой, о которой ты пишешь: &quot;потом будет бесконечно долго крутиться, пытаясь найти другие&quot;.
+<BR>
+<P><P>Ну почему же? Здесь конечно важно, что Rev &quot;выплевывает&quot; результат, а не накапливает. Ведь после того, как будет выплюнуто 4 символа, будет легко устанавлено, что классы
+<BR>
+&lt;Rev e5&gt; s4 s3 s2 s1 и 'abc' не пересекаются. Впрочем, если был использован предикат равенства, просматривающий аргументы слева направо, то действительно процесс &quot;будет бесконечно долго крутиться, пытаясь найти другие&quot;. Но мой наивный ментальный УРА выполняет как бы полуленивое сравнение с обеих сторон, а это, конечно же, элемент, ну если и не суперкомпиляции, то чего-то довольно продвинутого.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Вообще говоря УРА, это вот такая композиция (я разложу композицию в let-запись):
+<BR>
+ura prog clsio = let clsin   = in_ clsio      /* проекция желаемого IO-мно-
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;жества на ось Input */                     tree    = ppt p clsin    /* обычное перф. дерево процессов */                     graphic = tab tree clsin /* строим график программы, как 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;поток (ленивый список)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IO-классов */                 in  concat (map (*. clsio) graphic) 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* решение есть пересечение графика
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;программы с желаемым IO-множеством */
+<BR>
+&nbsp;&nbsp;Про такую организацию УРА можно (и очень легко) доказать вот такой критерий (стр. 26 Теорема 12 в статье):
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+<P>&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;То есть, УРА за конечное время терминируется, если время счета программы на данных из clsin &quot;равномерно ограничено&quot; (I.c) константой (которая не зависит от того, какие данные из clsin мы берем).
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Именно поэтому (&quot;равномерно ограничено&quot;, I.c), конечное время считаются любые примеры, имеющие вид:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match [ ????? , &quot;ABC&quot; ] = ?????
+<BR>
+<P>&nbsp;&nbsp;И поэтому, УРА будет работать бесконечно и одинаково успешно на обоих примерах с реверсом (как с одиночным, так и с вложенным).
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;А теперь рассмотрим задачу: &lt;Rev &lt;Rev ex&gt;&gt; = 'abc'. Как мне кажется, сидящий у меня в голове УРА выдаст решение ex = 'abc', а потом будет бесконечно долго крутиться, пытаясь найти другие.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Видимо, &quot;УРА, сидящий в твоей голове&quot; содержит элементы суперкомпиляции--если он на одиночном реверсе завершался в конечное время.  Или, как минимум, твой УРА содержит то самое превентивное отсечение бесконечных поддеревьев, не содержащих решений, о котором я писал в прошлом письме.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Да, для УРА с превентивным отсечением все будет так, как ты сказал: на одиноком реверсе УРА завершится за конечное время, а на вложенном--незавершится.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;И сделанная нами с Робертом смена третьей фазы и формата задачи эту пробему не решает.  Здесь требуются более серьезные инструменты.  Чтобы понять какие, скажу еще одно:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Заметим, что вложенность тут вовсе не при чем.  Достаточно перейти от выплевывающего реверса к реверсу с аккамулятором (который только в конце дает свой ответ), чтобы получить вот что: УРА бесконечно работает как в случае с одиночного, так и в случае вложенного реверса.
+<BR>
+&nbsp;&nbsp;И улучшить здесь положение может только технология суперкомпиляции.  Но не той суперкомпиляции, которую все уже освоили (она ничего не даст), а той суперкомпиляции, о которой столько лет говорят и мечтают---я говорю о ScpWalk.
+<BR>
+<P>Если некоторый УРА все же решает первую мою задачу за конечное время, то вторую задачу он мог бы просто решить, если бы &quot;догадался&quot; разложить ее на две отдельные задачи:
+<BR>
+&lt;Rev ex&gt; = ey и &lt;Rev ey&gt; = 'abc' 
+<BR>
+и решать их последовательно - сначала вторую (с результатом ey='cba'), потом первую (с результатом ex='abc'). Или, чтобы ни о чем не &quot;догадываться&quot;, он мог бы просто трудиться параллельно (как бы вширь) над обеими задачами, не отдавая априори никому предпочтений - ни ex, ни ey, ни 'abc', и жадно выполняя двусторонние сравнения с высоким приоритетом. Поэтому мне и подумалось, что симметричное УРА могло бы тут стать ключом.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;PPS. Сергей, у меня одно небольшое лингвистическое предложение: слово &quot;лизон&quot; по русски выглядит как-то неприлично, может лучше писать его &quot;лиезон&quot;, или &quot;лиазон&quot;, как больше нравится...
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;1.. Алик, я абсолютно безграмотен и заание извиняюсь за опечатки в русских (и не только) словах
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;2.. Мне очень кажется, что лезон (или как оно пишется?) -- уже давно (до нас) русское (конечно заимствованное) слово, а именно--термин из рускоязычных физико-ядерных печатных работ
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Насколько я помню (ой и сильно я могу заблуждаться--все это было в далеком детстве в школе еще): лезон--частица, ответственная за слабое (или сильное?) взаимодействие.  Есть разновидности этой элементарной частицы: пионы (пи-лезоны) и меоны (мю-лезоны).
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;3.. Так что, увы, не удастся между сбою &quot;повыбирать&quot;, как нам с вами лучше его писать по русски.  Все что нам надо, так просто узнать (у физиков, у Нозика?), как оно пишется на самом деле в русскоязычных работах.
+<BR>
+Завтра спросим ;-)
+<BR>
+<P>&nbsp;&nbsp;Удачи
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Сергей
+<BR>
+<P><P><P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0209/01-part">stored</A>
+</UL>
+<!-- attachment="01-part" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0210.html">korlyukov: "pearls (new Scp4 examples) - 2"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0208.html">Sergei M. Abramov (at home): "Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0208.html">Sergei M. Abramov (at home): "Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0208.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (arklimov@keldysh.ru)">
+<META NAME="Subject" CONTENT="Re: Refal-J: first release">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal-J: first release</H1>
+<HR>
+<P>
+<!-- received="Fri Apr 25 18:46:10 2003" -->
+<!-- isoreceived="20030425144610" -->
+<!-- sent="Wed, 23 Apr 2003 23:28:19 +0300" -->
+<!-- isosent="20030423202819" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="arklimov@keldysh.ru" -->
+<!-- subject="Re: Refal-J: first release" -->
+<!-- id="000901c309d7$047e4ab0$8704000a@Bagirra" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="003001c309a9$c66a8ae0$013b7cc1@ilt.kharkov.ua" -->
+<STRONG>Subject: </STRONG>Re: Refal-J: first release<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>arklimov@keldysh.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Thu Apr 24 2003 - 00:28:19 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#306">[ date ]</A>
+<A HREF="index.html#306">[ thread ]</A>
+<A HREF="subject.html#306">[ subject ]</A>
+<A HREF="author.html#306">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0307.html">Leonid Belous: "Re: Refal-J: first release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0305.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0304.html">Leonid Belous: "Re: Refal-J: first release"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0307.html">Leonid Belous: "Re: Refal-J: first release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0304.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Леня,
+<BR>
+у меня остались еще вопросы насчет Рефал-PHP, спрашиваю через группу,
+<BR>
+так как может это еще и другим интересно. См. ниже.
+<BR>
+<P>----- Original Message -----
+<BR>
+From: &quot;Leonid Belous&quot; &lt;belous@ilt.kharkov.ua&gt;
+<BR>
+To: &lt;refal@botik.ru&gt;
+<BR>
+Sent: Wednesday, April 23, 2003 18:03
+<BR>
+Subject: Re: Refal-J: first release
+<BR>
+<P><P>| Привет, всем!
+<BR>
+|
+<BR>
+| &gt; Леня, я как-то об этом подзабыл, о чем приношу свои извинения.
+<BR>
+| &gt; Это действительно мое серьезное упущение. В ближайшее время исправлю.
+<BR>
+| &gt; Оправдаться могу лишь тем, и это как бы моя беда, что PHP я сам не знаю
+<BR>
+| Алик, это легко исправимо.
+<BR>
+| Если найдешь время :-), загляни сюда
+<BR>
+| <A HREF="http://www.php.net/manual/ru/print/index.php">http://www.php.net/manual/ru/print/index.php</A>
+<BR>
+|
+<BR>
+| &gt; и не использую, а потому в каком-то смысле не ощутил ту реализацию как
+<BR>
+| &gt; выход во &quot;внешний мир&quot; для себя. С другой стороны, насколько я понимаю,
+<BR>
+| &gt; PHP - скриптовый язык, тоже (как и рефал), наверно, бестиповый и в этом
+<BR>
+| &gt; смысле он уровнем повыше и как бы поближе к рефалу, чем Java.
+<BR>
+| Этот язык поддерживает 8 простых типов, но не требует их жесткого
+<BR>
+| определения.
+<BR>
+| Тип определяется по контексту в динамике. Фраза из manual по PHP:
+<BR>
+|
+<BR>
+| &quot;PHP does not require (or support) explicit type definition in variable
+<BR>
+| declaration; a variable's type is determined by the context in which that
+<BR>
+| variable is used. That is to say, if you assign a string value to variable
+<BR>
+| $var, $var becomes a string. If you then assign an integer value to $var, it
+<BR>
+| becomes an integer.&quot;
+<BR>
+|
+<BR>
+| PHP гораздо ближе к Яве, чем к Рефалу, но реализован как интерпретатор, и в
+<BR>
+| этом последнем аспекте хорошо стыкуется с Рефалом-5.
+<BR>
+|
+<BR>
+| Мне этот язык очень импонирует своей универсальностью, огромной библиотекой,
+<BR>
+| и легкостью применения. Когда-то мы с Андреем  Климовым восхищались языком
+<BR>
+| REXX и его компактной реализацией (во времена машин ЕС ЭВМ). Это был (правда
+<BR>
+| он и сейчас есть) хороший инструмент в дополнение к Рефалу. Сейчас я смело
+<BR>
+| могу сказать, что PHP гораздо более удачная вещь. Именно эта причина и
+<BR>
+| вдохновила меня на создание Refal-PHP.
+<BR>
+|
+<BR>
+| &gt; То есть и тут и там имеем выход в &quot;мир&quot;, но эти миры немного разные.
+<BR>
+| Да, согласен.
+<BR>
+|
+<BR>
+| &gt;
+<BR>
+| &gt; А еще может мы имеем в виду разные уровни интеграции. Вот например,
+<BR>
+| &gt; такой вопрос: может ли рефал передать PHP свое произвольное выражение
+<BR>
+| &gt; с тем, чтобы оно было на PHP полностью понято, переработано и, быть может,
+<BR>
+| &gt; передано обратно? Мне почему-то казалось, что нет, то есть что обмен идет
+<BR>
+| только
+<BR>
+| &gt; на уровне строк, но буду рад ошибиться.
+<BR>
+| Именно так, ошибаешься. Обмен возможен в обоих направлениях. Но здесь я не
+<BR>
+| могу (пока) состязаться в уровне интеграции с тем, что делается у тебя, в
+<BR>
+| смысле эффективности реализации. Однако эта задача и не стояла у меня на
+<BR>
+| первом месте.
+<BR>
+Дело не в состязании: все-таки делались разные вещи. Но хотелось бы лучше
+<BR>
+понимать особенности каждой. Я хотел бы уточнить свое понимание
+<BR>
+системы Рефал-PHP (мне же надо будет ее упомянуть, сказав в двух
+<BR>
+словах об отличиях). Вот мои вопросы:
+<BR>
+1. Верно ли, что связка Рефал-PHP выполнена на основе *реализации* Рефал-5?
+<BR>
+Или там своя или значительно измененная (типа: подогнанная под структуры
+<BR>
+данных PHP) реализация.
+<BR>
+2. Возвращаюсь к вопросу об обмене выражениями. Мой вопрос был не столько
+<BR>
+о возможности обмена &quot;в обоих направлениях&quot;, сколько о структурах
+<BR>
+передаваемых при этом данных. Так все-таки, можно вызвать
+<BR>
+из рефала PHP-функцию и передать ей в качестве аргумента что-то вроде
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A (B '*' 1) (()))
+<BR>
+? И как это увидит функция на PHP? Как массив из трех элементов, где второй
+<BR>
+и третий элементы - тоже массивы? Соответственно, может ли функция
+<BR>
+на PHP вызвать функцию рефала с такого рода аргументом? (Из беглого взгляда
+<BR>
+на описание PHP и его системы типов, мне показалось, что массив PHP - это
+<BR>
+наверно самое близкое, из того, что там имеется, к рефальскому выражению).
+<BR>
+<P>Пока все.
+<BR>
+Заранее спасибо.
+<BR>
+С уважением,
+<BR>
+&nbsp;Аркадий
+<BR>
+<P>|
+<BR>
+| Можно сказать что PHP произошел из мира UNIX+Internet как скриптовый язык
+<BR>
+| для динамического создания вэб-страниц. Действительно, в этой роли он и
+<BR>
+| завоевал популярность, став своего рода стандартным инструментом в
+<BR>
+| популярной связке PHP+MySQL+Apache. (MySQL - система управления базами
+<BR>
+| данных, а Apache - вэб-сервер). Однако сейчас PHP начинает активно
+<BR>
+| применяться не только серверной стороне, но и на стороне клиента. Эта
+<BR>
+| двойственность оказалась очень удобной в Refal-PHP. С одной стороны это
+<BR>
+| позволило создать автономную компактную систему, а с другой - позволило
+<BR>
+| сильно облегчить отладку при создании вэб страниц, проводя ее в режиме
+<BR>
+| клиента.
+<BR>
+|
+<BR>
+| &gt; Что касается Refal-Java, то здесь имеет
+<BR>
+| &gt; место возможность полной интерпретации на Java любого выражения Рефала
+<BR>
+| &gt; (без какой-либо перекодировки) и любой его переработки (причем в терминах
+<BR>
+| &gt; очень естественных для Java).
+<BR>
+| Алик, из всего мною вышесказанного не следует извлекать критику твоего
+<BR>
+| подхода.
+<BR>
+| Это очень здорово что два &quot;старых рефальщика&quot; (я имею в виду тебя и Андрея),
+<BR>
+| одновременно же и специалисты по Яве и ее суперкомпиляции, создали такой
+<BR>
+| многообещающий инструмент.
+<BR>
+|
+<BR>
+| Я согласен с  замечанием Николая Кондратьева о некотором разночтении понятия
+<BR>
+| &quot;внешний мир&quot;.
+<BR>
+| Хочу пожелать ему (как соавтору Рефала-6) присоединиться к своим двоим
+<BR>
+| коллегам, и усилить коллектив(соображение на двоих хуже соображения на троих
+<BR>
+| :-)  ).
+<BR>
+|
+<BR>
+| С уважением,
+<BR>
+| --Леонид
+<BR>
+|
+<BR>
+| ----- Исходное сообщение -----
+<BR>
+| От: &quot;Arkady Klimov&quot; &lt;arklimov@keldysh.ru&gt;
+<BR>
+| Кому: &lt;refal@botik.ru&gt;
+<BR>
+| Отправлено: 23 апреля 2003 г. 14:04
+<BR>
+| Тема: Re: Refal-J: first release
+<BR>
+|
+<BR>
+|
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0307.html">Leonid Belous: "Re: Refal-J: first release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0305.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0304.html">Leonid Belous: "Re: Refal-J: first release"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0307.html">Leonid Belous: "Re: Refal-J: first release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0304.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

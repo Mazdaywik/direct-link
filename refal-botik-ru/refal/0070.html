@@ -1,0 +1,376 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Leonid F. Belous (belous@ilt.kharkov.ua)">
+<META NAME="Subject" CONTENT="Re: Case-sensitive Refal+; NetProlog">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Case-sensitive Refal+; NetProlog</H1>
+<HR>
+<P>
+<!-- received="Thu Dec 16 06:11:55 1999" -->
+<!-- isoreceived="19991216031155" -->
+<!-- sent="Tue, 14 Dec 1999 22:01:20 +0200 (EET)" -->
+<!-- isosent="19991214200120" -->
+<!-- name="Leonid F. Belous" -->
+<!-- email="belous@ilt.kharkov.ua" -->
+<!-- subject="Re: Case-sensitive Refal+; NetProlog" -->
+<!-- id="199912142001.WAA15113@ilt.kharkov.ua" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="019201bf3f24$2424d770$0100a8c0@piii" -->
+<STRONG>Subject: </STRONG>Re: Case-sensitive Refal+; NetProlog<BR>
+<STRONG>From: </STRONG>Leonid F. Belous (<EM>belous@ilt.kharkov.ua</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Dec 14 1999 - 23:01:20 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#70">[ date ]</A>
+<A HREF="index.html#70">[ thread ]</A>
+<A HREF="subject.html#70">[ subject ]</A>
+<A HREF="author.html#70">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0071.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0069.html">Nikolai Kondratiev: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0048.html">Andrei Klimov: "Re: Case-sensitive Refal+; NetProlog"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0048.html">Leonid F. Belous: "Re: Case-sensitive Refal+; NetProlog"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Привет Всем!
+<BR>
+Примите поздравления с уже совсем близким Новым Годом и Тысячелетием!
+<BR>
+<P>Андрей, который (К) :), я хочу ответить не только на это твое письмо,
+<BR>
+которое, как я понимаю, сподвигнуло Алика на эксперимент, результаты
+<BR>
+которого вызвали живую волну интереса к интеграции Рефала с Java.
+<BR>
+<P>Если помнишь, почти точно ровно год назад, в телеконференции refal-plus
+<BR>
+ты задавал вопрос, а каким бы мы хотели видеть Рефал в контексте
+<BR>
+современных веяний (Это письмо приведено в конце, чтобы его не разыскивать).
+<BR>
+<P>Мне хотелось бы поделится некоторой интерсной информацией и высказать свои
+<BR>
+пожелания насчет того, что нужно делать для выживаемости Рефала.
+<BR>
+<P><EM>&gt; Еще один пример того, что делают на других языках высокого уровня и
+</EM><BR>
+<EM>&gt; надо уметь делать и на Рефале, чтобы Рефал мог выжить, -- это писать апплетки.
+</EM><BR>
+<EM>&gt; Один способ достичь этого -- компилировать Рефал в Явовский байт-код
+</EM><BR>
+<EM>&gt; (или интерпретировать Рефал на Яве, а потом суперкомпилировать).
+</EM><BR>
+<EM>&gt; Другой способ -- оформить run-time Рефала как plug-in, чтобы он мог загружаться в браузер.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; В любом варианте встает вопрос о наборе функций для работы со средой в браузере.
+</EM><BR>
+<EM>&gt; При этом важно не разрабатывать библиотеку с нуля, а воспользоваться готовыми наработками --
+</EM><BR>
+<EM>&gt; желательно самыми распространенными, наиболее общими и хорошо отработанными библиотеками.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; В качестве образца (как для подражания, так и для критики, но в любом случае -- для размышлений)
+</EM><BR>
+<EM>&gt; стоит посмотреть NetProlog, который компилируется в явовский байт-код:
+</EM><BR>
+<EM>&gt; <A HREF="http://netprolog.pdc.dk/">http://netprolog.pdc.dk/</A>
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; На этой странице приведен текст на НетПрологе двух апплеток, работа которых тут же продемонстрирована.
+</EM><BR>
+<P>Я был на этом сайте, посмотрел, и пошел несколько дальше. Меня заинтересовало,
+<BR>
+а как выглядит сегодня, вообщем-то родственная по духу, СИСТЕМА на базе языка 
+<BR>
+Пролог (<A HREF="http://www.pdc.dk/vip/pdcindex.htm">http://www.pdc.dk/vip/pdcindex.htm</A>).
+<BR>
+А выглядит на сегодня Пролог, как можно увидеть на этом сайте, как
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visual Prolog - The Number One Programming Language for AI
+<BR>
+<P>Следует заметить, что этот путь (до Visual Prolog) они прошли, если я правильно
+<BR>
+понял их хронологию в разделе What's New, за довольно короткий срок,
+<BR>
+начиная с версии Visual Prolog 5.0 (Dec 1997).
+<BR>
+В разделе applications этого сайта отмечены в качестве самых новых вещей
+<BR>
+две:
+<BR>
+<P>1. Точно, то, что ты описываешь в своем письме - система Netprolog,
+<BR>
+&nbsp;&nbsp;&nbsp;поддерживающая Java апплеты,
+<BR>
+<P>2. SSProlog - Server Side Prolog. Execute serverside Prolog Code 
+<BR>
+&nbsp;&nbsp;&nbsp;in your HTML Pages &lt;<A HREF="http://www.jpmorrow.com/cgi-bin/foo1?call=foo1.html">http://www.jpmorrow.com/cgi-bin/foo1?call=foo1.html</A>&gt;
+<BR>
+<P>Это второе, как оказалось, есть не что иное, как ответ на PHP scripting
+<BR>
+language. Приводится конкретный пример и сравнительные результаты тестирования
+<BR>
+с последней версией PHP-4, недвусмысленно показывающими преимущество Пролога
+<BR>
+над PHP, и заодно над микросовтовскими ASP (Active Server Pages).
+<BR>
+&lt;<A HREF="http://www.zend.com/benchmarks-asp.php">http://www.zend.com/benchmarks-asp.php</A>&gt; PHP 4.0 pre-alpha vs.
+<BR>
+<P>Речь идет о возможности вставлять текст встраимого языка (Server Side Include)
+<BR>
+в HTML страницы. Основная цель - создание динамических страниц. PHP
+<BR>
+наиболее известен как интерфейс со всевозможными СУБД при  поддержке WEB
+<BR>
+на серверах apache &lt;<A HREF="http://www.php.net">http://www.php.net</A>&gt; .
+<BR>
+<P>&nbsp;Краткая характеристика с home page PHP:
+<BR>
+<P>What is PHP?
+<BR>
+PHP is a server-side, cross-platform, HTML embedded scripting 
+<BR>
+language. If you are completely new to PHP and want to get some idea of how it 
+<BR>
+works, have a look at the Introductory Tutorial.&lt;<A HREF="http://www.php.net/tut.php3">http://www.php.net/tut.php3</A>&gt;
+<BR>
+<P>Это ровно то, над чем работают (как я надеюсь) Сергей Битюков и Андрей Слепухин
+<BR>
+в отношении refal-plus. Возможно даже они и решили эту задачу, но
+<BR>
+все хранят в глубокой тайне :). Хотелось бы услышать каково действительное
+<BR>
+состояние дел с этой задачей. Я считаю, что все следует сделать точно также,
+<BR>
+как у прологовцев, только вместо Пролога - Рефал.
+<BR>
+<P>Пролог ринулся в эту нишу, понимая, что круг пользователей, 
+<BR>
+которым предоставляется сервис серверов apache необычайно широк. И я думаю,
+<BR>
+что мы не должны упускать этого шанса и для внедрения Рефала.
+<BR>
+И мне кажется, что это вовсе не должно быть прерогативой только Рефала-плюс.
+<BR>
+<P>А заключение мое относительно того, каким бы я хотел видеть Рефал, базируется
+<BR>
+на увиденном Прологе. Я скачал 20 мбт (самоубийца !) чтобы посмотреть все-таки
+<BR>
+что же есть Visual Prolog. Саморазворачивающийся файл при установке запросил
+<BR>
+210 mbt (что меня сначала отпугнуло), но заняла система только 68 mbt. 
+<BR>
+<P>Короче, здесь и изобретать нечего, хочу такое-же, но  Visual Refal !
+<BR>
+Если перфразировать слова из песни В.Высоцкого 
+<BR>
+&quot; ..Лучше гор могут быть только горы ..&quot;, то, имея ввиду под горами - списки,
+<BR>
+можно, наверняка, сказать:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Лучше Пролога может быть только Рефал !&quot;
+<BR>
+<P>Прошу прощения за возможный офтопик.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; Андрей (К).
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+Леонид Белоус
+<BR>
+<EM>&gt; 
+</EM><BR>
+-------------------------------------------------------------------------------- 
+<BR>
+Andrei Klimov (klimov@spp.keldysh.ru) 
+<BR>
+Sat, 19 Dec 1998 23:12:54 +0300 
+<BR>
+&nbsp;&nbsp;
+<BR>
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ] 
+<BR>
+Next message: Klimov, Arkady: &quot;RE: about books&quot; 
+<BR>
+Previous message: Sergei M. Abramov: &quot;Re: testing refal-plus@botik.ru, please 
+<BR>
+ignore&quot; 
+<BR>
+-------------------------------------------------------------------------------- 
+<BR>
+<P>Леня, добрый день! 
+<BR>
+&nbsp;&nbsp;
+<BR>
+<EM>&gt;Андрей, если помнишь, моя голубая мечта состояла в том, чтобы Рефал 
+</EM><BR>
+<EM>&gt;был доведен до того уровня удобства, как в свое время был REXX под 
+</EM><BR>
+VM/SP. 
+<BR>
+&nbsp;&nbsp;
+<BR>
+Очень хорошо помню! Сам о том мечтал! 
+<BR>
+&nbsp;&nbsp;
+<BR>
+Хорошую тему ты поднял. Столь важную, что это письмо стоило сразу в 
+<BR>
+mailling list направить. Чтобы привлечь к ней внимание остального 
+<BR>
+сообщества и спровоцировать обсуждение, отвечаю через refal-лист.
+<BR>
+&nbsp;&nbsp;
+<BR>
+<EM>&gt;Хотя REXX и сейчас под ОS/2 не в загоне, но моя неприязнь к этой 
+</EM><BR>
+<EM>&gt;системе тебе тоже известна. 
+</EM><BR>
+<EM>&gt;Но REXX это не то, также как и Perl. Вполне солидарен с точкой зрения 
+</EM><BR>
+<EM>&gt;Дмитрия на Perl. 
+</EM><BR>
+&nbsp;&nbsp;
+<BR>
+Тогда возникает такой вопрос: 
+<BR>
+&nbsp;&nbsp;
+<BR>
+А какие нужны средства в Рефале и в Рефал-системе, чтобы его 
+<BR>
+использование в качестве scripting language -- как в классическом 
+<BR>
+стиле, продемонстрированном REXX-ом, так и в современном стиле в духе 
+<BR>
+Visual Basic-а и JavaScript-а -- было реальным и удобным? 
+<BR>
+&nbsp;&nbsp;
+<BR>
+Ведь перекрыть удобство REXX-а не так просто! А может вообще для 
+<BR>
+данной роли лучше подходят императивные языки (REXX, Perl, Visual 
+<BR>
+Basic, Java...) и функциональный язык Рефал мало подходит? 
+<BR>
+&nbsp;&nbsp;
+<BR>
+Для затравки обсуждения вот мой список требований и вопросов по 
+<BR>
+отношению к Рефалу как scripting language: 
+<BR>
+&nbsp;&nbsp;
+<BR>
+1) нужен внятный и хорошо документированный интерфейс в 
+<BR>
+широко-распространенным языком, по-видимому, в первую очередь с С, а 
+<BR>
+потом, может и с Java; 
+<BR>
+&nbsp;&nbsp;
+<BR>
+2) более того, наверное, нужен не просто кабы какой интерфейс с С, но 
+<BR>
+возможность определять подсистему, запрограммированную на Рефале, как
+<BR>
+CORBA-объект и/или DCOM-объект, чтобы к ней можно было обращаться как 
+<BR>
+локально, так и удаленно, по единообразным правилам; 
+<BR>
+&nbsp;&nbsp;
+<BR>
+3) при этом, и из Рефал-программы надо вызывать CORBA- и DCOM-объекты, 
+<BR>
+созданные на других языках; 
+<BR>
+&nbsp;&nbsp;
+<BR>
+4) нужны ли и какие средства автоматической перекодировки данных? 
+<BR>
+язык описания интерфейса рефал-объектов с CORBA-объектами, Рефал-IDL? 
+<BR>
+&nbsp;&nbsp;
+<BR>
+5) будет ли этого достаточно, чтобы управлять системными объектами так 
+<BR>
+же легко как и из REXX-а? (вспомним, что управляемые из REXX-а 
+<BR>
+подсистемы имели специально отработанный интерфейс с REXX-ом в 
+<BR>
+терминах строчный команд, которые мог посылать как user с терминала, 
+<BR>
+так и REXX-программа) 
+<BR>
+&nbsp;&nbsp;
+<BR>
+6) насколько важна динамическая компиляция и загрузка программ для 
+<BR>
+роли scripting language? 
+<BR>
+&nbsp;&nbsp;
+<BR>
+И как сделать все это красиво, удобно, с достаточной полнотой. 
+<BR>
+&nbsp;&nbsp;
+<BR>
+Какие еще требования к Рефал-системе надо предъявить, какие вопросы 
+<BR>
+решить, чтобы Рефал мог конкурировать с REXX-ом, Perl-ом, и т.д.? 
+<BR>
+&nbsp;&nbsp;
+<BR>
+Андрей. 
+<BR>
+&nbsp;&nbsp;
+<BR>
+-------------------------------------------------------------------------------- 
+<BR>
+Next message: Klimov, Arkady: &quot;RE: about books&quot; 
+<BR>
+Previous message: Sergei M. Abramov: &quot;Re: testing refal-plus@botik.ru, please 
+<BR>
+ignore&quot; 
+<BR>
+-------------------------------------------------------------------------------- 
+<BR>
+This archive was generated by hypermail 2.0b3 on Tue Dec 29 1998 - 23:09:20 MSK 
+<BR>
+-------------------------------------------------------------------------------- 
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0071.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0069.html">Nikolai Kondratiev: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0048.html">Andrei Klimov: "Re: Case-sensitive Refal+; NetProlog"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0048.html">Leonid F. Belous: "Re: Case-sensitive Refal+; NetProlog"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

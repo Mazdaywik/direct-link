@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei Klimov (klimov@keldysh.ru)">
+<META NAME="Subject" CONTENT="Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu</H1>
+<HR>
+<P>
+<!-- received="Wed Oct 13 21:54:42 2004" -->
+<!-- isoreceived="20041013175442" -->
+<!-- sent="Wed, 13 Oct 2004 19:55:23 +0400" -->
+<!-- isosent="20041013155523" -->
+<!-- name="Andrei Klimov" -->
+<!-- email="klimov@keldysh.ru" -->
+<!-- subject="Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu" -->
+<!-- id="0fa001c4b13d$10cf9ee0$0200a8c0@p4" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="200410131804.18239.vladimi@mech.math.msu.su" -->
+<STRONG>Subject: </STRONG>Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu<BR>
+<STRONG>From: </STRONG>Andrei Klimov (<EM>klimov@keldysh.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Oct 13 2004 - 19:55:23 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#575">[ date ]</A>
+<A HREF="index.html#575">[ thread ]</A>
+<A HREF="subject.html#575">[ subject ]</A>
+<A HREF="author.html#575">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0576.html">Sergei Romanenko: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0574.html">A.A.Vladimirov: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0574.html">A.A.Vladimirov: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0577.html">Sergei M. Abramov: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0574.html">Andrei Klimov: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый вечер, Aнтон!
+<BR>
+<P>Да, Вы, наверное, действительно не все заметили в этом большом тексте.:-)
+<BR>
+Работа Турчина -- это отнюдь не обзор, а изложение новых результатов,
+<BR>
+которые можно считать дальнейшим продвижением по линии, по которой,
+<BR>
+по-видимому, стремились пройти и Брауэр, и Марков, но остановились раньше.
+<BR>
+<P>А по поводу истоков Рефала, даже если бы Рефал действительно
+<BR>
+представлял собой лишь &quot;чуть переработанный нормальный алгорифм&quot;,
+<BR>
+то это не умаляло бы его как язык программирования, поскольку
+<BR>
+между теоретической моделью вычислений и практическим
+<BR>
+языком программирования -- всегда дистанция огромного размера.
+<BR>
+И хотя в первых работах по Рефалу 60-х годов, Турчин указывал
+<BR>
+на алгорифмы Маркова как на истоки, сейчас, когда в мире
+<BR>
+функциональных языков было переработано много идей,
+<BR>
+сопоставление с нормальными алгорифмами выглядит бедно.
+<BR>
+Сейчас это лишь чисто исторический факт и интересный
+<BR>
+только потому, что это было важно для самого Турчина.
+<BR>
+<P>По сравнению с нормальными алгорифмами Маркова
+<BR>
+в Рефале появились следующие основные понятия, которые
+<BR>
+превратили абстрактное построение в удобный язык:
+<BR>
+<P>- данные (рефал-выражения) -- это деревья:
+<BR>
+&nbsp;&nbsp;строки со скобками, а не просто строки как в алгорифмах;
+<BR>
+&nbsp;&nbsp;(заметим, что ассоциативность конкатенации сохранена,
+<BR>
+&nbsp;&nbsp;что отличает рефал от прочих современных функ.языков);
+<BR>
+<P>- вызов функций, как средство локализации области
+<BR>
+&nbsp;&nbsp;преобразования данных (в алгорифмах, формально
+<BR>
+&nbsp;&nbsp;на каждом шаге область замены -- вся строка,
+<BR>
+&nbsp;&nbsp;но для локализации рекомендуется прием программирования -- 
+<BR>
+&nbsp;&nbsp;использование символа-указателя точки замены).
+<BR>
+<P>- средства описания функций (собственно язык), отражающие
+<BR>
+&nbsp;&nbsp;эти расширения.
+<BR>
+<P>IMHO эти изменения радикальные -- настолько, что некоторые
+<BR>
+из этих идей (симметричность левого/правого в образцах и
+<BR>
+отождествление с перебором) до сих не вошли в другие популярные
+<BR>
+функциональные языки.
+<BR>
+<P>Далее можно обсуждать детали синтаксиса Рефала и богатство
+<BR>
+его семантики, но в любом случае это уже будет лежать
+<BR>
+далеко-о-о за пределами идей нормальных алгорифмов.
+<BR>
+<P>Андрей.
+<BR>
+<P><P>----- Original Message ----- 
+<BR>
+From: &quot;A.A.Vladimirov&quot; &lt;vladimi@mech.math.msu.su&gt;
+<BR>
+To: &lt;refal@botik.ru&gt;
+<BR>
+Sent: 13 Oct 2004 18:04
+<BR>
+Subject: Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu
+<BR>
+<P><EM>&gt; &gt;
+</EM><BR>
+<EM>&gt;&gt; Вот неожиданно :-) появился малодоступный отчет 1983 года:
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; ed2k://|file|[Metamathematics].Turchin.-.The.Cybernetic.Foundation.of.Mathem
+</EM><BR>
+<EM>&gt;&gt; atics.(1983).djvu|4150006|E21E76E61F22C79913AF3A0E1B9C02D9|/
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Впечатление, честно говоря, странное.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Получается, не было в истории математики ни Брауэра, ни Маркова
+</EM><BR>
+<EM>&gt; (это при том, что о существовании и взглядах второго автор
+</EM><BR>
+<EM>&gt; обзора не мог не знать - как и о том, что рефал представляет
+</EM><BR>
+<EM>&gt; собой чуть переработанный нормальный алгорифм)? Или я чего-то в
+</EM><BR>
+<EM>&gt; тексте не заметил?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; С уважением,
+</EM><BR>
+<EM>&gt; А.Владимиров
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0576.html">Sergei Romanenko: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0574.html">A.A.Vladimirov: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0574.html">A.A.Vladimirov: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0577.html">Sergei M. Abramov: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0574.html">Andrei Klimov: "Re: Turchin.-.The.Cybernetic.Foundation.of.Mathematics.(1983).djvu"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:25:01 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

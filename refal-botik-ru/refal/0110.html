@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei P. Nemytykh (nemytykh@math.botik.ru)">
+<META NAME="Subject" CONTENT="Re: Re:Re:SCP's">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Re:Re:SCP's</H1>
+<HR>
+<P>
+<!-- received="Mon Mar 13 15:10:28 2000" -->
+<!-- isoreceived="20000313121028" -->
+<!-- sent="Sat, 11 Mar 2000 15:43:56 +0300" -->
+<!-- isosent="20000311124356" -->
+<!-- name="Andrei P. Nemytykh" -->
+<!-- email="nemytykh@math.botik.ru" -->
+<!-- subject="Re: Re:Re:SCP's" -->
+<!-- id="000701bf8b57$7992c260$0ee1d0c3@polnet.botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="E12TYtV-000KeP-00@f3.mail.ru" -->
+<STRONG>Subject: </STRONG>Re: Re:Re:SCP's<BR>
+<STRONG>From: </STRONG>Andrei P. Nemytykh (<EM>nemytykh@math.botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Mar 11 2000 - 15:43:56 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#110">[ date ]</A>
+<A HREF="index.html#110">[ thread ]</A>
+<A HREF="subject.html#110">[ subject ]</A>
+<A HREF="author.html#110">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0111.html">Andrei Klimov: "Seminar on Refal and supercompilation, 14 March 2000"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0109.html">Roman Gonin: "Re:Re:SCP's"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0109.html">Roman Gonin: "Re:Re:SCP's"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0109.html">Andrei P. Nemytykh: "Re: Re:Re:SCP's"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый день, Роман.
+<BR>
+<P><EM>&gt;  Меня заинтересовала поставленная Вами, Андрей, проблема:
+</EM><BR>
+<EM>&gt;  &quot;На мой взгляд, синтаксическое выделение подмножеств программ про которые
+</EM><BR>
+можно было бы делать те или иные точные утверждения относительно данного
+<BR>
+преобразователя программ -- есть очень важная и интересная задача&quot;.
+<BR>
+<EM>&gt;  Но, насколько это реально, и в какой мере, в ближайшее время? Какие мысли
+</EM><BR>
+по поводу методов и/или подходов к решению этой проблемы у Вас возникают и
+<BR>
+имеются? Если у Вас есть примеры, кроме работ Wadler-а, пожалуйста,
+<BR>
+поделитесь ими.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- спасибо.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- Если иметь ввиду конкретный обсуждаемый преобразователь программ ,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;то я не знаю ни одного текста, который бы ставил перед собой
+<BR>
+подобную задачу.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- В то же время, ограничения Рефала, предложенные ранее Валентином
+<BR>
+Фёдоровичем Турчиным, хотя и были сделаны с целью упростить построение
+<BR>
+суперкомпилятора, могут рассматриваться в контексте данной задачи: эти
+<BR>
+ограничения сокращают число понятий, которые возникают при реальных
+<BR>
+преобразованиях. Одним из таких важных ограничений является плоский Рефал.
+<BR>
+Это базисный Рефал, в котором в правых частях предложений допустимо лишь
+<BR>
+либо полностью пассивное выражение , либо выражение вида &lt;F e.passive&gt;,
+<BR>
+где аргументы не содержат вызовов функций.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;-- Если говорить более конкретно, то следующая задача кажется мне
+<BR>
+простой:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;среди демонстрационных примеров Scp4 есть пример, показывающий
+<BR>
+возможность автоматического преобразования некоторых реальных рекурсий в
+<BR>
+хвостовую рекурсию. Этому примеру в демонстрации соответствуей bat-файл
+<BR>
+d_tail_r.bat (примера пока нет в on-line версии демонстрации -- он появился
+<BR>
+недавно и туда ещё не внесён). Причина, по которой происходит такое
+<BR>
+преобразование, очень близка к причинам преобразований описанных Wadler-ом.
+<BR>
+Но сам он таких преобразований не рассматривает. Задача: указать
+<BR>
+подмножество Рефал-программ, для которого реальные рекурсии будут
+<BR>
+преобразовываться в хвостовые. ( правильно отталкнуться от текстов
+<BR>
+Wadler-а).
+<BR>
+<P>&nbsp;-- Вспоминается так же классическая работа John Backus. The algebra of
+<BR>
+functional programs: function level reasoning, linear equestions, and
+<BR>
+extended definitions. Lect. Notes in Comp. Sci., 1981, v.  107, p. 1-43.
+<BR>
+Имеется перевод в сборнике статей &quot;Математическая логика в программировании&quot;
+<BR>
+(Москва, &quot;Мир&quot;, 1991).  Можно ли в ней что-то позаимствовать ?
+<BR>
+<P>Спасибо за внимание, Андрей Немытых.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0111.html">Andrei Klimov: "Seminar on Refal and supercompilation, 14 March 2000"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0109.html">Roman Gonin: "Re:Re:SCP's"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0109.html">Roman Gonin: "Re:Re:SCP's"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0109.html">Andrei P. Nemytykh: "Re: Re:Re:SCP's"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

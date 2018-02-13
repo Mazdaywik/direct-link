@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei Klimov (klimov@keldysh.ru)">
+<META NAME="Subject" CONTENT="Re: Refal interpreter">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal interpreter</H1>
+<HR>
+<P>
+<!-- received="Fri Jan 21 15:39:45 2005" -->
+<!-- isoreceived="20050121123945" -->
+<!-- sent="Fri, 21 Jan 2005 15:03:25 +0300" -->
+<!-- isosent="20050121120325" -->
+<!-- name="Andrei Klimov" -->
+<!-- email="klimov@keldysh.ru" -->
+<!-- subject="Re: Refal interpreter" -->
+<!-- id="025901c4ffb1$cdf02c20$0200a8c0@p4" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="018a01c4ffa6$da64a720$914c7cc1@copernik" -->
+<STRONG>Subject: </STRONG>Re: Refal interpreter<BR>
+<STRONG>From: </STRONG>Andrei Klimov (<EM>klimov@keldysh.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Jan 21 2005 - 15:03:25 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#662">[ date ]</A>
+<A HREF="index.html#662">[ thread ]</A>
+<A HREF="subject.html#662">[ subject ]</A>
+<A HREF="author.html#662">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0663.html">Andrei Klimov: "Re: Refal interpreter (реплика по koi-rvs unicode"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0661.html">Leonid Belous: "Refal interpreter"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0661.html">Leonid Belous: "Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0663.html">Andrei Klimov: "Re: Refal interpreter (реплика по koi-rvs unicode"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0661.html">Andrei Klimov: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+From: &quot;Leonid Belous&quot; &lt;belous@ilt.kharkov.ua&gt;
+<BR>
+<EM>&gt; Я думаю, что переписка далее будет интересна всем, но предлагаю,
+</EM><BR>
+<EM>&gt; начиная с этого письма, поменять кодировку в нашей переписке с Юникода (utf-8) на koi-8r, поскольку те, кто читает почту в UNIX не 
+</EM><BR>
+<EM>&gt; в режиме X-ов (а я думаю, что такие есть :-) ) произносят (про себя) некоторые слова и не смотрят этих писем. Для фиксации этого 
+</EM><BR>
+<EM>&gt; момента я также сменил и Subj.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Антон, то что Вы делаете, действительно интересно.
+</EM><BR>
+<EM>&gt; Мне лично хотелось бы сначала получить ответ на следующие вопросы.
+</EM><BR>
+<EM>&gt; 1. Что представляет реализуемое Вами подмножество языка Рефал и его синтаксис.
+</EM><BR>
+<EM>&gt; 2. Вы обещали поменять комментарии на более читабельный (нежели &quot;ломаный Эсперанто&quot; :-) ) язык. Но относится ли это намерение к 
+</EM><BR>
+<EM>&gt; идентификаторам в программе? Глядя на имя  &quot;nterp_preni_nomon&quot;, возникает какая-то ассоцияция с интерпретацией, но не более. 
+</EM><BR>
+<EM>&gt; Кстати, мне часто попадалось имя &quot;kuranta&quot;, что оно означает?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; С уважением,
+</EM><BR>
+<EM>&gt; --Леонид Белоус
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; ----- Исходное сообщение ----- 
+</EM><BR>
+<EM>&gt; От: &quot;A.A.Vladimirov&quot; &lt;vladimi@mech.math.msu.su&gt;
+</EM><BR>
+<EM>&gt; Кому: &lt;belous@ilt.kharkov.ua&gt;
+</EM><BR>
+<EM>&gt; Отправлено: 21 января 2005 г. 10:27
+</EM><BR>
+<EM>&gt; Тема: Re: Re[2]: RAFAL &amp; JAVA
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;&gt; Здравствуйте.
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; Целью программы zamena.ref является демонстрация функции interp, имеющей
+</EM><BR>
+<EM>&gt;&gt; формат &quot;k/interp/ имя_файла.&quot; и изменяющей работающую рефал-машину
+</EM><BR>
+<EM>&gt;&gt; согласно программе из файла, имя которой является аргументом. В файле
+</EM><BR>
+<EM>&gt;&gt; zamena.ref происходит &quot;переинтерпретация&quot; его самого после ввода пустой
+</EM><BR>
+<EM>&gt;&gt; строки.
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; Здесь следует отметить следующую особенность реализации: функцию можно
+</EM><BR>
+<EM>&gt;&gt; определять повторно. Например, код
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; funk e/text/ = e/text/
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; funk e/text/ =
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; является вполне допустимым - при этом функция &quot;funk&quot; будет заменять
+</EM><BR>
+<EM>&gt;&gt; любое выражение на пустое (первоначальное же определение её как
+</EM><BR>
+<EM>&gt;&gt; тождественной &quot;убито&quot; в ходе переопределения).
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; &gt; ввел строку из 1111111111, потом 22222222. На каждый ENTER повторяла
+</EM><BR>
+<EM>&gt;&gt; &gt; введенное с переходом в ожидание ввода с новой строки.
+</EM><BR>
+<EM>&gt;&gt; &gt;
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; Так и должно быть.
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; &gt; &gt;4) провести &quot;горячее&quot; перетаскивание знака &quot;#&quot; на одну строку вверх,
+</EM><BR>
+<EM>&gt;&gt; &gt; &gt;после чего ввести __пустую__ строку;
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; Имеется в виду следующее. После ввода того же 222222:
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; 1) Файл zamena.ref открывается на редактирование (НЕ ВЫХОДЯ из
+</EM><BR>
+<EM>&gt;&gt; работающего скрипта - например, в параллельной консоли), символ
+</EM><BR>
+<EM>&gt;&gt; комментария из последней строки убирается, а на предпоследнюю, наоборот,
+</EM><BR>
+<EM>&gt;&gt; ставится. После чего изменения сохраняются.
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; 2) В консоли, где работает первоначальный скрипт, вводится пустая
+</EM><BR>
+<EM>&gt;&gt; строка. В результате выводится текст 'Zamena fajla' (который Вы и
+</EM><BR>
+<EM>&gt;&gt; видели) - и функции машины изменяются согласно новому положению дел в
+</EM><BR>
+<EM>&gt;&gt; файле zamena.ref.
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; 3) Снова вводится что-то типа 1111111. Но теперь оно уже не
+</EM><BR>
+<EM>&gt;&gt; продублируется, а просто произойдёт выход из программы.
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt; С уважением,
+</EM><BR>
+<EM>&gt;&gt; Антон Владимиров
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0663.html">Andrei Klimov: "Re: Refal interpreter (реплика по koi-rvs unicode"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0661.html">Leonid Belous: "Refal interpreter"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0661.html">Leonid Belous: "Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0663.html">Andrei Klimov: "Re: Refal interpreter (реплика по koi-rvs unicode"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0661.html">Andrei Klimov: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Fri Jan 21 2005 - 15:39:54 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

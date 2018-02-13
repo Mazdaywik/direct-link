@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.net)">
+<META NAME="Subject" CONTENT="Re: Refal6 для Linux скомпилирован">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal6 для Linux скомпилирован</H1>
+<HR>
+<P>
+<!-- received="Mon Nov  5 20:53:14 2001" -->
+<!-- isoreceived="20011105175314" -->
+<!-- sent="Mon, 5 Nov 2001 15:53:56 +0300" -->
+<!-- isosent="20011105125356" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.net" -->
+<!-- subject="Re: Refal6 для Linux скомпилирован" -->
+<!-- id="004e01c165f9$9a895c80$110d040a@Bagirra" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="20011105120059.A283@BelCanto" -->
+<STRONG>Subject: </STRONG>Re: Refal6 для Linux скомпилирован<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.net</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Nov 05 2001 - 15:53:56 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#263">[ date ]</A>
+<A HREF="index.html#263">[ thread ]</A>
+<A HREF="subject.html#263">[ subject ]</A>
+<A HREF="author.html#263">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0264.html">Andrey V Stolyarov: "Re: Refal6 для Linux скомпилирован"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0262.html">Mike Potanin: "Re: Ядро Рефал"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0260.html">dmsidorov@mtu-net.ru: "Refal6 для Linux скомпилирован"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0264.html">Andrey V Stolyarov: "Re: Refal6 для Linux скомпилирован"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0260.html">Arkady Klimov: "Re: Refal6 для Linux скомпилирован"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+----- Original Message -----
+<BR>
+From: &lt;dmsidorov@mtu-net.ru&gt;
+<BR>
+To: Arkady Klimov &lt;klark@bagirra.net&gt;; refal &lt;refal@botik.ru&gt;
+<BR>
+Sent: Monday, November 05, 2001 12:00 PM
+<BR>
+Subject: Refal6 для Linux скомпилирован!
+<BR>
+<P><P>| Во всяком случае, если переделать макрос в подставляемую функцию,
+<BR>
+|
+<BR>
+| inline void cvalue2float_fun (cvalue cc, float f)
+<BR>
+| {  cvalue2float(cc,f);
+<BR>
+|    };
+<BR>
+|
+<BR>
+| протесты компилятора прекращаются. Так, наверно, и надежнее, поскольку
+<BR>
+| у макросов контроля нет.
+<BR>
+|
+<BR>
+| ri скомпилирован, правда, компоновщик выдал предупреждение:
+<BR>
+|
+<BR>
+| rbeval.o: In function `rf_eval':
+<BR>
+| /home/dima/archive/refal/c1/rbeval.c:218: the `gets' function is dangerous and should not be used.
+<BR>
+<P>Наверно, надо заменить gets на что-то другое или написать свою.
+<BR>
+<P>|
+<BR>
+| При первом запуске ri было выдано предупреждение
+<BR>
+|
+<BR>
+| EVAL: *** Unexpected FAIL
+<BR>
+|
+<BR>
+| дальше нормальное приглашение коммандной строки.
+<BR>
+|
+<BR>
+| Теперь, когда Рефал скомпилирован, прошу советов, с чего лучше начать его
+<BR>
+| изучение, и как тестировать. Полный список исправлений для компиляции под
+<BR>
+| Linux пришлю позднее, когда все проверю.
+<BR>
+<P>К сожалению, ни регулярной технологии тестирования, ни набора тестов
+<BR>
+в свое время сформировано на было. Могу посоветовать только вести тестирование
+<BR>
+&quot;кругами&quot; от простого к сложному. Самое простое - пользоваться исполняемым
+<BR>
+файлом ri как &quot;фильтром&quot;, переводящим вызовы функций, записанные
+<BR>
+во входном файле в их значения, передаваемые в выходной файл.
+<BR>
+Таким способом можно вызывать любые встроенные функции.
+<BR>
+Входной файл указывает первый параметр командной строки. (Точнее,
+<BR>
+начало этого параметра до первого &quot;+&quot;.) Умолчание - файл &quot;default.rex&quot;.
+<BR>
+Можно попробовать ri con. Ввод будет с терминала.
+<BR>
+Чтобы видеть результаты укажите ключ: ri con -s или ri con -r.
+<BR>
+Если после этого набрать &lt;ADD 1 2&gt; [ENTER], то выдается 3.
+<BR>
+Когда этот режим более менее проверен, дальше можно запускать инициатор i.rex и
+<BR>
+в режиме &quot;ask&quot; (вызов ri i+*ask, со звездочкой задается стартовая функция)
+<BR>
+задавать отдельные вызовы функций в диалоге.
+<BR>
+Дальше запускать другие откомпилированные модули.
+<BR>
+Дальше запускать компилятор.
+<BR>
+И т.д. Где-то при тестировании небольших модулей потестировать режим отладки.
+<BR>
+Посмотреть как реагирует система на Ctrl-C. Как отвечает на команды отладки.
+<BR>
+Особое внимание следует уделить тестированию тех функций, в коде которых
+<BR>
+делались какие-то изменения при адаптации.
+<BR>
+Вот в общем-то все. Будут вопросы - буду рад ответить.
+<BR>
+Аркадий
+<BR>
+<P>|
+<BR>
+| Дмитрий
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0264.html">Andrey V Stolyarov: "Re: Refal6 для Linux скомпилирован"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0262.html">Mike Potanin: "Re: Ядро Рефал"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0260.html">dmsidorov@mtu-net.ru: "Refal6 для Linux скомпилирован"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0264.html">Andrey V Stolyarov: "Re: Refal6 для Linux скомпилирован"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0260.html">Arkady Klimov: "Re: Refal6 для Linux скомпилирован"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

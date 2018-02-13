@@ -1,0 +1,365 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: About new Refal+ release">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: About new Refal+ release</H1>
+<HR>
+<P>
+<!-- received="Thu Dec  9 14:32:37 1999 MSK" -->
+<!-- sent="Thu, 09 Dec 1999 14:32:05 +0300" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: About new Refal+ release" -->
+<!-- id="384F9335.D72B97FC@msu.ru" -->
+<!-- inreplyto="384E8535.2C730D6A@msu.ru" -->
+<STRONG>Andrey Slepuhin</STRONG> (<A HREF="mailto:pooh@msu.ru?subject=Re:%20About%20new%20Refal%2B%20release"><EM>pooh@msu.ru</EM></A>)<BR>
+<EM>Thu, 09 Dec 1999 14:32:05 +0300</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#94">[ date ]</A>
+<A HREF="index.html#94">[ thread ]</A>
+<A HREF="subject.html#94">[ subject ]</A>
+<A HREF="author.html#94">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0095.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0093.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0092.html">Andrey Slepuhin: "About new Refal+ release"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0095.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Arkady Klimov wrote:
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Было бы неплохо кое-где слегка прокомментировать.
+</EM><BR>
+<EM>&gt; Я попытаюсь это сделать. И вопросы задать.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; ----- Original Message -----
+</EM><BR>
+<EM>&gt; From: Andrey Slepuhin &lt;<A HREF="mailto:pooh@msu.ru?subject=Re:%20About%20new%20Refal%2B%20release">pooh@msu.ru</A>&gt;
+</EM><BR>
+<EM>&gt; To: &lt;<A HREF="mailto:refal-plus@botik.ru?subject=Re:%20About%20new%20Refal%2B%20release">refal-plus@botik.ru</A>&gt;
+</EM><BR>
+<EM>&gt; Sent: Wednesday, December 08, 1999 7:20 PM
+</EM><BR>
+<EM>&gt; Subject: About new Refal+ release
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; День добрый всем!
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Я закончил работу над очередной версией Рефала+. То есть
+</EM><BR>
+<EM>&gt; &gt; дистрибутив под Linux можно выложить в любое время. Однако
+</EM><BR>
+<EM>&gt; &gt; я хочу задержать выкладывание дистрибутива до тех пор, пока
+</EM><BR>
+<EM>&gt; &gt; Сергей (Битюков) не проверит, что под Windows все работает
+</EM><BR>
+<EM>&gt; &gt; нормально. Заодно я хочу сделать анонс того, что я добавил,
+</EM><BR>
+<EM>&gt; &gt; чтобы было время все осмыслить и высказать замечания (если
+</EM><BR>
+<EM>&gt; &gt; таковые имеются).
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 1) Case-sensitivity.
+</EM><BR>
+<EM>&gt; &gt;    Новая версия Рефала+ по умолчанию является case-sensitive.
+</EM><BR>
+<EM>&gt; &gt;    Старые программы можно компилировать с ключиком -u (поднять
+</EM><BR>
+<EM>&gt; &gt;    имена в верхний регистр). Для новых программ есть два варианта
+</EM><BR>
+<EM>&gt; &gt;    работы со стандартными модулями:
+</EM><BR>
+<EM>&gt; &gt;    а) Имена стандартных модулей и имена функций записываются
+</EM><BR>
+<EM>&gt; &gt;       большими буквами;
+</EM><BR>
+<EM>&gt; &gt;    б) Имена стандартных модулей и имена функций записываются
+</EM><BR>
+<EM>&gt; &gt;       в mixed-case в соответствии с тем, как было описано в
+</EM><BR>
+<EM>&gt; &gt;       одном из моих предыдущих писем.
+</EM><BR>
+<EM>&gt; &gt;    Никаких опций компилятору задавать не требуется - имена
+</EM><BR>
+<EM>&gt; &gt;    распознаются автоматически. При этом нельзя, скажем, писать
+</EM><BR>
+<EM>&gt; &gt;    имена модулей большими буквами, а имена функций в mixed-case.
+</EM><BR>
+<EM>&gt; Не слишком ли умный становиться компилятор? Боюсь это еще нам боком выйдет.
+</EM><BR>
+<P>Думаю, что нет. Все равно базовую библиотеку переписывать надо.
+<BR>
+<P><EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 2) Генерация виртуального кода.
+</EM><BR>
+<EM>&gt; &gt;    Новая версия Рефала+ может генерировать виртуальный код. Для
+</EM><BR>
+<EM>&gt; &gt;    этого нужно указать опцию -vc. Сгенерированный виртуальный код
+</EM><BR>
+<EM>&gt; &gt;    будет выведен в файл с расширением .rvc (Refal Virtual Code) в
+</EM><BR>
+<EM>&gt; &gt;    виде объектного выражения, которое может затем быть считано
+</EM><BR>
+<EM>&gt; &gt;    одним вызовом функции Read. Виртуальный код соответствует описанию
+</EM><BR>
+<EM>&gt; &gt;    в  статье &quot;Принципы реализации Рефала+&quot;) со следующими расширениями:
+</EM><BR>
+<EM>&gt; &gt;    а) Новые команды LEIS/LVIS/LES,REIS/RVIS/RES - семантика
+</EM><BR>
+<EM>&gt; &gt;       следующая (на примере LEIS/LVIS/LES):
+</EM><BR>
+<EM>&gt; &gt;       &lt; LEIS m : LES : C, S, D, E &gt;  =&gt;
+</EM><BR>
+<EM>&gt; &gt;         { S/m = Oe и Oe : S =S' } &lt; C, S', (LES : C, S') : D, E&gt;
+</EM><BR>
+<EM>&gt; &gt;       &lt; LVIS m : LES : C, S, D, E &gt;  =&gt;
+</EM><BR>
+<EM>&gt; &gt;         { S/m = Oe } &lt; LES : C, Oe : S, D, E&gt;
+</EM><BR>
+<EM>&gt; &gt;       &lt; LES : C, OtOe' : S, D, E &gt;  =&gt; { Oe' : S = S' } &lt; C, S', (LES :
+</EM><BR>
+<EM>&gt; &gt; C : S') D, E&gt;
+</EM><BR>
+<EM>&gt; &gt;       &lt; LES : C, p : S, D, E &gt;  =&gt; &lt; FAIL : [], S, D, E&gt;
+</EM><BR>
+<EM>&gt; - это оптимизированные команды удлинения. Используются в случае, когда
+</EM><BR>
+<EM>&gt; просмотренная часть (e1 в образце e1 sA e2) далее в теле функции не
+</EM><BR>
+<EM>&gt; используется.
+</EM><BR>
+<EM>&gt; (Если конечно, я это правильно понял. Андрей, поправь меня, если это не
+</EM><BR>
+<EM>&gt; так).
+</EM><BR>
+<P>Абсолютно точно. На самом деле я бы кое-что поменял в командах
+<BR>
+отщепления - уж больно они запутанные, и мне совсем не нравится
+<BR>
+требование, чтобы LEI/LE всегда были рядом. На самом деле все
+<BR>
+можно сделать более прозрачно с явными ALT'ами, и обойтись вообще
+<BR>
+без команд типа LEI. Если что - я могу подробно описать то, как я
+<BR>
+все это вижу.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;    б) Новые команды:
+</EM><BR>
+<EM>&gt; &gt;       PUSHEMP == PUSHQ []
+</EM><BR>
+<EM>&gt; - положить пустое выражение на стек
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;       PUSHBR m == PUSH m; BR
+</EM><BR>
+<EM>&gt; - вытащить m-й эл-т стека, взяв его в скобки
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;       MOVE -
+</EM><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; MOVE m n : C, Oe_0 : ... : Oe_n : S, D, E &gt; =&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; C, Oe_0 : ... : S/Oe_m : S, D, E &gt;
+<BR>
+<EM>&gt; - на место n-го эл-та стека поставить (n+1+m)-й (Странный номер! наверно,
+</EM><BR>
+<EM>&gt; не S/m, а ... ?)
+</EM><BR>
+<P>Ой, ну да конечно... S ведь у нас это не стек целиком...
+<BR>
+Естественно, имелся в виду m-й элемент. 
+<BR>
+Т.е. MOVE m n просто кладет m-й элемент стека на место n-го.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;       MOVEQ -
+</EM><BR>
+<EM>&gt; &gt;         &lt; MOVEQ n Oe : C, Oe_0 : ... : Oe_n : S, D, E &gt; =&gt;
+</EM><BR>
+<EM>&gt; &gt;           &lt; C, Oe_0 : ... : Oe : S, D, E &gt;
+</EM><BR>
+<EM>&gt; - поместить данное объектное выражение в стек в n-ю позицию (взамен старого
+</EM><BR>
+<EM>&gt; n-го эл-та)
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;       MOVEEMP == MOVEQ []
+</EM><BR>
+<EM>&gt; - непонятно ( не хватает числа n )
+</EM><BR>
+<P>Извиняюсь, очепятка :-)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEEMP n == MOVEQ n []
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;       SWAP -
+</EM><BR>
+<EM>&gt; &gt;         &lt; SWAP m n : C, Oe_0 : ... : Oe_m : ... : Oe_n : S, D, E &gt; =&gt;
+</EM><BR>
+<EM>&gt; &gt;           &lt; C, Oe_0 : ... : S/n : ... : S/m : S, D, E &gt;
+</EM><BR>
+<EM>&gt; - совсем непонятно. (Вообще-то, когда пишешь для людей, лучше использовать
+</EM><BR>
+<EM>&gt; русский язык).
+</EM><BR>
+<P>Просто поменять m-й и n-й элементы местами.
+<BR>
+<P><EM>&gt; И обязательно ли, что m&lt;n?
+</EM><BR>
+<P>Нет конечно. Я просто не знаю, как это правильно записать формально.
+<BR>
+<P><EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;       FUNFAIL Fname == PUSHQ Fname &quot;Unexpected fail&quot;; ERROR
+</EM><BR>
+<EM>&gt; &gt;       FUNEND == NOP , но всегда в конце функции.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;    в) Директивы:
+</EM><BR>
+<EM>&gt; &gt;       IMPORT/EXPORT/LOCAL FUNC/BOX/TABLE/VECTOR/STRING/CHANNEL -
+</EM><BR>
+<EM>&gt; &gt;       семантика очевидна.
+</EM><BR>
+<EM>&gt; А какой синтаксис? (Речь идет ведь не о рефале, а о виртуальном коде, да?)
+</EM><BR>
+<EM>&gt; Какая семантика LOCAL FUNC (в отличие от FUNC)? Это два слова?
+</EM><BR>
+<P>Просто FUNC нету. Т.е. синтаксис директивы _всегда_ содержит два
+<BR>
+слова - linkage class (не знаю, как это сказать по русски) и тип
+<BR>
+объекта.
+<BR>
+Это как раз спорное место, которое я хотел обсудить. Не стоит ли разбить
+<BR>
+каждую директиву на две?
+<BR>
+<P><EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 3) Функции ввода-вывода теперь правильно работают с символами-ссылками
+</EM><BR>
+<EM>&gt; Есть ли возможность управлять таблицей соответствий имя-ссылка (задать ее
+</EM><BR>
+<EM>&gt; начальное содержимое, например)? Получить ее конечное содержимое? Является
+</EM><BR>
+<EM>&gt; ли композиция ввод;вывод тождественной операцией. (Хотя бы на тех файлах,
+</EM><BR>
+<EM>&gt; которые сами получены выводом).
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 4) Подключен &quot;дырявый&quot; рефал и исправлены в нем ошибки. &quot;Дырявость&quot;
+</EM><BR>
+<EM>&gt; &gt;    контролируется переменной среды RFP_HOLECTRL, значение которой
+</EM><BR>
+<EM>&gt; &gt;    имеет вид
+</EM><BR>
+<EM>&gt; &gt;      RFP_HOLECTRL=l;r;s
+</EM><BR>
+<EM>&gt; &gt;    где l - процент дырок слева, r - процент дырок справа, s -
+</EM><BR>
+<EM>&gt; &gt;    минимальная длина результирующего выражения, для которой дырки
+</EM><BR>
+<EM>&gt; &gt;    разрешены. По умолчанию Рефал+ работает в &quot;не дырявом&quot; режиме.
+</EM><BR>
+<EM>&gt; &quot;Процент дырки&quot; - доля в процентах, которую составляет размер дырки от
+</EM><BR>
+<EM>&gt; размера самого выражения (?).
+</EM><BR>
+<P>Да. Процент от размера результата конкатенации.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 5) Теперь любую откомпилированную рефал-программу можно запускать
+</EM><BR>
+<EM>&gt; &gt;    со следующими опциями:
+</EM><BR>
+<EM>&gt; &gt;    -rfp-heapsize &lt;n&gt;    - задает размер heap'а в байтах
+</EM><BR>
+<EM>&gt; &gt;    -rfp-stacksize &lt;n&gt;   - задает размер стека в байтах
+</EM><BR>
+<EM>&gt; &gt;    -rfp-lholes &lt;n&gt;   \
+</EM><BR>
+<EM>&gt; &gt;    -rfp-rholes &lt;n&gt;   |  - задают &quot;дырявость&quot;
+</EM><BR>
+<EM>&gt; &gt;    -rfp-minholes &lt;n&gt; /
+</EM><BR>
+<EM>&gt; &gt;    -rfp-memstat         - разрешают печать статистики использования
+</EM><BR>
+<EM>&gt; &gt;                           памяти после окончания программы.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; 6) Разрешены комментарии, начинающиеся на //
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Всего доброго,
+</EM><BR>
+<EM>&gt; &gt; Андрей.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; Спасибо,
+</EM><BR>
+<EM>&gt; Аркадий.
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0095.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0093.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0092.html">Andrey Slepuhin: "About new Refal+ release"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0095.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Thu Dec 09 1999 - 14:32:38 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

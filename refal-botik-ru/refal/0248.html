@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: Компиляция Refal6 для Linu">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Компиляция Refal6 для Linu</H1>
+<HR>
+<P>
+<!-- received="Thu Nov  1 19:15:38 2001" -->
+<!-- isoreceived="20011101161538" -->
+<!-- sent="Mon, 29 Oct 2001 13:13:00 +0300" -->
+<!-- isosent="20011029101300" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: Компиляция Refal6 для Linu" -->
+<!-- id="20011029131300.A19905@glade.nmd.msu.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="20011028002637.B1615@BelCanto" -->
+<STRONG>Subject: </STRONG>Re: Компиляция Refal6 для Linu<BR>
+<STRONG>From: </STRONG>Andrey Slepuhin (<EM>pooh@msu.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Oct 29 2001 - 13:13:00 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#248">[ date ]</A>
+<A HREF="index.html#248">[ thread ]</A>
+<A HREF="subject.html#248">[ subject ]</A>
+<A HREF="author.html#248">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0249.html">Arkady Klimov: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0247.html">Arkady Klimov: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0246.html">dmsidorov@mtu-net.ru: "Re: Компиляция Refal6 для Linu"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0245.html">dmsidorov@mtu-net.ru: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0246.html">Andrey Slepuhin: "Re: Компиляция Refal6 для Linu"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Прошу прощения за несколько запоздалое письмо, просто я хотел бы немного
+<BR>
+прояснить ситуацию относительно ошибок.
+<BR>
+<P>On Sun, Oct 28, 2001 at 12:26:37AM +0400, dmsidorov@mtu-net.ru wrote:
+<BR>
+<EM>&gt; On Fri, Oct 26, 2001 at 08:28:50PM +0400, Arkady Klimov wrote:
+</EM><BR>
+<EM>&gt; &gt; Здравствуйте, Дмитрий,
+</EM><BR>
+<EM>&gt; &gt; с указанной Вами ошибкой я в некоторой растерянности. (На С
+</EM><BR>
+<EM>&gt; &gt; я уже более 5 лет не работаю). Почему-то до сих пор ни один
+</EM><BR>
+<EM>&gt; &gt; компилятор в этом месте не брыкался. Что сие означает? Верно
+</EM><BR>
+<EM>&gt; &gt; ли, что по стандарту языка правая часть инициализатора обязана
+</EM><BR>
+<EM>&gt; &gt; быть константой? И почему stderr - не константа? 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Здравствуйте, Аркадий.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Мои познания в C++ весьма невелики, как инженер всегда старался 
+</EM><BR>
+<EM>&gt; использовать Паскаль или что-нибудь скриптовое, но вот что написано 
+</EM><BR>
+<EM>&gt; в FAQ к gcc2.95:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Why can't I initialize a static variable with stdin?
+</EM><BR>
+<EM>&gt;    This has nothing to do with gcc, but people ask us about it a lot. 
+</EM><BR>
+<EM>&gt;    Code like this:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt;    #include &lt;stdio.h&gt;
+</EM><BR>
+<EM>&gt;    FILE *yyin = stdin;
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt;    will not compile with GNU libc (Linux libc6), because stdin is not a 
+</EM><BR>
+<EM>&gt;    constant. This was done deliberately, in order for there to be no 
+</EM><BR>
+<EM>&gt;    limit on the number of open FILE objects. It is surprising for people 
+</EM><BR>
+<EM>&gt;    used to traditional Unix C libraries, but it is permitted by the C 
+</EM><BR>
+<EM>&gt;    standard.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Так что, получается, под Linux это будет считаться ошибкой как минимум 
+</EM><BR>
+<EM>&gt; до выхода новой glibc, а может, и дальше.
+</EM><BR>
+<EM>&gt; Кроме того, glibc теперь включает в себя определения myulong и myushort 
+</EM><BR>
+<EM>&gt; (заголовок &lt;sys/types.h&gt;, включаемый через &lt;stdlib.h&gt;), полностью 
+</EM><BR>
+<EM>&gt; идентичные тем, что в исходниках Рефала, поэтому ошибки не возникает, 
+</EM><BR>
+<EM>&gt; но выдаются предупреждения об их переопределении. Чтобы избежать 
+</EM><BR>
+<EM>&gt; двойного определения, возможно, следует использовать препроцессорную 
+</EM><BR>
+<EM>&gt; директиву вроде
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; #if __GLIBC__ &gt;= 2
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; но я пока не смотрел, начиная с какой версии это появилось.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; В принципе, можно, наверно, поступить и так:
+</EM><BR>
+<EM>&gt; &gt; 
+</EM><BR>
+<EM>&gt; &gt; 1.удалить эту строку 43 rfstor.h
+</EM><BR>
+<EM>&gt; &gt; 
+</EM><BR>
+<EM>&gt; &gt; 2.заменить строку 40 rfstor.h на строку:
+</EM><BR>
+<EM>&gt; &gt; EXT FILE *    stdtrc;           /* File for debug information       */
+</EM><BR>
+<EM>&gt; &gt; (было:
+</EM><BR>
+<EM>&gt; &gt; extern FILE *    stdtrc;           /* File for debug information       */
+</EM><BR>
+<EM>&gt; &gt; )
+</EM><BR>
+<EM>&gt; &gt; 
+</EM><BR>
+<EM>&gt; &gt; 3. Вставить инициализацию
+</EM><BR>
+<EM>&gt; &gt;     stdtrc = stderr;
+</EM><BR>
+<EM>&gt; &gt; первым оператором в функцию initstor (файл rfstor.c, строка 256)
+</EM><BR>
+<EM>&gt; &gt; (эта функция вызывается первой в функции main).
+</EM><BR>
+<P><P>С предопределенными потоками ввода-вывода все достаточно просто -
+<BR>
+в описании стандартной библиотеки языка C нигде не указывается, что
+<BR>
+три предопределенных потока ввода-вывода (stdin, stdout и stderr) должны
+<BR>
+являться константными объектами, поэтому имплементация имеет право
+<BR>
+определять их по своему усмотрению, и, следовательно, использование
+<BR>
+их в качестве константных инициализаторов является некорректным. Поэтому
+<BR>
+исправление, предложенное Аркадием, является единственно правильным.
+<BR>
+Кстати, я на эти грабли в свое время наступил со старой реализацией
+<BR>
+Рефала+.
+<BR>
+<P><P><EM>&gt; 
+</EM><BR>
+<EM>&gt; Этот способ сработал, после исправлений rfstor.c скомпилировался 
+</EM><BR>
+<EM>&gt; нормально. Теперь остались нескомпилированы rfarm.c и rbarm.c. 
+</EM><BR>
+<EM>&gt; В rbarm.c строка 252 содержит определение matherr, конфликтующее с 
+</EM><BR>
+<EM>&gt; аналогичным в &lt;math.h&gt;:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; # ifdef __cplusplus
+</EM><BR>
+<EM>&gt; extern int matherr __P ((struct __exception *__exc));
+</EM><BR>
+<EM>&gt; # else
+</EM><BR>
+<EM>&gt; extern int matherr __P ((struct exception *__exc));
+</EM><BR>
+<EM>&gt; # endif
+</EM><BR>
+<P>Здесь несколько хуже: функция matherr() не является частью стандартной
+<BR>
+библиотеки языка C, ее корни растут из интерфейсов Unix System V,
+<BR>
+однако в текущем стандарте Unix98 она отсутствует. В частности, в
+<BR>
+руководстве по glibc явно сказано:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;In the System V math library, the user-defined function `matherr' is
+<BR>
+called when certain exceptions occur inside math library functions.
+<BR>
+However, the Unix98 standard deprecates this interface.  We support it
+<BR>
+for historical compatibility, but recommend that you do not use it in
+<BR>
+new programs.
+<BR>
+<P>То есть использовать эту функцию не рекомендуется. Вместо этого
+<BR>
+предлагается использовать стандартные механизмы обработки сигналов -
+<BR>
+при исключительных ситуациях во время операций с плавающей точкой
+<BR>
+вырабатывается сигнал SIGFPE.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; Сообщение об ошибке в rfarm.c совершенно непонятно:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; rfarm.c: In function `rf_cgetnumb':
+</EM><BR>
+<EM>&gt; rfarm.c:289: Unable to generate reloads for:
+</EM><BR>
+<EM>&gt; (insn 45 43 47 (parallel[
+</EM><BR>
+<EM>&gt;             (set (reg:SI 0 %eax)
+</EM><BR>
+<EM>&gt;                 (fix:SI (fix:SF (reg/v:SF 0 %eax))))
+</EM><BR>
+<EM>&gt;             (clobber (mem:HI (plus:SI (reg:SI 6 %ebp)
+</EM><BR>
+<EM>&gt;                         (const_int -2 [0xfffffffe])) 0))
+</EM><BR>
+<EM>&gt;             (clobber (mem:HI (plus:SI (reg:SI 6 %ebp)
+</EM><BR>
+<EM>&gt;                         (const_int -4 [0xfffffffc])) 0))
+</EM><BR>
+<EM>&gt;             (clobber (mem:SI (plus:SI (reg:SI 6 %ebp)
+</EM><BR>
+<EM>&gt;                         (const_int -8 [0xfffffff8])) 0))
+</EM><BR>
+<EM>&gt;             (clobber (scratch:HI))
+</EM><BR>
+<EM>&gt;         ] ) 145 {fix_truncsfsi2+1} (insn_list 92 (nil))
+</EM><BR>
+<EM>&gt;     (expr_list:REG_EQUIV (mem:SI (reg/v:SI 3 %ebx) 0)
+</EM><BR>
+<EM>&gt;         (expr_list:REG_DEAD (reg/v:SF 0 %eax)
+</EM><BR>
+<EM>&gt;             (expr_list:REG_UNUSED (scratch:HI)
+</EM><BR>
+<EM>&gt;                 (nil)))))
+</EM><BR>
+<EM>&gt; make: *** [rfarm.o] Error 1
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Что делать с определением matherr в rbarm.c, я еще мог бы попробовать 
+</EM><BR>
+<EM>&gt; докопаться, но насчет rfarm.c никаких идей нет. Я еще не подписан, поэтому, 
+</EM><BR>
+<EM>&gt; если есть что подсказать, пишите не только в рассылку, но и на мой адрес.
+</EM><BR>
+<P>Здесь однозначно ошибка компилятора, который не смог справиться с перегрузкой
+<BR>
+значений регистров (в силу малого их количества в x86 архитектуре). В качестве
+<BR>
+воркэраунда вокруг таких ситуаций обычно достаточно немного потасовать код
+<BR>
+функции, не меняя ее смысл. Хотя лично я посоветовал бы переходить на
+<BR>
+gcc-3.0.2. По крайней мере многие вещи там сделаны идеологически намного более
+<BR>
+правильно.
+<BR>
+<P>Всего доброго,
+<BR>
+Андрей.
+<BR>
+<P><PRE>
+-- 
+A right thing should be simple (tm)
+</PRE>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0249.html">Arkady Klimov: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0247.html">Arkady Klimov: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0246.html">dmsidorov@mtu-net.ru: "Re: Компиляция Refal6 для Linu"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0245.html">dmsidorov@mtu-net.ru: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0246.html">Andrey Slepuhin: "Re: Компиляция Refal6 для Linu"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

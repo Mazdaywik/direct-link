@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: SciTE as graphic user interface for Refal">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: SciTE as graphic user interface for Refal</H1>
+<HR>
+<P>
+<!-- received="Fri Jun 20 21:42:09 2003" -->
+<!-- isoreceived="20030620174209" -->
+<!-- sent="Fri, 20 Jun 2003 20:47:13 +0400" -->
+<!-- isosent="20030620164713" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: SciTE as graphic user interface for Refal" -->
+<!-- id="005a01c3374b$99c4eb00$07aee8c1@botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="007c01c3359e$6329e220$013b7cc1@ilt.kharkov.ua" -->
+<STRONG>Subject: </STRONG>Re: SciTE as graphic user interface for Refal<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Jun 20 2003 - 20:47:13 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#325">[ date ]</A>
+<A HREF="index.html#325">[ thread ]</A>
+<A HREF="subject.html#325">[ subject ]</A>
+<A HREF="author.html#325">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0326.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0324.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0324.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0326.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0324.html">Sergei M. Abramov: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P><EM>&gt; Сережа, в принципе все более или менее ясно.
+</EM><BR>
+<EM>&gt; Неясно одно, а кто бы это все взял и сделал :-).
+</EM><BR>
+<P>A student
+<BR>
+<P>(люблю язык супостатов за артикли! ;-)
+<BR>
+<P><EM>&gt; Я думаю, что эта тема годится не только для курсовой, но и для дипломной
+</EM><BR>
+<EM>&gt; работы.
+</EM><BR>
+<P>Очень мелкая работа. Хотя, конечно, все дело в оснастке.
+<BR>
+<P>Например, имеется программа (лексер+парсер):
+<BR>
+<P>&nbsp;&nbsp;&nbsp;Рефал Плюсс-файлы ==&gt; Лексер-Парсер ==&gt; АбстрСинтаксис
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(РефалВыражение)
+<BR>
+<P>и препроцессор для версии модуля под отладну этп не более чем растановка
+<BR>
+перед и после каждой операции (просваивания, перестройки) вызова встроенной
+<BR>
+(машинной) функции:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&lt;MaybeDebug s.Word-Имя-модуля
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.Номер-Точки-Останова
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( (s.Word-Тип-и-Имя-Переменной
+<BR>
+e.Значение-этой-переменной)...)
+<BR>
+<EM>    &gt;
+</EM><BR>
+<P>Еще надо породить табличку (взаимнооднозначное соответсвие):
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.Word-Имя-модуля s.Номер-Точки-Останова
+<BR>
+&lt;==&gt; s.Word-Имя-файла s.Номер-Строки s.Номер-Колонки
+<BR>
+<P>И после этого написать:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-- написать поддержку перечисленных в прошлом письме операций
+<BR>
+установки/снятия брекпоинтов, выполнения пошаговые (с погружением в функцию
+<BR>
+или нет).  Эта подержка должна передавать в доступное для MaybeDebug место
+<BR>
+информацию о том, для каких пар s.Word-Имя-модуля и s.Номер-Точки-Останова
+<BR>
+заказана отладка;
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-- реализовать ф-цию MaybeDebug: если для пары s.Word-Имя-модуля и
+<BR>
+s.Номер-Точки-Останова  не заказана отладка -- возврат из функции; иначе
+<BR>
+встаем, ставим подкраску в SciTE и вызываем диалоговое окно, показываем для
+<BR>
+каких переменных какие значения известны...
+<BR>
+<P>Студент может такое сделать за разумное время.
+<BR>
+<P>Сергей
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0326.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0324.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0324.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0326.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0324.html">Sergei M. Abramov: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

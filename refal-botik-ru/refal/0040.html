@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ abstract syntax">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ abstract syntax</H1>
+<HR>
+<P>
+<!-- received="Fri Nov 26 16:45:01 1999" -->
+<!-- isoreceived="19991126134501" -->
+<!-- sent="Fri, 26 Nov 1999 16:14:36 +0300" -->
+<!-- isosent="19991126131436" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: Refal+ abstract syntax" -->
+<!-- id="383E87BC.AE3233A8@msu.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="002b01bf37f2$ab149790$97925bc3@bagirra.rinet.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal+ abstract syntax<BR>
+<STRONG>From: </STRONG>Andrey Slepuhin (<EM>pooh@msu.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Nov 26 1999 - 16:14:36 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#40">[ date ]</A>
+<A HREF="index.html#40">[ thread ]</A>
+<A HREF="subject.html#40">[ subject ]</A>
+<A HREF="author.html#40">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0041.html">Sergei Romanenko: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0039.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0037.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0043.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0037.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый!
+<BR>
+<P>Насчет &quot;трех источников и трех составных частей&quot;:
+<BR>
+похоже, что это t.Pattern, t.Format и t.Result :-)
+<BR>
+<P>Семантику, на мой взгляд, нужно понимать так:
+<BR>
+<P>1) t.Pattern сравнивает текущее значение результата с образцом,
+<BR>
+изменяя при этом значения переменных. Текущее значение результата
+<BR>
+при этом не изменяется (в Рефале+ оно сейчас обнуляется).
+<BR>
+Т.е. если R - результатное выражение, то запись вида
+<BR>
+&nbsp;&nbsp;R : e1, R : e2
+<BR>
+можно представить как
+<BR>
+<P>t.Result t.Pattern t.Pattern
+<BR>
+&nbsp;&nbsp;&nbsp;R        e1       e2
+<BR>
+<P>2) t.Format запихивает текущее значение результата в жесткий образец,
+<BR>
+изменяя при этом значения переменных. Текущее значение результата
+<BR>
+при этом не изменяется (в Рефале+ оно сейчас обнуляется).
+<BR>
+Т.е. если R - результатное выражение, то запись вида
+<BR>
+&nbsp;&nbsp;R :: e1, R :: e2
+<BR>
+можно представить как
+<BR>
+<P>t.Result t.Format t.Format
+<BR>
+&nbsp;&nbsp;&nbsp;R        e1       e2
+<BR>
+<P>3) С t.Result дело обстоит чуть-чуть сложнее. Рассмотрим
+<BR>
+последовательность
+<BR>
+t.Result t.Block
+<BR>
+Вопрос: будет ли вычисление t.Block заменять значение результата
+<BR>
+или конкатенироваться с уже существующим? Хотелось бы иметь и то
+<BR>
+и другое. Предложение: ввести тег &quot;Flush&quot;, который будет сбрасывать
+<BR>
+текущее значение результата. Тогда t.Result и t.Block будут
+<BR>
+всегда конкатенироваться с текущим результатом.
+<BR>
+<P>То есть, в гипотетическом  Рефале-X (с точки зрения существующих
+<BR>
+рефалов приведенный ниже код некорректный, хотя интуитивно понятный)
+<BR>
+<P>'a' {'b';}    -&gt;    t.Result t.Block
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'a'    {'b';}
+<BR>
+&nbsp;&nbsp;
+<BR>
+'a', {'b';}    -&gt;    t.Result &quot;Flush&quot; t.Block
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'a'             {'b';}
+<BR>
+<P>Таким образом любая запятая будет переходить во &quot;Flush&quot;
+<BR>
+(за исключением возможных оптимизаций - см. ниже)
+<BR>
+Сейчас в Рефале+ перед запятой выходной формат должен быть
+<BR>
+пустым, т.е. если перед запятой стоит результатное выражение R
+<BR>
+с непустым выходным форматом, то надо писать, скажем, R::e,
+<BR>
+что, в общем-то не очень эстетично.
+<BR>
+Замечание. Выражение вида R : e1, R : e2 дословно преобразуется в
+<BR>
+<P>t.Result t.Pattern &quot;Flush&quot; t.Result t.Pattern
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;R        e1                R        e2
+<BR>
+<P>хотя может быть соптимизировано до
+<BR>
+<P>t.Result t.Pattern t.Pattern
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;R        e1       e2
+<BR>
+<P>Далее. &quot;Not&quot; все-таки относится к e.Statement и запись должна быть
+<BR>
+&quot;Not&quot; (e.Statement)
+<BR>
+Тогда 
+<BR>
+&quot;Not&quot; (&quot;Not&quot; (e.Statement))
+<BR>
+имеет вполне понятную семантику.
+<BR>
+<P>В целом, конечно, синтаксис получается шире, чем позволяют существующие
+<BR>
+рефалы.
+<BR>
+В выходные попробую еще подумать (в частности мне все-таки не нравятся
+<BR>
+метки), а пока переключаюсь на текущие дела.
+<BR>
+<P>Всего доброго,
+<BR>
+Андрей.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0041.html">Sergei Romanenko: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0039.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0037.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0043.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0037.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

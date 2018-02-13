@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Leonid Belous (belous@ilt.kharkov.ua)">
+<META NAME="Subject" CONTENT="Re: Re[2]: RAFAL &amp; JAVA">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Re[2]: RAFAL &amp; JAVA</H1>
+<HR>
+<P>
+<!-- received="Wed Jan 19 17:29:59 2005" -->
+<!-- isoreceived="20050119142959" -->
+<!-- sent="Wed, 19 Jan 2005 16:26:17 +0200" -->
+<!-- isosent="20050119142617" -->
+<!-- name="Leonid Belous" -->
+<!-- email="belous@ilt.kharkov.ua" -->
+<!-- subject="Re: Re[2]: RAFAL &amp; JAVA" -->
+<!-- id="003901c4fe33$1cd31800$914c7cc1@copernik" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="1105956460.4395.29.camel@shkal" -->
+<STRONG>Subject: </STRONG>Re: Re[2]: RAFAL & JAVA<BR>
+<STRONG>From: </STRONG>Leonid Belous (<EM>belous@ilt.kharkov.ua</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Jan 19 2005 - 17:26:17 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#657">[ date ]</A>
+<A HREF="index.html#657">[ thread ]</A>
+<A HREF="subject.html#657">[ subject ]</A>
+<A HREF="author.html#657">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0658.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0656.html">Andrei Klimov: "Computer Algebra Seminar on January 26"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0648.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0658.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0643.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0648.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0658.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0659.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый вечер, всем!
+<BR>
+<P><EM>&gt; Ладно уж, выложу карты на стол... От нечего делать я попробовал заняться
+</EM><BR>
+Искренне завидую людям, у которых может быть такое состояние души ... :-)
+<BR>
+<P><EM>&gt; написанием такого рода интерпретатора. Результат - в присоединённом tgz-
+</EM><BR>
+<EM>&gt; файле (под Linux точно собирается; под *BSD - не проверял, но причины,
+</EM><BR>
+<EM>&gt; которые мешали бы сборке, мне неизвестны; про Windows(TM) ничего не могу
+</EM><BR>
+<EM>&gt; сказать). Всем желающим предлагается посмотреть, что получится, если:
+</EM><BR>
+Антон, хочу заранее извиниться за возможную свою неумелость, но ...
+<BR>
+провести предлагавшиеся эксперименты с Вашим хозяйством как с &quot;черным ящиком&quot; мне не удалось.
+<BR>
+Напрямую (так, чтобы у Вас чего-нибудь не менять) у меня не собирается не только под FreeBSD, но и под тремя вариантами Linux (ASP, ALT, Mandrake, Debian).
+<BR>
+С грехом пополам (убрав в makefile параметр, вызываший ругань -mtune=pentium3 ) удалось собрать под одним из Linux, но запустить zamena.ref в режиме скрипта не удается (ругань типа bad interpreter). Казалось бы, должен был проработать из командной строки эквивалентный запуск (с удалением первых трех строк в zamena.ref)
+<BR>
+<EM>&gt;refal zamena.ref
+</EM><BR>
+<P>Но в этом случае выдается сообщение: Eraro: apliko je sendeterminita funkcio.
+<BR>
+Пробовал давать &gt;refal test , где файл состоит из одной строчки из 4-х единиц, 
+<BR>
+получил сообщение: Dosiero z.ref, linio 1: malbona determino de objekto.
+<BR>
+<P>Антон, наверное бы я разобрался и подправил кое-где, кое-что в Вашем &quot;черном ящике&quot; или в настройках Linux, но я быстро прекратил эти попытки по следующей причине. Нникак не умаляя возможной оригинальности Вашей разработки (содержащей сотни строк на С), хочу остановиться на одном негативном моменте.
+<BR>
+<P>Комментарии написаны на языке, как я понимаю, типа Esperanto.
+<BR>
+Вот фрагмент из ваших текстов:
+<BR>
+-----------------------------------------------------------------------
+<BR>
+/*
+<BR>
+* Funkcio &quot;interp_eraro&quot; skribas priskribon de eraro, aperanta dum
+<BR>
+* interpretado.
+<BR>
+*/
+<BR>
+<P>void interp_eraro (int ern) {
+<BR>
+<P>&nbsp;switch (ern) {
+<BR>
+&nbsp;&nbsp;case 1:
+<BR>
+&nbsp;&nbsp;&nbsp;fprintf (stderr, &quot;\n%s %s, %s %d: %s.\n&quot;,
+<BR>
+&nbsp;&nbsp;&nbsp;gettext (&quot;Dosiero&quot;), dosiero, gettext (&quot;linio&quot;), linnum,
+<BR>
+&nbsp;&nbsp;&nbsp;gettext (&quot;tro longa linio&quot;));
+<BR>
+&nbsp;&nbsp;&nbsp;break;
+<BR>
+..................................................
+<BR>
+------------------------------------------------------------------------  
+<BR>
+Мне лично трудно воспринимать такой текст. А выбор идентификаторов в стиле этого же языка
+<BR>
+не столько повышает читаемость, сколько просто зашифровывает программу для непосвященных :(.
+<BR>
+Единственное, о чем мне удалось легко догадаться, так это то, что работа выпоняется по GNU лицензии :-).
+<BR>
+<P>Ладно, бог с ними, приведенными выше замечаниями, можете на эту критику не обращать внимания. 
+<BR>
+<P>Вопрос по сути:
+<BR>
+Зачем Вам интерпретатор языка Рефал, а не интерпретатор, написанный на языке Рефал для Вашей конкретного класса  задач? 
+<BR>
+<P>Как мне показалось, Вам пока нужно было в диалоге воспринимать текст с учетом кодировки Юникод, а потом с ним что-то делать? Зачем в диалоге вводить и обрабатывать предложения на языке Рефал?
+<BR>
+У меня когда-то стоял подобный вопрос, когда Рефал применялся при создании системы компьютерной алгебры &quot;Сириус&quot;. 
+<BR>
+<P>Вспоминая нашу с Вами переписку, относительно нехватки встроенных функций в Рефале для обработки текста в кодировке Utf-8, задаю вопрос - Вам не хватает встроенных функций в Рефале и неустраивают компилирующие реализации Рефала, поэтому Вы решились написать свой интерпретатор с языка Рефал?
+<BR>
+Скорее всего я Вас неправильно понимаю, посему прошу разъяснений.
+<BR>
+<P>С уважением,
+<BR>
+--Леонид Белоус
+<BR>
+<P>----- Исходное сообщение ----- 
+<BR>
+От: &quot;A.A.Vladimirov&quot; &lt;vladimi@mech.math.msu.su&gt;
+<BR>
+Кому: &lt;refal@botik.ru&gt;
+<BR>
+Отправлено: 17 января 2005 г. 12:07
+<BR>
+Тема: Re: Re[2]: RAFAL &amp; JAVA
+<BR>
+<P><P><EM>&gt; Leonid Belous писал(а):
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; Антон, если не секрет, почему нужен именно
+</EM><BR>
+<EM>&gt; &gt; &quot;интерпретатор&quot;?
+</EM><BR>
+<EM>&gt; &gt; Ведь на самом деле компиляторы с языка Рефал 
+</EM><BR>
+<EM>&gt; &gt; переводят исходную программу на специальный 
+</EM><BR>
+<EM>&gt; &gt; промежуточный язык, который потом интерпретируется. 
+</EM><BR>
+<EM>&gt; &gt; При этом соотношение между фазой компиляции и 
+</EM><BR>
+<EM>&gt; &gt; интерпретации таково, что фаза компиляции не есть 
+</EM><BR>
+<EM>&gt; &gt; доминирующий участок этого процесса. 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Хотелось бы, в первую очередь, иметь расширяемую реализацию. А то в том
+</EM><BR>
+<EM>&gt; же Рефале-5 громких фраз о метасистемном переходе много, а вот
+</EM><BR>
+<EM>&gt; возможностей для добавления встроенных функций (без вбивания их в
+</EM><BR>
+<EM>&gt; основные исходники с последующей перекомпиляцией оных) похоже, не
+</EM><BR>
+<EM>&gt; наблюдается :(
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Что же касается собственно интерпретатора - то ведь ясно, что Рефал, в
+</EM><BR>
+<EM>&gt; силу своей структуры, заведомо способен исполнить роль скриптового языка
+</EM><BR>
+<EM>&gt; ничуть не хуже тех же tcl, perl или python. Однако возможность сия,
+</EM><BR>
+<EM>&gt; похоже, не используется.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Sergei Romanenko писал(а):
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; По поводу Рефала-2 я понял пожелание насчет &quot;интерпретатора&quot; так: нельзя ли
+</EM><BR>
+<EM>&gt; &gt; компилировать Рефал-программу сразу в основную память, не делая генерацию
+</EM><BR>
+<EM>&gt; &gt; объектных модулей. Действительно, было бы глупо заниматься линкованием
+</EM><BR>
+<EM>&gt; &gt; объектных модулей в мобильнике... :-)
+</EM><BR>
+<EM>&gt; &gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Ну, разумеется, под &quot;интерпретацией&quot; в данном случае следует понимать
+</EM><BR>
+<EM>&gt; компиляцию &quot;на лету&quot; - иначе эффективность реализации будет мизерной.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; Ну, а в случае Рефала-2 все обстоит наоборот! С модульностью и раздельной
+</EM><BR>
+<EM>&gt; &gt; компиляцией - все в порядке, а на режим &quot;интерактивной&quot; работы (когда
+</EM><BR>
+<EM>&gt; &gt; программа вводится в процессе работы) сам язык не рассчитан... В те времена
+</EM><BR>
+<EM>&gt; &gt; вычислительные мощности компьютеров были просто смехотворными (по сравнению
+</EM><BR>
+<EM>&gt; &gt; с нынешними мобилами), поэтому вопрос раздельной компиляции стоял ОЧЕНЬ
+</EM><BR>
+<EM>&gt; &gt; остро! А &quot;интерактивность&quot; (в смысле SML) пользователей Рефала не очень
+</EM><BR>
+<EM>&gt; &gt; волновала.
+</EM><BR>
+<EM>&gt; &gt; 
+</EM><BR>
+<EM>&gt; &gt; Поэтому, для создания &quot;интерактивной&quot; версии Рефала, нужно как-то
+</EM><BR>
+<EM>&gt; &gt; &quot;подкручивать&quot; сам язык...
+</EM><BR>
+<EM>&gt; &gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Ладно уж, выложу карты на стол... От нечего делать я попробовал заняться
+</EM><BR>
+<EM>&gt; написанием такого рода интерпретатора. Результат - в присоединённом tgz-
+</EM><BR>
+<EM>&gt; файле (под Linux точно собирается; под *BSD - не проверял, но причины,
+</EM><BR>
+<EM>&gt; которые мешали бы сборке, мне неизвестны; про Windows(TM) ничего не могу
+</EM><BR>
+<EM>&gt; сказать). Всем желающим предлагается посмотреть, что получится, если:
+</EM><BR>
+<EM>&gt; 1) сделать присоединённый ref-файл исполняемым;
+</EM><BR>
+<EM>&gt; 2) запустить его;
+</EM><BR>
+<EM>&gt; 3) ввести с консоли несколько непустых строк;
+</EM><BR>
+<EM>&gt; 4) провести &quot;горячее&quot; перетаскивание знака &quot;#&quot; на одну строку вверх,
+</EM><BR>
+<EM>&gt; после чего ввести __пустую__ строку;
+</EM><BR>
+<EM>&gt; 5) снова попытаться вводить с консоли непустые строки.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; С уважением,
+</EM><BR>
+<EM>&gt; Антон Владимиров
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0658.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0656.html">Andrei Klimov: "Computer Algebra Seminar on January 26"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0648.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0658.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0643.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0648.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0658.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0659.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Wed Jan 19 2005 - 17:30:04 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

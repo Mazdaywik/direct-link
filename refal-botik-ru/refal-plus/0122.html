@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrei Klimov (Andrei.Klimov@supercompilers.com)">
+<META NAME="Subject" CONTENT="Re: Refal+ 1.8.5 released">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ 1.8.5 released</H1>
+<HR>
+<P>
+<!-- received="Fri May 19 17:56:12 2000" -->
+<!-- isoreceived="20000519135612" -->
+<!-- sent="Fri, 19 May 2000 09:56:54 -0400" -->
+<!-- isosent="20000519135654" -->
+<!-- name="Andrei Klimov" -->
+<!-- email="Andrei.Klimov@supercompilers.com" -->
+<!-- subject="Re: Refal+ 1.8.5 released" -->
+<!-- id="00e401bfc19a$1a433640$2b460618@cc411095c" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="39248ABF.C6174C67@msu.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal+ 1.8.5 released<BR>
+<STRONG>From: </STRONG>Andrei Klimov (<EM>Andrei.Klimov@supercompilers.com</EM>)<BR>
+<STRONG>Date: </STRONG>Fri May 19 2000 - 17:56:54 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#122">[ date ]</A>
+<A HREF="index.html#122">[ thread ]</A>
+<A HREF="subject.html#122">[ subject ]</A>
+<A HREF="author.html#122">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0123.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0121.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0121.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0123.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0121.html">Andrei Klimov: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0123.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0124.html">var@msu.ru: "Re: Refal+ 1.8.5 released"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+<EM>&gt; Andrei Klimov wrote:
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; А есть ли там какая-нибудь документация по новым возможностям:
+</EM><BR>
+<EM>&gt; &gt; - по работе c RFL (большинство читателей refal-plus@botik.ru, я думаю, даже не знают, что это такое:-)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+Andrey Slepuhin wrote:
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Основные функции по работе с RFL содержатся в модулях RFL и RFLcomm.
+</EM><BR>
+<EM>&gt; Практически все, что нужно - это вызвать функцию RFL-Call
+</EM><BR>
+<EM>&gt; и передать ей сокет и RFL-выражение. В качестве результата функция
+</EM><BR>
+<EM>&gt; возвращает RFL-выражение, пришедшее с удаленной стороны.
+</EM><BR>
+<EM>&gt; В модуле RFLjava содержатся некоторые функции, которые полезны для
+</EM><BR>
+<EM>&gt; генерации RFL-выражений, соответствующих вызовам Java-методов.
+</EM><BR>
+<EM>&gt; Собственно, рефальские модули полностью аналогичны байндингу
+</EM><BR>
+<EM>&gt; для ML/Haskell, который сделал Володя Роганов.
+</EM><BR>
+<P>Андрей (С), большое спасибо!
+<BR>
+<P>Я глянул на .rf и rfi-файлы со страницы &quot;Refal+ Hot News&quot;
+<BR>
+<A HREF="http://glade.nmd.msu.ru/~pooh/refal-plus/">http://glade.nmd.msu.ru/~pooh/refal-plus/</A>
+<BR>
+но по одну их виду понять нелегко.
+<BR>
+Надеюсь, удастся разобраться после того, как Володя
+<BR>
+завершит подготовку общего описания для ML-я, Haskell-я и Refal-а.
+<BR>
+<P><EM>&gt; &gt; - по работе с сокетами, которые Вы сделали в предыдущей версии.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Я выложил краткое описание новых функций на страничку.
+</EM><BR>
+<EM>&gt; Думаю, что оно должно быть более-менее понятно, если у читателя
+</EM><BR>
+<EM>&gt; имеется хотя бы краткое представлние о сокетах.
+</EM><BR>
+<P>Спасибо, однако, у меня, например, нет ни какого представления о сокетах, кроме
+<BR>
+совсем интуитивного образа, что это что-то вроде каналов связи между задачами. :-)
+<BR>
+Уже в описании первой функции модуля Socket на странице &quot;Refal+ New Features&quot;
+<BR>
+<A HREF="http://glade.nmd.msu.ru/~pooh/refal-plus/new_features.html">http://glade.nmd.msu.ru/~pooh/refal-plus/new_features.html</A>
+<BR>
+я наткнулся на ничего не говорящие для меня слова &quot;Address family parameter&quot;,
+<BR>
+и возник вопрос: &quot;Какие их допустимые значения should be set to AF-UNIX?&quot;.
+<BR>
+<P>А нет ли где-нибудь в Интернете готовых описаний идеологии сокетов, чтобы
+<BR>
+можно было заново не писать, а просто &quot;позаимствовать&quot;?
+<BR>
+<P>И еще вопрос: Работа с сокетами сделана специфически под Unix, или
+<BR>
+функции модуля Socket должны точно так же работать и под Windows?
+<BR>
+<P>Еще раз спасибо! Успехов!
+<BR>
+<P>Андрей (К).
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0123.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0121.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0121.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0123.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0121.html">Andrei Klimov: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0123.html">Andrey Slepuhin: "Re: Refal+ 1.8.5 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0124.html">var@msu.ru: "Re: Refal+ 1.8.5 released"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Fri May 19 2000 - 17:56:13 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

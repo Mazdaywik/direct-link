@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei Romanenko (roman@integrum.ru)">
+<META NAME="Subject" CONTENT="Re: Re[2]: RAFAL &amp; JAVA">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Re[2]: RAFAL &amp; JAVA</H1>
+<HR>
+<P>
+<!-- received="Sat Jan 15 14:52:05 2005" -->
+<!-- isoreceived="20050115115205" -->
+<!-- sent="Sat, 15 Jan 2005 14:52:32 +0300" -->
+<!-- isosent="20050115115232" -->
+<!-- name="Sergei Romanenko" -->
+<!-- email="roman@integrum.ru" -->
+<!-- subject="Re: Re[2]: RAFAL &amp; JAVA" -->
+<!-- id="002401c4faf8$bb838a90$0a3aa8c0@shipil.ru" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="1105780774.4388.3.camel@shkal" -->
+<STRONG>Subject: </STRONG>Re: Re[2]: RAFAL & JAVA<BR>
+<STRONG>From: </STRONG>Sergei Romanenko (<EM>roman@integrum.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Jan 15 2005 - 14:52:32 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#647">[ date ]</A>
+<A HREF="index.html#647">[ thread ]</A>
+<A HREF="subject.html#647">[ subject ]</A>
+<A HREF="author.html#647">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0648.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0646.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0645.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0648.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0643.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0645.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0648.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый день!
+<BR>
+<P>Как известно, большинство &quot;интерпретаторов&quot;, пригодных к практическому
+<BR>
+использованию, на самом деле компилируют программу на какой-то язык более
+<BR>
+низкого уровня, который либо интерпретируют, либо компилируют дальше в
+<BR>
+машинный код.
+<BR>
+<P>Moscow ML, например, умеет работать в &quot;интерактивном&quot; режиме, когда строчки
+<BR>
+программы вводятся из командной строки, и сразу же исполняются. Но на
+<BR>
+самом-то деле они компилируются в виртуальный код!
+<BR>
+<P>Т.е. и при использовании компилятора+линкера, и при работе в &quot;интерактивном&quot;
+<BR>
+режиме работает в точности один и тот же компилятор!
+<BR>
+<P>По поводу Рефала-2 я понял пожелание насчет &quot;интерпретатора&quot; так: нельзя ли
+<BR>
+компилировать Рефал-программу сразу в основную память, не делая генерацию
+<BR>
+объектных модулей. Действительно, было бы глупо заниматься линкованием
+<BR>
+объектных модулей в мобильнике... :-)
+<BR>
+<P>Ответ здесь такой. Генерация объектных модулей в &quot;традиционных&quot; реализациях
+<BR>
+Рефала-2 производилась для того, чтобы потом можно было слинковать модули,
+<BR>
+которые были написаны на Рефале с модулями, написанными на других языках
+<BR>
+(Fortran, PL/I, C). Возможность стыковаться с программами на других языках
+<BR>
+как раз и дала возможность использовать Рефал при создании &quot;серьезных&quot;
+<BR>
+приложений. Однако, ни из чего не следует, что такой подход - &quot;единственно
+<BR>
+правильный&quot;...
+<BR>
+<P>Однако, все же есть одна проблема, которая возникает при попытке изготовить
+<BR>
+&quot;интерактивную&quot; версию Рефала (в том смысле, как &quot;интерактивность&quot;
+<BR>
+понимается в реализациях SML). Дело в том, что язык SML изначально
+<BR>
+сконструирован так, чтобы его было удобно использовать в &quot;интерактивном&quot;
+<BR>
+режиме. На самом деле, даже _спецификация_ SML определяет семантику языка в
+<BR>
+терминах &quot;интерактивного&quot; режима исполнения. И это создает проблемы при
+<BR>
+попытке реализовать для SML-программ нарезку на модули и нормальную
+<BR>
+_раздельную компиляцию_ этих модулей! По этому поводу в спецификации вообще
+<BR>
+ничего не сказано! И выходит, что реализатор должен сам, на свой страх и
+<BR>
+риск, чего-то выдумывать. Выдумать-то можно, но в каждой реализации
+<BR>
+раздельная компиляция реализована по-своему (и как это влияет на
+<BR>
+переносимость программ - догадаться нетрудно).
+<BR>
+<P>Ну, а в случае Рефала-2 все обстоит наоборот! С модульностью и раздельной
+<BR>
+компиляцией - все в порядке, а на режим &quot;интерактивной&quot; работы (когда
+<BR>
+программа вводится в процессе работы) сам язык не рассчитан... В те времена
+<BR>
+вычислительные мощности компьютеров были просто смехотворными (по сравнению
+<BR>
+с нынешними мобилами), поэтому вопрос раздельной компиляции стоял ОЧЕНЬ
+<BR>
+остро! А &quot;интерактивность&quot; (в смысле SML) пользователей Рефала не очень
+<BR>
+волновала.
+<BR>
+<P>Поэтому, для создания &quot;интерактивной&quot; версии Рефала, нужно как-то
+<BR>
+&quot;подкручивать&quot; сам язык...
+<BR>
+<P>(А ранние &quot;интерпретаторы&quot; Рефала вовсе и не были &quot;интерактивными&quot;.
+<BR>
+Программу вводили с перфокарт, операционная система выполняла &quot;задачу&quot; в
+<BR>
+пакетном режиме, а потом из принтера вылезал результат работы
+<BR>
+Рефал-программы.)
+<BR>
+<P>Сергей Романенко
+<BR>
+<P><P>----- Original Message ----- 
+<BR>
+From: &quot;A.A.Vladimirov&quot; &lt;vladimi@mech.math.msu.su&gt;
+<BR>
+To: &lt;refal@botik.ru&gt;
+<BR>
+Sent: Saturday, January 15, 2005 12:19 PM
+<BR>
+Subject: Re: Re[2]: RAFAL &amp; JAVA
+<BR>
+<P><P><P><EM>&gt; Сначала был &quot;эффективный&quot; Рефал-интерпретатор для БЭСМ-6 (а до него -
+</EM><BR>
+<EM>&gt; &quot;неэффективный&quot; Рефал-интерпретатор КИТ-1 для ламповой М-20).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; А Рефал-компилятор (для БЭСМ-6) начали делать после этого...
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Сергей Романенко
+</EM><BR>
+<P>Это-то мне известно; к сожалению, ключевое слово здесь - &quot;был&quot;. Где
+<BR>
+теперь найдёшь БЭСМ-6...
+<BR>
+<P>С уважением,
+<BR>
+Антон Владимиров
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0648.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0646.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0645.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0648.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0643.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0645.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0648.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Sat Jan 15 2005 - 14:52:08 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

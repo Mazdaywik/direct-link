@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Nikolai Kondratiev (Nikolai.Kondratiev@gmx.de)">
+<META NAME="Subject" CONTENT="Re: Refal -&gt; Java">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal -&gt; Java</H1>
+<HR>
+<P>
+<!-- received="Thu Dec  9 02:39:19 1999" -->
+<!-- isoreceived="19991208233919" -->
+<!-- sent="Wed, 8 Dec 1999 11:40:23 +0100" -->
+<!-- isosent="19991208104023" -->
+<!-- name="Nikolai Kondratiev" -->
+<!-- email="Nikolai.Kondratiev@gmx.de" -->
+<!-- subject="Re: Refal -&gt; Java" -->
+<!-- id="007d01bf4168$ee4c1130$e803f6c2@nk" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="384D642F.8C3FB7F6@bagirra.rinet.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal -> Java<BR>
+<STRONG>From: </STRONG>Nikolai Kondratiev (<EM>Nikolai.Kondratiev@gmx.de</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Dec 08 1999 - 13:40:23 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#57">[ date ]</A>
+<A HREF="index.html#57">[ thread ]</A>
+<A HREF="subject.html#57">[ subject ]</A>
+<A HREF="author.html#57">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0058.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0056.html">Arkady Klimov: "Refal -&gt; Java"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0056.html">Arkady Klimov: "Refal -&gt; Java"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0058.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0056.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Аркадий! 
+<BR>
+Очень хорошо !!! Действительно ошеломляюще !!!
+<BR>
+С выводами я тоже согласен.
+<BR>
+
+<BR>
+Николай Кондратьев
+<BR>
+
+<BR>
+
+<BR>
+----- Original Message ----- 
+<BR>
+From: Arkady Klimov &lt;klark@bagirra.rinet.ru&gt;
+<BR>
+To: Andrei Klimov &lt;klimov@keldysh.ru&gt;
+<BR>
+Cc: refal ; &lt;refal@botik.ru&gt;; Lyuda Solovskaya &lt;socol@ispras.ru&gt;; Mikhail Kovtun &lt;mkovtun@nortelnetworks.com&gt;
+<BR>
+Sent: Tuesday, December 07, 1999 8:46 PM
+<BR>
+Subject: Refal -&gt; Java
+<BR>
+
+<BR>
+
+<BR>
+<EM>&gt; Андрей, привет, 
+</EM><BR>
+<EM>&gt; недавно мы обсуждали вопрос о реализации рефала на основе Java. Я имел в виду компиляцию рефала в Яву. Делались оценки эффективности (умственные). Я был оптимистом - говорил, что по сравнению с нынешними (имя в виду рефал-5/6) будет уступать не более чем в пять раз и это хорошо. Ты называл цифру 10. Так вот, сегодня я поставил решающий эксперимент. Результаты меня ошеломили. 
+</EM><BR>
+<EM>&gt; Я взял тот самый тест - select - который мы обсуждали в Переславле. И руками, по прямому алгоритму с минимумом оптимизаций (даже сознательно не делая некоторых очевидных, но не совсем тривиальных оптимизаций) - перевел его в Яву так, как это сделал бы несложный компилятор, присобачил минимально необходимый runtime-support, и исполнил. Предлагаю сравнительную таблицу результатов (N - параметр задачи, время в секундах): 
+</EM><BR>
+<EM>&gt;   
+</EM><BR>
+<EM>&gt;   
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt;       N Рефал-6 Refal-&gt;Java (byte-code) Refal-&gt;Java (JIT) 
+</EM><BR>
+<EM>&gt;       11 5 10.5 1.22 
+</EM><BR>
+<EM>&gt;       12 29 59 6.5 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Выполнял на Sun-овской java из JDK 1.2.2. Режим байт-кода включал ключом -Xint. 
+</EM><BR>
+<EM>&gt; Итак, в режиме байт-кода уступает рефалу-6 в 2 раза (а не в 10 и даже не в 5). Поскольку было установлено, что рефал-5 обгоняет 6-й в 1.5 раза, то рефалу-5 - в 3 раза. Но в режиме jit-компиляции скорость наоборот повышается более чем в 4 раза! А от рефала-5, значит, почти  в 3. То есть эта скорость примерно соответствует Рефалу Плюс, который, помнится, в последнем тестировании показывал скорость где-то 2.5-3 по сравнению с рефалом-5. 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Теперь немного о том, как выглядит отображение в Яву. Используется наиболее прямое, с моей точки зрения, отображение данных. Выражение - это массив, терм - любой объект, не массив и не null. Есть специальный объект &quot;выражение в скобках&quot;, я назвал его Parenth. Слово = String. Символ-литера = Char. Символ-число = Integer или BigInteger и т.п. 
+</EM><BR>
+<EM>&gt; Функция F формата ((e1) t2 e3)  -&gt; e компилируется сигнатуру: 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt;     static Object[] f(Object[] e1, Object t2, Object[] e3) 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Если выходной формат из нескольких перменных, то из них делается выражение (e-перменные берутся в скобки) и выдается один массив, у которого размер равен числу выходных переменных. 
+</EM><BR>
+<EM>&gt; Все функции делаются рекурсивными, хвостовая рекурсия пока никак не оптимизируется, но можно будет оптимизировать. Подвыражения при передаче аргумента дублируются, чтобы они были целым массивом (а не его частью). Однако, в процессе отождествления, локальные переменные выражения указываются, возможнжо, как части массивов, со смещением для начала и конца. 
+</EM><BR>
+<EM>&gt; Сравнение термов отрабатывается через метод equals класса Object. 
+</EM><BR>
+<EM>&gt; Неуспех вырабатывается в форме null (очень удобно!). Error = Exception. 
+</EM><BR>
+<EM>&gt; Переходы при неуспехах - прямые передачи управления (if, break, continue), удлинения = циклы. При формирование результатного выражения зараз захватывается массив нужной длины (длина подсчитывается из длин компонентов), а потом копируются компоненты. Также при отождествлении жесткая часть проверяется однократным сравнением длин. Например, отождествление e0 с образцом t1 e2 t1, это проверка 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; (e0.length&gt;2) &amp;&amp; e0[0].equals(e0(e0.length-1)) 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Программу прикладываю: в подкатологе refal необходимый runtime-support. 
+</EM><BR>
+<EM>&gt; В самом модуле Select &quot;честно&quot; оттранслированы только две функции, остальное обрамление написано просто на Яве. При вызове надо указывать список параметров вида: 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; java [-Xint] Select a b c d e f g h i j k 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Длина списка аргументов, начиная с &quot;а&quot; - это и есть параметр задачи. 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Я все это так подробно описал, чтобы стало понятно, насколько будет это просто, хорошо и удобно. Нельзя медлить с реализацией! 
+</EM><BR>
+<EM>&gt; Срочно ищем исполнителя на тему. 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Аркадий. 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0058.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0056.html">Arkady Klimov: "Refal -&gt; Java"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0056.html">Arkady Klimov: "Refal -&gt; Java"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0058.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0056.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

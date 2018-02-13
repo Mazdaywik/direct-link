@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.rinet.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ abstract syntax">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ abstract syntax</H1>
+<HR>
+<P>
+<!-- received="Fri Nov 26 15:29:33 1999" -->
+<!-- isoreceived="19991126122933" -->
+<!-- sent="Fri, 26 Nov 1999 12:58:27 +0300" -->
+<!-- isosent="19991126095827" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.rinet.ru" -->
+<!-- subject="Re: Refal+ abstract syntax" -->
+<!-- id="003901bf37f4$c90a3320$97925bc3@bagirra.rinet.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="383E4008.9B6E62C9@msu.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal+ abstract syntax<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.rinet.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Nov 26 1999 - 12:58:27 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#38">[ date ]</A>
+<A HREF="index.html#38">[ thread ]</A>
+<A HREF="subject.html#38">[ subject ]</A>
+<A HREF="author.html#38">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0039.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0037.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0035.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0036.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0035.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+----- Original Message -----
+<BR>
+From: Andrey Slepuhin &lt;pooh@msu.ru&gt;
+<BR>
+To: Sergei M. Abramov &lt;abram@botik.ru&gt;
+<BR>
+Cc: Arkady Klimov &lt;klark@bagirra.rinet.ru&gt;; &lt;refal@botik.ru&gt;
+<BR>
+Sent: Friday, November 26, 1999 11:08 AM
+<BR>
+Subject: Re: Refal+ abstract syntax&gt;
+<BR>
+<P><EM>&gt; Добрый день всем!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Сергей Михайлович, спасибо за перевод в читаемый формат. Однако само
+</EM><BR>
+<EM>&gt; содержание
+</EM><BR>
+<EM>&gt; мне нравится все меньше. В самом деле, если у нас функция есть
+</EM><BR>
+<EM>&gt; последовательность
+</EM><BR>
+<EM>&gt; e.Statement, а e.Statement - это почти все что угодно, то мы можем
+</EM><BR>
+очень
+<BR>
+<EM>&gt; легко
+</EM><BR>
+<EM>&gt; описать некорректную программу. Например, что семантически будет
+</EM><BR>
+<EM>&gt; означать
+</EM><BR>
+<EM>&gt; последовательность t.Pattern t.Format ?
+</EM><BR>
+Не вижу проблемы - вполне понятная семантика. Скажу более - и
+<BR>
+полезная! Результатом t.Pattern является исходное выражение, которое
+<BR>
+было результатом предыдущего &quot;действия&quot;. При этом этому выражению,
+<BR>
+прошедшему сквозь pattern, приписывается новый формат, равный жесткой
+<BR>
+части этого pattern. После этого сопоставление с t.Format должно
+<BR>
+выполняться статически! Как вы понимаете, это может быть полезным,
+<BR>
+когда на один жесткий образец сходятся несколько путей и не все
+<BR>
+гарантированно имеют нужный формат. Тогда недостающую &quot;форматность&quot;
+<BR>
+можно обеспечить дополнительным образцом!
+<BR>
+<P><EM>&gt; Исходный синтаксис Сергея Романенко при некоторой его запутанности
+</EM><BR>
+<EM>&gt; (тропы, хвосты, источники...) обладает одним _очень_ важным
+</EM><BR>
+свойством -
+<BR>
+<EM>&gt; _любая_ программа в этом синтаксисе семантически корректна [1] (мне
+</EM><BR>
+во
+<BR>
+<EM>&gt; всяком
+</EM><BR>
+<EM>&gt; случае пока не удалось придумать контрпример). Я пытался как-нибудь
+</EM><BR>
+<EM>&gt; упростить
+</EM><BR>
+<EM>&gt; этот синтаксис, но все попытки упрощения приводили к потере свойства
+</EM><BR>
+<EM>&gt; [1].
+</EM><BR>
+<EM>&gt; Мне кажется, что этим свойством пренебрегать нельзя.
+</EM><BR>
+Я с этим согласен, поэтому приглашаю всех приводить контрпримеры этому
+<BR>
+свойству предложенного мной AS.
+<BR>
+Спасибо.
+<BR>
+Аркадий.
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; Андрей.
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0039.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0037.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0035.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0036.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0035.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

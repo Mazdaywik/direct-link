@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrei Klimov (klimov@keldysh.ru)">
+<META NAME="Subject" CONTENT="CHILEX (Re: FTP.  Новые поступления)">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>CHILEX (Re: FTP.  Новые поступления)</H1>
+<HR>
+<P>
+<!-- received="Tue Jul 13 15:49:52 1999 MSD" -->
+<!-- sent="Tue, 13 Jul 1999 15:38:56 +0400" -->
+<!-- name="Andrei Klimov" -->
+<!-- email="klimov@keldysh.ru" -->
+<!-- subject="CHILEX (Re: FTP.  Новые поступления)" -->
+<!-- id="00af01becd25$1063c2d0$0100a8c0@k" -->
+<!-- inreplyto="XFMail.990713024000.pooh@msu.ru" -->
+<STRONG>Andrei Klimov</STRONG> (<A HREF="mailto:klimov@keldysh.ru?subject=Re:%20CHILEX%20(Re:%20FTP.%20%20Новые%20поступления)"><EM>klimov@keldysh.ru</EM></A>)<BR>
+<EM>Tue, 13 Jul 1999 15:38:56 +0400</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#37">[ date ]</A>
+<A HREF="index.html#37">[ thread ]</A>
+<A HREF="subject.html#37">[ subject ]</A>
+<A HREF="author.html#37">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0038.html">Sergei M. Abramov: "Re: FTP.  Новые  поступлени"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0036.html">Andrey Slepuhin: "RE: FTP.  Новые поступления"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0035.html">Sergei M. Abramov: "FTP.  Новые поступлени"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P>On 10-Jul-99 Sergei M. Abramov wrote:
+<BR>
+<EM>&gt; П.С.  Видимо всерьез стал нужен конвертер (chi --&gt; ТеХ).
+</EM><BR>
+<P>On 13-Jul-99 Andrey Slepuhin wrote:
+<BR>
+<EM>&gt; Совсем на автомате перекодировать все равно не получится (По крайней
+</EM><BR>
+<EM>&gt; мере написание достаточно интеллектуального конвертера себя не оправдает).
+</EM><BR>
+[...]
+<BR>
+<EM>&gt; А вот полуавтоматическая конвертация вполне даже получается. Вот, посылаю
+</EM><BR>
+<EM>&gt; в качестве примера готовый файл.
+</EM><BR>
+<P>Я тоже думаю, что нужно не мудрить, а сделать &quot;полуавтоматом&quot;:
+<BR>
+автоматически извлечь текст и формулы в том виде, в каким получится, а
+<BR>
+потом пройтись и руками закодировать формулы в ТеХе.
+<BR>
+<P>Для извлечения текста есть программки CHILEX и CHILEX_N. Чтобы не
+<BR>
+засорять этот mailing list, я сейчас пошлю их только Абрамову; он
+<BR>
+приложит их ко всему хозяйству на FTP.
+<BR>
+<P>- CHILEX src-file.chi [ res-file.doc ] -- переводит из формата CHIWRITER
+<BR>
+в ASCII-формат в DOS-овской кодировке. Если res-file опушен, то выдается
+<BR>
+файл с тем же именем и расширением .doc. (Извините, нужно было бы .txt,
+<BR>
+но как уж есть.)
+<BR>
+Программа понимает CHIWRITER-овскую кодировку русских букв, принятую в
+<BR>
+ИПМ -- если кто помнит: их было так много! -- страшно вспомнить ;-( --
+<BR>
+то есть как раз ту, в которой написана документация по Рефалу Плюс.
+<BR>
+Кое-какие красоты CHIWRITER-а переводятся в читабельный вид; скажем,
+<BR>
+индексы. Это как раз то, что нужно для второй части &quot;полуавтомата&quot;. ;-)
+<BR>
+<P>- CHILEX_N src-file.chi [ res-file.doc ] -- переводит из формата
+<BR>
+CHIWRITER в формат Lexicon-а. От просто ASCII в DOS-овской кодировке от
+<BR>
+отличается тем, что на выходе сохраняются подчеркивание, курсив и bold
+<BR>
+face (полужирный) так, как это принято в Lexicon-е. Переключение face-а
+<BR>
+задается двумя байтами: xFF и байтом, обозначающим face. Для
+<BR>
+подчеркивания: в начале второй байт '_'; в конце '.'. Заглянув в файл,
+<BR>
+можно догадаться и про остальные. Про подчеркивание я только что
+<BR>
+выяснил, напустив обе программки на Rbvcode.chi и сравнив результаты
+<BR>
+WinDiff-ом.
+<BR>
+<P>Стоит, пожалуй, написать маленькую программку на Рефале Плюс или Рефале
+<BR>
+6 (кстати, другие Рефалы не подойдут, так как не дают возможности
+<BR>
+задавать characters с любыми кодами в человеческом синтаксисе), которая
+<BR>
+заменит эти комбинации на ТеХовские.
+<BR>
+<P>Андрей (С), большое спасибо за ручной эксперимент с перекодировкой файла
+<BR>
+Rbvcode.chi. По-видимому, стоит повторить, начав с применения CHILEX.
+<BR>
+Тогда русские буквы не будут слиты с латинскими, и можно будет
+<BR>
+гарантировать тождественность русского текста.
+<BR>
+<P>On 10-Jul-99 Sergei M. Abramov wrote:
+<BR>
+<EM>&gt; Пока сам пакет ChiWriter я не нашел.  А без (и его Font-дизайнера) возможно
+</EM><BR>
+<EM>&gt; будет трудно восстановить начертание символов из специалных
+</EM><BR>
+<EM>&gt; шрифтов--рамочки, греция, и т.п.--только по &quot;оттискам&quot;.
+</EM><BR>
+<P>Может, удастся обойтись без самого ChiWRiter-а? Ведь есть hard-copy
+<BR>
+большинства текстов -- книжка по Рефалу Плюс. Можно смотреть на нее и
+<BR>
+править. Наверное, у Сергея Романенко сохранились распечатки и других
+<BR>
+файлов. Я посмотрел результат обработки с CHILEX-ом файла Rbvcode.chi, и
+<BR>
+у меня создалось впечателние, что почти обо всем можно догадаться.
+<BR>
+<P>Успехов! Андрей (К).
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0038.html">Sergei M. Abramov: "Re: FTP.  Новые  поступлени"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0036.html">Andrey Slepuhin: "RE: FTP.  Новые поступления"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0035.html">Sergei M. Abramov: "FTP.  Новые поступлени"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Tue Jul 13 1999 - 15:49:52 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

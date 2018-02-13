@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.net)">
+<META NAME="Subject" CONTENT="Re: Лямбда-исчисление в рефале">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Лямбда-исчисление в рефале</H1>
+<HR>
+<P>
+<!-- received="Tue Aug 28 21:02:22 2001" -->
+<!-- isoreceived="20010828170222" -->
+<!-- sent="Tue, 28 Aug 2001 20:28:03 +0300" -->
+<!-- isosent="20010828172803" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.net" -->
+<!-- subject="Re: Лямбда-исчисление в рефале" -->
+<!-- id="002601c12fe7$0daf55f0$929943c2@Bagirra" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="000801c12fd9$2a3af480$32e1d0c3@abrhome.polnet.botik.ru" -->
+<STRONG>Subject: </STRONG>Re: Лямбда-исчисление в рефале<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.net</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Aug 28 2001 - 21:28:03 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#232">[ date ]</A>
+<A HREF="index.html#232">[ thread ]</A>
+<A HREF="subject.html#232">[ subject ]</A>
+<A HREF="author.html#232">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0233.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0231.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0231.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0233.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0231.html">Arkady Klimov: "Re: Лямбда-исчисление в рефале"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+----- Original Message -----
+<BR>
+From: Sergei M. Abramov (at home) &lt;abram@botik.ru&gt;
+<BR>
+To: Arkady Klimov &lt;klark@bagirra.net&gt;; Mike Potanin &lt;potanin@mccme.ru&gt;; &lt;refal@botik.ru&gt;
+<BR>
+Sent: Tuesday, August 28, 2001 6:50 PM
+<BR>
+Subject: Re: Лямбда-исчисление в рефале.
+<BR>
+<P><P>| &gt;А поскольку результат &lt;Adder ...&gt; - замыкание, то есть сама функция, а не ее
+<BR>
+| имя
+<BR>
+| &gt;(идентификатор), то и писать надо просто &lt;&lt;Adder1&gt; 2&gt;. Правда в рефале-5 такая
+<BR>
+| &gt;запись невозможна (в отличие от рефалов 6 и +).
+<BR>
+|
+<BR>
+| Ooops!  В Рефале Плюс, как я помню, за &quot;&lt;&quot; всегда должен идти имя функции
+<BR>
+| (слово-константа-имя-функции).
+<BR>
+|
+<BR>
+| А для аппликации есть библиотечная Apply.  И у этой Apply весьма строгий формат:
+<BR>
+|
+<BR>
+| $func? Apply sF eX = eY;
+<BR>
+|
+<BR>
+| (*** Более точно---цитирую документацию:
+<BR>
+|
+<BR>
+| &gt; 3.APPLY: ВЫЗОВ ФУНКЦИЙ ПЕРЕДАННЫХ ЧЕРЕЗ ПАРАМЕТРЫ
+<BR>
+| &gt;
+<BR>
+| &gt; $func? APPLY s.Name e.Exp = e.Exp;
+<BR>
+| &gt;
+<BR>
+| &gt;      APPLY применяет функцию, на которую указывает ссылка s.Name
+<BR>
+| &gt; к выражению e.Exp и выдает результат этого вычисления.
+<BR>
+|
+<BR>
+| ***)
+<BR>
+|
+<BR>
+| При этом (если мне не изменяет память) в run-time эта Apply контролирует, что
+<BR>
+| переданный ей sF есть имя функции с таким вот форматом:
+<BR>
+|
+<BR>
+|     $func? sF eX = eY;
+<BR>
+|
+<BR>
+| или с таким:
+<BR>
+|
+<BR>
+|     $func  sF eX = eY;
+<BR>
+|
+<BR>
+<P>Имеется в виду, наверно:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$func? Fname eX = eY;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$func  Fname  eX = eY;
+<BR>
+где Fname - имя переданной функции sF (= значение переменной sF). [Надо бы написать
+<BR>
+Fname курсивом, да формат не позволяет.]
+<BR>
+<P>| И если это не так, то она (Apply) производит из себя $error -- если я не
+<BR>
+| ошибаюсь...
+<BR>
+|
+<BR>
+| Так что, с греческими мю и с замыканиями в Рефале Плюс не очень-то.  Ну,...
+<BR>
+| компромис &quot;интерпретация или компиляция&quot;.
+<BR>
+<P>Нет проблем! Просто писать на 5 или 6 знаков больше приходится. А содержательно
+<BR>
+&lt;Apply sF eX&gt; это то же самое, что и &lt;sF eX&gt; в рефале-6 (если конечно, ограничиваться функциями формата e=e).
+<BR>
+А от функции Mu из Р5 все это действительно отличается тем, что Mu еще производит неявное предварительное преобразование:
+<BR>
+идентификатор -&gt; символ-ссылка, например Proc -&gt; &amp;Proc в обозначениях Р+, причем непременно в среде того модуля, где это Mu
+<BR>
+написано.
+<BR>
+<P>|
+<BR>
+| Удачи
+<BR>
+|
+<BR>
+| Сергей
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0233.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0231.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0231.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0233.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0231.html">Arkady Klimov: "Re: Лямбда-исчисление в рефале"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

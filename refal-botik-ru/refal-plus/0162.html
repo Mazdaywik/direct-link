@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: Рефал и Лисп на Си++ (was: Re: интерприатор">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Рефал и Лисп на Си++ (was: Re: интерприатор</H1>
+<HR>
+<P>
+<!-- received="Mon Oct 22 10:51:06 2001" -->
+<!-- isoreceived="20011022065106" -->
+<!-- sent="Mon, 22 Oct 2001 10:51:03 +0400" -->
+<!-- isosent="20011022065103" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: Рефал и Лисп на Си++ (was: Re: интерприатор" -->
+<!-- id="016801c15ac5$eada0b60$07aee8c1@botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Pine.LNX.4.05.10110191939020.247-100000@home.croco.net" -->
+<STRONG>Subject: </STRONG>Re: Рефал и Лисп на Си++ (was: Re: интерприатор<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Oct 22 2001 - 10:51:03 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#162">[ date ]</A>
+<A HREF="index.html#162">[ thread ]</A>
+<A HREF="subject.html#162">[ subject ]</A>
+<A HREF="author.html#162">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0163.html">Andrey V Stolyarov: "Re: Рефал и Лисп на Си++"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0161.html">Mikhail Kovtun: "Re: интерпритатор"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0155.html">Andrey V Stolyarov: "Рефал и Лисп на Си++ (was: Re: интерпритатор)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0163.html">Andrey V Stolyarov: "Re: Рефал и Лисп на Си++"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0155.html">Sergei M. Abramov: "Re: Рефал и Лисп на Си++ (was: Re: интерприатор"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0163.html">Andrey V Stolyarov: "Re: Рефал и Лисп на Си++"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, Андрей!
+<BR>
+<P><EM>&gt; Я сейчас в рамках диссертации делаю нечто из смежной области,...
+</EM><BR>
+...
+<BR>
+<EM>&gt; ... У меня Рефал (причем
+</EM><BR>
+<EM>&gt; полный Рефал-5, со всеми WHERE/WITH) реализован как надстройка над Лиспом.
+</EM><BR>
+...
+<BR>
+<EM>&gt; В добавок все это реализовано как библиотека классов Си++ и
+</EM><BR>
+<EM>&gt; предназначается к применению в проектах, где основным языком является
+</EM><BR>
+<EM>&gt; Си++....
+</EM><BR>
+...
+<BR>
+<EM>&gt; Подчеркну, это обычный модуль Си++, не требующий никакого дополнительного
+</EM><BR>
+<EM>&gt; препроцессирования. Компилируется обычным компилятором Си++ (я пользуюсь
+</EM><BR>
+<EM>&gt; gcc 2.95.2)
+</EM><BR>
+...
+<BR>
+<EM>&gt; Еще в планах есть, в качестве побочного эффекта от создания библиотеки,
+</EM><BR>
+<EM>&gt; некий новый язык (рабочее название - &quot;Ситуационный Лисп&quot;), представляющий
+</EM><BR>
+<EM>&gt; собой парадигматический гибрид Лиспа и Рефала.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Интересно ли такое кому-нибудь?
+</EM><BR>
+<P>Лично мне это очень интересно.  Скажу больше--я сильно заинтригован.
+<BR>
+<P>=1= Где это понадобилось?
+<BR>
+<P>=2= Тема диссертации?  Где/когда она предполагается?
+<BR>
+<P>=3= Известно ли Вам о выполняемом сейчас проекте компиляции Рефал Плюс в
+<BR>
+Си++?
+<BR>
+<P>Очень интересно,
+<BR>
+<P>Сергей
+<BR>
+П.С. Состояние дел по =3=:
+<BR>
+<P>[ + ] Сейчас отлажены тексты лексера/парсера Рефала Плюс? (Ввод из
+<BR>
+рефал-программы файла и перевод в абстрактный синтаксис: в АС == в
+<BR>
+рефальское выражение).
+<BR>
+<P>АС задуман (вроде бы) так, чтобы туда можно было бы згружать и Р-5, и Р-6 и
+<BR>
+Рефал+...  А может быть и &quot;Ситуационный Лисп&quot; ;-)
+<BR>
+<P>[+/-] В Си++ написан набор классов --- refal plus run-time support
+<BR>
+(RPRTS) --- с хорошим представлением рефальских списков: с одной стороны
+<BR>
+массивное представление, с другой стороны---счетчики ссылок на блоки...
+<BR>
+Требует массированного тестирования, отладки, доработки, дописывания.
+<BR>
+<P>[+/-] Пишется двупроходный компилятор:
+<BR>
+&nbsp;&nbsp;&nbsp;(а) АС --&gt; абстр. императивный. язык (АИЯ)
+<BR>
+&nbsp;&nbsp;&nbsp;(б) АИЯ --&gt; Си++
+<BR>
+<P>Состояние по компилятору: кушать пока нельзя, но на хлеб уже мазать
+<BR>
+можно---первые программки успешно компилируются.
+<BR>
+<P>[ - ] Предстоит писать на Си++/RPRTS или/и на Рефал Плюс всю существующую
+<BR>
+библиотеку...
+<BR>
+<P>[ - ] Предстоит потом писать:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;АИЯ --&gt; Т-язык
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;АИЯ --&gt; Ява? (если кому надо 8-)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;....
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0163.html">Andrey V Stolyarov: "Re: Рефал и Лисп на Си++"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0161.html">Mikhail Kovtun: "Re: интерпритатор"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0155.html">Andrey V Stolyarov: "Рефал и Лисп на Си++ (was: Re: интерпритатор)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0163.html">Andrey V Stolyarov: "Re: Рефал и Лисп на Си++"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0155.html">Sergei M. Abramov: "Re: Рефал и Лисп на Си++ (was: Re: интерприатор"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0163.html">Andrey V Stolyarov: "Re: Рефал и Лисп на Си++"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 22 2001 - 10:51:09 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

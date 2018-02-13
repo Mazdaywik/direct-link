@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Leonid F. Belous (belous@ilt.kharkov.ua)">
+<META NAME="Subject" CONTENT="Re: Обозначения для спецсимволов">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Обозначения для спецсимволов</H1>
+<HR>
+<P>
+<!-- received="Sat Feb 10 15:57:15 2001" -->
+<!-- isoreceived="20010210125715" -->
+<!-- sent="Sat, 10 Feb 2001 14:20:00 +0200" -->
+<!-- isosent="20010210122000" -->
+<!-- name="Leonid F. Belous" -->
+<!-- email="belous@ilt.kharkov.ua" -->
+<!-- subject="Re: Обозначения для спецсимволов" -->
+<!-- id="000e01c0935b$e4095de0$013b7cc1@ilt.kharkov.ua" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Pine.LNX.4.05.10102100006120.784-100000@home" -->
+<STRONG>Subject: </STRONG>Re: Обозначения для спецсимволов<BR>
+<STRONG>From: </STRONG>Leonid F. Belous (<EM>belous@ilt.kharkov.ua</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Feb 10 2001 - 15:20:00 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#176">[ date ]</A>
+<A HREF="index.html#176">[ thread ]</A>
+<A HREF="subject.html#176">[ subject ]</A>
+<A HREF="author.html#176">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0177.html">Sergei M. Abramov (at home): "Re: Обозначения для спецсимволов"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0175.html">Andrey V Stolyarov: "Обозначения для спецсимволо"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0175.html">Andrey V Stolyarov: "Обозначения для спецсимволо"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0177.html">Sergei M. Abramov (at home): "Re: Обозначения для спецсимволов"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0175.html">Leonid F. Belous: "Re: Обозначения для спецсимволов"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Здравствуйте, Андрей!
+<BR>
+
+<BR>
+Ни в коей мере не претендуя на роль крупного знатока Рефала, попытаюсь ответить на Ваш первый вопрос.
+<BR>
+
+<BR>
+В свое время я тоже откапывал информацию относительно обозначений для ходовых спецсимволов. Если более внимательно посмотреть на исходные тексты только библиотеки Рефала (Reflib.ref), то в тексте функции Input (подфункция Escape), можно обнаружить, что \n, \r, \t, не зыбыты, и для них используются именно эти С-ишные обозначения. Кстати, я считаю, что функция Input (хорошо описанная в докуменации по Рефалу-5) очень полезна и удобна.
+<BR>
+
+<BR>
+Я думаю, что это упущение в документации по Рефалу-5 восполняет документация по Рефалу-6 <A HREF="http://www.refal.net/authors/arklimov/refal6/Refal6.zip">http://www.refal.net/authors/arklimov/refal6/Refal6.zip</A>
+<BR>
+
+<BR>
+После распаковки Refal6.zip см. файл Refal6\HELP\refal.txt.
+<BR>
+В Рефале-5, правда, я работал только с \n, \r, \t, а по поводу остальных C-шных обозначений, приведенных в документации Аркадия Климова по Рефалу-6, не уверен, поддерживаются ли они в Рефале-5. 
+<BR>
+
+<BR>
+Надеюсь, что мои коллеги меня дополнят и поправят, а также прояснят вопрос о пользе и вреде спецификаторов :). Лично для меня, исчезновение спецификаторов, все-таки оставило какое-то ощущение потери. Хотя, как я понимаю, успехи с созданием суперкомпилятора Scp4, вряд ли были бы возможны с языком, отягощенным спецификаторами.
+<BR>
+
+<BR>
+С уважением,
+<BR>
+--Леонид Белоус
+<BR>
+
+<BR>
+
+<BR>
+----- Original Message ----- 
+<BR>
+From: Andrey V Stolyarov &lt;croco@croco.net&gt;
+<BR>
+To: &lt;refal@botik.ru&gt;
+<BR>
+Sent: Friday, February 09, 2001 11:20 PM
+<BR>
+Subject: Обозначения для спецсимволов
+<BR>
+
+<BR>
+
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Уважаемые коллеги, 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; я неожидано столкнулся с весьма странным и, видимо, очень глупым вопросом,
+</EM><BR>
+<EM>&gt; на который, тем не менее, ответа в доступной документации и в исходных
+</EM><BR>
+<EM>&gt; текстах Refal-5 не нашел.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Вопрос состоит в следующем. Есть ли в Рефале-5 способ обозначить
+</EM><BR>
+<EM>&gt; специальные терминальные символы, а именно - символ табуляции, символ
+</EM><BR>
+<EM>&gt; возврата каретки, символ BELL и прочие? Есть ли какой-нибудь аналог для
+</EM><BR>
+<EM>&gt; \n, \t, \r, \g и прочих обозначений языка C, или, соответственно, для
+</EM><BR>
+<EM>&gt; #\Newline, #\Tab, #\Space и прочих подобных токенов Лиспа?
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Собственно, меня интересует две стороны проблемы. Первая - есть ли такой
+</EM><BR>
+<EM>&gt; способ в той версии Рефала-5, которая доступна на сайте (именно эту версию
+</EM><BR>
+<EM>&gt; я пытаюсь использовать). Вторая - каков должен был бы быть такой способ,
+</EM><BR>
+<EM>&gt; если бы мир был идеальным ;-) (безотносительно того, есть ли такой способ
+</EM><BR>
+<EM>&gt; на самом деле).
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Заодно, уж раз собрался написать, хотелось бы задать еще один вопрос
+</EM><BR>
+<EM>&gt; знатокам Рефала. Насколько я понял, в Рефале-5 отсутствует то, что
+</EM><BR>
+<EM>&gt; когда-то называлось, если не ошибаюсь, спецификаторами (например, для
+</EM><BR>
+<EM>&gt; S-переменной можно было указать диапазон символов, которые она может
+</EM><BR>
+<EM>&gt; match'ить). Исчезновение спецификаторов лично мне понравилось (на мой
+</EM><BR>
+<EM>&gt; взгляд, язык стал стройнее), и некоторые догадки о причине такого
+</EM><BR>
+<EM>&gt; исчезновения у меня есть. Тем не менее, не мог бы кто-нибудь из знатоков
+</EM><BR>
+<EM>&gt; поделиться своим мнением на этот счет или хотя бы указать, где об этом
+</EM><BR>
+<EM>&gt; можно прочитать. 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; С уважением,
+</EM><BR>
+<EM>&gt; Андрей Столяров
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0177.html">Sergei M. Abramov (at home): "Re: Обозначения для спецсимволов"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0175.html">Andrey V Stolyarov: "Обозначения для спецсимволо"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0175.html">Andrey V Stolyarov: "Обозначения для спецсимволо"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0177.html">Sergei M. Abramov (at home): "Re: Обозначения для спецсимволов"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0175.html">Leonid F. Belous: "Re: Обозначения для спецсимволов"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

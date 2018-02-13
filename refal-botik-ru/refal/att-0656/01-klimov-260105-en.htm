@@ -1,0 +1,58 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="en">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title></title>
+</head>
+
+<body>
+  <p><b>Formal specifications of supercompilers by Natural Semantics</b></p>
+  <p><b>Andrei Klimov</b></p>( Keldysh Institute for Applied Mathematics, Russian Academy of 
+  Sciences ) 
+  <p>Supercompilation is a program 
+  transformation method aimed at such problems as program 
+  specialization, program composition (&quot;fusion&quot;), inversion etc. The 
+  method was conceived in 1970s and 1980s by Valentin Turchin and 
+  originally developed for the functional programming language Refal. 
+  Related methods -- Partial Evaluation by the group led by Neil Jones 
+  and Mixed Computation by 
+  Andrei Ershov. </p>
+  <p>A supercompiler, <i>Scp</i>: <i>p</i> -&gt; <i>q</i>, given a <i>
+  source </i>program <i>p</i> in some programming language builds a 
+  equivalent <i>residual </i>program <i>q</i> in the same (or another) 
+  language. As a rule, program <i>q</i><span lang="ru"> </span>is more 
+  efficient than <i>p</i> due to specialization of code with respect 
+  to known information inherent in the code, and/or constraint of the 
+  domain <i>D</i> of the source program <i>p</i>.</p>
+  <p>Now the area of supercompilation lacks supercompilation theory 
+  that allows for formulating and proving general properties of 
+  supercompilers independently of particular algorithms implemented in 
+  supercompilers,<span lang="ru"> </span>and at least briefly and 
+  formally defines what is a supercompiler.</p>
+  <p>As foundation of such supercompilation theory, we suggest to use 
+  supercompiler <i>specifications</i> that define a <i>relation 
+  R(p,q,D) </i>between source and residual programs <i>p</i> and <i>q
+  </i>such that the programs are equivalent on domain D. A 
+  specification tells <i>what</i> is a possible result of 
+  supercompilation, saying nothing about <i>how</i> a supercompiler 
+  builds a residual program, what algorithms and strategies are used 
+  to take particular decisions.</p>
+  <p>The specifications are given by deduction rules of Natural 
+  Semantics (based on Plotkin's operational semantics) for a simple 
+  functional language. The supercompiler specifications are presented 
+  as extension of operational semantics of the language interpreter. 
+  The main notions of supercompilation such as <i>configuration, 
+  driving, generalization, configuration cutting</i> are formalized. 
+  Based on the specifications, the correctness and other properties of 
+  supercompilers that meet the specifications, can be proved.</p>
+  <p>Prerequisites: Informal acquaintance with the ideas of 
+  supercompilation as it was presented at this seminar on April 28, 
+  2004 (&quot;Supercompilation and Partial Evaluation: introduction and the 
+  state of affairs&quot;) is desirable.</p>
+  </body>
+
+</html>
+

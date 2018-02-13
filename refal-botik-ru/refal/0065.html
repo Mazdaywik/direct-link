@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Mikhail Kovtun (mkovtun@nortelnetworks.com)">
+<META NAME="Subject" CONTENT="Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !</H1>
+<HR>
+<P>
+<!-- received="Fri Dec 10 19:58:46 1999" -->
+<!-- isoreceived="19991210165846" -->
+<!-- sent="Fri, 10 Dec 1999 10:02:33 -0500" -->
+<!-- isosent="19991210150233" -->
+<!-- name="Mikhail Kovtun" -->
+<!-- email="mkovtun@nortelnetworks.com" -->
+<!-- subject="Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !" -->
+<!-- id="38511609.42DE140@americasm01.nt.com" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="00fb01bf4308$0c44d460$07aee8c1@rcms.botik.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal -> Java?  РефалАС-->АСАИЯ !<BR>
+<STRONG>From: </STRONG>Mikhail Kovtun (<EM>mkovtun@nortelnetworks.com</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Dec 10 1999 - 18:02:33 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#65">[ date ]</A>
+<A HREF="index.html#65">[ thread ]</A>
+<A HREF="subject.html#65">[ subject ]</A>
+<A HREF="author.html#65">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0066.html">Sergei M. Abramov: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0064.html">Arkady Klimov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0062.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0067.html">Arkady Klimov: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0062.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+
+<body bgcolor="#FFFFFF">
+Привет всем!
+<p>Сначала -- небольшое техническое замечание:
+<p>А не лучше ли в отображении использовать вместо массивов java.util.Collection
+и дальнейшие вариации? А какой вариант реализации Collection лучше в конкретных
+случаях, пусть братья Климовы думают.
+<p>По основному вопросу -- я согласен с Колей: отображение в Яву должно
+быть на первом местею Если случайно заодно получится отображение в другие
+языки, то хорошо. Но если для получения отображения в другие языки&nbsp;
+потребуется хоть немного ухудшить отображение в Яву -- от этого нужно отказываться.
+<p>Я не разделяю Сережиного оптимизма по поводу того, что ЯваАС без труда
+может быть отображен в любой язык: семантика Явы слишком сильно отличается
+от семантики C/C++, и это должно отразиться на абстрактном синтаксисе (несмотря
+на то, что внешние представления синтаксиса Явы и C/C++ крайне похожи!)
+Поэтому, полагаю, тезис "Ява превыше всего" следует принять (или отвергнуть,
+если общество так решит) с самого начала, и если принять, то принять безоговорочно
+-- иначе потом споров не оберешься...
+<p>"Sergei M. Abramov" wrote:
+<blockquote TYPE=CITE><style></style>
+<font face="Arial"><font color="#000000"><font size=-1>Привет,
+всем!</font></font></font>
+<blockquote 
+style="BORDER-LEFT: #000000 solid 2px; MARGIN-LEFT: 5px; PADDING-LEFT: 5px"><font size=-1>я
+хочу еще раз подчеркнуть именно важность интеграции с Явой. Я бы все рассматривал
+именно с этой точки зрения.</font></blockquote>
+<font face="Arial"><font color="#000000"><font size=-1>Я это понимаю и
+не собираюсь спорить с этим утверждением.</font></font></font>
+<blockquote 
+style="BORDER-LEFT: #000000 solid 2px; MARGIN-LEFT: 5px; PADDING-LEFT: 5px"><font size=-1>На
+мой взгляд даже сам принцип отображения функция -> функия, выражение ->
+массив важен именно потому, что интерфейс с Явой крайне упрощается.</font></blockquote>
+&nbsp;<font face="Arial"><font color="#000000"><font size=-1>Все верно,
+и вместо Явы можно подставить любой язык, в котором поддержаны все понятия,
+которые используются при синтаксическом отображении&nbsp; РефалАС-->Ява.</font></font></font>&nbsp;<font face="Arial"><font size=-1>В
+частности, легко может быть подставлен:</font></font>&nbsp;<font face="Arial"><font size=-1>&nbsp;&nbsp;&nbsp;
+-1- Си/Си++ -- вот вся разница: в Яве более просто описать run-time support
+-- описал объекты терм, массив термов, вырезка массива термов--и все! А
+сборка муссора дается даром.&nbsp; В Си/Си++ все примерно также, только
+сборку мусора надо писать самим.</font></font>&nbsp;<font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-2- Т-язык (имеется и работает) -- тут разницы вообще нету, более того
+уже сейчас в Т-сситеме не только поддержана сборка мусора, но и еще и рефальские
+структуры данных...</font></font></font>
+<blockquote 
+style="BORDER-LEFT: #000000 solid 2px; MARGIN-LEFT: 5px; PADDING-LEFT: 5px"><font size=-1>В
+Яве мы можем получить хороший "тягач" для рефала. Все, что будет мешать
+интегрировать рефал с Явой я бы безжалостно отбросил. Даже ценой потери
+универсальности отображения по отношению к другим императивным языкам.</font></blockquote>
+&nbsp;<font face="Arial"><font color="#000000"><font size=-1>Я не верю,
+что при реализации "Рефал-->Ява" не будет фаз:</font></font></font><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-1- Рефал-->РефалАС</font></font></font><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-2- РефалАС --> ЯваАС</font></font></font><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-3- ЯваАС --> Ява (файл)</font></font></font>&nbsp;<font face="Arial"><font size=-1>где
+буковки "АС" можно произносить как "Абстрактный Синтаксис" и/или "внутреннее
+представление в виде рефальского выражения".</font></font><font face="Arial"><font size=-1>При
+этом, "ЯваАС" будет совсем маленький язычек -- то мизерное подмножество
+Явы, которое и потребуется для реализации Рефала.</font></font>&nbsp;<font face="Arial"><font size=-1>Так
+вот, можешь считать, что "ЯваАС" это и есть, что я назвал АСАИЯ.</font></font><font face="Arial"><font size=-1>То
+что требуется для отображения Рефала в Яву есть во всех современных императивных
+языках (по крайней мере есть в Си, Си++, Т-системе).</font></font>&nbsp;<font face="Arial"><font size=-1>ОК,
+я соглашаюсь в дальнейшем называть АСАИЯ словом ЯваАС и включать в это
+понятие только то, что</font></font><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-а- абсолютно необходимо для отображения рефал программ в Яву и</font></font></font><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-б- эффективно поддержано Явой;</font></font></font>&nbsp;<font face="Arial"><font size=-1>От
+такого определения ЯваАС ничем не будет отличаться от АСАИ.&nbsp; Так получится
+само получится, что в ЯваАС будет то, и только то, что:</font></font><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-а- абсолютно необходимо для отображения рефал программ в любой современный
+императивный язык (Ява, Си, Си++, Т-язык) и</font></font></font><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-б- эффективно поддержано в любом современном императивном языке (Ява,
+Си, Си++, Т-язык);</font></font></font>
+<blockquote 
+style="BORDER-LEFT: #000000 solid 2px; MARGIN-LEFT: 5px; PADDING-LEFT: 5px"><font size=-1>Второе,
+что бы я безжалостно отбросил - это преемственность по отношению с существующим
+и существовавшим реализациям рефала. Версию языка необходимо определить
+заново. Если она войдет в противоречие с существующими реализациями на
+уровне АС, тем хуже для этих реализаций и для АС.</font></blockquote>
+&nbsp;<font size=-1>Не соглашусь ;-)</font>&nbsp;<font size=-1>АС для того
+и разрабатывается, чтобы в него вписывались все сегодняшние и будущие рефалы...</font><font size=-1>Если
+это не получилось -- надо расширять АС, а не выбрасывать его.</font>
+<blockquote 
+style="BORDER-LEFT: #000000 solid 2px; MARGIN-LEFT: 5px; PADDING-LEFT: 5px"><font size=-1>Это
+не означает, что новая версия не возьмет ничего от старых, но мы не должны
+быть связаны никакими нашими исторически сложившимися предпочтениями. Версия
+рефала для Явы (Refal-J) должна на мой взгляд разрабатываться так, чтобы
+быть наиболее естественной для знатоков Явы, а не рефала.</font></blockquote>
+&nbsp;<font face="Arial"><font size=-1><font color="#000000">Прекрасно.&nbsp;
+Значит надо начать с разработки языка Refal-J ?&nbsp; </font>Есть какие-либо
+идеи, с чего следует начинать писать этот документ (Описание языка...)
+?</font></font>&nbsp;<font face="Arial"><font size=-1>Я нисколько <b><u>не
+против</u></b>, если кто-то сейчас займется таким документом (я поучаствую
+в дискуссии!!!).&nbsp;&nbsp; Я нисколько <b><u>не против</u></b> того,
+что возможно после разработки Refal-J потребуется расширять тот РефалАС,
+который вот-вот сложится сегодня...</font></font>&nbsp;<font face="Arial"><font color="#000000"><font size=-1>Ну
+вот совсем уж я "<b>ЗА</b>" то, чтобы сегодня, немедленно, иметь:</font></font></font><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-0- хоть какую-то версию РефалАС-а, покрывающего Рефал Плюс;</font></font></font><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;
+-1- версию РефалПлюс компилятора, который выдает в файл РефалАС;</font></font></font>&nbsp;<font face="Arial"><font color="#000000"><font size=-1>Это
+все, что мне надо, чтобы быстро и по уму сделать три двухфазных компилятора:</font></font></font>&nbsp;<font face="Arial"><font size=-1><font color="#000000">(1)
+</font><b><font color="#800000">Рефал Плюс-->РефалАС</font></b></font></font><b><font face="Arial"><font size=-1><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;
+</font><font color="#000080">РефалАС --> ЯваАС</font></font></font></b><b><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;
+ЯваАС --> Ява (файл)</font></font></font></b>&nbsp;<font face="Arial"><font size=-1><font color="#000000">(2)
+</font><b><font color="#800000">Рефал Плюс-->РефалАС</font></b></font></font><b><font face="Arial"><font size=-1><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;
+</font><font color="#000080">РефалАС --> ЯваАС</font></font></font></b><b><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;
+ЯваАС --> Си++</font></font></font></b>&nbsp;<font face="Arial"><font size=-1><font color="#000000">(3)
+</font><b><font color="#800000">Рефал Плюс-->РефалАС</font></b></font></font><b><font face="Arial"><font size=-1><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;
+</font><font color="#000080">РефалАС --> ЯваАС</font></font></font></b><b><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;
+ЯваАС --> Си++</font></font></font></b>&nbsp;<font face="Arial"><font color="#000000"><font size=-1>Ну,
+а после разработки описания <b>Refal-J</b> и возможно расширения РефалАС
+--> Рефала-J-АС я думаю новый компилятор:</font></font></font>&nbsp;<font face="Arial"><font color="#000000"><font size=-1>(4)
+<b>RefalJ-->Рефал-J-АС</b></font></font></font><b><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;
+Рефал-J-АС --> ЯваАС+</font></font></font></b><b><font face="Arial"><font color="#000000"><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;
+ЯваАС+ --> Ява</font></font></font></b>&nbsp;<font face="Arial"><font color="#000000"><font size=-1>будет
+каждой своей фазой на 75...100% кода совпадать с компилятором номер (1).&nbsp;
+Разве нет?</font></font></font><font face="Arial"><font size=-1>Именно
+это я и называл разумной организацией работы.</font></font>
+<blockquote 
+style="BORDER-LEFT: #000000 solid 2px; MARGIN-LEFT: 5px; PADDING-LEFT: 5px"><font size=-1>Эта
+тематика мне кажется важной, как относящаяся к первому уровню иерархии
+целей.</font></blockquote>
+&nbsp;<font size=-1>Абсолютно согласен.</font>&nbsp;<font size=-1>Сергей</font></blockquote>
+
+<p>--
+<br>Best regards,
+<p>Mikhail
+<br>&nbsp;
+</body>
+
+
+<HR>
+<UL>
+<LI>text/x-vcard attachment: <A HREF="att-0065/01-mkovtun.vcf">Card for Mikhail Kovtun</A>
+</UL>
+<!-- attachment="01-mkovtun.vcf" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0066.html">Sergei M. Abramov: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0064.html">Arkady Klimov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0062.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0067.html">Arkady Klimov: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0062.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Nikolai Kondratiev (Nikolai.Kondratiev@gmx.de)">
+<META NAME="Subject" CONTENT="Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ</H1>
+<HR>
+<P>
+<!-- received="Tue Dec 14 23:07:47 1999" -->
+<!-- isoreceived="19991214200747" -->
+<!-- sent="Fri, 10 Dec 1999 22:03:59 +0100" -->
+<!-- isosent="19991210210359" -->
+<!-- name="Nikolai Kondratiev" -->
+<!-- email="Nikolai.Kondratiev@gmx.de" -->
+<!-- subject="Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ" -->
+<!-- id="001c01bf4352$197d6210$c8c8ffc0@nk.de" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="38514E08.AEBCA07D@americasm01.nt.com" -->
+<STRONG>Subject: </STRONG>Re: Refal -> Java?         РефалАС-->АСАИЯ<BR>
+<STRONG>From: </STRONG>Nikolai Kondratiev (<EM>Nikolai.Kondratiev@gmx.de</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Dec 11 1999 - 00:03:59 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#69">[ date ]</A>
+<A HREF="index.html#69">[ thread ]</A>
+<A HREF="subject.html#69">[ subject ]</A>
+<A HREF="author.html#69">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0070.html">Leonid F. Belous: "Re: Case-sensitive Refal+; NetProlog"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0068.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0068.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0068.html">Nikolai Kondratiev: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Ну, ну.., ребята, полегче...
+<BR>
+<P>Но ArrayList может быть стоит проверить. Тем более, что там есть equals, хотя и не совсем эффективный.
+<BR>
+<P><P>&nbsp;&nbsp;----- Original Message ----- 
+<BR>
+&nbsp;&nbsp;From: Mikhail Kovtun 
+<BR>
+&nbsp;&nbsp;To: Arkady Klimov 
+<BR>
+&nbsp;&nbsp;Cc: Sergei M. Abramov ; Nikolai Kondratiev ; Refal 
+<BR>
+&nbsp;&nbsp;Sent: Friday, December 10, 1999 8:01 PM
+<BR>
+&nbsp;&nbsp;Subject: Re: Refal -&gt; Java? РефалАС--&gt;АСАИЯ !
+<BR>
+<P><P>&nbsp;&nbsp;Привет всем! 
+<BR>
+&nbsp;&nbsp;Arkady Klimov wrote: 
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Сначала -- небольшое техническое замечание: 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;А не лучше ли в отображении использовать вместо массивов java.util.Collection и дальнейшие вариации? А какой вариант реализации Collection лучше в конкретных случаях, пусть братья Климовы думают. 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Интересная мысль! Конечно, это будет сильно менее эффективно, но ведь это будет прекрасный тест на суперкомпиляцию Явы! Миша, ты на это намекал?
+<BR>
+&nbsp;&nbsp;Разумеется. 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Точнее я бы выразился так: надо сделать компиляцию рефала с использованием интерфейса java.util.Collection,
+<BR>
+&nbsp;&nbsp;Пожалуй, java.util.List, а не java.util.Collection -- как я понимаю, упорядоченность нужна. 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;реализовать этот интерфейс через массивы,
+<BR>
+&nbsp;&nbsp;А может быть, где как лучше? Явный тип тебе нужно указывать только тогда, когда ты строишь новый список, во всех остальных случаях пользуешься только интерфейсом. Например, если нужно построить список из одного элемента, почему бы не воспользоваться Collections.singletonList(Object)? И я бы не стеснялся порождать что-то вроде: 
+<BR>
+&nbsp;&nbsp;public List concat(final List e1, final List e2) { 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return e1.clone().addAll(e2.clone()) 
+<BR>
+&nbsp;&nbsp;} 
+<BR>
+<P>&nbsp;&nbsp;-- а потом пусть у суперкомпилятора голова болит, нужны ли clone(), и про все прочее... 
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;а потом подумать и заточить суперкомпилятор так, чтобы он брал эту задачу, то есть чистил бы результат компиляции так, чтобы выкидывались все объекты-коллекции и оставались голые массивы и такой код, который построил бы прямой компилятор рефала в массивы. Я уже второй день на эту тему думаю и полагаю, что это реально. Весь вопрос в том, чтобы выбрать подходящий язык описания конфигураций. В данном случае - хорошо представляющий состояние массивов в терминов источников, из которых он построен. 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Аркадий. 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+<P>&nbsp;&nbsp;-- 
+<BR>
+&nbsp;&nbsp;Best regards, 
+<BR>
+<P>&nbsp;&nbsp;Mikhail 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0070.html">Leonid F. Belous: "Re: Case-sensitive Refal+; NetProlog"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0068.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0068.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0068.html">Nikolai Kondratiev: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

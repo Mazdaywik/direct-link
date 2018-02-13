@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Anton Yu. Orlov (orlov@mccme.ru)">
+<META NAME="Subject" CONTENT="Re: Об отсечениях внутри блока">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Об отсечениях внутри блока</H1>
+<HR>
+<P>
+<!-- received="Sun Nov 26 10:07:03 2000" -->
+<!-- isoreceived="20001126070703" -->
+<!-- sent="Sun, 26 Nov 2000 10:12:19 +0300 (MSK)" -->
+<!-- isosent="20001126071219" -->
+<!-- name="Anton Yu. Orlov" -->
+<!-- email="orlov@mccme.ru" -->
+<!-- subject="Re: Об отсечениях внутри блока" -->
+<!-- id="Pine.LNX.4.21.0011260547260.16134-100000@mccme.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Pine.LNX.4.21.0011252112590.22989-100000@mccme.ru" -->
+<STRONG>Subject: </STRONG>Re: Об отсечениях внутри блока<BR>
+<STRONG>From: </STRONG>Anton Yu. Orlov (<EM>orlov@mccme.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sun Nov 26 2000 - 10:12:19 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#136">[ date ]</A>
+<A HREF="index.html#136">[ thread ]</A>
+<A HREF="subject.html#136">[ subject ]</A>
+<A HREF="author.html#136">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0137.html">Sergei Romanenko: "Re: Об отсечениях внутри блока"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0135.html">Anton Yu. Orlov: "Re: Об отсечениях внутри блока"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0135.html">Anton Yu. Orlov: "Re: Об отсечениях внутри блока"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0137.html">Sergei Romanenko: "Re: Об отсечениях внутри блока"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0135.html">Anton Yu. Orlov: "Re: Об отсечениях внутри блока"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0137.html">Sergei Romanenko: "Re: Об отсечениях внутри блока"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Добрый день!
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Я решил привести еще одно соображение в пользу решения, высказанного в
+<BR>
+предыдущем письме:
+<BR>
+<P>On Sat, 25 Nov 2000, Anton Yu. Orlov wrote:
+<BR>
+&nbsp;
+<BR>
+<EM>&gt;     На мой взгляд, есть еще третий вариант, который представляется вполне
+</EM><BR>
+<EM>&gt; разумным. Он состоит в том, что блок всегда характеризуется &quot;глубиной отсечения
+</EM><BR>
+<EM>&gt; стека&quot; равной 0, но отсекать возвраты в нем все равно можно ;-). Т.е. после
+</EM><BR>
+<EM>&gt; прохождения блока тропа оказывается на том же уровне, что и до блока,
+</EM><BR>
+<EM>&gt; независимо от находящихся в нем отсечений. Иначе говоря, всякое отсечение
+</EM><BR>
+<EM>&gt; действует только до конца текущего предложения (в терминах абстрактного
+</EM><BR>
+<EM>&gt; синтаксиса; в терминах статьи Сергея Романенко про компиляцию в виртуальный
+</EM><BR>
+<EM>&gt; код, до конца текущего предложения или текущей тропы). Такая семантика
+</EM><BR>
+<EM>&gt; совпадает с принятой, в случае, если блок - это последнее действие в
+</EM><BR>
+<EM>&gt; предложении, и добавляет приятную возможность, в случае неуспеха &quot;выброситься&quot;
+</EM><BR>
+<EM>&gt; куда-нибудь даже из источника. И &quot;дизайн&quot;, вроде бы, достаточно прост для
+</EM><BR>
+<EM>&gt; написания/понимания программ.
+</EM><BR>
+&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Насколько я понимаю, ровно такую семантику имеют на данный момент
+<BR>
+правые части. Т.е. если мы встретили '=', то надо очистить стек
+<BR>
+альтернатив, однако, когда текущее предложение будет скомпилировано, надо
+<BR>
+будет вспомнить содержимое стека до компиляции блока. Так что вполне
+<BR>
+логично так же поступать и с отсечениями.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;С уважением,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Антон.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0137.html">Sergei Romanenko: "Re: Об отсечениях внутри блока"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0135.html">Anton Yu. Orlov: "Re: Об отсечениях внутри блока"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0135.html">Anton Yu. Orlov: "Re: Об отсечениях внутри блока"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0137.html">Sergei Romanenko: "Re: Об отсечениях внутри блока"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0135.html">Anton Yu. Orlov: "Re: Об отсечениях внутри блока"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0137.html">Sergei Romanenko: "Re: Об отсечениях внутри блока"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Sun Nov 26 2000 - 10:07:04 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

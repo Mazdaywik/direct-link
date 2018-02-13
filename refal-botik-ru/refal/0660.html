@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Leonid Belous (belous@ilt.kharkov.ua)">
+<META NAME="Subject" CONTENT="Re: Re[2]: RAFAL &amp; JAVA">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Re[2]: RAFAL &amp; JAVA</H1>
+<HR>
+<P>
+<!-- received="Thu Jan 20 19:50:52 2005" -->
+<!-- isoreceived="20050120165052" -->
+<!-- sent="Thu, 20 Jan 2005 18:49:05 +0200" -->
+<!-- isosent="20050120164905" -->
+<!-- name="Leonid Belous" -->
+<!-- email="belous@ilt.kharkov.ua" -->
+<!-- subject="Re: Re[2]: RAFAL &amp; JAVA" -->
+<!-- id="005401c4ff10$22864140$013b7cc1@ilt.kharkov.ua" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="1106148890.5319.46.camel@shkal" -->
+<STRONG>Subject: </STRONG>Re: Re[2]: RAFAL & JAVA<BR>
+<STRONG>From: </STRONG>Leonid Belous (<EM>belous@ilt.kharkov.ua</EM>)<BR>
+<STRONG>Date: </STRONG>Thu Jan 20 2005 - 19:49:05 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#660">[ date ]</A>
+<A HREF="index.html#660">[ thread ]</A>
+<A HREF="subject.html#660">[ subject ]</A>
+<A HREF="author.html#660">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0661.html">Leonid Belous: "Refal interpreter"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0659.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0658.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0659.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0658.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый вечер!
+<BR>
+<P>Антон, теперь вроде запустил (после Ваших подсказок), но есть вопросы.
+<BR>
+<P><EM>&gt; В Срд, 19/01/2005 в 16:26 +0200, Leonid Belous пишет:
+</EM><BR>
+<EM>&gt; &gt; Добрый вечер, всем!
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Антон, хочу заранее извиниться за возможную свою неумелость, но ...
+</EM><BR>
+<EM>&gt; &gt; провести предлагавшиеся эксперименты с Вашим хозяйством как с &quot;черным
+</EM><BR>
+ящиком&quot; мне не удалось.
+<BR>
+<EM>&gt; &gt; Напрямую (так, чтобы у Вас чего-нибудь не менять) у меня не собирается
+</EM><BR>
+не только под FreeBSD,
+<BR>
+<EM>&gt; &gt;но и под тремя вариантами Linux (ASP, ALT, Mandrake, Debian).
+</EM><BR>
+<EM>&gt; &gt; С грехом пополам (убрав в makefile параметр, вызываший
+</EM><BR>
+ругань -mtune=pentium3 )
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Извиняюсь: данный параметр для компиляции не принципиален (и, возможно,
+</EM><BR>
+<EM>&gt; поддерживается не всеми gcc).
+</EM><BR>
+Да, в моих версиях Linux это вызывает ругань. Подправил makefile's.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;  удалось собрать под одним из Linux, но запустить zamena.ref в режиме
+</EM><BR>
+скрипта не удается
+<BR>
+<EM>&gt; &gt;  (ругань типа bad interpreter).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Если интерпретатор действительно лежит по указанному после #! пути, это
+</EM><BR>
+<EM>&gt; довольно странно. Проверю.
+</EM><BR>
+Разобрался я с этой руганью. А причиной оказались лишние символы  (^M) от
+<BR>
+DOS-кодировки  в Вашем файле zamena.ref , которые я очевидно вставил при
+<BR>
+приеме почты через Windows, ftp. Файл zamena.ref ведь был приаттачен
+<BR>
+отдельно, а не в архиве tgz.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; Кстати, забыл написать, что makefile предполагает запуск make из-под
+</EM><BR>
+<EM>&gt; root'а (нужны права на запись в некоторые системные каталоги).
+</EM><BR>
+На это я наткнулся сразу.
+<BR>
+<P><EM>&gt; Равно как
+</EM><BR>
+<EM>&gt; забыл написать, что внутри файла Bibliotekoj лежит ещё один makefile
+</EM><BR>
+<EM>&gt; (для библиотек функций), предполагающий самостоятельный запуск.
+</EM><BR>
+А вот до этого я не догадался.  Времени было мало. Но скорее всего меня уже
+<BR>
+успел отпугнуть Ваш &quot;ломанный эсперанто&quot;, что отбило познавательный интерес
+<BR>
+:-).
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; Так что бейте меня, а равно топчите меня ногами. (C) И.Ильф и Е.Петров
+</EM><BR>
+Да что уж .... У всех такое бывает.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;  Казалось бы, должен был проработать из командной
+</EM><BR>
+<EM>&gt; &gt;  строки эквивалентный запуск (с удалением первых трех строк в
+</EM><BR>
+zamena.ref)
+<BR>
+<EM>&gt; &gt; &gt;refal zamena.ref
+</EM><BR>
+Теперь работает вызов и в режиме скрипта ./zamena.ref , но возможно я
+<BR>
+неправильно понимаю Вашу инструкцию?
+<BR>
+А поведение таково.
+<BR>
+<EM>&gt;1) сделать присоединённый ref-файл исполняемым;
+</EM><BR>
+<EM>&gt;2) запустить его;
+</EM><BR>
+Выполнил 1 и 2, произошел переход к новой строке с ожиданием ввода.
+<BR>
+<P><EM>&gt;3) ввести с консоли несколько непустых строк;
+</EM><BR>
+ввел строку из 1111111111, потом 22222222. На каждый ENTER повторяла
+<BR>
+введенное с переходом в ожидание ввода с новой строки.
+<BR>
+<P><EM>&gt;4) провести &quot;горячее&quot; перетаскивание знака &quot;#&quot; на одну строку вверх,
+</EM><BR>
+<EM>&gt;после чего ввести __пустую__ строку;
+</EM><BR>
+Этого я не понял. Наверное имелось в виду работа под оболочкой KDE? Но я
+<BR>
+работал с удаленной машиной в режиме консоли. Посему подумал, что нужно
+<BR>
+ввести последнюю строку из файла zamena.ref (убрав # как комментарий). По
+<BR>
+логике вещей, судя по вашей программе, эта строчка должна была бы
+<BR>
+модифицировать (не понимаю как) последнюю строку Рефал-программы, и
+<BR>
+последующий ввод с консоли прошел бы только один раз с выходом из программы
+<BR>
+по вводу чистой строки (ввод ENTER?)  после финальной выдачи сообщения
+<BR>
+'Vyhod iz programmy'.
+<BR>
+<EM>&gt;5) снова попытаться вводить с консоли непустые строки.
+</EM><BR>
+<P>Короче говоря, это все работает как повторитель введенного, на чистую строку
+<BR>
+выдает &quot;Zamena fajla&quot; и выходит по CTR-C из программы.
+<BR>
+<P>[...]
+<BR>
+<P>Прошу прощения у читателей нашей конференции за возможный оффтопик.
+<BR>
+Антон, возможно нам пока следует перейти к личной переписке?
+<BR>
+А переписку относительно Ваших последних ответов о мотивах реализации своей
+<BR>
+версии языка Рефал посредством написания &quot;чистого&quot; интерпретатора, которые
+<BR>
+представляют общий интерес, снова продолжим в конференции.
+<BR>
+<P><EM>&gt; С уважением,
+</EM><BR>
+<EM>&gt; Антон Владимиров
+</EM><BR>
+С уважением,
+<BR>
+--Леонид Белоус
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; ----- Исходное сообщение ----- 
+</EM><BR>
+От: &quot;A.A.Vladimirov&quot; &lt;vladimi@mech.math.msu.su&gt;
+<BR>
+Кому: &lt;refal@botik.ru&gt;
+<BR>
+Отправлено: 19 января 2005 г. 17:34
+<BR>
+Тема: Re: Re[2]: RAFAL &amp; JAVA
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0661.html">Leonid Belous: "Refal interpreter"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0659.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0658.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0659.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0658.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Thu Jan 20 2005 - 19:50:54 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

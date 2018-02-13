@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (Arkady.Klimov@supercompilers.com)">
+<META NAME="Subject" CONTENT="Re: XML, &quot;holes&quot; and programming styles in R5 and R+">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: XML, &quot;holes&quot; and programming styles in R5 and R+</H1>
+<HR>
+<P>
+<!-- received="Sat Jun 10 23:09:51 2000" -->
+<!-- isoreceived="20000610190951" -->
+<!-- sent="Sat, 10 Jun 2000 03:04:06 -0400" -->
+<!-- isosent="20000610070406" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="Arkady.Klimov@supercompilers.com" -->
+<!-- subject="Re: XML, &quot;holes&quot; and programming styles in R5 and R+" -->
+<!-- id="005901bfd2aa$13b9cc00$2e00a8c0@scpwks02" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="013301bfcdc5$9330bf00$2b460618@cc411095c" -->
+<STRONG>Subject: </STRONG>Re: XML, "holes" and programming styles in R5 and R+<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>Arkady.Klimov@supercompilers.com</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Jun 10 2000 - 11:04:06 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#121">[ date ]</A>
+<A HREF="index.html#121">[ thread ]</A>
+<A HREF="subject.html#121">[ subject ]</A>
+<A HREF="author.html#121">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0122.html">Andrei Klimov: "Re: XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0120.html">Arkady Klimov: "Re: XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0119.html">Andrei Klimov: "XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0122.html">Andrei Klimov: "Re: XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0119.html">Arkady Klimov: "Re: XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый день всем!
+<BR>
+<P>Прошу прощения, если тема (&quot;дырки&quot; в рефале+) уже слегка &quot;устарела&quot;,
+<BR>
+но мне захотелось внести в нее свой скромный вклад.
+<BR>
+<P>----- Original Message -----
+<BR>
+From: &quot;Andrei Klimov&quot; &lt;Andrei.Klimov@supercompilers.com&gt;
+<BR>
+To: &lt;refal@botik.ru&gt;
+<BR>
+Sent: Saturday, June 03, 2000 9:37 PM
+<BR>
+Subject: XML, &quot;holes&quot; and programming styles in R5 and R+
+<BR>
+<P><P><EM>&gt; Добрый день!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Направляю в refal@botik.ru письмо Сергея Абрамова
+</EM><BR>
+<EM>&gt; о &quot;дырках&quot; (есть такое понятие в реализации Рефала Плюс) и
+</EM><BR>
+<P>. . .&lt;опущено&gt;. . .
+<BR>
+<P>АБРАМОВ:
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; ==================8&lt;===================
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Юра!  Я вам в вашей борьбе с плохим временем работы той самой программы не
+</EM><BR>
+<EM>&gt; подсказал хороших дырочных параметров, вот почему:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; =1= не бывает универсальных правильных дырочных параметров;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; =2= подбирать оптимальные дырочные параметры надо по задаче (а иногда и по
+</EM><BR>
+<EM>&gt; данным к ней:) -- это процесс не сложный и он базируется на идее минимизации
+</EM><BR>
+<EM>&gt; выпуклых функций методом подбора шага с адаптивным выбором шага (делим последний
+</EM><BR>
+<EM>&gt; шак или умножаем его на 2).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; В большинстве случаев важны только два дырочных параметра (левая и правая
+</EM><BR>
+<EM>&gt; процентная длина дырки--х, у), при этом на время работы программы можно смотреть
+</EM><BR>
+<EM>&gt; как на выпуклую функцию Т(х,у).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Берете данныем, на которых программа работает существенное но не изматывающее
+</EM><BR>
+<EM>&gt; вас время и замеряете время: Т(0,0), Т(100,0), Т(0,100), Т(100,100), Т(100,100),
+</EM><BR>
+<EM>&gt; Т(200,0), Т(0,200), Т(200,200), то бишь в углах сетки:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<P>АРК:
+<BR>
+Было бы неплохо, если бы можно было получить грубую оценку уже по одному
+<BR>
+прогону. Для этого  можно и нужно выдавать статистику не просто о событиях
+<BR>
+(было копирование или нет) а вообще о плотности распределения исполнявшихся
+<BR>
+конкатенаций по длинам аргументов (с некоторым шагом в логарифмической
+<BR>
+шкале). Эта информация не зависит от установленной &quot;дырочности&quot;, а
+<BR>
+определяется исключительно алгоритмом. Пользуясь ею, я уверен, можно с
+<BR>
+достаточной точностью прогнозировать относительное ускорение при тех или
+<BR>
+иных значениях &quot;левой и правой
+<BR>
+дырочности&quot;. (Совсем точно, к сожалению, не получится, поскольку мы теряем
+<BR>
+информацию о последовательных конкатенациях.) При этом возможно
+<BR>
+автоматизировать выбор оптимального решения. И, как подсказал Андрей К.,
+<BR>
+даже автоматически выполнять этот выбор на лету, постепенно меняя параметры
+<BR>
+&quot;дырочности&quot; динамически.
+<BR>
+А качество алгоритмов выбора оценивать затем повторными просчетами при
+<BR>
+различных фиксированных параметрах &quot;дырочности&quot;.
+<BR>
+Думаю, это уже потянет на довольно интересную дипломную.
+<BR>
+<P>. . .&lt;опущено&gt;. . .
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; программист-пятерешник =========================
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; $func ZamenaAB e = e;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; ZamenaAB eX =
+</EM><BR>
+<EM>&gt;     eX:{
+</EM><BR>
+<EM>&gt;         'A'   eX--  = 'B' &lt;ZamenaAB eX--&gt;;
+</EM><BR>
+<EM>&gt;         sY    eX--  = sY  &lt;ZamenaAB eX--&gt;;
+</EM><BR>
+<EM>&gt;         (eY)  eX--  = (&lt;ZamenaAB eY--&gt;) &lt;ZamenaAB eX--&gt;;
+</EM><BR>
+<EM>&gt;         /* empty */ = /* empty */;
+</EM><BR>
+<EM>&gt;     }
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; плюсный-программист =========================
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; $func  RepAB! e = e; /* безоткатная главная функция */
+</EM><BR>
+<EM>&gt; $func? RepAB? e = e;
+</EM><BR>
+<EM>&gt; $func? RepTermAB? t = t;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; /*  Откатные функции: если замена A -&gt; B _меняет_ аргумент,
+</EM><BR>
+<EM>&gt;     тогда удача и мы строим измененный аргумент.  Если не
+</EM><BR>
+<EM>&gt;     изменяет -- тогда просто неудача.
+</EM><BR>
+<EM>&gt; */
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; RepAB! eX = {  &lt;RepAB? eX&gt;;
+</EM><BR>
+<EM>&gt;                eX;
+</EM><BR>
+<EM>&gt;             };
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; /* Что есть изменяемое выражение и на что оно изменяется? */
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; RepAB? eX tA eY,                   /* -- найти первый     */
+</EM><BR>
+<EM>&gt;             &lt;RepTermAB? tA&gt;::tB,   /*    изменяемый терм? */
+</EM><BR>
+<EM>&gt;             &lt;RepAB! eY&gt;    ::eZ,   /* -- изменить хвост!  */
+</EM><BR>
+<EM>&gt;                     eX tB eZ;      /* -- результат        */
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; /* Что есть изменяемый терм и на что он изменяется? */
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; RepTermAB?  \{ 'A',      'B';
+</EM><BR>
+<EM>&gt;                (eA),     (&lt;RepAB? eA&gt;);
+</EM><BR>
+<EM>&gt;             };
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; /////////////////////////////////////////////////////////////
+</EM><BR>
+<P>АРК:
+<BR>
+Есть предложения думать о том, можно ли и как такие преобразования
+<BR>
+осуществлять автоматически. В данном случае речь идет о том, чтобы умный
+<BR>
+компилятор догадался о двух разных моментах:
+<BR>
+1. Что терм можно не строить заново, если в нем не было замен.
+<BR>
+2. Что можно использовать повторно куски выражений; при этом они копируются,
+<BR>
+но быстро, поскольку может использоваться специальная команда.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; Сноска (1)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Под словами переписать под рефал плюс, я подразумеваю, в том числе и
+</EM><BR>
+<EM>&gt; возможное (если оно потребуется) расширение рефал-плюс библиотеки.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Например, функцией, которая одним чохом читает ВЕСЬ файл (а не по
+</EM><BR>
+<EM>&gt; одному символу):
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; $func ReadChars! s.Channel s.Length = e.Chars;
+</EM><BR>
+<EM>&gt; /* считать s.Length (или до конца файла) символов из файла.
+</EM><BR>
+<EM>&gt;    Если s.Length &lt; 0 -- считать от текущей позиции до конца
+</EM><BR>
+<EM>&gt;    файла...
+</EM><BR>
+<EM>&gt;  */
+</EM><BR>
+<P>АРК:
+<BR>
+Я думаю, будет полезнее, если такая функция будет строить не выражение (где
+<BR>
+на каждый символ уходит 8-12 байтов), а символ-строку.
+<BR>
+Такую штуку я когда-то сделал в Рефале-6, назвав ее, кажется, ReadBlock.
+<BR>
+У меня тоже требовалось указать размер. Мы тут обсуждали это с Андреем,
+<BR>
+он предлагает убрать этот параметр, чтобы читать весь файл целиком,
+<BR>
+используя ту особенность плюсовой памяти, что всегда есть одна большая дырка.
+<BR>
+От этого мне хотелось бы предостеречь, поскольку аналогичную функцию
+<BR>
+на других моделях динамической памяти реализовать будет либо невозможно,
+<BR>
+либо она будет шибко неэффективной.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+Аркадий.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0122.html">Andrei Klimov: "Re: XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0120.html">Arkady Klimov: "Re: XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0119.html">Andrei Klimov: "XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0122.html">Andrei Klimov: "Re: XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0119.html">Arkady Klimov: "Re: XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

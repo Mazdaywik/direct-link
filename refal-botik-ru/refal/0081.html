@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Vladimir A. Roganov (roganov@niisi.msk.ru)">
+<META NAME="Subject" CONTENT="Re: Refal &amp; XML - possible tasks">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal &amp; XML - possible tasks</H1>
+<HR>
+<P>
+<!-- received="Tue Dec 21 18:31:46 1999" -->
+<!-- isoreceived="19991221153146" -->
+<!-- sent="Tue, 21 Dec 1999 18:29:43 +0300" -->
+<!-- isosent="19991221152943" -->
+<!-- name="Vladimir A. Roganov" -->
+<!-- email="roganov@niisi.msk.ru" -->
+<!-- subject="Re: Refal &amp; XML - possible tasks" -->
+<!-- id="385F9CE7.F7BBD8EE@niisi.msk.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="385F5C91.493AD689@msu.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal & XML - possible tasks<BR>
+<STRONG>From: </STRONG>Vladimir A. Roganov (<EM>roganov@niisi.msk.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Dec 21 1999 - 18:29:43 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#81">[ date ]</A>
+<A HREF="index.html#81">[ thread ]</A>
+<A HREF="subject.html#81">[ subject ]</A>
+<A HREF="author.html#81">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0082.html">Andrey Slepuhin: "Re: Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0080.html">Andrey Slepuhin: "Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0080.html">Andrey Slepuhin: "Refal &amp; XML - possible tasks"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0082.html">Andrey Slepuhin: "Re: Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0080.html">Vladimir A. Roganov: "Re: Refal &amp; XML - possible tasks"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Andrey Slepuhin wrote:
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; День добрый всем!
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Я тут на днях поставил XP/XT - соответственно XML-парсер и
+</EM><BR>
+<EM>&gt; имплементация XSL/XSLT от J.Clark'а, написанные исключительно
+</EM><BR>
+<EM>&gt; на Java. Все это дело, конечно, работает, но результаты удручающие -
+</EM><BR>
+<EM>&gt; даже на моем Dual PIII-450 преобразование тестового XML-файла
+</EM><BR>
+<EM>&gt; из 120 строк в HTML занимает около 5.5 секунд с использованием JIT,
+</EM><BR>
+<EM>&gt; и почти 8 секунд без оного (JDK1.2.2)!!! В связи с этим я вспомнил
+</EM><BR>
+<EM>&gt; про то, что Рефал надо увязывать с обработкой XML и после некоторых
+</EM><BR>
+<EM>&gt; размышлений пришел к следующему набору задач в этой области.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<P>Java (from my experience) is ugly tool for parsers
+<BR>
+(considering both language features and performance of resulting code).
+<BR>
+I think J.Clark's first goal is a portability of his program.
+<BR>
+<P>BTW, are You measuring java performance properly ?
+<BR>
+Under _Linux_ (JDK 1.1.x installed without manual efforts)
+<BR>
+java takes up to few seconds unpacking zipped JDK class files,
+<BR>
+so test how long works trivial &quot;Hello, World !&quot; at Your Dual PIII-450.
+<BR>
+(?! may be this effect fixed in JDK 1.2.x ?!)
+<BR>
+<P>Please sorry for humor, but second processor of Your Dual PIII-450 
+<BR>
+looks useless for this test :-)
+<BR>
+<P><EM>&gt; 1) XML-парсер. Читает XML-документ и представляет его в виде
+</EM><BR>
+<EM>&gt;    объектного выражения.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 2) DTD-парсер. Читает XML DTD и представляет в виде объектного
+</EM><BR>
+<EM>&gt;    выражения.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 3) XML Validator. Берет XML-документ и соответствующий DTD (уже
+</EM><BR>
+<EM>&gt;    в виде объектных выражений) и производит проверку документа на
+</EM><BR>
+<EM>&gt;    соответствие DTD.
+</EM><BR>
+<EM>&gt;    Внимание!!! Задача на суперкомпиляцию: оптимизация XML Validator
+</EM><BR>
+<EM>&gt;    для конкретного DTD.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 4) XSL-парсер. Читает XSL-стиль и представляет в виде объектного
+</EM><BR>
+<EM>&gt;    выражения.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 5) XSL-интерпретатор. Берет XSL-стиль и XML-документ (уже в виде
+</EM><BR>
+<EM>&gt;    объектных выражений) и производит необходимое преобразование
+</EM><BR>
+<EM>&gt;    XML-документа.
+</EM><BR>
+<EM>&gt;    Внимание!!! Задача на суперкомпиляцию: оптимизация XSL-интерпретатора
+</EM><BR>
+<EM>&gt;    для конкретного стиля.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 6) В случае, если суперкомпиляция в 5) не даст желаемого результата,
+</EM><BR>
+<EM>&gt;    можно поставить отдельную задачу по написанию XSL-компилятора,
+</EM><BR>
+<EM>&gt;    который по XSL-стилю будет выдавать Рефал-программу преобразования
+</EM><BR>
+<EM>&gt;    XML-документов в соответствии с конкретным стилем.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Володя (Роганов), тут есть хорошие задачи для твоих студентов -
+</EM><BR>
+<EM>&gt; 1) - 4) вполне годятся для курсовой, а 5) и 6) могут и на диплом
+</EM><BR>
+<EM>&gt; потянуть. Так что можешь взять на заметку.
+</EM><BR>
+<P>Tasks looks nice, and I really need a tasks for students.
+<BR>
+My brother said that he is planning to involve most powerful students 
+<BR>
+for interesting real projects after 1-2 month. MSIU plan to assign some
+<BR>
+money for students working for these projects. 
+<BR>
+So, any such tasks are very welcoming !
+<BR>
+<P>I think, however, that allmost all MSIU students are able
+<BR>
+to execute only some more or less simple/technical task, so we should be
+<BR>
+preparing to unsatisfactory result ...
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; Андрей.
+</EM><BR>
+<P>Thanks,
+<BR>
+Vladimir.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0082.html">Andrey Slepuhin: "Re: Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0080.html">Andrey Slepuhin: "Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0080.html">Andrey Slepuhin: "Refal &amp; XML - possible tasks"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0082.html">Andrey Slepuhin: "Re: Refal &amp; XML - possible tasks"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0080.html">Vladimir A. Roganov: "Re: Refal &amp; XML - possible tasks"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

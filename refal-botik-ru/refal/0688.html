@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=KOI8-R">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="A.A.Vladimirov (vladimi@mech.math.msu.su)">
+<META NAME="Subject" CONTENT="Re: вопросы и заметки новичка">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: вопросы и заметки новичка</H1>
+<HR>
+<P>
+<!-- received="Thu May 26 18:27:07 2005" -->
+<!-- isoreceived="20050526142707" -->
+<!-- sent="Thu, 26 May 2005 18:26:00 +0400" -->
+<!-- isosent="20050526142600" -->
+<!-- name="A.A.Vladimirov" -->
+<!-- email="vladimi@mech.math.msu.su" -->
+<!-- subject="Re: вопросы и заметки новичка" -->
+<!-- id="1117117560.4427.27.camel@shkal" -->
+<!-- charset="KOI8-R" -->
+<!-- inreplyto="a542ea610505250843702ab244@mail.gmail.com" -->
+<STRONG>Subject: </STRONG>Re: вопросы и заметки новичка<BR>
+<STRONG>From: </STRONG>A.A.Vladimirov (<EM>vladimi@mech.math.msu.su</EM>)<BR>
+<STRONG>Date: </STRONG>Thu May 26 2005 - 18:26:00 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#688">[ date ]</A>
+<A HREF="index.html#688">[ thread ]</A>
+<A HREF="subject.html#688">[ subject ]</A>
+<A HREF="author.html#688">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0689.html">Leonid Belous: "Refal-2 for Windows and UNIX"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0687.html">Boyko Bantchev: "вопросы и заметки новичк"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0687.html">Boyko Bantchev: "вопросы и заметки новичк"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0692.html">Boyko Bantchev: "Re: вопросы и заметки новичк"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0687.html">A.A.Vladimirov: "Re: вопросы и заметки новичка"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0692.html">Boyko Bantchev: "Re: вопросы и заметки новичк"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Здравствуйте.
+<BR>
+<P><EM>&gt; Что, на сегодняшний день, считается, что не хватает уРефала, но в принципе можно было бы добавить,
+</EM><BR>
+<EM>&gt;  не нарушаяего цельности?
+</EM><BR>
+<P>Рефалов имеется несколько (это к вопросу о 2/5/+/6). Тот, которым
+<BR>
+пользуетесь Вы (судя по ссылке) - это Рефал-5. Стеллецкий использует
+<BR>
+один из вариантов Рефала-2. А Рефал+ - это диалект, в который добавлено
+<BR>
+совершенно невообразимое количество такого, &quot;что не хватает у других
+<BR>
+версий&quot;.
+<BR>
+<P>На мой личный, ни для кого не обязательный, взгляд, всё нужное имеется
+<BR>
+уже в Базисном Рефале. Поэтому к расширениям языка (даже к уже
+<BR>
+реализованным - вроде where,with-выражений Рефала-5 и дополнительных
+<BR>
+особенностей Рефала+ и Рефала-6) лично я отношусь скептически. Хотя,
+<BR>
+разумеется, многие со мной не согласятся.
+<BR>
+<P><EM>&gt; По-моему, раздражает отсутствие (как мне кажется)в Рефале средства чтения дробных чисел.
+</EM><BR>
+<EM>&gt;   Целые можновводить, а с плавающей точкой -- нет.  Почему?
+</EM><BR>
+<P>Отсутствие плавающей запятой в текущих версиях языка было и является
+<BR>
+одной из причин моей горячей симпатии к этим версиям. И НИ В КОЕМ СЛУЧАЕ
+<BR>
+НЕ НАДО ЕЁ ВОЗВРАЩАТЬ - очень всех разработчиков об этом прошу!
+<BR>
+<P>Плавающая запятая - одно из мощнейших средств дезориентирования
+<BR>
+математика-вычислителя. Она годится лишь для инженерных расчётов, а в
+<BR>
+более серьёзных задачах (а главным назначением Рефала является всё же
+<BR>
+обработка символьных данных, а не написание инженерных калькуляторов) её
+<BR>
+применение становится просто опасным: результат сложного расчёта может
+<BR>
+не иметь ничего общего с действительностью! Поэтому такие расчёты лучше
+<BR>
+(на мой личный взгляд, разумеется) проводить непосредственно в
+<BR>
+рациональных числах, понимая под таковыми, например, выражения Рефала-5
+<BR>
+вида ((e.Num) e.Den), где e.Num - числитель, а e.Den - знаменатель.
+<BR>
+Благо, средства для работы с натуральными числами произвольной
+<BR>
+разрядности в Рефалах имеются.
+<BR>
+<P>С уважением,
+<BR>
+Антон Владимиров
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0689.html">Leonid Belous: "Refal-2 for Windows and UNIX"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0687.html">Boyko Bantchev: "вопросы и заметки новичк"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0687.html">Boyko Bantchev: "вопросы и заметки новичк"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0692.html">Boyko Bantchev: "Re: вопросы и заметки новичк"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0687.html">A.A.Vladimirov: "Re: вопросы и заметки новичка"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0692.html">Boyko Bantchev: "Re: вопросы и заметки новичк"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Thu May 26 2005 - 18:27:12 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

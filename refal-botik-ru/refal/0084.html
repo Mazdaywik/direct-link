@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.rinet.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ abstract syntax">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ abstract syntax</H1>
+<HR>
+<P>
+<!-- received="Thu Dec 23 20:08:07 1999" -->
+<!-- isoreceived="19991223170807" -->
+<!-- sent="Thu, 23 Dec 1999 17:44:59 +0300" -->
+<!-- isosent="19991223144459" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.rinet.ru" -->
+<!-- subject="Re: Refal+ abstract syntax" -->
+<!-- id="000b01bf4d54$4a3f5780$97925bc3@bagirra.rinet.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="385E12CD.722E07B7@msu.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal+ abstract syntax<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.rinet.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Thu Dec 23 1999 - 17:44:59 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#84">[ date ]</A>
+<A HREF="index.html#84">[ thread ]</A>
+<A HREF="subject.html#84">[ subject ]</A>
+<A HREF="author.html#84">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0085.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0083.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0077.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0085.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0077.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Андрей,
+<BR>
+<P>1. Подытоживая первый раздел дискуссии (о самодостаточности АС-модуля), я предлагаю констатировать, что остался вопрос, который надо
+<BR>
+будет обсудить на семинаре. А пока ты
+<BR>
+вполне можешь действовать в соответствии со своим представлением, поскольку оно не
+<BR>
+противоречит альтернативному.
+<BR>
+<P><EM>&gt; Есть выбор из следующих вариантов:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; A) Парсер использует как вход только один файл, выдает АС-модуль
+</EM><BR>
+<EM>&gt; с неразрешенными именами.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; B) Парсер использует данный файл и все его окружение и выдает
+</EM><BR>
+<EM>&gt; АС-модуль, в котором все имена разрешены и имеется вся информация
+</EM><BR>
+<EM>&gt; об их определениях, достаточная для (любого?) компилятора.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; C) Реализуются оба варианта, то есть реализуется вариант A), который затем
+</EM><BR>
+<EM>&gt; дополняется до B) написанием отдельной фазы (StaticElaboration), которая
+</EM><BR>
+<EM>&gt; соберет всю информацию, достаточную для дальнейшей компиляции.
+</EM><BR>
+<P>2.
+<BR>
+<EM>&gt; &gt; &gt; &gt; &gt; 6) NOT и ITER сохранены как есть. С моей точки зрения их раскрытие
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;    слишком далеко двигает нас в сторону виртуального кода и может
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;    привести к менее удобному представлению при компиляции в
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; &gt;    императивные языки.
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; Это нормально. Но не отменяет возможности на ранней стадии компиляции
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; устранить NOT и ITER путем их раскрытия в АС же. Я не вижу почему эти
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; раскрытия специфичны для какого-то одного типа реализации. Полагаю,
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; они универсальны.
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; Я не против возможных расширений, но мне существенно не нравится
+</EM><BR>
+<EM>&gt; &gt; &gt; использование
+</EM><BR>
+<EM>&gt; &gt; &gt; LABEL в раскрытии ITER. Я бы еще согласился на
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; t.Label ::= (LABEL s.LabelName e.Sentence)
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; чтобы получились помеченные предложения, но не LABEL как
+</EM><BR>
+<EM>&gt; &gt; &gt; абстрактная метка.
+</EM><BR>
+<EM>&gt; &gt; Арк:
+</EM><BR>
+<EM>&gt; &gt; Какая, собственно, разница?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Такая, что, скажем, в Java нельзя просто сказать goto на метку,
+</EM><BR>
+<EM>&gt; а метка используется только в break и continue; для этого метка
+</EM><BR>
+<EM>&gt; привязана к соответствующему блоку. В моем варианте помеченное
+</EM><BR>
+<EM>&gt; предложение будет переходить в помеченный блок - компиляция будет
+</EM><BR>
+<EM>&gt; проще. А метка сама по себе - ну что с ней делать?
+</EM><BR>
+В моей модели на метку тоже можно переходить не отовсюду, а только
+<BR>
+из хвоста, идущего за меткой. Но если честно, я снимаю свои возражения
+<BR>
+в этом месте, поскольку мне даже нравится идея, что вводятся конструкции
+<BR>
+&quot;помеченный блок&quot;, &quot;блок TRY&quot; и &quot;блок ITER&quot;. По-видимому, предполагается,
+<BR>
+что это результатные блоки, то есть нормальный выход из них сопровождается
+<BR>
+выдачей объектного выражения в качестве результата, который потребляется
+<BR>
+следующим &quot;действием&quot; (блоком, образцом и т.п.). Причем выдачей этого
+<BR>
+результата эффект этих блоков исчерпывается: никаких других последствий
+<BR>
+нет.
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;  А правильно ли я понимаю, что в твоем варианте
+</EM><BR>
+<EM>&gt; &gt; после t.Label не должно быть продолжения предложения? (То есть t.Label
+</EM><BR>
+<EM>&gt; &gt; тогда
+</EM><BR>
+<EM>&gt; &gt; должен относиться к так называемым терминирующим операторам, таким как
+</EM><BR>
+<EM>&gt; &gt; FAIL.)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Если вопрос о о том, можно ли в этом случае снять с LABEL скобки -
+</EM><BR>
+<EM>&gt; то ответ отрицательный.
+</EM><BR>
+Нет, не о том, но я уже понял, ответ- &quot;нет, за t.Label может идти
+<BR>
+непустое продолжение, находящееся вне области действия метки&quot;.
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; И тот же вопрос относительно Try и Iter (в последнем варианте).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Ответ тот же самый. Конечно можно написать, скажем,
+</EM><BR>
+<EM>&gt; TRY e.TrySentence CATCH e.CatchSentence ENDTRY но зачем??? А потом
+</EM><BR>
+<EM>&gt; руками считать уровни вложенности? Другой вопрос, что можно написать
+</EM><BR>
+<EM>&gt; (TRY e.TrySentence CATCH e.CatchSentence) или
+</EM><BR>
+<EM>&gt; TRY t.TrySentence t.CatchSentence - это вопрос вкуса. Мне больше
+</EM><BR>
+<EM>&gt; нравится
+</EM><BR>
+<EM>&gt; выделять сложные операторы скобками и не использовать лишних тегов,
+</EM><BR>
+<EM>&gt; но если есть принципиальные возражения - я не буду слишком сильно
+</EM><BR>
+<EM>&gt; настаивать.
+</EM><BR>
+Аналогично.
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; Замечу, что в своем (предыдущем) варианте я старался минимизировать
+</EM><BR>
+<EM>&gt; &gt; количество таких операторов. Поэтому и у Error нет явного аргумента, его
+</EM><BR>
+<EM>&gt; &gt; аргумент - все окончание предложения.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Ммм... Насколько я помню, в Рефале+ аргумент у ERROR - это объектное
+</EM><BR>
+<EM>&gt; выражение,
+</EM><BR>
+<EM>&gt; и если мы его только этим ограничим, то для ERROR надо бы ввести
+</EM><BR>
+<EM>&gt; отдельный
+</EM><BR>
+<EM>&gt; синтаксис. Если же мы допустим, что аргументом у ERROR может быть
+</EM><BR>
+<EM>&gt; значение
+</EM><BR>
+<EM>&gt; любого предложения, то тогда можно оставить все как есть (вопрос: что
+</EM><BR>
+<EM>&gt; будет,
+</EM><BR>
+<EM>&gt; если при вычислении аргумента ERROR возникнет новый ERROR? ;-) )
+</EM><BR>
+В Рефале Плюс после $ERROR идет произвольная тропа, значение которой
+<BR>
+(объектное выражение) и становится фактическим аргументом $Error.
+<BR>
+Но синтаксически это тропа, с переменными, вызовами, блоками и т.п.
+<BR>
+Действительно, при вычислении этого аргумента может возникнуть новый
+<BR>
+$Error (который и будет &quot;значением&quot; всей конструкции).
+<BR>
+Не спорю, возможно для ясности вместо ERROR e.Sentence следует
+<BR>
+писать (ERROR e.sentence), имея при этом в виду, что этот терм
+<BR>
+завершает предложение в котором он написан (поскольку продолжение
+<BR>
+недостижимо и потому бессмысленно).
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+3. Константы - обсудить на семинаре.
+<BR>
+Вопросы:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;раскрывать или не раскрывать?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;допускать только термы или любые выражения.?
+<BR>
+<P>4.
+<BR>
+<EM>&gt; &gt; &gt; &gt; 1. Для объектов типов BOX, STRING, VECTOR и, возможно, TABLE - вести
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; понятие начального значения:
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; t.Object        ::= (s.Linkage s.ObjectType s.ObjectName
+</EM><BR>
+<EM>&gt; &gt; e.InitialValue)
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; e.InitialValue    ::= e.ResultExpression
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; &gt; (ограничения - те же, что и для initializer'а.
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; Я уже думал над этим. Только непонятно, кто будет проверять, что
+</EM><BR>
+<EM>&gt; &gt; &gt; начальное значение, скажем для VECTOR имеет корректный формат?
+</EM><BR>
+<EM>&gt; &gt; Арк:
+</EM><BR>
+<EM>&gt; &gt; В момент засылки, то есть при загрузке.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Ну, если ни у кого возражений нет - я e.InitialValue введу.
+</EM><BR>
+<EM>&gt; Вопрос: а не делает ли это t.Initializer слегка obsolete?
+</EM><BR>
+Нет, например в Яве есть и Static Initializer и Initial Values,
+<BR>
+и хотя одно можно заменить другим, понятно, что это криво.
+<BR>
+<EM>&gt;
+</EM><BR>
+Успехов,
+<BR>
+Аркадий.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0085.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0083.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0077.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0085.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0077.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

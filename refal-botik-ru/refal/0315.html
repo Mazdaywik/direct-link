@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (arklimov@keldysh.ru)">
+<META NAME="Subject" CONTENT="Re: SciTE as graphic user interface for Refal">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: SciTE as graphic user interface for Refal</H1>
+<HR>
+<P>
+<!-- received="Thu Jun 12 21:12:58 2003" -->
+<!-- isoreceived="20030612171258" -->
+<!-- sent="Thu, 12 Jun 2003 19:59:52 +0300" -->
+<!-- isosent="20030612165952" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="arklimov@keldysh.ru" -->
+<!-- subject="Re: SciTE as graphic user interface for Refal" -->
+<!-- id="002301c33105$20b50e80$8704000a@Bagirra" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="003a01c33032$63de0aa0$013b7cc1@ilt.kharkov.ua" -->
+<STRONG>Subject: </STRONG>Re: SciTE as graphic user interface for Refal<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>arklimov@keldysh.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Thu Jun 12 2003 - 20:59:52 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#315">[ date ]</A>
+<A HREF="index.html#315">[ thread ]</A>
+<A HREF="subject.html#315">[ subject ]</A>
+<A HREF="author.html#315">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0316.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0314.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0313.html">Leonid Belous: "SciTE as graphic user interface for Refal"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0316.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0313.html">Arkady Klimov: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Леонид (и все),
+<BR>
+<P>Как мне кажется, никаких отдельных продуктов типа IDE для рефала в 21-м
+<BR>
+веке уже не нужно. И данное предложение как бы даже это подтверждает: всякий
+<BR>
+достаточно развитый редактор позволяет в себя интегрировать любой
+<BR>
+компилятор, лишь бы у того был достаточно разумный интерфейс командной
+<BR>
+строки. Причем конкретная интеграция, к сожалению, будет интересна только
+<BR>
+тем, кто уже используется данный редактор, или еще не сделал своего выбора.
+<BR>
+Поэтому своя фиксированная оболочка для такого &quot;нового&quot; языка, как Рефал,
+<BR>
+вряд ли будет способствовать его распространению, а может даже и наоборот
+<BR>
+(ведь сменить привычный редактор - это почти как переехать в новую квартиру).
+<BR>
+<P>С другой стороны, все нормальные редакторы развиваются независимо, и поэтому
+<BR>
+поставлять рефал в привязке к конкретной версии - тоже не лучшее решение.
+<BR>
+<P>У себя я тоже сделал аналогогичную интеграцию (рефала-6)
+<BR>
+с редактором TextPad, к которому привык. Он правда не является свободным,
+<BR>
+и поэтому я не могу предложить замкнутую совместную инсталляцию,
+<BR>
+но могу только предложить настроечные файлы, на которые когда-то затратил
+<BR>
+некоторое время.
+<BR>
+<P>Конечно, разные редакторы допускают разную степень адаптации. В частности,
+<BR>
+TextPad допускает лишь очень ограниченную настройку в части понимании синтаксиса,
+<BR>
+но зато все сводится к написанию некоего несложного параметрического файла
+<BR>
+(и ничего не надо писать на C++, как для SciTE).
+<BR>
+Было бы интересно обменяться мнениями о том, какие средства от IDE действительно
+<BR>
+нужны, и какие нужды, где и как удается удовлетворить. В частности, пока вроде нет
+<BR>
+нормального решения в части диалоговой отладки (может где есть?).
+<BR>
+Правда, еще вопрос, насколько это действительно нужно, а не просто дань моде.
+<BR>
+Впрочем, наверно есть люди, которые никогда не возьмут язык, для которого нет
+<BR>
+интерактивного отладчика, равно как есть и другие, которым такой отладчик и
+<BR>
+даром не нужен (я отношу себя к последним: отладку в диалоге, с отслеживанием
+<BR>
+состояний переменных и ползанием по выполняющейся программе, считаю
+<BR>
+непроизводительной тратой времени. Но: вмешаться в циклящуюся программу
+<BR>
+и выяснить, что сейчас происходит, уметь надо).
+<BR>
+<P>Среди базовых потребностей, которые вроде можно и не обсуждать, я бы назвал такие:
+<BR>
+<P>1.Подсветка лексических конструкций,
+<BR>
+2.Навигация по скобкам,
+<BR>
+3.Автоиндентация,
+<BR>
+4.Вызов компилятора, выполнение по кнопке,
+<BR>
+5.Позиционирование по ошибке при компиляции (файл-строка-позиция)
+<BR>
+6.Авто-Make
+<BR>
+7.Быстрый поиск определения/использования функции
+<BR>
+8.Контекстный help (по функциям, ключевым словам, конструкциям языка)
+<BR>
+9.Авто-продолжение для вызовов библиотечных (и не только) функций (в редакторе)
+<BR>
+10. Консоль ввода-вывода для выполнения.
+<BR>
+<P>Что еще забыл?
+<BR>
+У меня в TexPad обеспечены только первые 5, с другими либо еще надо потрудиться,
+<BR>
+либо вообще ничего не сделаешь. П.7, например, обеспечивается просто общими
+<BR>
+средствами поиска.
+<BR>
+Что из этого есть/нет в SciTE?
+<BR>
+<P>Кстати о п.10. Это просто должно поддерживаться средой. Но почему-то ни TextPad,
+<BR>
+ни SciTE это должным образом не обеспечивают (может не считают нужным?):
+<BR>
+в SCiTE программа выполняется и даже ввод с &quot;консоли&quot; (через функцию Card)
+<BR>
+проходит в программу, но весь вывод (Print) где-то буферизуется и появляется только по
+<BR>
+завершении работы. Наверно, где-то не хватает оператора Flush (а может это каким-то
+<BR>
+параметром управляется? Конечно, еще не очень ясно, что *должно* быть: flush после
+<BR>
+каждого символа или только после перевода строки.)
+<BR>
+<P>Аркадий
+<BR>
+<P><P>----- Original Message -----
+<BR>
+From: &quot;Leonid Belous&quot; &lt;belous@ilt.kharkov.ua&gt;
+<BR>
+To: &lt;refal@botik.ru&gt;
+<BR>
+Sent: Wednesday, June 11, 2003 18:58
+<BR>
+Subject: SciTE as graphic user interface for Refal
+<BR>
+<P><P>| Уважаемые коллеги!
+<BR>
+|
+<BR>
+| Вашему вниманию предлагается графический интерфейс к языку Рефал в лице его
+<BR>
+| канонической версии Рефал-5 для платформы Windows (95/98/ME/NT/2000/XP).
+<BR>
+| Подробности на моем сайте
+<BR>
+| <A HREF="http://www.refal.net/~belous/">http://www.refal.net/~belous/</A>  (зеркало <A HREF="http://www.refal.org/~belous/">http://www.refal.org/~belous/</A> ) .
+<BR>
+|
+<BR>
+| Реализации Рефала появились в эпоху DOS и командной строки. К сожалению, до
+<BR>
+| сегодняшнего дня ситуация с интерфейсом  и установкой  Рефал систем
+<BR>
+| оставалась на прежнем архаичном уровне.
+<BR>
+|
+<BR>
+| К счастью, сегодня уже не нужно начинать все с нуля и изобретать велосипед
+<BR>
+| заново при решении этой нетривиальной задачи. Надеюсь, что предложенное мною
+<BR>
+| решение позволит теперь предлагать и демонстрировать достоинства языка Рефал
+<BR>
+| для пользователей любого уровня.
+<BR>
+|
+<BR>
+| Насчет ресурсов. То, что дистрибутив Refal-SciTE занимает менее чем половину
+<BR>
+| дискеты, уже вызывает уважение. Но тот факт, что ВСЕ это хозяйство
+<BR>
+| устанавливается на чистую дискетку и успешно работает (проверено), меня
+<BR>
+| приятно удивило.
+<BR>
+|
+<BR>
+| Буду благодарен за отзывы, советы, замечания.
+<BR>
+|
+<BR>
+| С уважением,
+<BR>
+| --Леонид Белоус
+<BR>
+|
+<BR>
+|
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0316.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0314.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0313.html">Leonid Belous: "SciTE as graphic user interface for Refal"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0316.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0313.html">Arkady Klimov: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

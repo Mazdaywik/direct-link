@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="A.P.Nemytykh (nemytykh@math.botik.ru)">
+<META NAME="Subject" CONTENT="Scp4's news.">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Scp4's news.</H1>
+<HR>
+<P>
+<!-- received="Thu Nov  4 16:04:13 1999" -->
+<!-- isoreceived="19991104130413" -->
+<!-- sent="Tue, 26 Oct 1999 00:17:00 +0400 (MSD)" -->
+<!-- isosent="19991025201700" -->
+<!-- name="A.P.Nemytykh" -->
+<!-- email="nemytykh@math.botik.ru" -->
+<!-- subject="Scp4's news." -->
+<!-- id="m11fqY8-00454MC@math.botik.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>Scp4's news.<BR>
+<STRONG>From: </STRONG>A.P.Nemytykh (<EM>nemytykh@math.botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Oct 26 1999 - 00:17:00 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#15">[ date ]</A>
+<A HREF="index.html#15">[ thread ]</A>
+<A HREF="subject.html#15">[ subject ]</A>
+<A HREF="author.html#15">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0016.html">Alexander P. Konyshev: "Refal5 news"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0014.html">Leonid F. Belous: "Адрес официального РЕФАЛ-сайта"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0115.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0010.html">A.P.Nemytykh: "Scp4's news."</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Об'явление.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;На страничке <A HREF="http://www.botik.ru/pub/local/scp/refal5/refal5.html">http://www.botik.ru/pub/local/scp/refal5/refal5.html</A>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;выложена новая версия SCP4.
+<BR>
+<P>&nbsp;Что нового:
+<BR>
+-----------------------------------------------------------------
+<BR>
+&nbsp;&nbsp;&nbsp;- Данная версия SCP4 ТРЕБУЕТ ОБНОВЛЕННОЙ версии РЕФАЛА-5
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(которую можно взять на той же старнице ).
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Под старой версией Рефала-5 данная версия SCP4 работать НЕ будет.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- Исправлено несколько ошибок. 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Большое спасибо Александру Корлюкову и Аркадию Климову, за 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;пересланные мне тесты на ошибки.  
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- Добавлено большое количество новых демонстарционных примеров.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Большое спасибо Александру Корлюкову и Аркадию Климову за 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;интересные примеры. Под DOS часть примеров работает медленно.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( см. DOC/USE.TXT и сами примеры DEMO/)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- Появилась новая директория DEMO. Вся демонстарция перемещена
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;в этот каталог.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- Можно запустить Scp4 из любого пользовательского каталога,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;если указать путь (path) к исполняемым модулям Рефала-5 и корневому
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;каталогу Scp4 (либо скопировать из него batch-файлы в каталог,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;куда уже указан путь).
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( см. DOC/USE.TXT )
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- Открыт третий уровень трассировки: печать выдается в Рефал-стиле.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( см. DOC/USE.TXT )
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- реализована чистака экранируемых предложений;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( Пример: F { '111' eX = 0;    ==&gt; F { '111' eX = 0; }
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'1111' eX = 1;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- внесены мета-знания о встроенной арифметике Рефала-5.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( Пример: &lt;Mul (e.1) 0&gt; ==&gt; 0, 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Div (e.1) 0&gt; ==&gt; Recognition Impossible
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- расширен входной язык описания программ для суперкомпиляции:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- допускаются жесткие образцы после вызова функции в
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;левой части предложения;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( Пример:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... e1, &lt;Divmod e1&gt;: (e.q) e.r = &lt;F e.q&gt; e.r;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- допускаются вызовы внешних функций в правых частях предложений;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( Пример:  e1 = &lt;Mul &lt;Fact e1&gt;&gt;; ) 
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- семантика t-переменных реализована в полном об'еме
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;и отныне совпадет со стандартной  Рефал-семантикой этих 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;переменных;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Оставлена возможность понимания t-переменных 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;в прежнем смысле ( во входной программе и задаче на 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;суперкомпиляцию ): такую возможность дает ключ '/t'
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;при вызове INREF4 и MST4.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- допускаются повторные t и е-переменные в левой части 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;предложения;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( подробности см. в DOC/USE.TXT, DOC/INREF4.TXT )
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- внешние исполняемые ( в compile-time ) функции могут быть об'явлены
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;непосредственно в тексте программы подвергающейся преобразованиям;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Старый способ об'явления таких функций так же возможен. 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( подробности см. в DOC/USE.TXT, DOC/INREF4.TXT )
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- появились три новых файла: MAIN_SCP.REF,  MAIN_SCP.BAK, FAQ.TXT
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- появилось несколько новых batch-файлов
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( подробности см. в DOC/USE.TXT )
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Модули SCPWHOLP.BAT , SCPWHOLE.BAT позволяют исполнить поную
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;сессию суперкомпиляции.
+<BR>
+<P>&nbsp;&nbsp;- служебный каталог SCPOUT теперь чистится автоматически. 
+<BR>
+<P>&nbsp;&nbsp;- я буду Вам благодарен, если Вы не забудете указать путь (path) 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;к исполняемым модулям Рефала-5 и корневому каталогу Scp4 (либо 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;скопировать из него batch-файлы в каталог, куда уже указан путь).
+<BR>
+<P>&nbsp;&nbsp;- Большое спасибо всем пользователям Scp4.
+<BR>
+&nbsp;&nbsp;
+<BR>
+&nbsp;Андрей Немытых.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0016.html">Alexander P. Konyshev: "Refal5 news"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0014.html">Leonid F. Belous: "Адрес официального РЕФАЛ-сайта"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0115.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0010.html">A.P.Nemytykh: "Scp4's news."</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

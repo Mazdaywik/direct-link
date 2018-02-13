@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: Case-sensitive Refal+">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Case-sensitive Refal+</H1>
+<HR>
+<P>
+<!-- received="Fri Dec  3 18:45:44 1999 MSK" -->
+<!-- sent="Fri, 03 Dec 1999 18:45:14 +0300" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: Case-sensitive Refal+" -->
+<!-- id="3847E58A.346E0546@msu.ru" -->
+<!-- inreplyto="3843FA3F.F160866F@msu.ru" -->
+<STRONG>Andrey Slepuhin</STRONG> (<A HREF="mailto:pooh@msu.ru?subject=Re:%20Case-sensitive%20Refal%2B"><EM>pooh@msu.ru</EM></A>)<BR>
+<EM>Fri, 03 Dec 1999 18:45:14 +0300</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#85">[ date ]</A>
+<A HREF="index.html#85">[ thread ]</A>
+<A HREF="subject.html#85">[ subject ]</A>
+<A HREF="author.html#85">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0086.html">Sergei M Abramov at home: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0084.html">Andrei Klimov: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0072.html">Andrey Slepuhin: "Case-sensitive Refal+"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0086.html">Sergei M Abramov at home: "Re: Case-sensitive Refal+"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Andrei Klimov wrote:
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; From: Andrey Slepuhin &lt;<A HREF="mailto:pooh@msu.ru?subject=Re:%20Case-sensitive%20Refal%2B">pooh@msu.ru</A>&gt;
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; &gt; Арк.: А что, разве в существующей б-ке для существующего runtim'а надо
+</EM><BR>
+<EM>&gt; &gt; &gt; много менять?
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Ее надо просто переписывать с нуля - менять многие интерфейсы, вводить новые
+</EM><BR>
+<EM>&gt; &gt; возможности, которые необходимы в современной жизни. Естественно, старая
+</EM><BR>
+<EM>&gt; &gt; библиотека останется, чтобы не переделывать уже существующие программы.
+</EM><BR>
+<EM>&gt; &gt; Я готов проработать подробный проект библиотеки, но сначала хочу закончить
+</EM><BR>
+<EM>&gt; &gt; текущие преобразования в компиляторе.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Андрей.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Извините за занудство (;-) и повтор, но я по-прежнему придерживаюсь мнения,
+</EM><BR>
+<EM>&gt; что никаких чисто рефальских библиотек (кроме уж совсем &quot;ядреных&quot;, имеющих
+</EM><BR>
+<EM>&gt; дело с понятиями самого Рефала, вроде арифметики) разрабатывать не следует,
+</EM><BR>
+<P>Речь идет как раз о минимальном наборе необходимых функций (то есть
+<BR>
+некий
+<BR>
+аналог libc): ввод-вывод (текстовый и бинарный, файлы, сокеты и потоки
+<BR>
+поверх
+<BR>
+них), поддержка DNS, операции с файлами (создание, удаление,
+<BR>
+переименование и т.д.),
+<BR>
+многозадачность, может быть терминальный ввод-вывод (во всяком случае не
+<BR>
+в первую очередь). В существующей библиотеке эти функции реализованы
+<BR>
+далеко
+<BR>
+не в полном объеме и порой очень криво.
+<BR>
+<P><EM>&gt; а нужно (просто-таки необходимо, чтобы Рефал не умер, а пошел в жизнь)
+</EM><BR>
+<EM>&gt; пристыковать его в существующим распространенным библиотекам:
+</EM><BR>
+<EM>&gt; Tcl/Tk (Tcl -- это название языка, Tk -- &quot;toolkit&quot; -- это название библиотеки)
+</EM><BR>
+<EM>&gt; и другим.
+</EM><BR>
+<P>Обертки для разных библиотек конечно _обязательно_ быть, но _только_
+<BR>
+после того,
+<BR>
+как будет обеспечена базовая функциональность. 
+<BR>
+<P><EM>&gt; А это не зависит от вопроса, менять runtime или нет. Подключение чужих библиотек
+</EM><BR>
+<EM>&gt; можно (и дОлжно) сделать для любого run-timе-а -- кроме тех, для которых это
+</EM><BR>
+<EM>&gt; невозможно вообще. А а такие run-time-ы надо выкинуть и с ними больше не связываться.
+</EM><BR>
+<EM>&gt; (Если нынешней реализации Рефала Плюс уже поставлен такой диагноз, то...;-).
+</EM><BR>
+<P>Я могу в принципе подключить _любую_ C-шную библиотеку к Рефалу+, но:
+<BR>
+для нового runtime'а это надо будет делать заново, поскольку нет
+<BR>
+нормального отдельного интерфейса для написания таких оберток.
+<BR>
+<P><EM>&gt; Что нужно продумать -- это общий механизм вызова таких библиотек из Рефала.
+</EM><BR>
+<EM>&gt; Сочинить такие вещи теоретически практически невозможно, поэтому надо взять
+</EM><BR>
+<EM>&gt; несколько живых библиотек и с ними поработать. Я бы начал c Tcl/Tk, поскольку
+</EM><BR>
+<EM>&gt; основной тип данных в Tcl -- это строка, аргументы функций -- списки строк.
+</EM><BR>
+<P>Ну да, так оно выглядит на уровне языка. А на уровне библиотеки -
+<BR>
+обычные
+<BR>
+типы, структуры и т.д.
+<BR>
+<P><EM>&gt; Поэтому создается впечатление, что форматы вызова функций Tk из Рефала
+</EM><BR>
+<EM>&gt; будет естественным отображением вызовов из Tcl, и можно будет даже
+</EM><BR>
+<EM>&gt; даже не переписывать документацию по Tk.
+</EM><BR>
+<P>Единственно, для чего может Tcl/Tk пригодиться Рефалу - это
+<BR>
+платформно-независимый окошечный интерфейс (именно в _таком качестве_
+<BR>
+Tcl/Tk прикручен, скажем, к
+<BR>
+Haskell'у), и то на мой взгляд это не самый не лучший вариант.
+<BR>
+<P>А что нужно прикрутить к Рефалу в _первую очередь_ - это gmp
+<BR>
+(GNU Multiple Precision Library). 
+<BR>
+<P><EM>&gt; Дальше нужно разбираться, как связываться в объектно-ориентированными
+</EM><BR>
+<EM>&gt; мирами: CORBA, DCOM, Visual Basic, Java RMI -- причем, мне кажется,
+</EM><BR>
+<EM>&gt; надо брать за основу не IDL (interface definition language) как средство
+</EM><BR>
+<EM>&gt; основанное на компиляции, а динамические механизмы вызова:
+</EM><BR>
+<EM>&gt; т.н. &quot;автоматизация&quot; в DCOM, Java reflection и т.п.
+</EM><BR>
+<P>Кто сказал, что в CORBA этого нет? А DII и DSI на что?
+<BR>
+И потом, кроме CORBA больше ничего заточенного на многоплатформность/
+<BR>
+многоязычность нету.
+<BR>
+<P><EM>&gt; Я убежден, что если это не будет сделано, то даже великий факт наличия
+</EM><BR>
+<EM>&gt; суперкомпилятора
+</EM><BR>
+<EM>&gt; для Рефала его не спасет. Мы сами вбиваем гвоздь...
+</EM><BR>
+<P>Наоборот, мы пытаемся идти правильным путем. Это надо было сделать много
+<BR>
+раньше, но лучше поздно, чем никогда.
+<BR>
+<P>Всего доброго,
+<BR>
+Андрей.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0086.html">Sergei M Abramov at home: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0084.html">Andrei Klimov: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0072.html">Andrey Slepuhin: "Case-sensitive Refal+"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0086.html">Sergei M Abramov at home: "Re: Case-sensitive Refal+"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Fri Dec 03 1999 - 18:45:45 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

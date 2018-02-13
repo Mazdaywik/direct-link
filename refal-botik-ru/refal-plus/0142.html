@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Anton Yu. Orlov (orlov@mccme.ru)">
+<META NAME="Subject" CONTENT="' E=+E+е oE+I++ I+EEе+.">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>' E=+E+е oE+I++ I+EEе+.</H1>
+<HR>
+<P>
+<!-- received="Thu Dec 14 02:16:48 2000" -->
+<!-- isoreceived="20001213231648" -->
+<!-- sent="Thu, 14 Dec 2000 02:21:40 +0300 (MSK)" -->
+<!-- isosent="20001213232140" -->
+<!-- name="Anton Yu. Orlov" -->
+<!-- email="orlov@mccme.ru" -->
+<!-- subject="' E=+E+е oE+I++ I+EEе+." -->
+<!-- id="Pine.LNX.4.21.0012140218300.25221-100000@mccme.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>' E=+E+е oE+I++ I+EEе+.<BR>
+<STRONG>From: </STRONG>Anton Yu. Orlov (<EM>orlov@mccme.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Thu Dec 14 2000 - 02:21:40 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#142">[ date ]</A>
+<A HREF="index.html#142">[ thread ]</A>
+<A HREF="subject.html#142">[ subject ]</A>
+<A HREF="author.html#142">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0143.html">Sergei Romanenko: "Re: ' E=+E+е oE+I++ I+EEе+."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0141.html">Andrei Klimov: "Problems with {refal,refal-plus}@botik.u resolved (Was: Об отсечениях внутри блока."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0143.html">Sergei Romanenko: "Re: ' E=+E+е oE+I++ I+EEе+."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0143.html">Sergei Romanenko: "Re: ' E=+E+е oE+I++ I+EEе+."</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Здравствуйте, Аркадий и Сергей!
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Недавно в одном из своих писем, сравнивая дизайны Р+ и Р6, Аркадий
+<BR>
+написал:
+<BR>
+<P><EM>&gt; В Р+ равенство означает откат на уровень функции (с точки зрения
+</EM><BR>
+<EM>&gt; заборов и отсечений оно равносильно запятой, перед которой стоит
+</EM><BR>
+<EM>&gt; достаточное количество отсечений).
+</EM><BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В связи с этим у меня есть несколько вопросов к Сергею.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1) Я правильно понимаю, что это не совсем верное утверждение, и
+<BR>
+равенство означает откат не на уровень функции, а на уровень первого (в порядке
+<BR>
+изнутри наружу) блока, результат которого не будет результатом предложения?
+<BR>
+Например, результатом вычисления конструкции
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ = $fail; }, A;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+<BR>
+будет B.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2) Это не противоречит утверждению о заборах и отсечениях и является,
+<BR>
+конечно, вопросом дизайна, но, на мой взгляд, очень сильно его (дизайн)
+<BR>
+усложняет. Для того, чтобы понять, где же мы окажемся в результате неуспеха
+<BR>
+после '=', нам надо найти &lt;&lt;наименьший блок, результат вычисления которого, не
+<BR>
+является результатом вычисления объемлющей его конструкции&gt;&gt;. Казалось бы,
+<BR>
+более человекоориентированным (и не менее выразительным) было бы считать, что
+<BR>
+неуспехи после равенства действительно перехватываются только на уровне функции
+<BR>
+(ну, и на уровне наименьшего &quot;отрицаемого&quot; блока). Не могли бы Вы объяснить,
+<BR>
+почему сделано так как сделано, а не так, как могло бы быть сделано ;-)? Тем
+<BR>
+более, что такой дизайн придется поддерживать и в последующих версиях Рефала+.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Большое спасибо!
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;С уважением,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Антон.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0143.html">Sergei Romanenko: "Re: ' E=+E+е oE+I++ I+EEе+."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0141.html">Andrei Klimov: "Problems with {refal,refal-plus}@botik.u resolved (Was: Об отсечениях внутри блока."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0143.html">Sergei Romanenko: "Re: ' E=+E+е oE+I++ I+EEе+."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0143.html">Sergei Romanenko: "Re: ' E=+E+е oE+I++ I+EEе+."</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Thu Dec 14 2000 - 02:16:49 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

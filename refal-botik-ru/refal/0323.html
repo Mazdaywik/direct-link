@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: SciTE as graphic user interface for Refal">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: SciTE as graphic user interface for Refal</H1>
+<HR>
+<P>
+<!-- received="Wed Jun 18 17:36:33 2003" -->
+<!-- isoreceived="20030618133633" -->
+<!-- sent="Sun, 15 Jun 2003 01:00:41 +0400" -->
+<!-- isosent="20030614210041" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: SciTE as graphic user interface for Refal" -->
+<!-- id="007901c332b8$03d81550$07aee8c1@botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="00c901c331b7$dbd2b020$013b7cc1@ilt.kharkov.ua" -->
+<STRONG>Subject: </STRONG>Re: SciTE as graphic user interface for Refal<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sun Jun 15 2003 - 01:00:41 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#323">[ date ]</A>
+<A HREF="index.html#323">[ thread ]</A>
+<A HREF="subject.html#323">[ subject ]</A>
+<A HREF="author.html#323">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0324.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0322.html">Andrei Klimov: "Re: Sasha Romanenko 13.06.1993"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0320.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0324.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0320.html">Sergei M. Abramov: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P>Очень интересное начинание, межд прочим (я про SciTE).
+<BR>
+<P>Спросил своих орлов -- и они используют SciTE (для написания интерфейса
+<BR>
+к отладчику MPI-программ).
+<BR>
+<P>Алик абсолютно прав -- писать программы лучше в приятной, удобной
+<BR>
+квартирке.
+<BR>
+<P>Однако, вот эту мысль:
+<BR>
+<P><EM>&gt; Я отношусь к категории, которая без диалогового отладчика чувствует
+</EM><BR>
+<EM>&gt; себя дискомфортно :-).
+</EM><BR>
+<P>я полностью разделяю!
+<BR>
+<P>И для этой (весьма особой--не редактор это вовсе!) деятельности я готов
+<BR>
+переехать в иную квартиру (особенно если привычная мне не дает
+<BR>
+поддержки).
+<BR>
+<P>Вот и мои орлы (кто из (X)Emax-a, кто из Vim-a) стали огород городить с
+<BR>
+SciTE, когда поняли, чТо удобной подержки сложной деятельности ну никак
+<BR>
+не получить.  Даже исписав мегабайты Emax-лиспа.
+<BR>
+<P><EM>&gt; В Рефал-5 есть трассировщик, который прекрасно работает с SciTE в
+</EM><BR>
+<EM>&gt; диалоге. (Меню &quot;Сервис -&gt; Reftr (Ctrl+3) ),
+</EM><BR>
+<P>Ну вот только здесь мне маловато ;-)
+<BR>
+<P>В современных рефалах (не важно о каком идет речь) надо уметь делать
+<BR>
+отладку в терминах Turbo-Borland-a:
+<BR>
+<P>1. Установить брекпоинт на оператор (в современных рефалах: установить
+<BR>
+брекпоинт на любой разделитель, находящийся _до_
+<BR>
+перестройки/присваивания).
+<BR>
+<P>2. Сделать один шаг (выполнить одну перестройку или присваивание);
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;2.1 С заходом в функции (трассировка  вложенных функций);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;2.1 Без захода
+<BR>
+<P>3. Побежать (до брэкпоинта/до конца)
+<BR>
+<P>Когда мы стоим (по брэкпоинту или после/до шага) нужно курсором выделять
+<BR>
+где (_до_ какой конструкции) мы встали. И здесь надо позволять:
+<BR>
+<P>4. видеть результат предыдущей перестройки ($fail? $ok?);
+<BR>
+<P>5. иметь возможность посмотреть значения всех переменных, из текущего
+<BR>
+контекста (разные режимы: Watch и Show)
+<BR>
+<P>Отдельно есть потребности при просмотре выражений:
+<BR>
+&nbsp;&nbsp;&nbsp;6.1 умение fold/unfold скобок
+<BR>
+&nbsp;&nbsp;&nbsp;6.2 заход в сиволы-ссылки (или умение делать Calculate)
+<BR>
+<P>Все это осуждалось. И большая часть (если не все) можно сделать за счет
+<BR>
+конвертора:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Рефал-программа
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=== Подготовщик отладки ===&gt;
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Рефал-программа со вставками до и после каждой конструкции
+<BR>
+<P>А (почти) никакой поддержки отладки в самой рефал-системе можно и не
+<BR>
+делать (а если она уже есть--забыть про нее).
+<BR>
+<P>Леонид, прои встрече могу пояснить, если что-то не ясно. Думаю, это
+<BR>
+нормальная тема для курсовой.
+<BR>
+<P>Еще думаю, поддержку 1..6 не сделаешь в простых редакторах. Думаю, в
+<BR>
+SciTE все это реализуемо.
+<BR>
+<P>Удачи
+<BR>
+<P>С.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0324.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0322.html">Andrei Klimov: "Re: Sasha Romanenko 13.06.1993"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0320.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0324.html">Leonid Belous: "Re: SciTE as graphic user interface for Refal"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0320.html">Sergei M. Abramov: "Re: SciTE as graphic user interface for Refal"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

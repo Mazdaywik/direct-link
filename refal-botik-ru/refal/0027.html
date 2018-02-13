@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="[Fwd: Refal+ abstract syntax]">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>[Fwd: Refal+ abstract syntax]</H1>
+<HR>
+<P>
+<!-- received="Wed Nov 17 20:48:56 1999" -->
+<!-- isoreceived="19991117174856" -->
+<!-- sent="Wed, 17 Nov 1999 19:07:25 +0300" -->
+<!-- isosent="19991117160725" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="[Fwd: Refal+ abstract syntax]" -->
+<!-- id="3832D2BD.A658C541@msu.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>[Fwd: Refal+ abstract syntax]<BR>
+<STRONG>From: </STRONG>Andrey Slepuhin (<EM>pooh@msu.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Nov 17 1999 - 19:07:25 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#27">[ date ]</A>
+<A HREF="index.html#27">[ thread ]</A>
+<A HREF="subject.html#27">[ subject ]</A>
+<A HREF="author.html#27">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0028.html">Leonid F. Belous: "обновления на refal.net"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0026.html">Leonid F. Belous: "REFAL.NET is valid"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый день!
+<BR>
+<P>По просьбе Андрея Климова перепосылаю проект абстрактного
+<BR>
+синтаксиса Рефала+ в refal@botik.ru. Просьба всем высказать свои
+<BR>
+замечания/предложения. Заранее извиняюсь, если кто получит это
+<BR>
+письмо второй раз.
+<BR>
+<P>Андрей.	
+<BR>
+<P>-------- Original Message --------
+<BR>
+Subject: Refal+ abstract syntax
+<BR>
+Date: Wed, 17 Nov 1999 00:34:40 +0300
+<BR>
+From: Andrey Slepuhin &lt;pooh@msu.ru&gt;
+<BR>
+Organization: Moscow State University Network (MSUnet)
+<BR>
+To: Andrei Klimov &lt;klimov@keldysh.ru&gt;
+<BR>
+CC: Arkady Klimov &lt;klark@bagirra.rinet.ru&gt;,Andrei Nemytykh
+<BR>
+&lt;nemytykh@math.botik.ru&gt;,Sergei Abramov &lt;abram@botik.ru&gt;,Sergei
+<BR>
+Romanenko &lt;roman@integrum.ru&gt;,Victor Kistlerov &lt;kistler@iitp.ru&gt;
+<BR>
+References: &lt;025b01bf2f73$f70a11c0$0100a8c0@piii&gt;
+<BR>
+<P>День добрый всем!
+<BR>
+<P>Ниже прилагается проект описания абстрактного синтаксиса Рефала+
+<BR>
+в виде объектного выражения. За основу взято описание абстрактного
+<BR>
+синтаксиса из статьи Романенко &quot;Компиляция Рефал-программ в
+<BR>
+виртуальный код&quot; (файл rbvcomp.tex). Убедительная просьба всем
+<BR>
+Рефал-гуру посмотреть внимательно на предмет ошибок и прочих замечаний.
+<BR>
+<P>Некоторые комментарии к файлу:
+<BR>
+1) круглые скобки в описании - рефальские, то что заключено в кавычки -
+<BR>
+&nbsp;&nbsp;&nbsp;рефальские &quot;слова&quot;.
+<BR>
+2) В файле не определены понятия Name - это по смыслу строка символов,
+<BR>
+&nbsp;&nbsp;&nbsp;означающая то или иное имя, и SymbolValue - это соответствующий
+<BR>
+&nbsp;&nbsp;&nbsp;рефальский символ.
+<BR>
+3) Вместо форматного выражения используется жесткое; понятно,
+<BR>
+&nbsp;&nbsp;&nbsp;что форматное выражение можно получить отбрасыванием у жесткого
+<BR>
+&nbsp;&nbsp;&nbsp;имен переменных.
+<BR>
+4) HardBlock, HardPAlt - это то что начинается с &quot;{&quot;,
+<BR>
+&nbsp;&nbsp;&nbsp;SoftBlock, SoftPAlt - это то что начинается с &quot;\{&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;Cut и Stake - это \! и \? соответственно (по предложению
+<BR>
+&nbsp;&nbsp;&nbsp;Аркадия Климова).
+<BR>
+5) В конструкциях типа :, ::, $iter ключевое слово вынесено вперед
+<BR>
+&nbsp;&nbsp;&nbsp;(т.е. (&quot;Colon&quot; Source Sentence) а не (Source &quot;Colon&quot; Sentence))
+<BR>
+6) Просьба особенно обратить внимание на следующие моменты:
+<BR>
+&nbsp;&nbsp;&nbsp;- Нет ли где пропущенной альтернативной записи и что с ней делать
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(например, тело функции может быть одним предложением; надо ли при
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;генерации абстрактного синтаксиса превращать его в образцовое
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;распутье из одного предложения?).
+<BR>
+&nbsp;&nbsp;&nbsp;- Где по смыслу может стоять Empty, т.е. &quot;пусто&quot;? Кое-где я
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Empty вставил, но, возможно, не везде.
+<BR>
+&nbsp;&nbsp;&nbsp;- Насколько хорошо вписываются другие рефалы в этот синтаксис?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Все-таки хотелось бы иметь абстракный синтаксис универсальным;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;если что - пока описание можно поправить.
+<BR>
+&nbsp;&nbsp;&nbsp;- действительно ли даннное описание однозначно позволяет
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;произвести разбор программы? (т.е. не нужно ли где-нибудь
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;добавить ключевые слова или лишние скобки)
+<BR>
+<P>Буду крайне признателен за всяческую критику. Думаю, что до
+<BR>
+семинара в понедельник можно успеть провести предварительное
+<BR>
+обсуждение по почте, а на семинаре зафиксировать результаты.
+<BR>
+<P>Всего доброго,
+<BR>
+Андрей.
+<BR>
+<P>Refal+ Abstract Syntax
+<BR>
+----------------------
+<BR>
+<P>Program ::= ProgramItem | Program ProgramItem
+<BR>
+<P>ProgramItem ::= FuncDef | BoxDef | TableDef | VectorDef | StringDef
+<BR>
+<P>FuncDef ::= (&quot;Function&quot; FunctionName (FunctionFormat) (FunctionBody)) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Function?&quot; FunctionName (FunctionFormat) (FunctionBody))
+<BR>
+<P>FunctionFormat ::= (InputFormat) (OutputFormat)
+<BR>
+<P>InputFormat ::= HardExpression
+<BR>
+<P>OutputFormat ::= HardExpression
+<BR>
+<P>HardExpression ::= HardTerms | HardTerms VVar HardTerms |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HardTerms EVar HardTerms
+<BR>
+<P>HardTerms ::= Empty | HardTerm | HardTerms HardTerm
+<BR>
+<P>HardTerm ::= Symbol | (HardExpression) | SVar | TVar
+<BR>
+<P>FunctionBody ::= Sentence | PAlt
+<BR>
+<P>PAlt ::= HardPAlt | SoftPAlt
+<BR>
+<P>HardPAlt ::= (&quot;HardPAlt&quot; PAltBody)
+<BR>
+<P>SoftPAlt ::= (&quot;SoftPAlt&quot; PAltBody)
+<BR>
+<P>PAltBody ::= Sentence | BlockBody Sentence
+<BR>
+<P>Sentence ::= (Pattern Tail)
+<BR>
+<P>Pattern ::= (&quot;Left&quot; PatternExpression) | (&quot;Right&quot; PatternExpression)
+<BR>
+<P>PatternExpression ::= Empty | Term | PatternExpression Term
+<BR>
+<P>Term ::= Symbol | (PatternExpression) | Variable
+<BR>
+<P>Symbol ::= (&quot;Symbol&quot; SymbolValue)
+<BR>
+<P>Variable ::= EVar | VVar | TVar | SVar
+<BR>
+<P>EVar ::= (&quot;EVar&quot; Name)
+<BR>
+<P>VVar ::= (&quot;VVar&quot; Name)
+<BR>
+<P>TVar ::= (&quot;TVar&quot; Name)
+<BR>
+<P>SVar ::= (&quot;SVar&quot; Name)
+<BR>
+<P>Tail ::= (&quot;Comma&quot; Path) | (&quot;Not&quot; Source Tail) | (&quot;Stake&quot; Path) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Cut&quot; Path) | (&quot;Fail&quot;) | (&quot;Equal&quot; Path) | (&quot;Error&quot; Path) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Trap&quot; Path PAlt)
+<BR>
+<P>Path ::= (Source Tail) | (&quot;DColon&quot; Source (HardExpression) Tail) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Iter&quot; Source Source (HardExpression) Tail) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Colon&quot; Source Sentence)
+<BR>
+<P>Source ::= HardBlock | SoftBlock | (&quot;Colon&quot; Source PAlt) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ResultExpression)
+<BR>
+<P>HardBlock ::= (&quot;HardBlock&quot; BlockBody)
+<BR>
+<P>SoftBlock ::= (&quot;SoftBlock&quot; BlockBody)
+<BR>
+<P>BlockBody ::= Path | BlockBody Path
+<BR>
+<P>ResultExpression ::= ResultTerm | ResultExpression ResultTerm
+<BR>
+<P>ResultTerm ::= Symbol | (ResultExpression) | Variable |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Call&quot; FunctionName (ResultExpression))
+<BR>
+<P>BoxDef ::= (&quot;Box&quot; BoxName)
+<BR>
+<P>TableDef ::= (&quot;Table&quot; TableName)
+<BR>
+<P>VectorDef ::= (&quot;Vector&quot; VectorName)
+<BR>
+<P>StringDef ::= (&quot;String&quot; StringName)
+<BR>
+<P>BoxName ::= Name
+<BR>
+<P>TableName ::= Name
+<BR>
+<P>VectorName ::= Name
+<BR>
+<P>StringName ::= Name
+<BR>
+<P>FunctionName ::= Name
+<BR>
+<P><P>
+Program ::= ProgramItem | Program ProgramItem
+<BR>
+<P>ProgramItem ::= FuncDef | BoxDef | TableDef | VectorDef | StringDef
+<BR>
+<P>FuncDef ::= (&quot;Function&quot; FunctionName (FunctionFormat) (FunctionBody)) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Function?&quot; FunctionName (FunctionFormat) (FunctionBody))
+<BR>
+<P>FunctionFormat ::= (InputFormat) (OutputFormat)
+<BR>
+<P>InputFormat ::= HardExpression
+<BR>
+<P>OutputFormat ::= HardExpression
+<BR>
+<P>HardExpression ::= HardTerms | HardTerms VVar HardTerms |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HardTerms EVar HardTerms
+<BR>
+<P>HardTerms ::= Empty | HardTerm | HardTerms HardTerm
+<BR>
+<P>HardTerm ::= Symbol | (HardExpression) | SVar | TVar
+<BR>
+<P>FunctionBody ::= Sentence | PAlt
+<BR>
+<P>PAlt ::= HardPAlt | SoftPAlt
+<BR>
+<P>HardPAlt ::= (&quot;HardPAlt&quot; PAltBody)
+<BR>
+<P>SoftPAlt ::= (&quot;SoftPAlt&quot; PAltBody)
+<BR>
+<P>PAltBody ::= Sentence | BlockBody Sentence
+<BR>
+<P>Sentence ::= (Pattern Tail)
+<BR>
+<P>Pattern ::= (&quot;Left&quot; PatternExpression) | (&quot;Right&quot; PatternExpression)
+<BR>
+<P>PatternExpression ::= Empty | Term | PatternExpression Term
+<BR>
+<P>Term ::= Symbol | (PatternExpression) | Variable
+<BR>
+<P>Symbol ::= (&quot;Symbol&quot; SymbolValue)
+<BR>
+<P>Variable ::= EVar | VVar | TVar | SVar
+<BR>
+<P>EVar ::= (&quot;EVar&quot; Name)
+<BR>
+<P>VVar ::= (&quot;VVar&quot; Name)
+<BR>
+<P>TVar ::= (&quot;TVar&quot; Name)
+<BR>
+<P>SVar ::= (&quot;SVar&quot; Name)
+<BR>
+<P>Tail ::= (&quot;Comma&quot; Path) | (&quot;Not&quot; Source Tail) | (&quot;Stake&quot; Path) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Cut&quot; Path) | (&quot;Fail&quot;) | (&quot;Equal&quot; Path) | (&quot;Error&quot; Path) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Trap&quot; Path PAlt)
+<BR>
+<P>Path ::= (Source Tail) | (&quot;DColon&quot; Source (HardExpression) Tail) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Iter&quot; Source Source (HardExpression) Tail) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Colon&quot; Source Sentence)
+<BR>
+<P>Source ::= HardBlock | SoftBlock | (&quot;Colon&quot; Source PAlt) |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ResultExpression)
+<BR>
+<P>HardBlock ::= (&quot;HardBlock&quot; BlockBody)
+<BR>
+<P>SoftBlock ::= (&quot;SoftBlock&quot; BlockBody)
+<BR>
+<P>BlockBody ::= Path | BlockBody Path
+<BR>
+<P>ResultExpression ::= ResultTerm | ResultExpression ResultTerm
+<BR>
+<P>ResultTerm ::= Symbol | (ResultExpression) | Variable |
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&quot;Call&quot; FunctionName (ResultExpression))
+<BR>
+<P>BoxDef ::= (&quot;Box&quot; BoxName)
+<BR>
+<P>TableDef ::= (&quot;Table&quot; TableName)
+<BR>
+<P>VectorDef ::= (&quot;Vector&quot; VectorName)
+<BR>
+<P>StringDef ::= (&quot;String&quot; StringName)
+<BR>
+<P>BoxName ::= Name
+<BR>
+<P>TableName ::= Name
+<BR>
+<P>VectorName ::= Name
+<BR>
+<P>StringName ::= Name
+<BR>
+<P>FunctionName ::= Name
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0028.html">Leonid F. Belous: "обновления на refal.net"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0026.html">Leonid F. Belous: "REFAL.NET is valid"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

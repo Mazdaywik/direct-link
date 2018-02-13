@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: Case-sensitive Refal+">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Case-sensitive Refal+</H1>
+<HR>
+<P>
+<!-- received="Thu Dec  2 17:15:48 1999 MSK" -->
+<!-- sent="Thu, 02 Dec 1999 17:14:54 +0300" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: Case-sensitive Refal+" -->
+<!-- id="38467EDE.2023D225@msu.ru" -->
+<!-- inreplyto="3843FA3F.F160866F@msu.ru" -->
+<STRONG>Andrey Slepuhin</STRONG> (<A HREF="mailto:pooh@msu.ru?subject=Re:%20Case-sensitive%20Refal%2B"><EM>pooh@msu.ru</EM></A>)<BR>
+<EM>Thu, 02 Dec 1999 17:14:54 +0300</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#80">[ date ]</A>
+<A HREF="index.html#80">[ thread ]</A>
+<A HREF="subject.html#80">[ subject ]</A>
+<A HREF="author.html#80">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0081.html">Leonid F. Belous: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0079.html">Andrei Klimov: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0072.html">Andrey Slepuhin: "Case-sensitive Refal+"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0081.html">Leonid F. Belous: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0081.html">Leonid F. Belous: "Re: Case-sensitive Refal+"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Andrei Klimov wrote:
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Андрей (С), спасибо за усилия и успехи в деле наведения порядка
+</EM><BR>
+<EM>&gt; в реализации Рефала Плюс и в самом языке!
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Позвольте и мне сделать несколько замечаний.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &lt;&lt;Режим &quot;case-insensitiveness&quot; означает, что все буквы в идентификаторах
+</EM><BR>
+<EM>&gt; данного модуля переводятся в верхний регистр.&gt;&gt;
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Поскольку понятие &quot;верхний регистр&quot; в этом определении &quot;первичное&quot;,
+</EM><BR>
+<EM>&gt; а &quot;case-insensitiveness&quot; или &quot;режим совместимости&quot; -- &quot;вторичные&quot;,
+</EM><BR>
+<EM>&gt; то лучше бы назвать ключик -u (Upper case), а не -i (Ignore case или
+</EM><BR>
+<EM>&gt; case-Insensitiveness),
+</EM><BR>
+<EM>&gt; так как все равно мы не можем спрятать детали.
+</EM><BR>
+<P>Если все хотят, чтобы было -u - мне без разницы, одну букву
+<BR>
+поменять не проблема.
+<BR>
+<P><EM>&gt; Как и Аркадий я голосую за то, чтобы имена функций из старых библиотек были upper
+</EM><BR>
+<EM>&gt; case.
+</EM><BR>
+<P>Я уже сказал, что если большинство будет за upper case, то я так и
+<BR>
+сделаю.
+<BR>
+Тогда уж и модули стандартные тоже upper case будут. Почему я особо не
+<BR>
+настаиваю на своем варианте - все равно стандартную библиотеку надо
+<BR>
+переписывать. Единственно, я хочу услышать мнения остальных (и авторов
+<BR>
+Рефала+ в том числе) - пусть все будет честно, голосованием.
+<BR>
+Однако, на будущее хочется выработать некий рекомендованный стиль
+<BR>
+написания программ на Рефале, как это сделано для Java.
+<BR>
+<P><EM>&gt; Мне кажется, что в данном случае &quot;революционное желание&quot; сделать сразу так, чтобы
+</EM><BR>
+<EM>&gt; все было &quot;красиво&quot;, не слишком перетягивает противоположные аргументы:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Во-первых, так написано в книжке.
+</EM><BR>
+<EM>&gt; Во-вторых, имена стандартных функций из основных библиотек, написанные большими
+</EM><BR>
+<EM>&gt; буквами, смотрятся не так уж и плохо.
+</EM><BR>
+<EM>&gt; В-третьих, все равно нам предстоит подключение к Рефалу Плюс каких-нибудь
+</EM><BR>
+<EM>&gt; распространенных системных библиотек типа Tcl/Tk-шной, и лучше это библиотеку
+</EM><BR>
+<EM>&gt; просто заморозить и не трогать -- только исправлять ошибки.
+</EM><BR>
+<P>Заморозить и не трогать - это хорошо. Вот только что делать с нормальной
+<BR>
+библиотекой - то ли писать ее для существующего runtime'а, то ли сначала
+<BR>
+runtime новый писать?
+<BR>
+<P><EM>&gt; Кстати, об ошибках в библиотеке. Вот пример одной.
+</EM><BR>
+<P>[description snipped]
+<BR>
+<P>Ну, это ерунда, я уже в текущих сорсах поправил.
+<BR>
+<P>Всего доброго,
+<BR>
+Андрей.
+<BR>
+<P>P.S. У меня тут много всяких разных мыслей появилось, только вот нет
+<BR>
+времени
+<BR>
+их изложить в письменном виде, а хотелось бы поделиться. На всякий
+<BR>
+случай:
+<BR>
+я буду 4-го, в субботу, на дне рождения интерната (где-то с 18.00
+<BR>
+в конференц-зале 1-го гуманитарного корпуса МГУ), так что если вдруг
+<BR>
+кто-то
+<BR>
+из бывших интернатовцев захочет предаться ностальгии, то меня там можно
+<BR>
+будет найти.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0081.html">Leonid F. Belous: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0079.html">Andrei Klimov: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0072.html">Andrey Slepuhin: "Case-sensitive Refal+"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0081.html">Leonid F. Belous: "Re: Case-sensitive Refal+"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0081.html">Leonid F. Belous: "Re: Case-sensitive Refal+"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Thu Dec 02 1999 - 17:15:49 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="korlyukov (korlyukov@grsu.grodno.by)">
+<META NAME="Subject" CONTENT="Turing Machine">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Turing Machine</H1>
+<HR>
+<P>
+<!-- received="Wed Mar 28 08:10:35 2001" -->
+<!-- isoreceived="20010328041035" -->
+<!-- sent="Sat, 24 Mar 2001 12:33:46 +0200" -->
+<!-- isosent="20010324103346" -->
+<!-- name="korlyukov" -->
+<!-- email="korlyukov@grsu.grodno.by" -->
+<!-- subject="Turing Machine" -->
+<!-- id="000201c0b459$cc5b7a10$190432c3@home" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>Turing Machine<BR>
+<STRONG>From: </STRONG>korlyukov (<EM>korlyukov@grsu.grodno.by</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Mar 24 2001 - 13:33:46 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#194">[ date ]</A>
+<A HREF="index.html#194">[ thread ]</A>
+<A HREF="subject.html#194">[ subject ]</A>
+<A HREF="author.html#194">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0195.html">korlyukov: "Examples for scpj"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0193.html">Sergei M. Abramov (at home): "Re: Refal for BESM-6"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В качестве побочного продукта занятий с суперкомпиляцией интерпретатора XSLT, написанного на рефале, у меня имелся интерпретатор машины Тьюринга, который был написан на XSLT.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В связи с этим, я отправил по адресу
+<BR>
+<P>xsl-list@lists.mulberrytech.com &lt;xsl-list@lists.mulberrytech.com&gt;
+<BR>
+<P>письмо следующего содержания 
+<BR>
+(ссылка
+<BR>
+<A HREF="http://www.biglist.com/lists/xsl-list/archives/200103/msg01221.html">http://www.biglist.com/lists/xsl-list/archives/200103/msg01221.html</A>
+<BR>
+)
+<BR>
+<P><P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Robert !
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I also have the Turing machine in XSLT.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The stylesheet does use the xt:node-set instruction, thus, you should
+<BR>
+use James Clark's XT to execute the stylesheet.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I do not use built-in XSLT functions of arithmetics, and also the
+<BR>
+functions for working with lines of symbols.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sequence of symbols of a tape I represent as a tree. At each level of
+<BR>
+the tree there are one symbol and reference to other part of the tape.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The instructions for the Turing machine are similarly represented also.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example 1. Replacement of each unit by two.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example 2. Doubling of quantity of units on the tape. If, for example,
+<BR>
+on the tape in the beginning there are 10 units, then in the end will be 20
+<BR>
+units.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example 3. Check of structure of brackets. At the end of working in the
+<BR>
+free square there will be T, if structure correct, and F - if wrong.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example 4. Deleting of points between units. For example, if in the
+<BR>
+beginning on the tape there were symbols &quot;.11..1.1...&quot;, then in the end we
+<BR>
+shall have &quot;1111&quot;.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example 5. Check of divisibility on 3. Similarly, it is possible to
+<BR>
+make the program of check of divisibility on 9.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more details, please see  <A HREF="http://www.refal.net/~korlukov/tm/">http://www.refal.net/~korlukov/tm/</A>
+<BR>
+<P><P>Alexandr Korlyukov
+<BR>
+The professor of the Grodno state university
+<BR>
+email -   korlyukov@grsu.grodno.by
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Содержание письма именно такое, потому что в период его подготовки появился конкурент, и мое письмо составлено как ответ на его письмо :
+<BR>
+<P>( <A HREF="http://www.biglist.com/lists/xsl-list/archives/200103/msg01017.html">http://www.biglist.com/lists/xsl-list/archives/200103/msg01017.html</A> )
+<BR>
+<P>Just for fun, I created a Turing Machine Markup Language (TMML).
+<BR>
+It's an XML language for describing Turing machines.
+<BR>
+I also created a TMML interpreter in XSLT. This XSLT 
+<BR>
+stylesheet, which is a Universal Turing Machine, executes 
+<BR>
+the Turing machine that is described in the TMML source 
+<BR>
+document.
+<BR>
+<P>For more details, please see <A HREF="http://www.unidex.com/turing/.">http://www.unidex.com/turing/.</A>
+<BR>
+<P>Best regards,
+<BR>
+<P>Bob
+<BR>
+<P>&lt;sig name    = 'Bob Lyons'
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title   = 'E-Commerce Consultant'
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;company = 'Unidex, Inc.'
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;phone   = '+1-732-975-9877'
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email   = 'boblyons@unidex.com'
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url     = '<A HREF="http://www.unidex.com/">http://www.unidex.com/</A>'
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;product = 'XML Convert: transforms flat files to XML and vice versa' /&gt;
+<BR>
+<P>&nbsp;XSL-List info and archive:  <A HREF="http://www.mulberrytech.com/xsl/xsl-list">http://www.mulberrytech.com/xsl/xsl-list</A>
+<BR>
+<P><P><P>Александр
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0195.html">korlyukov: "Examples for scpj"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0193.html">Sergei M. Abramov (at home): "Re: Refal for BESM-6"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

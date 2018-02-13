@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei Klimov (Andrei.Klimov@supercompilers.com)">
+<META NAME="Subject" CONTENT="Re: Refal &amp; XML - possible tasks">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal &amp; XML - possible tasks</H1>
+<HR>
+<P>
+<!-- received="Thu Apr  6 18:35:23 2000" -->
+<!-- isoreceived="20000406143523" -->
+<!-- sent="Fri, 24 Mar 2000 18:07:10 +0300" -->
+<!-- isosent="20000324150710" -->
+<!-- name="Andrei Klimov" -->
+<!-- email="Andrei.Klimov@supercompilers.com" -->
+<!-- subject="Re: Refal &amp; XML - possible tasks" -->
+<!-- id="017701bf95a2$e003cfd0$0100a8c0@piii" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="385F5C91.493AD689@msu.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal & XML - possible tasks<BR>
+<STRONG>From: </STRONG>Andrei Klimov (<EM>Andrei.Klimov@supercompilers.com</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Mar 24 2000 - 18:07:10 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#113">[ date ]</A>
+<A HREF="index.html#113">[ thread ]</A>
+<A HREF="subject.html#113">[ subject ]</A>
+<A HREF="author.html#113">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0114.html">Sergei M. Abramov: "A paper (ura-MPC2000)"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0112.html">Andrei Klimov: "Seminar Dynamic supercompilation of Java, 21 March 2000"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0080.html">Andrey Slepuhin: "Refal &amp; XML - possible tasks"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0080.html">Andrei Klimov: "Re: Refal &amp; XML - possible tasks"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Андрей (С) и все, добрый день!
+<BR>
+<P>По мотивам Вашего письма трехмесячной давности хочу обратиться
+<BR>
+ко всему рефал-scp сообществу с некоторыми текущими проблемами.
+<BR>
+<P>Извините, что то Ваше письмо осталось без обсуждения. Кроме как
+<BR>
+по причине &quot;всеобщей занятости и лености&quot;, это произошло еще
+<BR>
+и потому, что хотя работы в этом направлении уже велись
+<BR>
+Александром Корлюковым, в тот момент ему похвастаться было еще не чем.
+<BR>
+<P>Но сейчас ситуация изменилась: Те кто принимал участие в
+<BR>
+семинарах в Политехническом музее или почитывает www.refal.net
+<BR>
+(см. приложения 2, 3, 4 к &quot;Пособию по суперкомпиляции&quot;
+<BR>
+А. Корлюкова; однако, там выставлено далеко не все),
+<BR>
+знают, что у Александра Корлюкова &quot;уже на хлеб мажется&quot;:
+<BR>
+<P>1) имеется &quot;валидатор&quot;, проверяющий соответствие
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;XML-документа определению данных в DTD (Data Type Definition),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;который -- для проведения нижеописанных экспериментов --
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;вызывается на Рефале как &quot;фильтр&quot;:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Validate (e.DTD) e.XML&gt;  =&gt;   e.XML (без изменения)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;если e.XML удовлетворяет e.DTD и выдает авост в противном случае.
+<BR>
+<P>2) имеется интерпретатор (подмножества) XSLT
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(языка трансформаций XML-документов):
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Transform (e.XSLT) e.XML&gt;  =&gt;  e.XML_transformed
+<BR>
+<P>3) на некоторых примерах суперкомпилируется композиция функций:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Transform (e.XSLT) &lt;Validate (e.DTD) e.XML&gt;&gt;
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;где e.XSLT и e.DTD -- константы, а e.XML -- переменная,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;получая:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;а) компиляцию алгоритма преобразования e.XSLT в рефал-5,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;б) специализацию алгоритма преобразования на класс
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XML-документов, удовлетворяющих e.XML.
+<BR>
+<P>Здесь особенно ценно, что суперкомпиляция только
+<BR>
+&lt;Transform (e.XSLT) e.XML&gt; без фильтра-валидатора
+<BR>
+дает заметно худший результат, чем со специализацией по e.DTD.
+<BR>
+<P>==&gt; Теперь о текущих проблемах.
+<BR>
+<P>Сначала об общей проблеме: На фронте работ &quot;Написание
+<BR>
+на Рефале и суперкомпиляция программ обработки XML-документов&quot;
+<BR>
+очень не хватает людей. Приглашаются желающие.
+<BR>
+В частности, как Вы, Андрей, справедливо пишите,
+<BR>
+здесь много задач, которые могут поднять студенты,
+<BR>
+делающие курсовики и дипломные работы.
+<BR>
+<P>Например, есть такая серия работ:
+<BR>
+<P>&nbsp;&nbsp;- изучать материалы по XML-ю на сайте www.w3c.org
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(и других местах в Интернете),
+<BR>
+&nbsp;&nbsp;- описывать на Рефале интерпретаторы выставленных
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;там языков описания и обработки XML-документов
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(кроме DTD и XSLT еще есть XML Schema и др.),
+<BR>
+&nbsp;&nbsp;- суперкомпилировать эти интерпретаторы по отдельности и
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;в разных фигурах (вроде композиции Transform и Validate),
+<BR>
+&nbsp;&nbsp;- писать отчеты о проведенных экспериментах и о программах,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;доведенных до отчуждаемого от автора состояния,
+<BR>
+&nbsp;&nbsp;- присылать их для выставления на сайте www.refal.net.
+<BR>
+<P>==&gt; Есть еще одна назревшая конкретная проблема:
+<BR>
+<P>Нужны тестовые программы на XSLT, а также рекомендации,
+<BR>
+с какими реализациями XSLT стОит сравниваться (какие из них
+<BR>
+имеют приличную скорострельность и котируются на рынке?).
+<BR>
+<P>Хорошо бы найти такие программы на XSLT, которые делают не такие
+<BR>
+тривиальные преобразования как отображение XML в HTML, так как
+<BR>
+есть опасения, что интерпретация задач такого стиля достаточно
+<BR>
+хорошо вылизана и нам будет трудно конкурировать. Но, может, я и не прав.
+<BR>
+<P>Имея в виду способность суперкомпилятора &quot;сплавлять&quot; композицию
+<BR>
+функций, особый интерес представляют живые примеры, которые
+<BR>
+описываются последовательностью преобразований на XSLT.
+<BR>
+<P>Было бы совсем замечательно, если бы нашелся кто-нибудь,
+<BR>
+кто не прочь заняться подбором содержательных примеров и задач
+<BR>
+(например, лазая по Интернету) и разработкой тестов для программ
+<BR>
+А.Корлюкова, а также проведением сравнительных измерений.
+<BR>
+<P>Подытоживая, перечислю направления работ -- как упомянутые,
+<BR>
+так и не упомянутые выше, -- по которым есть рабочие места:
+<BR>
+- XML:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;- написание на Рефале и суперкомпиляция инструментов обработки XML-я
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;- тестирование и сравнительные измерения этих программ
+<BR>
+- Refal-Scp:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;- участие в работах по развитию суперкомпилятора Рефала
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;- разработка разных программ на Рефале &quot;под суперкомпилятор&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;- тестирование
+<BR>
+- Java-Scp:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;- аналогичные (и другие) фронты работ вокруг Java-суперкомпилятора.
+<BR>
+<P>Андрей (К).
+<BR>
+<P>PS. Андрей (С), а что за примеры на XSLT Вы гоняли?
+<BR>
+Это Ваши личные программы или какие-то чужие?
+<BR>
+Что они из себя представляют? Они были нужны практически?
+<BR>
+<P>----- Original Message -----From: Andrey Slepuhin &lt;pooh@msu.ru&gt;
+<BR>
+To: &lt;refal@botik.ru&gt;
+<BR>
+Cc: Vladimir Roganov &lt;roganov@niisi.msk.ru&gt;
+<BR>
+Sent: Tuesday, 21 December, 1999 13:55
+<BR>
+Subject: Refal &amp; XML - possible tasks
+<BR>
+<P><EM>&gt; День добрый всем!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Я тут на днях поставил XP/XT - соответственно XML-парсер и
+</EM><BR>
+<EM>&gt; имплементация XSL/XSLT от J.Clark'а, написанные исключительно
+</EM><BR>
+<EM>&gt; на Java. Все это дело, конечно, работает, но результаты удручающие -
+</EM><BR>
+<EM>&gt; даже на моем Dual PIII-450 преобразование тестового XML-файла
+</EM><BR>
+<EM>&gt; из 120 строк в HTML занимает около 5.5 секунд с использованием JIT,
+</EM><BR>
+<EM>&gt; и почти 8 секунд без оного (JDK1.2.2)!!! В связи с этим я вспомнил
+</EM><BR>
+<EM>&gt; про то, что Рефал надо увязывать с обработкой XML и после некоторых
+</EM><BR>
+<EM>&gt; размышлений пришел к следующему набору задач в этой области.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 1) XML-парсер. Читает XML-документ и представляет его в виде
+</EM><BR>
+<EM>&gt;    объектного выражения.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 2) DTD-парсер. Читает XML DTD и представляет в виде объектного
+</EM><BR>
+<EM>&gt;    выражения.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 3) XML Validator. Берет XML-документ и соответствующий DTD (уже
+</EM><BR>
+<EM>&gt;    в виде объектных выражений) и производит проверку документа на
+</EM><BR>
+<EM>&gt;    соответствие DTD.
+</EM><BR>
+<EM>&gt;    Внимание!!! Задача на суперкомпиляцию: оптимизация XML Validator
+</EM><BR>
+<EM>&gt;    для конкретного DTD.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 4) XSL-парсер. Читает XSL-стиль и представляет в виде объектного
+</EM><BR>
+<EM>&gt;    выражения.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 5) XSL-интерпретатор. Берет XSL-стиль и XML-документ (уже в виде
+</EM><BR>
+<EM>&gt;    объектных выражений) и производит необходимое преобразование
+</EM><BR>
+<EM>&gt;    XML-документа.
+</EM><BR>
+<EM>&gt;    Внимание!!! Задача на суперкомпиляцию: оптимизация XSL-интерпретатора
+</EM><BR>
+<EM>&gt;    для конкретного стиля.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; 6) В случае, если суперкомпиляция в 5) не даст желаемого результата,
+</EM><BR>
+<EM>&gt;    можно поставить отдельную задачу по написанию XSL-компилятора,
+</EM><BR>
+<EM>&gt;    который по XSL-стилю будет выдавать Рефал-программу преобразования
+</EM><BR>
+<EM>&gt;    XML-документов в соответствии с конкретным стилем.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Володя (Роганов), тут есть хорошие задачи для твоих студентов -
+</EM><BR>
+<EM>&gt; 1) - 4) вполне годятся для курсовой, а 5) и 6) могут и на диплом
+</EM><BR>
+<EM>&gt; потянуть. Так что можешь взять на заметку.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; Андрей.
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0114.html">Sergei M. Abramov: "A paper (ura-MPC2000)"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0112.html">Andrei Klimov: "Seminar Dynamic supercompilation of Java, 21 March 2000"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0080.html">Andrey Slepuhin: "Refal &amp; XML - possible tasks"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0080.html">Andrei Klimov: "Re: Refal &amp; XML - possible tasks"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

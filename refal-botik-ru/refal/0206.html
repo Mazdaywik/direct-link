@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (at home) (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!</H1>
+<HR>
+<P>
+<!-- received="Wed May  9 14:04:53 2001" -->
+<!-- isoreceived="20010509100453" -->
+<!-- sent="Tue, 8 May 2001 23:47:40 +0400" -->
+<!-- isosent="20010508194740" -->
+<!-- name="Sergei M. Abramov (at home)" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!" -->
+<!-- id="00ba01c0d7f7$bde57780$32e1d0c3@abrhome.polnet.botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="SURA: от нас с Робертом всем -- троекратное, симметричное URA!" -->
+<STRONG>Subject: </STRONG>Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (at home) (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue May 08 2001 - 23:47:40 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#206">[ date ]</A>
+<A HREF="index.html#206">[ thread ]</A>
+<A HREF="subject.html#206">[ subject ]</A>
+<A HREF="author.html#206">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0207.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0205.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Maybe in reply to:</STRONG> <A HREF="0204.html">Sergei M. Abramov (at home): "SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0207.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0204.html">Sergei M. Abramov (at home): "Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;From: Arkady Klimov &lt;klark@bagirra.net&gt;
+<BR>
+<P><P>&nbsp;&nbsp;&nbsp;&nbsp;И что меня в этом подходе заинтриговало: не получится ли теперь &quot;на УРА&quot;
+<BR>
+композиция? Была, мне кажется, такая слабость у УРА: композиция функций, каждая
+<BR>
+из которых в отдельности решается легко, вместе могут составлять очень сложную
+<BR>
+проблему. А как с этим теперь обстоит? (Прошу прощения, что не могу столь же
+<BR>
+четко и ясно, как Сергей, выразить свою мысль).
+<BR>
+Алик, попробую нащупть ответ:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;1.. Я не до конца понял проблему.  Если кто вспомнит конкретную задачу
+<BR>
+(пример)--будет легче.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;2.. С композициями в TSG не очень здорово--язык хвостово-рекурсивный
+<BR>
+(плоский);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;3.. Возможно вот о чем речь (это еще одна заготовка в закромах Родины--ну да
+<BR>
+среди своих...расскажу ;-)
+<BR>
+Если язык не плоский, то любая (не только листовая) конфигурация имеет вид
+<BR>
+(пардон, я все про свои лизоны, SCPJ-шники меня поймут, у них конфигурация точно
+<BR>
+такая-же, в некотором смысле):
+<BR>
+let [v1.1, ...,v1.k1] = F1(e1.1,....e1.n1)    [v2.1, ...,v2.k2] =
+<BR>
+F2(e2.1,....e2.n1)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;...
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;[vm.1, ...,vm.km] = Fm(em.1,....em.n1)in
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;[e(m+1).1,.....,e(m+1).k(m+1)]
+<BR>
+Здесь v*.* -- лизон-переменные, e*.* -- выражения с с-переменными и с лизонами
+<BR>
+(определенными выше использования в e*.*).
+<BR>
+<P>Тогда можно, построив (ТАВ) класс достижимости cls_i для данной
+<BR>
+вершины-конфигурации, построить апроксимацию сверху всех IO-классов в таблице
+<BR>
+ТАВ, получаемых здесь и ниже этой вершины:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clsio_j  = io( cls_i,  [e'(m+1).1,.....,e'(m+1).k(m+1)])
+<BR>
+<P>где e'i.j получен из ei.j заменой всех лизонов v*.* на свежие (уникальные)
+<BR>
+с-переменные.  Если пересечение clsio_j с желаемым clsiо пустое:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;null (clsio *. clsio_j)
+<BR>
+<P>то нет никаких шансов, что под данной вершиной будет хоть какой-то ответ -- все
+<BR>
+поддерево можно откинуть.  Это дает отсечение заведомо бесперспективных деревьев
+<BR>
+(в том числе--бесконечных).
+<BR>
+<P>Это (иногда) повысит скорость и повысит терминируемость SURA (пардон за
+<BR>
+терминалогию--все равно останется нетерминируемость и неразрешимость
+<BR>
+терминируемости, конечно).
+<BR>
+<P>Но это все штуки для вложенных языков (проект XSG как-то движется...)
+<BR>
+<P><P><P>&nbsp;&nbsp;&nbsp;&nbsp;From: korlyukov &lt;korlyukov@grsu.grodno.by&gt;
+<BR>
+<P><P>&nbsp;&nbsp;&nbsp;&nbsp;Но,... хоть какой-нибудь примерчик для прояснения существа дела для таких,
+<BR>
+как я, не очень знающего всю предысторию УРА.  Чтоб на нем (примере) было видно,
+<BR>
+чем результат работы старого УРА отличается от результата работы симметричного
+<BR>
+УРА.  Не буду возражать, если ответ будет послан по всему списку.
+<BR>
+<P>Тут по сути все просто: речь идет о расширении форматов решаемых задач.
+<BR>
+<P>Старый УРА умел решать только такие уравнения относительно С-переменных:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prog c-exps = const
+<BR>
+<P>где c-exps -- c-выражения (ну, с параметрами, рефальский образец), const --
+<BR>
+данные (без с-переменных).
+<BR>
+<P>Пример уравнения, подвластного старому УРА:
+<BR>
+&nbsp;&nbsp;(perm2 X (001 002 003 004 005 006 007)) = (002 003 004 005 006 007 001)
+<BR>
+где perm2 -- программа вычисления двойного применения перестановки Х1 к
+<BR>
+элементам списка (001 002 003 004 005 006 007)
+<BR>
+<P>У нового (симметричного) УРА можно писать переменные слева и справа от знака
+<BR>
+равно.  Можно и повторные.  Тем самым, все старые примеры по формату доступны и
+<BR>
+новому УРА, но можно еще писать и такой пример:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(digits X1) = X1
+<BR>
+<P>где (digits A) ==&gt; B -- вот такая функция: она берет число A и строит новое
+<BR>
+число В, у которого первая цифра равна тому, сколько в А было нулей, вторая
+<BR>
+цифра тому--сколько в А было единиц и т.д.
+<BR>
+<P>В старом УРА такой пример тоже бы взялся бы, но через Альпы -- за счет трюка:
+<BR>
+пришлось бы ручканми громоздить функцию EQ, строить бы композицию и решать такое
+<BR>
+вот уравнение:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(EQ (digits X1) X1) = True
+<BR>
+<P>В конце письма привожу пару (ну очень классических) примеров на УРА --- как для
+<BR>
+старого, так и для нового эти примеры подходят.
+<BR>
+<P>Ссылка на PDF рассматриваемой статьи:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;<A HREF="http://www.futamura.info.waseda.ac.jp/~glueck/URA/AbrGlu2.pdf">http://www.futamura.info.waseda.ac.jp/~glueck/URA/AbrGlu2.pdf</A>
+<BR>
+<P><P>Очень много примеров в китайской статье (нежное введение в обычный УРА, ссылка
+<BR>
+дается на вариант статьи до ее обработки китайскими верстальщиками):
+<BR>
+<P>&nbsp;&nbsp;<A HREF="../../~abram/AbrGlu-China.pdf">http://www.botik.ru/~abram/AbrGlu-China.pdf</A> (203,931 байтов)
+<BR>
+<P>Удачи
+<BR>
+<P>Сергей
+<BR>
+<P><P>--------------------------------------------------------------------------------
+<BR>
+<P>Не в пику, а как секция Related Works:
+<BR>
+<P>Замечу, что все игры с УРА очень похожи на красивую серию Корлюкова
+<BR>
+&quot;инвертирование при помощи SCP&quot; за исключением некоторых разниц:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;1.. УРА намного примитивнее SCP.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;2.. В УРА не нужно писать подпрограммку EQ, которая пишется из примера в
+<BR>
+пример в SCP-инверсиях (при этом, в SCP надо каждый раз еще сообразить, с какой
+<BR>
+стороны--слева или справа,--надо сравнивать на равенство...)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;3.. Про УРА все теоремы доказаны, все свойства известны.  Про SCP... ну,
+<BR>
+вообще говоря, SCP расширяет область определения функций.  Посему, в примерах
+<BR>
+&quot;SCP-для-инверсии&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a.. либо надо озаботиться, что все входные функции (которые мы SCP-руем
+<BR>
+ради инверсии) были бы тотальными (что не есть верно для многих примеров),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.. либо надо каждый &quot;ответ&quot; затем подставлять в уравнение и проверать
+<BR>
+(у нас в принципе могут быть лишние ответы--то бишь, SCP говорит &lt;F Вася&gt;=True,
+<BR>
+однако исходная функция не определена на Вася.... Особенно тяжело подставлять в
+<BR>
+исходную функцию выражения с с-переменными.  Особенно, когда SCP смело обобщает
+<BR>
+такую функцию:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F { s1 ex = s1 &lt;F ex&gt;;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= ;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;до такой:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F { ex = ex };
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Как тут отсеять &quot;лишние ответы&quot; (на скобках исходная программа не
+<BR>
+определена)?
+<BR>
+<P>--------------------------------------------------------------------------------
+<BR>
+<P>Мatch--наивная проверка вхождения подстроки в строку.  При помощи УРА решаются
+<BR>
+две задачи &quot;Что есть подстроки строки ABC?&quot; и &quot;Что не есть подстроки строки
+<BR>
+AАА?&quot;.
+<BR>
+<P>Переменные--почти как в рефале: Xe.i -- е-переменная (произвольный лисп-список);
+<BR>
+Xа.i -- атомарная переменная.
+<BR>
+<P><P><P><P><P><P><P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0206/01-part">stored</A>
+</UL>
+<!-- attachment="01-part" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0207.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0205.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Maybe in reply to:</STRONG> <A HREF="0204.html">Sergei M. Abramov (at home): "SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0207.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0204.html">Sergei M. Abramov (at home): "Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

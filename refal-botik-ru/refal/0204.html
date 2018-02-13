@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (at home) (abram@botik.ru)">
+<META NAME="Subject" CONTENT="SURA: от нас с Робертом всем -- троекратное, симметричное URA!">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>SURA: от нас с Робертом всем -- троекратное, симметричное URA!</H1>
+<HR>
+<P>
+<!-- received="Tue May  8 11:27:04 2001" -->
+<!-- isoreceived="20010508072704" -->
+<!-- sent="Mon, 7 May 2001 18:27:13 +0400" -->
+<!-- isosent="20010507142713" -->
+<!-- name="Sergei M. Abramov (at home)" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="SURA: от нас с Робертом всем -- троекратное, симметричное URA!" -->
+<!-- id="017501c0d701$cf8f7b80$32e1d0c3@abrhome.polnet.botik.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>SURA: от нас с Робертом всем -- троекратное, симметричное URA!<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (at home) (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Mon May 07 2001 - 18:27:13 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#204">[ date ]</A>
+<A HREF="index.html#204">[ thread ]</A>
+<A HREF="subject.html#204">[ subject ]</A>
+<A HREF="author.html#204">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0205.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0203.html">korlyukov: "pearls (new Scp4 examples)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0205.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P>Мы с Робертом сегодня закончили очередную ревизию статьи--пригласили написать
+<BR>
+про УРА в журнал со смачным сокращением SCP ;-)
+<BR>
+<A HREF="http://www.elsevier.nl/locate/scico/">http://www.elsevier.nl/locate/scico/</A> &quot;Science of Computer Programming&quot;.
+<BR>
+<P>Статья зовется: ``The Universal Resolving Algorithm and its Correctness:Inverse
+<BR>
+Computation in a Functional Language''.
+<BR>
+<P>Это наш трудовой подарок В.Ф.Турчину к его замечательному юбилею.
+<BR>
+<P>Учитывая (пытаясь) противоречивые требования рецензентов (сократить объем на
+<BR>
+5..10 страниц и добавить материала) нам пришлось &quot;открыть закрома
+<BR>
+Родины&quot;--пришлось предать гластности штучку, котоую мы давно дискутировали, но в
+<BR>
+тайне от народа.
+<BR>
+<P>Это потребовало сильно переписать (сильно сократить) Haskell пакет про URA и
+<BR>
+сильно переписать (сильно сократить) текст статьи.
+<BR>
+<P>Итак--симметричный УРА.  На самом деле, штука не сложная, возможно она кому-то
+<BR>
+приходила в голову и/или бросалась в народ как идея на наших бурных семинарах.
+<BR>
+<P>Обычный УРА умеет решать такие задачи (замечание: здесь и ниже--угловые
+<BR>
+скобки--просто скобки):
+<BR>
+<P>ura match &lt;[X1, &quot;ABC&quot;],[]&gt; 'Success -- найти такие X1, что (match [X1, &quot;ABC&quot;] =
+<BR>
+'Success); ura match &lt;[X1, &quot;ABC&quot;],[]&gt; 'Failure   -- найти такие X1, что (match
+<BR>
+[X1, &quot;ABC&quot;] = 'Failure);
+<BR>
+где match -- некая программа (например, проверка вхождения строки в подстроку),
+<BR>
+&lt;[X1, &quot;ABC&quot;],[]&gt; -- класс, описывающий множество входных данных, X1 --
+<BR>
+с-переменная, [] -- рестрикция (набор неравенств, тут--пустой) на с-переменные.
+<BR>
+То есть, в задачах обычного УРА входные параметры неизвестны (или частично
+<BR>
+неизвестны), выходное значение программы--фиксировано.
+<BR>
+<P>Симметричный УРА исключает дискриминацию между входным и выходными значениями
+<BR>
+программы.
+<BR>
+<P>Ему кроме старых задач (1, 2) можно задавать и такие задачки (3-это обычное
+<BR>
+вычисление и делается в точности так же эффективно,4 и 5 -- &quot;диаганальный
+<BR>
+случай&quot;, решение уравнений вида f(x)=x и др. более общих.):
+<BR>
+1) ura match &lt;( [X1,   &quot;ABC&quot;], 'Success ), []&gt; -- найти X1: match [X1, &quot;ABC&quot;] =
+<BR>
+'Success; 2) ura match &lt;( [X1,   &quot;ABC&quot;], 'Failure ), []&gt; -- найти X1: match [X1,
+<BR>
+&quot;ABC&quot;] = 'Failure;3) ura match &lt;( [&quot;AB&quot;, &quot;ABC&quot;],     X1   ), []&gt; -- найти X1:
+<BR>
+match [&quot;AB&quot;, &quot;ABC&quot;] = X1; 4) ura match &lt;( [X1,   &quot;ABC&quot;], 'Error:X2), []&gt; --
+<BR>
+найти X1, Х2: match [X1, &quot;ABC&quot;] = 'Error:X2;
+<BR>
+5) ura match &lt;( [X1,   &quot;ABC&quot;],     X1   ), []&gt; -- найти X1: match [X1, &quot;ABC&quot;] =
+<BR>
+X1;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^^^^^^^^^^^^io-class^^^^^^^^^^^^^
+<BR>
+Как оказалось, добавление функциональности в УРА приводит к сокращению его кода
+<BR>
+и его описания.  Кому интересно--смотрите ниже или спрашивайте PDF для
+<BR>
+proof-reader-ов ;-)
+<BR>
+<P>Удачи
+<BR>
+<P>Сергей.
+<BR>
+<P>--------------------------------------------------------------------------------
+<BR>
+<P>Обычный УРА
+<BR>
+Чтобы обсуждать симметричный УРА (SURA) надо договориться о том, что такое
+<BR>
+обычный УРА:
+<BR>
+<P><P>Это композиция трех функций:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;a.. PPT получает программу и входной класс, и строит дерево процессов (не
+<BR>
+интересно, все знают);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;b.. TAB -- обходит дерево в ширину, тащит через дерево входной класс,
+<BR>
+применяя к нему (к класу) по пути все сужения, что написаны на ребрах, дойдя до
+<BR>
+листа (пассивной конфигурации), она знает класс достижимости листа (какие данные
+<BR>
+придут к этому листу) и какой результат (выражение с c-переменными из этого
+<BR>
+класса) получится на выходе программы.  Тем самым, строится пары (возможно
+<BR>
+бесконечный список пар):
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;входной подкласс==&gt; с-выражение-для-результата
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;То есть исходная программа преобразуется в бесконечный список правил:
+<BR>
+&quot;образец = результат&quot;, в терминах рефала.  Все входные подклассы (левые части) в
+<BR>
+таблице tab -- непересекаются.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;c.. INV -- проссматривает табличное представление программы, сравнивает
+<BR>
+(clash) желаемое значение с правой частью предложения из таблицы, если можно
+<BR>
+отождествить, то подуживает левую часть (контралируя, что это подужение не
+<BR>
+схлопывает правую часть в пусто).
+<BR>
+Интересные места (ну, для нас PPT и TAB не интересны ведь!) в Haskell-реализации
+<BR>
+выглядили просто (правда буржуям приходится долго втолковывать тривиалные вещи,
+<BR>
+типа clash и subClassCntr -- CRA-теорему).
+<BR>
+ura  :: ProgTSG -&gt; Class -&gt; Dval  -&gt;  [(CCsub,Restr)]ura  p cls out = inv (tab
+<BR>
+(ppt p cls) cls) cls out
+<BR>
+inv  :: Tab -&gt; Class -&gt; Dval  -&gt;  [(CCsub,Restr)]inv  tab cls out = concat (map
+<BR>
+ans tab)     where ans (cls_i, ce_i) =            case (clash [ce_i] [out]) of
+<BR>
+(False, _)  -&gt;                   []             (True,sub') -&gt; case cls_i' of
+<BR>
+(_, [CONTRA]) -&gt; []                             _             -&gt; [(sub, r)]
+<BR>
+where cls_i' = cls_i/.sub'                                  (sub, r) =
+<BR>
+subClassCntr cls cls_i'
+<BR>
+<P>Симметричный УРА
+<BR>
+Переходим к симметричному УРА.
+<BR>
+<P>Шаг 1.  Вводим понятие io-класс: конструкция с с-переменными, описывающая
+<BR>
+множество 2D-точек на плоскости &quot;аргумент программы-результат&quot;---просто вот
+<BR>
+такая конструкция (и рядом лежащие):
+<BR>
+обычный класс:
+<BR>
+&lt;ds,      r&gt; -- описывает множество входных данных, ds--список с-выражений,
+<BR>
+r--рестрикция;
+<BR>
+io-класс:
+<BR>
+&lt;(ds,d), r&gt; -- описывает множество пар (входное данное, данное), ds--список
+<BR>
+с-выражений, d--с-выражение, r--рестрикция.
+<BR>
+функции in_ и io -- ничего особенного, конструктор, селектор:
+<BR>
+in_ (&lt;(ds,d), r&gt;) =def= &lt;ds, r&gt;  /* проекция */
+<BR>
+io (&lt;ds, r&gt;, d) =def= &lt;(ds,d), r&gt;  /* декартово произведение, если угодно */
+<BR>
+<P>Шаг 2.  Понимаем, что каждый буржуй (изучавший унификацию, но не изучавший
+<BR>
+clash) без объяснений и доказательств понимает, что пересечение классов есть
+<BR>
+класс, и делается пересечение при помощи унификации (the most general unifier):
+<BR>
+<P><P><P><P>Шаг 3.  Понимаем, что вместо старой исходной задачи для УРА: по заданному языку,
+<BR>
+программе, входному классу и желаемому результату (константа), найти множетсво
+<BR>
+всех тех входных данных, которые:
+<BR>
+<P><P><P>можно брать симметричную постановку исходной задачи для УРА: по заданному языку,
+<BR>
+программе и io-классу, найти множетсво всех тех пар (входные данные-результат),
+<BR>
+корторые:
+<BR>
+<P><P><P>Шаг 4.  Четкое осознаем, что старый добрый TAB -- не более чем представление в
+<BR>
+виде перечисления io-классов (непересекающихся!) графика функции программы на
+<BR>
+входном классе cls_in = in_(cls_io)
+<BR>
+<P><P><P>Шаг 5.  Понимаем, что Inv(...) выписанное выше, не более, чем пересечение
+<BR>
+графика программы с исходным |cls_io|
+<BR>
+<P><P><P>Ну, в общем-то и все!  Далее картинка:
+<BR>
+<P><P><P><P>И можно сравнить старый вариант УРА на Хаскеле, с новым вариантом (да, кодов PPT
+<BR>
+и TAB никто ни сколько не менял):
+<BR>
+ura :: ProgTSG -&gt; IOClass -&gt; [ (CCsub,Restr) ]ura    p cls_io = inv (tab (ppt p
+<BR>
+cls_in) cls_in) cls_io                  where cls_in = in_ cls_io
+<BR>
+inv :: [IOClass] -&gt; IOClass -&gt; [ (CCsub,Restr) ]inv    tab clsio = concat (map
+<BR>
+((*.) clsio) tab)
+<BR>
+<P><P><P><P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0204/01-part">stored</A>
+</UL>
+<!-- attachment="01-part" -->
+<P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0204/02-part">stored</A>
+</UL>
+<!-- attachment="02-part" -->
+<P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0204/03-part">stored</A>
+</UL>
+<!-- attachment="03-part" -->
+<P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0204/04-part">stored</A>
+</UL>
+<!-- attachment="04-part" -->
+<P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0204/05-part">stored</A>
+</UL>
+<!-- attachment="05-part" -->
+<P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0204/06-part">stored</A>
+</UL>
+<!-- attachment="06-part" -->
+<P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0204/07-part">stored</A>
+</UL>
+<!-- attachment="07-part" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0205.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0203.html">korlyukov: "pearls (new Scp4 examples)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0205.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

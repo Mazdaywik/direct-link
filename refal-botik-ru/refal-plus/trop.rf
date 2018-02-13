@@ -1,0 +1,12 @@
+$use STDIO;
+
+$func "++" eZ = (eX)(eA)(eY);
+*$func "++" eZ = eX;
+
+"++" 
+    $l eX '+' eP,
+    eP : $r eA '+' eY = (eX)(eA)(eY);
+
+
+Main = <"++" 'AAA+BBB+CCC+DDD+EEE'>;
+

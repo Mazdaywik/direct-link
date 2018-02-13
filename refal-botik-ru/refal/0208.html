@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (at home) (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!</H1>
+<HR>
+<P>
+<!-- received="Wed May  9 21:52:59 2001" -->
+<!-- isoreceived="20010509175259" -->
+<!-- sent="Wed, 9 May 2001 16:36:59 +0400" -->
+<!-- isosent="20010509123659" -->
+<!-- name="Sergei M. Abramov (at home)" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!" -->
+<!-- id="007301c0d884$bfb0eda0$32e1d0c3@abrhome.polnet.botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="SURA: от нас с Робертом всем -- троекратное, симметричное URA!" -->
+<STRONG>Subject: </STRONG>Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (at home) (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed May 09 2001 - 16:36:59 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#208">[ date ]</A>
+<A HREF="index.html#208">[ thread ]</A>
+<A HREF="subject.html#208">[ subject ]</A>
+<A HREF="author.html#208">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0209.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0207.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Maybe in reply to:</STRONG> <A HREF="0204.html">Sergei M. Abramov (at home): "SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0209.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0204.html">Sergei M. Abramov (at home): "Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Я попробую начать с самого простого примера. Но может реальные УРА, и старый
+<BR>
+и новый, уже такие, что это для них не проблема, не знаю, я исхожу из
+<BR>
+отстоявшегося у меня с 70-х образа &quot;простого&quot; УРА.
+<BR>
+Как будет ясно ниже, твой образ простого УРА намного серьезнее, чем то, что я
+<BR>
+всегда называл УРА.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Имеем функцию
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Rev {
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1 e2 = &lt;Rev e2&gt; s1;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;(прошу прощения, мне лень ставить точки в переменных)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Сначала рассмотрим задачу: &lt;Rev ex&gt; = 'abc'. Очевидно, что любой УРА с ней
+<BR>
+легко справляется и выдает, что есть одно и только одно решение: ex = 'cba'.
+<BR>
+<P>Увы, УРА как он есть (без суперкомпиляции) с задачей справляться-то справляется
+<BR>
+(ответ находит), но после этого занимается бесконечно долгой работой--той самой,
+<BR>
+о которой ты пишешь: &quot;потом будет бесконечно долго крутиться, пытаясь найти
+<BR>
+другие&quot;.
+<BR>
+<P>Вообще говоря УРА, это вот такая композиция (я разложу композицию в let-запись):
+<BR>
+ura prog clsio = let clsin   = in_ clsio      /* проекция желаемого IO-мно-
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;жества на ось Input */
+<BR>
+tree    = ppt p clsin    /* обычное перф. дерево процессов */
+<BR>
+graphic = tab tree clsin /* строим график программы, как
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;поток (ленивый список)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IO-классов */
+<BR>
+in  concat (map (*. clsio) graphic)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* решение есть пересечение
+<BR>
+графика
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;программы с желаемым
+<BR>
+IO-множеством */
+<BR>
+Про такую организацию УРА можно (и очень легко) доказать вот такой критерий
+<BR>
+(стр. 26 Теорема 12 в статье):
+<BR>
+<P><P><P>То есть, УРА за конечное время терминируется, если время счета программы на
+<BR>
+данных из clsin &quot;равномерно ограничено&quot; (I.c) константой (которая не зависит от
+<BR>
+того, какие данные из clsin мы берем).
+<BR>
+<P>Именно поэтому (&quot;равномерно ограничено&quot;, I.c), конечное время считаются любые
+<BR>
+примеры, имеющие вид:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match [ ????? , &quot;ABC&quot; ] = ?????
+<BR>
+<P>И поэтому, УРА будет работать бесконечно и одинаково успешно на обоих примерах с
+<BR>
+реверсом (как с одиночным, так и с вложенным).
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;А теперь рассмотрим задачу: &lt;Rev &lt;Rev ex&gt;&gt; = 'abc'. Как мне кажется, сидящий
+<BR>
+у меня в голове УРА выдаст решение ex = 'abc', а потом будет бесконечно долго
+<BR>
+крутиться, пытаясь найти другие.
+<BR>
+<P>Видимо, &quot;УРА, сидящий в твоей голове&quot; содержит элементы суперкомпиляции--если он
+<BR>
+на одиночном реверсе завершался в конечное время.  Или, как минимум, твой УРА
+<BR>
+содержит то самое превентивное отсечение бесконечных поддеревьев, не содержащих
+<BR>
+решений, о котором я писал в прошлом письме.
+<BR>
+<P>Да, для УРА с превентивным отсечением все будет так, как ты сказал: на одиноком
+<BR>
+реверсе УРА завершится за конечное время, а на вложенном--незавершится.
+<BR>
+<P>И сделанная нами с Робертом смена третьей фазы и формата задачи эту пробему не
+<BR>
+решает.  Здесь требуются более серьезные инструменты.  Чтобы понять какие, скажу
+<BR>
+еще одно:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Заметим, что вложенность тут вовсе не при чем.  Достаточно перейти от
+<BR>
+выплевывающего реверса к реверсу с аккамулятором (который только в конце дает
+<BR>
+свой ответ), чтобы получить вот что: УРА бесконечно работает как в случае с
+<BR>
+одиночного, так и в случае вложенного реверса.
+<BR>
+И улучшить здесь положение может только технология суперкомпиляции.  Но не той
+<BR>
+суперкомпиляции, которую все уже освоили (она ничего не даст), а той
+<BR>
+суперкомпиляции, о которой столько лет говорят и мечтают---я говорю о ScpWalk.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;PPS. Сергей, у меня одно небольшое лингвистическое предложение: слово
+<BR>
+&quot;лизон&quot; по русски выглядит как-то неприлично, может лучше писать его &quot;лиезон&quot;,
+<BR>
+или &quot;лиазон&quot;, как больше нравится...
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;1.. Алик, я абсолютно безграмотен и заание извиняюсь за опечатки в русских
+<BR>
+(и не только) словах
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;2.. Мне очень кажется, что лезон (или как оно пишется?) -- уже давно (до
+<BR>
+нас) русское (конечно заимствованное) слово, а именно--термин из рускоязычных
+<BR>
+физико-ядерных печатных работ
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Насколько я помню (ой и сильно я могу заблуждаться--все это было в далеком
+<BR>
+детстве в школе еще): лезон--частица, ответственная за слабое (или сильное?)
+<BR>
+взаимодействие.  Есть разновидности этой элементарной частицы: пионы (пи-лезоны)
+<BR>
+и меоны (мю-лезоны).
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;3.. Так что, увы, не удастся между сбою &quot;повыбирать&quot;, как нам с вами лучше
+<BR>
+его писать по русски.  Все что нам надо, так просто узнать (у физиков, у
+<BR>
+Нозика?), как оно пишется на самом деле в русскоязычных работах.
+<BR>
+Удачи
+<BR>
+<P>Сергей
+<BR>
+<P><P><P><HR>
+<UL>
+<LI>image/gif attachment: <A HREF="att-0208/01-part">stored</A>
+</UL>
+<!-- attachment="01-part" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0209.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0207.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Maybe in reply to:</STRONG> <A HREF="0204.html">Sergei M. Abramov (at home): "SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0209.html">Arkady Klimov: "Re: SURA: от нас с Робертом всем -- трократное, симметричное URA"</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0204.html">Sergei M. Abramov (at home): "Re: SURA: от нас с Робертом всем -- троекратное, симметричное URA!"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

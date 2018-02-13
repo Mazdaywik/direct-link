@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.net)">
+<META NAME="Subject" CONTENT="Re: Evolution of programming languages Was: Об отсечениях внутри блока.">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Evolution of programming languages Was: Об отсечениях внутри блока.</H1>
+<HR>
+<P>
+<!-- received="Sat Dec  2 07:10:18 2000" -->
+<!-- isoreceived="20001202041018" -->
+<!-- sent="Fri, 1 Dec 2000 18:23:48 +0300" -->
+<!-- isosent="20001201152348" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.net" -->
+<!-- subject="Re: Evolution of programming languages Was: Об отсечениях внутри блока." -->
+<!-- id="007f01c05bab$03c8f250$929943c2@swan" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="3A27AC37.48D7AA71@mccme.ru" -->
+<STRONG>Subject: </STRONG>Re: Evolution of programming languages Was: Об отсечениях внутри блока.<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.net</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Dec 01 2000 - 18:23:48 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#150">[ date ]</A>
+<A HREF="index.html#150">[ thread ]</A>
+<A HREF="subject.html#150">[ subject ]</A>
+<A HREF="author.html#150">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0151.html">Sergei M. Abramov (at home): "Fwd: Gentle introduction to inverse computation / uploaded"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0149.html">Andrei Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0147.html">Anton Yu. Orlov: "Re: Evolution of programming languages (Was:  Об отсечениях внутри блока.)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0147.html">Arkady Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+----- Original Message -----
+<BR>
+From: Anton Yu. Orlov &lt;orlov@mccme.ru&gt;
+<BR>
+To: Arkady Klimov &lt;klark@bagirra.net&gt;
+<BR>
+Cc: Andrei Klimov &lt;Andrei.Klimov@supercompilers.com&gt;; refal &lt;refal@botik.ru&gt;; Fedor Romanenko &lt;fedor@blues.ru&gt;
+<BR>
+Sent: Friday, December 01, 2000 4:48 PM
+<BR>
+Subject: Re: Evolution of programming languages (Was: Об отсечениях внутри блока.)
+<BR>
+<P><P>|         Добрый день, всем!
+<BR>
+|
+<BR>
+|     Отвечаю на вопрос о соответствии AC своей цели ;-).
+<BR>
+|
+<BR>
+| Arkady Klimov wrote:
+<BR>
+|
+<BR>
+| &gt; Теперь было бы интересно узнать, как обстоят дела с отсечениями в АС и его реализации?
+<BR>
+| &gt; Нет ли там ограничения, исходящего от рефала Плюс: что нет переходов по отсечениям изнутри
+<BR>
+| &gt; блока в роли источника. Надеюсь, что нет, иначе о перспективе переводе с Рефала-6
+<BR>
+| &gt; в АС можно будет забыть.
+<BR>
+|
+<BR>
+|     Это действительно вопрос реализации, так как подобные ограничения, конечно, никак не
+<BR>
+| |влияют на синтаксис.
+<BR>
+Формально да, но к АС мы фактически относимся не просто как к синтаксису, а как к нормальному (промежуточному) языку со своей
+<BR>
+семантикой. А название может вводить в заблуждение, поэтому я и вставил оговорку &quot;и его реализации&quot;, хотя дело тут, конечно, не в
+<BR>
+реализации, а в зафиксированной семантике.
+<BR>
+<P>| В данный момент работа
+<BR>
+| над реализацией еще далека от завершения, но перехват неуспехов уже сделан,
+<BR>
+| и данного ограничения на использование отсечений там нет.
+<BR>
+Отлично!
+<BR>
+<P>А как обстоят сейчас дела с документированностью АС? Сюда же относится и вопрос по семантике. По хорошему, нужно иметь полное
+<BR>
+описание семантики, не зависящее от реализации. Вероятно его нужно писать параллельно с первой реализацией (или сразу по ее
+<BR>
+завершении). Может кого еще подключить к этому (у кого есть к этому вкус)?
+<BR>
+Вопрос о форме надо будет обсудить отдельно.
+<BR>
+<P>| Я предлагал такую трактовку отсечений в блоках (не зная, что именно
+<BR>
+| это решение принято в Рефале-6) лишь в качестве приятного
+<BR>
+| расширения Рефала+, но так как это оказывается необходимым для
+<BR>
+| выражения понятий Рефала-6, я думаю можно быть уверенным, что так оно и
+<BR>
+| останется в окончательной реализации.
+<BR>
+Конечно, пусть останется. Если же нужно будет в рефале+ оставить старую семантику, это, как я понимаю, всегда можно сделать
+<BR>
+средствами входного контроля и подходящего отображения из внешнего языка в АС.
+<BR>
+|
+<BR>
+|     И, поскольку с разными Рефалами так все, оказывается, не просто, у меня
+<BR>
+| есть вопрос по Рефалу-6. Как обстоят дела с отсечениями
+<BR>
+| внутри источника, к которому применяется отрицание?
+<BR>
+Неуспех внутри отрицания выходит как нормальное завершение со значением (пустым?), так?
+<BR>
+Поэтому понятно, что выйти из отрицания ни обычный неуспех, ни тем более, усиленный отсечением, не может. А нормальный результат под
+<BR>
+отрицанием выходит как простой (не усиленный) неуспех. Поэтому, конечно, под отрицанием с точки зрения заборов и отсечений
+<BR>
+&quot;начинается новая жизнь&quot;, так же как и с начала тела функции. Другое дело, должны ли отсечения быть сбалансированны явными заборами?
+<BR>
+Это вопрос дизайна внешнего языка: либо они требуются явно, либо компилятор их будет вставлять сам. Как этот вопрос будет решен в
+<BR>
+АС - по большому счету безразлично, так как это не язык для пользователя. (Но важно, чтобы это было как то решено и зафиксировано).
+<BR>
+Вообще АС - исключительно приятный объект для воплощения хороших идей, поскольку нет ограничения, что это должно быть &quot;удобно для
+<BR>
+пользователя&quot;. Но все должно быть максимально логично и однородно.
+<BR>
+<P>| В Рефале+ они, как и внутри любого источника, должны быть сбалансированны
+<BR>
+| заборами. Кроме того, отрицание в Рефале+ перехватывает неуспехи, идущие после знака равенства. Как я понимаю, в Рефале-6 это не
+<BR>
+так?
+<BR>
+Да, в рефале-6 это будет авария.
+<BR>
+<P>Аркадий.
+<BR>
+|
+<BR>
+|         С уважением,
+<BR>
+|                 Антон.
+<BR>
+|
+<BR>
+|
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0151.html">Sergei M. Abramov (at home): "Fwd: Gentle introduction to inverse computation / uploaded"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0149.html">Andrei Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0147.html">Anton Yu. Orlov: "Re: Evolution of programming languages (Was:  Об отсечениях внутри блока.)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0147.html">Arkady Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

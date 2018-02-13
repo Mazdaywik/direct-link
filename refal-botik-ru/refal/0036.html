@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ abstract syntax">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ abstract syntax</H1>
+<HR>
+<P>
+<!-- received="Fri Nov 26 13:41:57 1999" -->
+<!-- isoreceived="19991126104157" -->
+<!-- sent="Fri, 26 Nov 1999 11:39:24 +0300" -->
+<!-- isosent="19991126083924" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: Refal+ abstract syntax" -->
+<!-- id="003e01bf37e9$bdfac860$07aee8c1@rcms.botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Refal+ abstract syntax" -->
+<STRONG>Subject: </STRONG>Re: Refal+ abstract syntax<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Nov 26 1999 - 11:39:24 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#36">[ date ]</A>
+<A HREF="index.html#36">[ thread ]</A>
+<A HREF="subject.html#36">[ subject ]</A>
+<A HREF="author.html#36">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0037.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0035.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0039.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0029.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P><EM>&gt;    2. Путь последовательность операторов вытянут по-
+</EM><BR>
+<EM>&gt;       горизонтали через конкатенацию, а не через cons .
+</EM><BR>
+<P>Не говоря &quot;ЗА&quot; или &quot;ПРОТИВ&quot; просто подчеркну разницу: разница такая же, как
+<BR>
+между
+<BR>
+<P>&nbsp;&nbsp;&nbsp;(x+y)*(z+w)   и   (* + z w + x y)
+<BR>
+<P>С этой точки зрения с репликой:
+<BR>
+<P>From: Andrey Slepuhin &lt;pooh@msu.ru&gt;
+<BR>
+<EM>&gt;2) Предлагаемый синтаксис несколько ближе к виртуальному коду. По
+</EM><BR>
+<EM>&gt;   крайней мере конструкций типа &quot;Label s&quot; в абстрактном синтаксисе
+</EM><BR>
+<EM>&gt;   иметь не хотелось бы.
+</EM><BR>
+<P>я согласен.
+<BR>
+<P><EM>&gt;    3. Все скобки, включая образующие термы, имеют впереди теги.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;    4. Я не стал здесь брать теги в кавычки.
+</EM><BR>
+<P>Вообще говоря--&quot;Form&quot; и Form--эквивалентны
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;(* Сегодня и в Рефала+ я надеюсь они уже эквивалентны? Или еще нет?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ну, по крайней мере, в длиннющей дискуссии про &quot;кавычки&quot; и
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;крики души&quot;--около 80 писем с 30/08/1999 по 10/09/1999,--было
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;это устаканено и ЭТО НАДО ДЕЛАТЬ В Рефале+.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*)
+<BR>
+<P>Однако (дело вкуса!!!) мне кажется, что чисто визуально в двух эквивалентных
+<BR>
+текстах:
+<BR>
+<P><EM>&gt;t.ProgramFile       ::= (Program t.Source t.Import e.Program)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;t.Import            ::= (Use e.Names)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;t.Source            ::= (Source s.FileName)
+</EM><BR>
+<P>и
+<BR>
+<P><EM>&gt;t.ProgramFile       ::= (&quot;Program&quot; t.Source t.Import e.Program)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;t.Import            ::= (&quot;Use&quot; e.Names)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;t.Source            ::= (&quot;Source&quot; s.FileName)
+</EM><BR>
+<P>выигрывает по читабельности второй--лучше (контрастнее) отличаются нетерминалы и
+<BR>
+терминалы...
+<BR>
+Еще раз--это дело вкуса.
+<BR>
+<P>(* ------------------------------------------------------------
+<BR>
+Для справки и обмена Рефал+ опытом: а я в своих разработках делаю еще и так:
+<BR>
+<P><EM>&gt;t.ProgramFile       ::= (&amp;Program t.Source t.Import e.Program)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;t.Import            ::= (&amp;Use e.Names)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;t.Source            ::= (&amp;Source s.FileName)
+</EM><BR>
+<P>Обычно я завожу Рефал+ модуль tаgs.rfi:
+<BR>
+<P>$const Program = &quot;Program&quot;, Use = &quot;Use&quot;, Source=&quot;Source&quot;;
+<BR>
+<P>(замечу, что tаgs.rf при этом ПУСТОЙ, интересно, правда?)  Во время отладки
+<BR>
+важно, чтобы теги печатались читабельно--поэтому тег==слово (звено+рюкзак для
+<BR>
+хранения тела слова...).  При этом (в сегодняшнем рефале+) сравнение слов не
+<BR>
+сводится к сравнению только звеньев--делается еще сравнение рюкзаков... А после
+<BR>
+отладки  я имею возможность переопределить:
+<BR>
+<P>$const Program = 1, Use = 2, Source=3;
+<BR>
+<P>что экономит память (тег==звено) и время сравнения тэгов (сравниваются только
+<BR>
+звенья)...
+<BR>
+<P>------------------------------------------------------------ *)
+<BR>
+<P><EM>&gt;    5. Сложные конструкции (перестройки, присваивания) разбиты на
+</EM><BR>
+<EM>&gt;       составляющие действия.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;    6. Семантика действия состоит в пополнении среды и выработке
+</EM><BR>
+<EM>&gt;       нового форматного значения (объектного выражения со
+</EM><BR>
+<EM>&gt;       статическим форматом). Действия бывают простые (образцы,
+</EM><BR>
+<EM>&gt;       результаты, форматы) и сложные (блоки).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;    7. Есть отдельный оператор NoFail, непроницаемый для $Fail, и
+</EM><BR>
+<EM>&gt;       CUTALL, выражающий семантику равенства рефала +.
+</EM><BR>
+<EM>&gt;       Непрозрачный блок выражается так: NoFail
+</EM><BR>
+<EM>&gt;       (Block e.Branches).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;    8. $iter может быть разложен в более элементарные понятия
+</EM><BR>
+<EM>&gt;       (Label sl) и (Loop sl) см.ниже. В операторе Loop метка
+</EM><BR>
+<EM>&gt;       sl должна быть определенной (оператором Label) выше на
+</EM><BR>
+<EM>&gt;       пути от начала функции к данному оператору Loop.
+</EM><BR>
+<EM>&gt;       Ищется ближайшая точка Label с тем же символом-меткой.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;    9. Вместо трех понятий: Tail, Path, Source одно: e.Sentence.
+</EM><BR>
+<P>Пункты 5, 6, 7, 8 связаны все (являются следствием) с п. 2. См. замечание на п.2
+<BR>
+(и реплику &lt;pooh@msu.ru&gt;).
+<BR>
+<P><EM>&gt;   10. Констант нет: они уже подставлены.
+</EM><BR>
+<P>Вот!  Я же говорил, что это требует дискуссии!
+<BR>
+<P>Важное завоевание рефала+ (как и рефала-6) -- введение понятий &quot;разделяемое
+<BR>
+данное&quot;.  Конструкции &quot;$const X = ... &quot; и &quot;&amp;X&quot; позволяют выражать эти понятия на
+<BR>
+уровне констант.  Пример:
+<BR>
+<P>$const X   = '1234567890',
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X1  = (&amp;X)  (&amp;X),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X2  = (&amp;X1) (&amp;X1),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X3  = (&amp;X2) (&amp;X2),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.....
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X64 = (&amp;X65) (&amp;X65);
+<BR>
+<P>F = &amp;X64;
+<BR>
+<P>Ну а теперь к экспертам--расскажите:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-1- Как это выглядит сегодня в реализации Рефала+? Около 138 звеньев в
+<BR>
+сегменте данных, не правда ли?;
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-2- И как это будет выглядить в абстрактном синтаксисе, если принять
+<BR>
+концепцию &quot;Констант нет: они уже подставлены&quot;?
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-3- Отдельное пожелание: хотелось бы, чтобы кто-нибудь выписал и прислал на
+<BR>
+список рассылки файл с сегодняшним абстрактным синтаксисом функции F в условии
+<BR>
+&quot;Констант нет: они уже подставлены&quot; ;-)
+<BR>
+<P>(* только мне не присылайте--у меня маленький диск--по моим оценкам будет:
+<BR>
+&nbsp;&nbsp;&nbsp;10*2^64 байт == 160 миллионов Террабайт текста ;-)
+<BR>
+&nbsp;*)
+<BR>
+<P><EM>&gt;       Но вопрос: что такое
+</EM><BR>
+<EM>&gt;       имя функции? И как выглядит внутри выражения ссылка на
+</EM><BR>
+<EM>&gt;       функцию? Другие символы ссылки? Возможный ответ: как (Ref
+</EM><BR>
+<EM>&gt;       s.Word). Определяющие вхождения задаются просто как s.Word. В
+</EM><BR>
+<EM>&gt;       вызове функции используется (Ref s.Word)
+</EM><BR>
+<P>Да! И это важное место для существенной дискуссии...
+<BR>
+<P><EM>&gt;   11. Определения символов-ссылок должна быть возможность
+</EM><BR>
+<EM>&gt;       расширять список типов ссылок.
+</EM><BR>
+<P>Да! И это важное место для существенной дискуссии...
+<BR>
+<P><EM>&gt;   12. Объектные символы (в отличие от символов-ссылок)
+</EM><BR>
+<EM>&gt;       представляются сами собой, а не как (Symbol s)
+</EM><BR>
+<P>Это можно сделать если ВСЕ рефальские круглые скобки будут представлены с тэгом
+<BR>
+(&quot;Par&quot; ....).  Это сделано в определении &quot;t.HardTerm&quot;, но пропущено (я не
+<BR>
+ошибаюсь-ли?) в
+<BR>
+<P><EM>&gt;t.PatternTerm       ::= t.Symbol
+</EM><BR>
+<EM>&gt;                      | (e.PatternExpression)
+</EM><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^ Par?
+<BR>
+<EM>&gt;                      | t.Variable
+</EM><BR>
+<P>Ок...
+<BR>
+<P><EM>&gt;   13. Операторы Error и Trap имеют неявный дополнительный
+</EM><BR>
+<EM>&gt;       аргумент продолжение справа от оператора.
+</EM><BR>
+<P><P>Это опять про п.2.
+<BR>
+<P><EM>&gt;   14. Остаток после операторов Fail и Loop игнорируется.
+</EM><BR>
+<P><P>Это опять про п.2.
+<BR>
+<P><EM>&gt;   15. Конкретная реализация может не поддерживать какие-то
+</EM><BR>
+<EM>&gt;       элементы (или сочетания элементов) абстрактного синтаксиса. В
+</EM><BR>
+<EM>&gt;       этом случае должно выдаваться внятное сообщение.
+</EM><BR>
+<P><P>Да.
+<BR>
+<P><EM>&gt;======================================================================
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;t.ProgramFile       ::= (Program t.Source t.Import e.Program)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;t.Import            ::= (Use e.Names)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;t.Source            ::= (Source s.FileName)
+</EM><BR>
+<P>Алик!
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(1) Хотелось бы каких-то пояснений...
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(2) Модульность требует существенных дискуссий
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(3) Вижу &quot;импорт&quot;, не вижу &quot;экспорта&quot;...
+<BR>
+<P><EM>&gt;e.Program           ::= t.ProgramItem
+</EM><BR>
+<EM>&gt;                      | e.Program t.ProgramItem
+</EM><BR>
+<EM>&gt;                      | t.Line
+</EM><BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;(1) кажется тело программы может быть пустым;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(2) не понял, что значит, что значит, что тело состоит только из t.Line?
+<BR>
+Может быть имелось в виду, что есть алтернатива у &quot;t.ProgramItem :== ..... |
+<BR>
+t.Line&quot; ?
+<BR>
+<P><EM>&gt;t.ProgramItem       ::= t.FuncDef | t.ObjectDef | t.Initializer
+</EM><BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;(1) Да, симпатично, понравился t.Initializer ;-)  А зачем он?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(2) Следует добавить альтернативу | t.Pragma
+<BR>
+<P>Я бы сделал так:
+<BR>
+<P>-а- в текущем тексте Алика заменил бы глобально t.Line --&gt; t.Pragma, а вместо
+<BR>
+<P><EM>&gt;t.Line              ::= (Line s.LineNumber s.PosNumber)
+</EM><BR>
+<EM>&gt;                      | (Line s.LineNumber)
+</EM><BR>
+<P>-б- и написал бы:
+<BR>
+<P>t.Pragma             ::= (Pragma e.Pragma)
+<BR>
+<P>e.Pragma             ::= t.Line
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &quot;Traseall&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &quot;Trase&quot; e.Fnames
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;......
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| e.OtherPragma
+<BR>
+<P>t.Line              ::= (Line s.LineNumber s.PosNumber)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Line s.LineNumber)
+<BR>
+<P>Ну, кажется и все (пока--при первом просмотре) замечания...
+<BR>
+<P>Удачи!
+<BR>
+<P>Сергей
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0037.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0035.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0039.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0029.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei P. Nemytykh (nemytykh@math.botik.ru)">
+<META NAME="Subject" CONTENT="Scp4's news.">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Scp4's news.</H1>
+<HR>
+<P>
+<!-- received="Fri Apr 14 15:18:07 2000" -->
+<!-- isoreceived="20000414111807" -->
+<!-- sent="Fri, 14 Apr 2000 11:49:40 +0400" -->
+<!-- isosent="20000414074940" -->
+<!-- name="Andrei P. Nemytykh" -->
+<!-- email="nemytykh@math.botik.ru" -->
+<!-- subject="Scp4's news." -->
+<!-- id="001901bfa5e6$002c2f20$0ee1d0c3@polnet.botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="m11fqY8-00454MC@math.botik.ru" -->
+<STRONG>Subject: </STRONG>Scp4's news.<BR>
+<STRONG>From: </STRONG>Andrei P. Nemytykh (<EM>nemytykh@math.botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Apr 14 2000 - 11:49:40 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#115">[ date ]</A>
+<A HREF="index.html#115">[ thread ]</A>
+<A HREF="subject.html#115">[ subject ]</A>
+<A HREF="author.html#115">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0116.html">Andrei Klimov: "Re: Scp4's news."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0114.html">Sergei M. Abramov: "A paper (ura-MPC2000)"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0015.html">A.P.Nemytykh: "Scp4's news."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0116.html">Andrei Klimov: "Re: Scp4's news."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0015.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Об'явление.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;На страничке <A HREF="http://www.botik.ru/pub/local/scp/refal5/">http://www.botik.ru/pub/local/scp/refal5/</A>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;выложена новая версия SCP4.
+<BR>
+<P>&nbsp;&nbsp;Что нового:
+<BR>
+&nbsp;-----------------------------------------------------------------
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;- Данная версия SCP4 ТРЕБУЕТ ОБНОВЛЕННОЙ версии РЕФАЛА-5
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(которую можно взять на той же странице ).
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Под старой версией Рефала-5 данная версия SCP4 работать НЕ будет.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Необходимо ПЕРЕТРАНСЛИРОВАТЬ ВСЕ Ваши модули.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Мы благодарны Александру Корлюкову и Леониду Белоусу за указанные
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ошибки в Рефале-5.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Мы благодарим Леонида Белоуса за перенос Рефала-5  под Sun/Linux.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;- Исправлено несколько ошибок.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Большое спасибо Андрею Климову, Александру Корлюкову ,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Сергею Мешвелиани , Сергею Скоробогатову (студент Андрея Чеповского),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Юре Климову, Антону Орлову и Олегу Одинцову (студент Андрея
+<BR>
+Чеповского).
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;за пересланные мне тесты на ошибки.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;- Добавлено несколько новых демонстарционных примеров.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( см. DOC/USE.TXT и сами примеры DEMO/)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;- реализована чистка поглощаемых рядом стоящих предложений;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( Пример: F { '111'  s.1 e.X = s.1 e.X;    ==&gt; F { '111'  e.X =
+<BR>
+e.X; }
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'111' e.X = e.X;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+<BR>
+&nbsp;&nbsp;&nbsp;- реализована чистка тождественных циклов. Что позволяет использовать
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;простые рекурсивные фильтры, не боясь того, что циклы из этих фильтров
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;появятся в остаточной программе.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( Пример:       F { 'a'  e.X = 'a'  &lt;F e.X&gt;;    ==&gt; F { e.X = e.X; }
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= ;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+<BR>
+<P><P>&nbsp;&nbsp;&nbsp;- реализована чистка рекурсивных проекций.  Любознательный читатель
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;может сравнить остаточные программы демонстрационных примеров
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d_div10.bat и d_div125.bat  в предыдущей и данной версии Scp4.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( Пример: F { s.1   e.X (s.1   e.Y) = s.1 &lt;F e.X (e.Y)&gt;;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(e.1) e.X ((e.2) e.Y) = (&lt;F e.1 (e.2)&gt;) &lt;F e.X
+<BR>
+(e.Y)&gt; ;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;() = ;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;==&gt; F { e.X (e.Y) = e.X; }
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( Ещё один пример: F { s.1  e.X (e.Y) = &lt;F e.X (e.Y)&gt;;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(e.Y) = e.Y;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;==&gt; F { e.X (e.Y) = e.Y; }
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;- расширен входной язык описания программ для суперкомпиляции:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- появилась новая функция-пометка Cut__ , которая
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;должна быть определена на Рефале как тождественная.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Появление вызова данной функции в стеке в момент прогонки
+<BR>
+приводит к
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;реструктуризации последнего -- функциональные аргуметы этого
+<BR>
+вызова
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;далее будут преобразовываться отдельно от остальной части стека.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Т.е. оставшаяся часть стека объявляется контекстом текущих
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;вычислений, и ,тем самым, её входные параметры будут обобщены.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Я благодарю Андрея Климова за идею данной мета-пометки.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( подробности см. в DOC/INREF4.TXT )
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- появились новый модуль: GLOBAL.REF
+<BR>
+<P>&nbsp;&nbsp;- я благодарю Андрея Климова и Александра Корлюкова за пересланные мне
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;подробные дневники наблюдений за свойствами Scp4.
+<BR>
+<P>&nbsp;&nbsp;- я благодарю Леонида Белоуса за указанные ошибки в системе on-line
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;демонстрации Scp4.
+<BR>
+<P>&nbsp;&nbsp;- я благодарен Андрею Чеповскому, который организовал в МВТУ для студентов
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;лабораторные работы по Scp4. Прошу его предать спасибо всем студентам
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;принявшим в этих работах участие.
+<BR>
+<P>&nbsp;- я благодарен Сергею Скоробогатову, который оказывает техническое
+<BR>
+&nbsp;&nbsp;&nbsp;содействие в проведении таких лабораторных работ.
+<BR>
+<P><P>&nbsp;&nbsp;&nbsp;- Большое спасибо всем пользователям Scp4.
+<BR>
+<P>&nbsp;&nbsp;Андрей Немытых.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0116.html">Andrei Klimov: "Re: Scp4's news."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0114.html">Sergei M. Abramov: "A paper (ura-MPC2000)"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0015.html">A.P.Nemytykh: "Scp4's news."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0116.html">Andrei Klimov: "Re: Scp4's news."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0015.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=KOI8-R">
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Dmitry Kostin (dik@cnt.ru)">
+<META NAME="Subject" CONTENT="RE: Refal+ 1.8.3 released">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>RE: Refal+ 1.8.3 released</H1>
+<HR>
+<P>
+<!-- received="Wed May 10 15:28:56 2000" -->
+<!-- isoreceived="20000510112856" -->
+<!-- sent="Wed, 10 May 2000 15:26:50 +0400 (MSD)" -->
+<!-- isosent="20000510112650" -->
+<!-- name="Dmitry Kostin" -->
+<!-- email="dik@cnt.ru" -->
+<!-- subject="RE: Refal+ 1.8.3 released" -->
+<!-- id="XFMail.000510152650.dik@cnt.ru" -->
+<!-- charset="KOI8-R" -->
+<!-- inreplyto="39137756.C5705067@msu.ru" -->
+<STRONG>Subject: </STRONG>RE: Refal+ 1.8.3 released<BR>
+<STRONG>From: </STRONG>Dmitry Kostin (<EM>dik@cnt.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed May 10 2000 - 15:26:50 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#116">[ date ]</A>
+<A HREF="index.html#116">[ thread ]</A>
+<A HREF="subject.html#116">[ subject ]</A>
+<A HREF="author.html#116">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0117.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0115.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0109.html">Andrey Slepuhin: "Refal+ 1.8.3 released"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0117.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0109.html">Dmitry Kostin: "RE: Refal+ 1.8.3 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0117.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;Приятно, что и в пять утра в субботу в поте лица
+<BR>
+трудится Рефал-сообщество !
+<BR>
+On 06-May-00 Andrey Slepuhin wrote:
+<BR>
+<EM>&gt; День добрый всем!
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; У меня дошли руки поковырять старую реализацию Рефала+.
+</EM><BR>
+<EM>&gt; В итоге там появились поддержка fork и предварительная
+</EM><BR>
+<EM>&gt; поддержка TCP-сокетов. Скачать новую версию можно со
+</EM><BR>
+&nbsp;Здорово !
+<BR>
+<EM>&gt; страницы
+</EM><BR>
+<EM>&gt;   <A HREF="http://glade.nmd.msu.ru/~pooh/refal-plus">http://glade.nmd.msu.ru/~pooh/refal-plus</A>
+</EM><BR>
+<EM>&gt; Там же лежит пример использования. Под Linux'ом вроде бы
+</EM><BR>
+<EM>&gt; все работает. Когда появится версия под CygWin - пока не
+</EM><BR>
+&nbsp;Скачал и получил странный результат.
+<BR>
+<P>&nbsp;Правда, сразу оговорюсь - у меня не Линукс, а FreeBSD 3.4
+<BR>
+EXE-шники скомпилировались нормально, как всегда
+<BR>
+а вот с библиотеками получил облом.
+<BR>
+----------------------------------------
+<BR>
+gcc -g -Wall -pipe -m486 -c -o rl_main.o rl_main.c
+<BR>
+In file included from rl_main.c:5:
+<BR>
+/usr/include/malloc.h:2: warning: #warning &quot;this file includes &lt;malloc.h&gt; which
+<BR>
+is deprecated, use &lt;stdlib.h&gt; instead&quot;
+<BR>
+rl_main.c: In function `vpr':
+<BR>
+rl_main.c:126: warning: long unsigned int format, rlptr arg (arg 2)
+<BR>
+rl_main.c: In function `main':
+<BR>
+rl_main.c:260: structure has no member named `sa_restorer'
+<BR>
+rl_main.c:262: `SA_SIGINFO' undeclared (first use this function)
+<BR>
+rl_main.c:262: (Each undeclared identifier is reported only once
+<BR>
+rl_main.c:262: for each function it appears in.)
+<BR>
+rl_main.c:263: structure has no member named `sa_sigaction'
+<BR>
+rl_main.c: In function `inithole':
+<BR>
+rl_main.c:444: warning: implicit declaration of function `isdigit'
+<BR>
+gmake[1]: *** [rl_main.o] Error 1
+<BR>
+gmake[1]: Leaving directory `/usr/0/refal+/refal-plus-1.8.3/lib'
+<BR>
+gmake: *** [all] Error 2
+<BR>
+---------------------------------
+<BR>
+&nbsp;Может быть не самые свежие исходники были выложены ?
+<BR>
+<P><EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; Андрей.
+</EM><BR>
+&nbsp;&nbsp;С уважением,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Дмитрий.
+<BR>
+<P>P.S. А если бы еще не считали авторы, что кроме Линукс и
+<BR>
+Win* операционных систем не существует ! :-)
+<BR>
+----------------------------------
+<BR>
+E-Mail: Dmitry Kostin &lt;dik@cnt.ru&gt;
+<BR>
+Date: 10-May-00
+<BR>
+Time: 15:16:23
+<BR>
+<P>This message was sent by XFMail
+<BR>
+----------------------------------
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0117.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0115.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0109.html">Andrey Slepuhin: "Refal+ 1.8.3 released"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0117.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0109.html">Dmitry Kostin: "RE: Refal+ 1.8.3 released"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0117.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Wed May 10 2000 - 15:28:57 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

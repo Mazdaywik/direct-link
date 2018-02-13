@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrey.Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: New Refal+ errors">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: New Refal+ errors</H1>
+<HR>
+<P>
+<!-- received="Wed Sep 29 13:37:22 1999 MSD" -->
+<!-- sent="Wed, 29 Sep 1999 13:29:43 +0400" -->
+<!-- name="Andrey.Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: New Refal+ errors" -->
+<!-- id="37F1DC07.676CA14A@msu.ru" -->
+<!-- inreplyto="37F0F13C.2568BD25@msu.ru" -->
+<STRONG>Andrey.Slepuhin</STRONG> (<A HREF="mailto:pooh@msu.ru?subject=Re:%20New%20Refal%2B%20errors"><EM>pooh@msu.ru</EM></A>)<BR>
+<EM>Wed, 29 Sep 1999 13:29:43 +0400</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#60">[ date ]</A>
+<A HREF="index.html#60">[ thread ]</A>
+<A HREF="subject.html#60">[ subject ]</A>
+<A HREF="author.html#60">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0061.html">Andrei Klimov: "Re: New Refal+ errors"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0059.html">Andrey.Slepuhin: "New Refal+ errors"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0061.html">Andrei Klimov: "Re: New Refal+ errors"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&quot;Andrey.Slepuhin&quot; wrote:
+<BR>
+<P>[snip]
+<BR>
+<P><EM>&gt; 2) Наблюдаются глюки со входными форматами. Мне с большим трудом
+</EM><BR>
+<EM>&gt; удалось локализовать ошибку, имея под рукой лишь автоматически
+</EM><BR>
+<EM>&gt; сгенерированные из FLAC'а рефальские тексты. В итоге получился следующий
+</EM><BR>
+<EM>&gt; пример:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; ====================8&lt;========================
+</EM><BR>
+<EM>&gt; $use Stdio;
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; $func F (e.lc) (e.lr) t.p (e.ls) t.u = e.res ;
+</EM><BR>
+<EM>&gt; * $func F e = e ;
+</EM><BR>
+<EM>&gt; $func G e = e ;
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Main =
+</EM><BR>
+<EM>&gt;   1 :: t.p,
+</EM><BR>
+<EM>&gt;   2 :: e.l,
+</EM><BR>
+<EM>&gt;   3 :: t.u,
+</EM><BR>
+<EM>&gt;   &lt;G t.p e.l t.u&gt;;
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; G {
+</EM><BR>
+<EM>&gt;   t.p e.l t.u,
+</EM><BR>
+<EM>&gt; &lt;WriteLN t.p&gt;
+</EM><BR>
+<EM>&gt; &lt;WriteLN e.l&gt;
+</EM><BR>
+<EM>&gt; &lt;WriteLN t.u&gt;
+</EM><BR>
+<EM>&gt;   &lt;F (e.l) ( ) t.p (e.l) t.u&gt;;
+</EM><BR>
+<EM>&gt; };
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; F {
+</EM><BR>
+<EM>&gt;   (e.lc) (e.lr) t.p (e.ls) t.u,
+</EM><BR>
+<EM>&gt; &lt;WriteLN e.lr&gt;,
+</EM><BR>
+<EM>&gt; &lt;WriteLN e.ls&gt;;
+</EM><BR>
+<EM>&gt; };
+</EM><BR>
+<EM>&gt; ====================8&lt;========================
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; pooh@thicket:~/work/flac$ rfp test.rf
+</EM><BR>
+<EM>&gt; Refal Plus Compiler  Version 1.8.00.8b-32bit  1991 R.F.Gurin,
+</EM><BR>
+<EM>&gt; S.A.Romanenko
+</EM><BR>
+<EM>&gt;  and RCMS PSI AS RUSSIA, Pereslavl-Zalessky,1993 Copyright (c)
+</EM><BR>
+<EM>&gt; /usr/bin/gcc -g -c test.s
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt;      Dynamic memory 6708
+</EM><BR>
+<EM>&gt;      Max dynamic memory 12076
+</EM><BR>
+<EM>&gt; test : No errors
+</EM><BR>
+<EM>&gt; /usr/bin/gcc -g  test.o /usr/refal-plus/inc/rfp.a  -o test.out
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; File test.out created
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; pooh@thicket:~/work/flac$ ./test.out
+</EM><BR>
+<EM>&gt; 1
+</EM><BR>
+<EM>&gt; 2
+</EM><BR>
+<EM>&gt; 3
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 3
+</EM><BR>
+<EM>&gt; pooh@thicket:~/work/flac$
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Должно быть (получается, если использовать закомментированное
+</EM><BR>
+<EM>&gt; объявление функции F):
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; pooh@thicket:~/work/flac$ ./test.out
+</EM><BR>
+<EM>&gt; 1
+</EM><BR>
+<EM>&gt; 2
+</EM><BR>
+<EM>&gt; 3
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 2
+</EM><BR>
+<EM>&gt; pooh@thicket:~/work/flac$
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Более подробно на код я еще не смотрел. Если у кого-нибудь есть идеи -
+</EM><BR>
+<EM>&gt; буду очень благодарен.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Когда эта ошибка будет исправлена - выложу обновленные RPM'ы.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; Андрей.
+</EM><BR>
+<P>День добрый еще раз!
+<BR>
+<P>Кажется можно расслабиться - ошибку я нашел. Дело было в том,
+<BR>
+что во время swap'а двух rlnod'ов, который проходит в два приема
+<BR>
+(8 байт все-таки), при обмене первых половин был использован
+<BR>
+неправильный режим адресации. После исправления ошибки &quot;чистый&quot;
+<BR>
+(т.е. без модификаций) FLAC вроде бы собирается и работает нормально.
+<BR>
+Новые RPM'ы выложу к вечеру.
+<BR>
+<P>Всего доброго,
+<BR>
+Андрей.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0061.html">Andrei Klimov: "Re: New Refal+ errors"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0059.html">Andrey.Slepuhin: "New Refal+ errors"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0061.html">Andrei Klimov: "Re: New Refal+ errors"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Wed Sep 29 1999 - 13:37:23 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Mike Potanin (potanin@mccme.ru)">
+<META NAME="Subject" CONTENT="Re: Лямбда-исчисление в рефале">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Лямбда-исчисление в рефале</H1>
+<HR>
+<P>
+<!-- received="Tue Aug 28 18:46:45 2001" -->
+<!-- isoreceived="20010828144645" -->
+<!-- sent="Mon, 27 Aug 2001 15:25:39 +0400 (MSD)" -->
+<!-- isosent="20010827112539" -->
+<!-- name="Mike Potanin" -->
+<!-- email="potanin@mccme.ru" -->
+<!-- subject="Re: Лямбда-исчисление в рефале" -->
+<!-- id="Pine.LNX.4.21.0108271508580.17951-100000@mccme.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="000401c12ee4$5f5c7300$07aee8c1@rcms.botik.ru" -->
+<STRONG>Subject: </STRONG>Re: Лямбда-исчисление в рефале<BR>
+<STRONG>From: </STRONG>Mike Potanin (<EM>potanin@mccme.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Aug 27 2001 - 15:25:39 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#229">[ date ]</A>
+<A HREF="index.html#229">[ thread ]</A>
+<A HREF="subject.html#229">[ subject ]</A>
+<A HREF="author.html#229">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0230.html">Arkady Klimov: "Re: Лямбда-исчисление в рефале"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0228.html">Sergei M. Abramov: "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0228.html">Sergei M. Abramov: "Re: Лямбда-исчисление в рефале."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0231.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0228.html">Mike Potanin: "Re: Лямбда-исчисление в рефале"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+<EM>&gt; &gt;замыкание (closure). Синтаксис естественный
+</EM><BR>
+<EM>&gt; &gt;Adder {
+</EM><BR>
+<EM>&gt; &gt; s1 = { s2 = &lt;Add s1 s2&gt;; };
+</EM><BR>
+<EM>&gt; &gt;}
+</EM><BR>
+<EM>&gt; ....
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Думаю, в реальной системе придется больше синтаксически разносить между собою
+</EM><BR>
+<EM>&gt; блок {...} и замыкание.  Так же, как в Хаскелле пришлось разнезносить (...) и (\
+</EM><BR>
+<EM>&gt; ...).
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Возможно синтаксис рефала не развалится, если в него добавить примерно такое же:
+</EM><BR>
+<EM>&gt; {\ ... }.
+</EM><BR>
+Я думал об альтернативе для {}, уж больно они некрасиво смотрятся в
+<BR>
+конструкции &lt;{...} ...&gt;. Но более удачного придумать не смог. {}
+<BR>
+используются и в стандартном with-блоке и я решил что этот синтаксис будет
+<BR>
+привычным. Хотя переделать его не долго - в стандарт он пока не попал :-).
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; А по сути:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; =1= Надо или нет добавлять замыкания в Рефал?  Думаю можно--язык
+</EM><BR>
+<EM>&gt;     от этого не обеднеет.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; =2= Усложнит ли это суперкомпиляцию?  Смотря о какой
+</EM><BR>
+<EM>&gt;     суперкомпиляции идет речь.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt;     Я бы аккуратно посмотрел бы, каким в таком расширенном
+</EM><BR>
+<EM>&gt;     рефале становится state (соостояние вычисления), а затем
+</EM><BR>
+<EM>&gt;     посмотрел бы, какой для этого state нужна conf. После чего и
+</EM><BR>
+<EM>&gt;     можно будет оценить, насколько все усложнтся (или упростится?).
+</EM><BR>
+Как работает рефаловский суперкомпилятор я понять не смог - сложно
+<BR>
+разобраться в большой программе на языке, который только что изучил, да
+<BR>
+еще и без математической подготовки :-). По этому очень интересно услышать
+<BR>
+мнение специалистов.
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Сергей
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;P.S. Исходный текст этой эксперементальной реализации лежит
+</EM><BR>
+<EM>&gt; &gt;<A HREF="http://pm.kmost.express.ru/~pm/hrefal.tgz">http://pm.kmost.express.ru/~pm/hrefal.tgz</A>
+</EM><BR>
+<EM>&gt; &gt;Слиль в них плохой (первая моя программа на haskell), но
+</EM><BR>
+<EM>&gt; &gt;поэксперементировать можно. Накоплю опыта, я ее с нуля перепишу.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Внушает!
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Я уже 3 недели себя психологически готовлю к счастью (к Happy) и все никак не
+</EM><BR>
+<EM>&gt; могу решиться освоить лексеры/парсеры на Хаскелле.  А тут в первом же Вашем
+</EM><BR>
+<EM>&gt; опыте вижу:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Makefile:
+</EM><BR>
+<EM>&gt; ...
+</EM><BR>
+<EM>&gt;    Parser.hs: Parser.y
+</EM><BR>
+<EM>&gt;      happy -a Parser.y
+</EM><BR>
+<EM>&gt; ...
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+Я раньше уже пользовался yacc и Java CUT, поэтому happy освоил без
+<BR>
+проблем. Хотя я с формальными граматиками знаком очень мало (даже для
+<BR>
+рефала мне пришлось обращаться к знакомым с ВМК, что бы понять почему
+<BR>
+правильная программа не распознается как правильная :-)), писать парсер на
+<BR>
+happy оказалось проще чем сразу на незнакомом haskell. Особенно приятно
+<BR>
+было вносить изменения в граматику - те же переделки в haskell делалиь бы
+<BR>
+с гораздо большим трудом. Но у счастья оказалась и обратная сторона.
+<BR>
+Ошибки и даже опечатки в граматике несколько раз порождали haskell-код,
+<BR>
+который компилировался. Вот тут то я понял как тяжело отлаживать программы
+<BR>
+на этом языке :-). Все ошибки в собственно haskellе компилятор обнаруживал
+<BR>
+сам.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0230.html">Arkady Klimov: "Re: Лямбда-исчисление в рефале"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0228.html">Sergei M. Abramov: "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0228.html">Sergei M. Abramov: "Re: Лямбда-исчисление в рефале."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0231.html">Sergei M. Abramov (at home): "Re: Лямбда-исчисление в рефале."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0228.html">Mike Potanin: "Re: Лямбда-исчисление в рефале"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

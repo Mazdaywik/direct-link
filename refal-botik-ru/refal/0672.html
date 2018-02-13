@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Leonid Belous (belous@ilt.kharkov.ua)">
+<META NAME="Subject" CONTENT="Re: Refal interpreter">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal interpreter</H1>
+<HR>
+<P>
+<!-- received="Wed Jan 26 00:29:48 2005" -->
+<!-- isoreceived="20050125212948" -->
+<!-- sent="Tue, 25 Jan 2005 23:26:55 +0200" -->
+<!-- isosent="20050125212655" -->
+<!-- name="Leonid Belous" -->
+<!-- email="belous@ilt.kharkov.ua" -->
+<!-- subject="Re: Refal interpreter" -->
+<!-- id="016801c50324$c2648240$914c7cc1@copernik" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="1106564918.2509.6.camel@shkal" -->
+<STRONG>Subject: </STRONG>Re: Refal interpreter<BR>
+<STRONG>From: </STRONG>Leonid Belous (<EM>belous@ilt.kharkov.ua</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Jan 26 2005 - 00:26:55 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#672">[ date ]</A>
+<A HREF="index.html#672">[ thread ]</A>
+<A HREF="subject.html#672">[ subject ]</A>
+<A HREF="author.html#672">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0673.html">aka captain cobalt: "partial-eval.org"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0671.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0670.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0674.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0671.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0670.html">Leonid Belous: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0674.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый вечер, всем!
+<BR>
+<P>Антон, спасибо за примеры. 
+<BR>
+Попробовал оценить эффективность Вашего интерпретатора. Очень резвый :-).
+<BR>
+За неимением времени не смог пока организовать сравнительный прогон тестов в одинаковых условиях и хронометрирование.
+<BR>
+<P>Из-за того, что мне удается посчитать на Вашем тесте только 823! , а с 824 выдается &quot;Ошибка: слишком длинная строка.&quot; могу только сказать, что практически не заметна разница в сранении с компилятивной реализацией Рефала-2 для Windows.
+<BR>
+<P>Интересно узнать, как в Вашей реализации организована память и можно ли увеличить объем обрабатываемых выражений? Можете ли Вы посчитать 10000! ?
+<BR>
+<P>Я призываю читателей нашей конференции, работающих под Unix, попробовать и высказать свои впечатления об этой интересной работе.
+<BR>
+<P>С уважением,
+<BR>
+--Леонид Белоус
+<BR>
+<P>----- Исходное сообщение ----- 
+<BR>
+От: &quot;A.A.Vladimirov&quot; &lt;vladimi@mech.math.msu.su&gt;
+<BR>
+Кому: &lt;refal@botik.ru&gt;
+<BR>
+Отправлено: 24 января 2005 г. 13:08
+<BR>
+Тема: Re: Refal interpreter
+<BR>
+<P><P><EM>&gt; В Сбт, 22/01/2005 в 21:28 +0200, Leonid Belous пишет:
+</EM><BR>
+<EM>&gt; &gt; Здравствуйте, Антон!
+</EM><BR>
+<EM>&gt; &gt; 
+</EM><BR>
+<EM>&gt; &gt; Правильно ли я понял, что встроенные арифметические функции в Вашей реализации
+</EM><BR>
+<EM>&gt; &gt;  (add,sub,mul,div,div,mod)пока не расчитаны на произвольноразрядную целую арифметику?
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Неправильно поняли. Расчитаны ;)
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; 
+</EM><BR>
+<EM>&gt; &gt; Если я неправ насчет нереализованности произвольноразрядной целой арифметики, то
+</EM><BR>
+<EM>&gt; &gt;  был бы благодарен за правильно написанный для Вашей реализации пример программы
+</EM><BR>
+<EM>&gt; &gt;  рекурсивного вычисления факториала, на котором интересно было бы оценить эффективность
+</EM><BR>
+<EM>&gt; &gt;  Вашей чистой интерпретации. 
+</EM><BR>
+<EM>&gt; &gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Приложено.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; С уважением,
+</EM><BR>
+<EM>&gt; Антон Владимиров
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0673.html">aka captain cobalt: "partial-eval.org"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0671.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0670.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0674.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0671.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0670.html">Leonid Belous: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0674.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Wed Jan 26 2005 - 00:29:56 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

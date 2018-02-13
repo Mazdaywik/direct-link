@@ -1,0 +1,4 @@
+$func REF-XML e = e ;
+$func XML-REFA e = e ;
+$func XML-REF e = e ;
+

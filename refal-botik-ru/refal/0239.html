@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.net)">
+<META NAME="Subject" CONTENT="Re: Рефал и база знани">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Рефал и база знани</H1>
+<HR>
+<P>
+<!-- received="Fri Oct 19 14:13:50 2001" -->
+<!-- isoreceived="20011019101350" -->
+<!-- sent="Sat, 13 Oct 2001 14:52:40 +0400" -->
+<!-- isosent="20011013105240" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.net" -->
+<!-- subject="Re: Рефал и база знани" -->
+<!-- id="001f01c153d5$735e3da0$110d040a@Bagirra" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="000f01c1531f$883bda40$013b7cc1@ilt.kharkov.ua" -->
+<STRONG>Subject: </STRONG>Re: Рефал и база знани<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.net</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Oct 13 2001 - 14:52:40 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#239">[ date ]</A>
+<A HREF="index.html#239">[ thread ]</A>
+<A HREF="subject.html#239">[ subject ]</A>
+<A HREF="author.html#239">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0240.html">Иван Евтухови: "(no subject)"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0238.html">Leonid Provorov: "Re: Рефал и база знаний"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0237.html">Leonid Belous: "Re: Рефал и база знани"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0237.html">Arkady Klimov: "Re: Рефал и база знани"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;----- Original Message ----- 
+<BR>
+&nbsp;&nbsp;From: Leonid Belous 
+<BR>
+&nbsp;&nbsp;To: Ермолаев Дмитрий 
+<BR>
+&nbsp;&nbsp;Cc: refal@botik.ru 
+<BR>
+&nbsp;&nbsp;Sent: Friday, October 12, 2001 5:10 PM
+<BR>
+&nbsp;&nbsp;Subject: Re: Рефал и база знаний
+<BR>
+<P><P>&nbsp;&nbsp;Здравствуйте, Дмитрий!
+<BR>
+<P><P>&nbsp;&nbsp;&nbsp;&nbsp;Возможно ли чтобы РЕФАЛ мог обрабатывать динамические факты и правила.
+<BR>
+&nbsp;&nbsp;Если можно, то уточните, что Вы имеете ввиду?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Тоесть, есть ли нтерпритатор РЕФАЛА.
+<BR>
+&nbsp;&nbsp;Все три диалекта Рефала (Рефал-5, Рефал-плюс, Рефал-6) не являются в чистом виде интерпретаторами, а содержат компилирующую часть, которая переводит программу на специальный промежуточный язык, который затем интерпретируется. С моей точки зрения минимальная компилирующая часть у Рефала-5, которую в определенной степени можно и не замечать (достаточно быстро работает), и просто считать Рефал-5 интерпретатором.
+<BR>
+&nbsp;&nbsp;Прошу прощения у авторов  реализаций Рефала , ежели я чего не так сказал, поправьте.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Или как-то можно обойтись и так?
+<BR>
+&nbsp;&nbsp;Если я правильно понял, то в принципе Вам хотелось бы обрабатывать динамически меняющиеся Рефал-предложения?
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Меня, как пользователя Рефала, когда-то занимал этот вопрос, и насколько я помню, из этой ситуации успешно вышел Леонид Проворов при создании своей системы АЛЬКОР. У него был свой диалект Рефала (близкий к т.н. базисному).
+<BR>
+&nbsp;&nbsp;Леонид, если Вы читаете конференцию, то просьба поделится своими идеями на этот счет.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Хотелось бы также услышать мнение Аркадия Климова, поскольку, как мне показалось, он косвенным образом затрагивал этот вопрос на Рефал-семинарах, в связи с задачами суперкомпиляции.
+<BR>
+<P>Да, если речь об этом, то в Рефале-6 имеется возможность динамически пополнять &quot;поле памяти&quot; (то есть работающую программу), и на этой основе, можно писать программы, порождающие новые функции с занесением последних в поле памяти (через посредство вызова компилятора, который написан целиком на рефале и умеет оставлять свой результат сразу в поле памяти, минуя файл).
+<BR>
+Аркадий
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;С уважением,
+<BR>
+&nbsp;&nbsp;--Леонид Белоус
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;----- Original Message ----- 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;From: Ермолаев Дмитрий 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;To: refal-plus@botik.ru 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Sent: Wednesday, October 10, 2001 6:15 PM
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Subject: Рефал и база знаний
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0240.html">Иван Евтухови: "(no subject)"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0238.html">Leonid Provorov: "Re: Рефал и база знаний"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0237.html">Leonid Belous: "Re: Рефал и база знани"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0237.html">Arkady Klimov: "Re: Рефал и база знани"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

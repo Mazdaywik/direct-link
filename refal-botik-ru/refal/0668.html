@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Leonid Belous (belous@ilt.kharkov.ua)">
+<META NAME="Subject" CONTENT="Re: Refal interpreter">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal interpreter</H1>
+<HR>
+<P>
+<!-- received="Sat Jan 22 22:33:28 2005" -->
+<!-- isoreceived="20050122193328" -->
+<!-- sent="Sat, 22 Jan 2005 21:28:38 +0200" -->
+<!-- isosent="20050122192838" -->
+<!-- name="Leonid Belous" -->
+<!-- email="belous@ilt.kharkov.ua" -->
+<!-- subject="Re: Refal interpreter" -->
+<!-- id="005801c500b8$b0493f60$01004e0a@copernik" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="1106314748.4835.46.camel@shkal" -->
+<STRONG>Subject: </STRONG>Re: Refal interpreter<BR>
+<STRONG>From: </STRONG>Leonid Belous (<EM>belous@ilt.kharkov.ua</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Jan 22 2005 - 22:28:38 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#668">[ date ]</A>
+<A HREF="index.html#668">[ thread ]</A>
+<A HREF="subject.html#668">[ subject ]</A>
+<A HREF="author.html#668">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0669.html">Sergei Romanenko: "Re: Refal interpreter"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0667.html">Leonid Belous: "Re: Romanenko.-.Generator.kompilyatorov,.porozhdenny`j.samoprimeneniem.specializatora....(1987).djvu"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0664.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0669.html">Sergei Romanenko: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0664.html">Leonid Belous: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0669.html">Sergei Romanenko: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0670.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0671.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Здравствуйте, Антон!
+<BR>
+<P>Правильно ли я понял, что встроенные арифметические функции в Вашей реализации (add,sub,mul,div,div,mod)пока не расчитаны на произвольноразрядную целую арифметику?
+<BR>
+<P>&nbsp;Я попытался протестировать функцию add, но получал сообщение - &quot;Ошибка: применение встроенной функции невозможно&quot;, пока не понял, что Вы не придерживаетесь общепринятого в Рефалах синтаксиса для этих операций и не заключаете первый аргумент в скобки. В связи с этим у меня пожелание (если конечно Вы посчитаете его выполнимым).
+<BR>
+<P>Насколько я понимаю, в процессе развития Рефала, мы до сих пор пожинаем негативные последствия несовместимости его диалектов и реализаций.
+<BR>
+Однако, имеющиеся на сегодня диалекты (Рефал-2, Рефал-5, Рефал-6, Рефал-Плюс) все-таки более или менее устоялись. Мне кажется, что если бы Вы строго придерживались синтаксиса Рефала-2 (который Вы слегка начали варьировать), то потенциальных пользователей Вашей версии будет больше.
+<BR>
+<P>Я бы рекомендовал вот это описание <A HREF="http://www.refal.net/origins/d2k/">http://www.refal.net/origins/d2k/</A>[Functional.Programming].Klimov,.Romanenko.-.Refal-2..Opisanie.vxodnogo.yazy`ka.(1987)(ru).djvu . Это расширение Базисного Рефала было реализовано на EC ЭВМ, БЭСМ-6, PDP-11, VAX-11, IBM PC. 
+<BR>
+<P>Если я неправ насчет нереализованности произвольноразрядной целой арифметики, то был бы благодарен за правильно написанный для Вашей реализации пример программы рекурсивного вычисления факториала, на котором интересно было бы оценить эффективность Вашей чистой интерпретации. 
+<BR>
+<P>С уважением,
+<BR>
+--Леонид Белоус
+<BR>
+<P>----- Исходное сообщение ----- 
+<BR>
+От: &quot;A.A.Vladimirov&quot; &lt;vladimi@mech.math.msu.su&gt;
+<BR>
+Кому: &lt;refal@botik.ru&gt;
+<BR>
+Отправлено: 21 января 2005 г. 15:39
+<BR>
+Тема: Re: Refal interpreter
+<BR>
+<P><P><EM>&gt; &gt; 1. Что представляет реализуемое Вами подмножество языка Рефал и его синтаксис.
+</EM><BR>
+<EM>&gt; Если в общих чертах, то реализуется нечто типа первоначального Рефала, а
+</EM><BR>
+<EM>&gt; именно:
+</EM><BR>
+<EM>&gt; 1) типы переменных - e, s, и w; имена состоят из произвольного числа
+</EM><BR>
+<EM>&gt; букв и заключаются в &quot;/&quot;;
+</EM><BR>
+<EM>&gt; 2) функции пишутся через &quot;k&quot; и &quot;.&quot;;
+</EM><BR>
+<EM>&gt; 3) красивостей (вроде where- и with-выражений) не предусмотрено.
+</EM><BR>
+<EM>&gt; 4) комментарии начинаются с &quot;#&quot; (вместо &quot;*&quot;), строки &quot;склеиваются&quot;
+</EM><BR>
+<EM>&gt; посредством &quot;\&quot; (вместо &quot;+&quot;);
+</EM><BR>
+<EM>&gt; 5) строки делятся на:
+</EM><BR>
+<EM>&gt; 5.1) пустые (состоят только из пробелов и табуляций) - игнорируются.
+</EM><BR>
+<EM>&gt; 5.2) начинающиеся с символа &quot;$&quot; - это &quot;команды интерпретатора&quot; (см.
+</EM><BR>
+<EM>&gt; ниже)
+</EM><BR>
+<EM>&gt; 5.3) начинающиеся с буквы - определения функций; должны состоять из
+</EM><BR>
+<EM>&gt; имени функции и первой формулы подстановки
+</EM><BR>
+<EM>&gt; 5.4) начинающиеся с пробела или табуляции - продолжение определения
+</EM><BR>
+<EM>&gt; функции; состоит из формулы подстановки.
+</EM><BR>
+<EM>&gt; 6) $-команды: $use (подключение библиотеки встроенных функций); $include
+</EM><BR>
+<EM>&gt; (включение в программу другого рефал-файла; аналогично команде из C);
+</EM><BR>
+<EM>&gt; $start (определение начального поля зрения).
+</EM><BR>
+<EM>&gt; 7) кодировкой, на которой пишется скрипт, является UTF-8 (в частности,
+</EM><BR>
+<EM>&gt; можно применять чистый ASCII).
+</EM><BR>
+<EM>&gt; 8) все символы - натуральные числа (начиная с нуля и заканчивая
+</EM><BR>
+<EM>&gt; переполнением ОЗУ). Соответственно, строка типа 'ля-ля-ля' с внутренней
+</EM><BR>
+<EM>&gt; точки зрения представляет собой последовательность номеров входящих в
+</EM><BR>
+<EM>&gt; неё букв.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Например, всеми любимое оборачивание строк, берущихся из файла
+</EM><BR>
+<EM>&gt; '1.txt' (и записанных в любой однобайтовой кодировке), с записью
+</EM><BR>
+<EM>&gt; результата в '2.txt' (в той же кодировке) может выглядеть так, как это
+</EM><BR>
+<EM>&gt; сделано в программе из вложенного архива. Надеюсь, синтаксис
+</EM><BR>
+<EM>&gt; используемых функций интуитивно понятен :)
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; 2. Вы обещали поменять комментарии на более читабельный (нежели &quot;ломаный Эсперанто&quot; :-) )
+</EM><BR>
+<EM>&gt; &gt;  язык. Но относится ли это намерение к идентификаторам в программе? Глядя на имя
+</EM><BR>
+<EM>&gt; &gt;   &quot;nterp_preni_nomon&quot;, возникает какая-то ассоцияция с интерпретацией, но не более.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Ну, комментарии - это вопрос понятный. А идентификаторы - неужели же они
+</EM><BR>
+<EM>&gt; действительно столь нечитаемы? Лексика-то всё же интернациональная (хотя
+</EM><BR>
+<EM>&gt; чаще - романская, а не германская)...
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt;  Кстати, мне часто попадалось имя &quot;kuranta&quot;, что оно означает?
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &quot;Текущий&quot;. Обычно указывает на обрабатываемый в данный момент элемент
+</EM><BR>
+<EM>&gt; списка.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; С уважением,
+</EM><BR>
+<EM>&gt; Антон Владимиров
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0669.html">Sergei Romanenko: "Re: Refal interpreter"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0667.html">Leonid Belous: "Re: Romanenko.-.Generator.kompilyatorov,.porozhdenny`j.samoprimeneniem.specializatora....(1987).djvu"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0664.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0669.html">Sergei Romanenko: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0664.html">Leonid Belous: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0669.html">Sergei Romanenko: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0670.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0671.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Sat Jan 22 2005 - 22:33:31 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

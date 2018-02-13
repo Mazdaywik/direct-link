@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ docs">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ docs</H1>
+<HR>
+<P>
+<!-- received="Tue Aug 17 16:15:04 1999 MSD" -->
+<!-- sent="Tue, 17 Aug 1999 16:15:23 +0400" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: Refal+ docs" -->
+<!-- id="00f601bee8aa$2ee07960$07aee8c1@rcms.botik.ru" -->
+<!-- inreplyto="Refal+ docs" -->
+<STRONG>Sergei M. Abramov</STRONG> (<A HREF="mailto:abram@botik.ru?subject=Re:%20Refal%2B%20docs"><EM>abram@botik.ru</EM></A>)<BR>
+<EM>Tue, 17 Aug 1999 16:15:23 +0400</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#55">[ date ]</A>
+<A HREF="index.html#55">[ thread ]</A>
+<A HREF="subject.html#55">[ subject ]</A>
+<A HREF="author.html#55">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0056.html">Sergei Romanenko: "Re: Refal+ docs"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0054.html">Sergei M. Abramov: "Re: rfp16 -&gt; rfp32"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0056.html">Sergei Romanenko: "Re: Refal+ docs"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0056.html">Sergei Romanenko: "Re: Refal+ docs"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P>From: Sergei Romanenko &lt;<A HREF="mailto:roman@integrum.ru?subject=Re:%20Refal%2B%20docs">roman@integrum.ru</A>&gt;
+<BR>
+Date: 7 августа 1999 г. 20:25
+<BR>
+Subject: Re: Refal+ docs
+<BR>
+<P><P>...
+<BR>
+<EM>&gt;Высылаю отредактированный мной rbvcomp.tex
+</EM><BR>
+...
+<BR>
+<EM>&gt;Надеюсь, что у вас не будет проблем с обратной перекодировкой из
+</EM><BR>
+<EM>&gt;Windows-1251 в koi8-r. Я перекодировал с помощью Internet Explorer 5.0:
+</EM><BR>
+<EM>&gt;переименовал файл в rbvcomp.tex.txt, открыл браузером как plain/text в
+</EM><BR>
+<EM>&gt;koi8-r и сделал Save as в кодировке Windows-1251...
+</EM><BR>
+<P>Не совсем в тему (Рефал Плюс), но позвольте сказать, что в подобных случаях
+<BR>
+(межплатформные обмены текстами) меня спасала написанная в ИПС РАН
+<BR>
+программка CTC (есть исходники для МС ДОС и Линукса и бинарики для МС ДОС):
+<BR>
+<P><A HREF="ftp://ftp.botik.ru/pub/local/roma/ctc/">ftp://ftp.botik.ru/pub/local/roma/ctc/</A>
+<BR>
+<P>&nbsp;&nbsp;ctc-03.zip 5 Kb    Tue Jan 09 00:00:00 1996 Winzip32 File
+<BR>
+&nbsp;&nbsp;ctc-04.tgz 4 Kb    Thu May 23 00:00:00 1996 WinZip File
+<BR>
+&nbsp;&nbsp;ctc.com   13 Kb    Mon Aug 18 00:00:00 1997 MS-DOS Application
+<BR>
+<P>СТС занимается:
+<BR>
+&nbsp;-- и русскими (пере-)кодировками /* поддержаны 7 кодировок ;-) */
+<BR>
+&nbsp;-- и различными вариантами (ДОС/Вин, Юникс, Мас) оформления концов строк
+<BR>
+(последнее я регулярно использую при пересылке ТеХ-файлов с счастливым
+<BR>
+обладателем Мас'а--Робертом Глюком)...
+<BR>
+<P>Да, файл изменяется &quot;на месте&quot;, старое содержимое копируется в &quot;*.bak&quot;.
+<BR>
+Пример:
+<BR>
+<P>&nbsp;&nbsp;ctc -i win -o unix rbvcomp.tex rbvcomp1.tex rbvcomp2.tex
+<BR>
+<P>в файлах rbvcomp.tex  rbvcomp1.tex rbvcomp2.tex будут изменены:
+<BR>
+&nbsp;(1) русская кодировка (MS-CP1251--&gt;KOI8-r/RFC1489)
+<BR>
+&nbsp;(2) &quot;изображение&quot; для конца строки (crlf--&gt;lf).
+<BR>
+Будут созданы rbvcomp.bak  rbvcomp1.bak rbvcomp2.bak.
+<BR>
+<P>Привожу ниже help СТС.
+<BR>
+<P>Удачи
+<BR>
+<P>Сергей
+<BR>
+===============================
+<BR>
+C:\&gt;ctc --help
+<BR>
+Cyrillic text convertor v0.3 (c) 1995 Max Kovalenko
+<BR>
+Usage: ctc [-i enc] ... [-o enc] ... [-c default_symbol] [file] ...
+<BR>
+<P>Encoding switch                   Encoding          OS
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;koi8-r, koi8, koi               KOI8-r/RFC1489    Unix
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cp866, alt                      MS-CP866          MS-DOS
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cp1251                          MS-CP1251         MS-Windows
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;iso8859-5, iso5, iso            ISO8859-5         Unix
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;macoscyr, macos-r               MacOS Cyrillic    Mac
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cp10007                         MS-CP10007        Mac
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cp855                           MS-CP855          MS-DOS(?)
+<BR>
+<P>New line switch  OS             |  Aliases    Encoding          New line
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;lf             Unix         |    unix       KOI8-r            lf
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;cr             Mac          |    dos        MS-CP866          crlf
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;crlf           DOS/Windows  |    win        MS-CP1251         crlf
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|    mac        MacOS Cyrillic    cr
+<BR>
+<P>Please report bugs and problems to <A HREF="mailto:madmax@roma.botik.ru?subject=Re:%20Refal%2B%20docs">madmax@roma.botik.ru</A>
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0056.html">Sergei Romanenko: "Re: Refal+ docs"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0054.html">Sergei M. Abramov: "Re: rfp16 -&gt; rfp32"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0056.html">Sergei Romanenko: "Re: Refal+ docs"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0056.html">Sergei Romanenko: "Re: Refal+ docs"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Tue Aug 17 1999 - 16:15:05 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

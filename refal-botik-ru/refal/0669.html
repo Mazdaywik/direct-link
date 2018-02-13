@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei Romanenko (roman@integrum.ru)">
+<META NAME="Subject" CONTENT="Re: Refal interpreter">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal interpreter</H1>
+<HR>
+<P>
+<!-- received="Sun Jan 23 00:58:20 2005" -->
+<!-- isoreceived="20050122215820" -->
+<!-- sent="Sun, 23 Jan 2005 00:59:06 +0300" -->
+<!-- isosent="20050122215906" -->
+<!-- name="Sergei Romanenko" -->
+<!-- email="roman@integrum.ru" -->
+<!-- subject="Re: Refal interpreter" -->
+<!-- id="003101c500cd$98f07bc0$0a3aa8c0@shipil.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="005801c500b8$b0493f60$01004e0a@copernik" -->
+<STRONG>Subject: </STRONG>Re: Refal interpreter<BR>
+<STRONG>From: </STRONG>Sergei Romanenko (<EM>roman@integrum.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sun Jan 23 2005 - 00:59:06 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#669">[ date ]</A>
+<A HREF="index.html#669">[ thread ]</A>
+<A HREF="subject.html#669">[ subject ]</A>
+<A HREF="author.html#669">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0670.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0668.html">Leonid Belous: "Re: Refal interpreter"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0668.html">Leonid Belous: "Re: Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0670.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0668.html">Sergei Romanenko: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Доброе &lt;время суток&gt;!
+<BR>
+<P>----- Original Message ----- 
+<BR>
+From: &quot;Leonid Belous&quot; &lt;belous@ilt.kharkov.ua&gt;
+<BR>
+<P><EM>&gt; Правильно ли я понял, что встроенные арифметические функции
+</EM><BR>
+<EM>&gt; в Вашей реализации (add,sub,mul,div,div,mod)пока не расчитаны
+</EM><BR>
+<EM>&gt; на произвольноразрядную целую арифметику?
+</EM><BR>
+<P><EM>&gt; Однако, имеющиеся на сегодня диалекты (Рефал-2, Рефал-5,
+</EM><BR>
+<EM>&gt; Рефал-6, Рефал-Плюс) все-таки более или менее устоялись. Мне
+</EM><BR>
+<EM>&gt; кажется, что если бы Вы строго придерживались синтаксиса Рефала-2
+</EM><BR>
+<EM>&gt; (который Вы слегка начали варьировать), то потенциальных
+</EM><BR>
+<EM>&gt; пользователей Вашей версии будет больше.
+</EM><BR>
+<P>Целочисленная арифметика с произвольной разрядностью, как она была сделана в
+<BR>
+Рефале-2 - это, конечно, пример вряд ли достойный подражания.
+<BR>
+<P>Во-первых, представление в виде последовательности &quot;макроцифр&quot; - &quot;рыхлое&quot; и
+<BR>
+неэкономное в смысле расхода памяти. Во-вторых, оно вряд ли удобно для тех,
+<BR>
+кто занимается компьютерной алгеброй. В Рефале Плюс это было исправлено, и
+<BR>
+целые числа представлялись в виде одиночных символов.
+<BR>
+<P>В случае Рефала-2, однако, максимально допустимый размер &quot;макроцифр&quot; не
+<BR>
+является свойством самого языка, а является свойством реализации. Например,
+<BR>
+в случае БЭСМ-6 и ЕС ЭВМ разрядность макроцифр была разная. Поэтому,
+<BR>
+какие-то реализации Рефала-2 вполне могут иметь макроцифры неограниченной
+<BR>
+разрядности. И при этом старые программы будут работать! Правда тогда все
+<BR>
+равно остается такая пакость, как знак числа, представленный отдельным
+<BR>
+символом.
+<BR>
+<P>Если обеспечивать &quot;обратную совместимость&quot;, то аргументы арифметических
+<BR>
+операций должны все равно разделяться скобками, но можно сделать так, чтобы
+<BR>
+они были необязательны.
+<BR>
+<P>Но, вообще-то, у меня нет твердого мнения по этому вопросу. Все определяется
+<BR>
+наличием пользователей, которые хотели бы перенести старые программы на
+<BR>
+новую реализацию. Если таковые есть, то есть и смысл поддерживать &quot;обратную
+<BR>
+совместимость&quot;. А если таковых нет, то тогда нет и проблемы. Как говорил
+<BR>
+один политик: &quot;Есть человек - есть проблема, нет человека - нет проблемы...&quot;
+<BR>
+:-)
+<BR>
+<P>Сергей Романенко
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0670.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0668.html">Leonid Belous: "Re: Refal interpreter"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0668.html">Leonid Belous: "Re: Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0670.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0668.html">Sergei Romanenko: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Sun Jan 23 2005 - 00:58:23 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

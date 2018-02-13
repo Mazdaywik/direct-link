@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrew Chepovski (bfchep@usa.net)">
+<META NAME="Subject" CONTENT="(no subject)">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>(no subject)</H1>
+<HR>
+<P>
+<!-- received="Sun Jun  4 10:07:00 2000" -->
+<!-- isoreceived="20000604060700" -->
+<!-- sent="Sun Jun  4 10:07:00 2000" -->
+<!-- isosent="20000604060700" -->
+<!-- name="Andrew Chepovski" -->
+<!-- email="bfchep@usa.net" -->
+<!-- subject="(no subject)" -->
+<!-- id="20000516014403.3382.qmail@nwcst267.netaddress.usa.net" -->
+<STRONG>Subject: </STRONG>(no subject)<BR>
+<STRONG>From: </STRONG>Andrew Chepovski (<EM>bfchep@usa.net</EM>)<BR>
+<STRONG>Date: </STRONG>Sun Jun 04 2000 - 10:07:00 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#118">[ date ]</A>
+<A HREF="index.html#118">[ thread ]</A>
+<A HREF="subject.html#118">[ subject ]</A>
+<A HREF="author.html#118">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0119.html">Andrei Klimov: "XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0117.html">Leonid F. Belous: "Refal-5 (in Russian)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0220.html">йЧБО еЧФХИПЧЙЮ: "(no subject)"</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0105.html">Andrew Chepovski: "(no subject)"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+____________________________________________________________________
+<BR>
+Get free email and a permanent address at <A HREF="http://www.netaddress.com/?N=1">http://www.netaddress.com/?N=1</A>
+<BR>
+<P><P><html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="http://www.botik.ru/mail-archive/refal/SummerSchoolAfish1.files/filelist.xml">
+<title>ИНСТИТУТ ПРОГРАММНЫХ СИСТЕМ РАН</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>achap</o:Author>
+  <o:LastAuthor>achap</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>97</o:TotalTime>
+  <o:LastPrinted>2000-04-29T19:37:00Z</o:LastPrinted>
+  <o:Created>2000-05-16T00:00:00Z</o:Created>
+  <o:LastSaved>2000-05-16T00:00:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>228</o:Words>
+  <o:Characters>1305</o:Characters>
+  <o:Company>VIGPI</o:Company>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotHyphenateCaps/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>6 пт</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>6 пт</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>3</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:12.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{mso-style-parent:"Основной шрифт";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.1, li.1, div.1
+	{mso-style-name:"заголовок 1";
+	mso-style-next:Обычный;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:-14.2pt;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:14.2pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	text-autospace:none;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.2, li.2, div.2
+	{mso-style-name:"заголовок 2";
+	mso-style-next:Обычный;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	text-autospace:none;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.3, li.3, div.3
+	{mso-style-name:"заголовок 3";
+	mso-style-next:Обычный;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	text-autospace:none;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.a
+	{mso-style-name:"Основной шрифт";
+	mso-style-parent:"";}
+p.a0, li.a0, div.a0
+	{mso-style-name:Эпиграф;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:.5in;
+	mso-pagination:widow-orphan;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:56.7pt 42.55pt 51.05pt 35.45pt;
+	mso-header-margin:1.0in;
+	mso-footer-margin:1.0in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:290211021;
+	mso-list-type:simple;
+	mso-list-template-ids:68747279;}
+@list l0:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:1192766165;
+	mso-list-type:simple;
+	mso-list-template-ids:68747279;}
+@list l1:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=RU link=blue vlink=purple style='tab-interval:.5in;text-justify-trim:
+punctuation'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='margin-top:2.0pt;margin-right:0in;
+margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:14.0pt'>ИНСТИТУТ ПРОГРАММНЫХ СИСТЕМ РАН<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:2.0pt;margin-right:0in;
+margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:14.0pt'>ИНСТИТУТ ПРИКЛАДНОЙ МАТЕМАТИКИ им. М.В.КЕЛДЫША РАН<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:2.0pt;margin-right:0in;
+margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:14.0pt'>МЕХАНИКО–МАТЕМАТИЧЕСКИЙ ФАКУЛЬТЕТ МГУ им.
+М.В.ЛОМОНОСОВА<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:2.0pt;margin-right:0in;
+margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:14.0pt'>УНИВЕРСИТЕТ г. ПЕРЕСЛАВЛЯ<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;text-align:center'><span
+style='font-size:14.0pt'>Переславль&#8209;Залесский <span style='mso-tab-count:
+1'> </span><span style='mso-tab-count:2'>                   </span><span
+style='mso-tab-count:2'>                   </span><span style='mso-tab-count:
+2'>                   </span><span style="mso-spacerun: yes"> </span>15 — 25
+августа 2000 г<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;text-align:center'><span
+style='font-size:14.0pt'>СТУДЕНЧЕСКАЯ НАУЧНАЯ ШКОЛА—СЕМИНАР<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:2.0pt;text-align:center'><b><span
+style='font-size:18.0pt'>МЕТАВЫЧИСЛЕНИЯ</span></b><b><span lang=EN-US
+style='font-size:18.0pt;mso-ansi-language:EN-US'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:2.0pt;text-align:center'><b><span
+style='font-size:18.0pt'>И<o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:2.0pt;text-align:center'><b><span
+style='font-size:18.0pt'>ФУНКЦИОНАЛЬНОЕ<span style="mso-spacerun: yes"> 
+</span>ПРОГРАММИРОВАНИЕ</span></b><b><span style='font-size:14.0pt'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:14.0pt'>Научный руководитель школы д.ф.&#8209;м.н. С.М.АБРАМОВ<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;text-align:center'><span
+style='font-size:14.0pt'>В программе<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:38.7pt;mso-list:l0 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><span lang=EN-US style='font-size:
+14.0pt;mso-ansi-language:EN-US'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:14.0pt'>Функциональное
+программирование. Языки </span><span lang=EN-US style='font-size:14.0pt;
+mso-ansi-language:EN-US'>Haskell и Рефал.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:38.7pt;mso-list:l0 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><span lang=EN-US style='font-size:
+14.0pt;mso-ansi-language:EN-US'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:14.0pt'>Метавычисления.</span><span
+lang=EN-US style='font-size:14.0pt;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:38.7pt;mso-list:l0 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><span lang=EN-US style='font-size:
+14.0pt;mso-ansi-language:EN-US'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:14.0pt;mso-ansi-language:
+EN-US'>Суперкомпиляция с языков Рефал и Java.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:38.7pt;mso-list:l0 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><span lang=EN-US style='font-size:
+14.0pt;mso-ansi-language:EN-US'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='font-size:14.0pt;mso-ansi-language:
+EN-US'>Тематические семинары:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-indent:99.25pt;
+tab-stops:list .25in'><span lang=EN-US style='font-size:14.0pt;mso-ansi-language:
+EN-US'>Кибернетика и теория метасистемных переходов;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-indent:99.25pt;
+tab-stops:list .25in'><span lang=EN-US style='font-size:14.0pt;mso-ansi-language:
+EN-US'>Современные технологии программирования для Интернет;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-indent:99.25pt;
+tab-stops:list .25in'><span style='font-size:14.0pt'>Алгоритмы компьютерной
+алгебры;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;text-indent:99.25pt;
+tab-stops:list .25in'><span style='font-size:14.0pt'>Задачи олимпиад по
+программированию ACM.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;margin-bottom:.0001pt;text-indent:38.7pt;mso-list:l0 level1 lfo1;
+tab-stops:list .25in'><![if !supportLists]><span style='font-size:14.0pt'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><![endif]><span
+style='font-size:14.0pt'>Студенческие научные доклады.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;text-align:justify;text-indent:
+14.2pt;tab-stops:list .25in'><i><span style='font-size:14.0pt'>Лекции и
+практические занятия помогут освоить участникам школы современные
+функциональные языки и метавычисления —<span style="mso-spacerun: yes"> 
+</span>технологию преобразования и оптимизации программ. <o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:77.85pt;margin-bottom:
+5.0pt;margin-left:56.7pt;text-align:justify;tab-stops:list .25in'><b><span
+style='font-size:14.0pt'>Приглашаются студенты математических и компьютерных
+специальностей, желающие познакомиться с передовыми технологиями системного
+программирования нового века.<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:0in;text-align:justify;text-indent:14.2pt;
+tab-stops:list .25in'><i><span style='font-size:14.0pt'>Принимаются научные
+доклады студентов, выполненные в области метавычислений или функционального
+программирования.<o:p></o:p></span></i></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'>В
+работе школы принимают участие:<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>С.М.Абрамов (ИПС РАН),
+А.В.Климов (ИПМ РАН), А.П.Немытых</span><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'> </span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>(ИПС РАН), Е.В.Панкратьев</span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'> </span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>(МГУ), В.А.Роганов</span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'> </span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>(МГУ), Е.П.Лилитко (фирма
+&quot;Стратегия&quot;)<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:14.0pt'>Информация и регистрация желающих участвовать в школе<b>:</b></span><b><span
+style='font-size:14.0pt;mso-ansi-language:EN-US'> </span></b><b><span
+lang=EN-US style='font-size:16.0pt;mso-ansi-language:EN-US'>www.refal.net</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+text-align:center'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>Вопросы<span
+style="mso-spacerun: yes">  </span>об<span style="mso-spacerun: yes"> 
+</span>условиях<span style="mso-spacerun: yes">  </span>участия<span
+style="mso-spacerun: yes">  </span>и<span style="mso-spacerun: yes">  </span>проезда,
+визовая поддержка:</span><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+text-align:center'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>Председатель
+оргкомитета</span><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+mso-ansi-language:EN-US'> </span><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt'>Юмагужина Валерия Николаевна, </span><span lang=EN-US style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'>e</span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>-mail: </span><b><span
+lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+EN-US'>lera@diffiety.botik.ru</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'> <o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+text-align:center'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>Заявки
+на доклады, вопросы и пожелания по программе:</span><span lang=EN-US
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+text-align:center'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><span
+style="mso-spacerun: yes"> </span>Чеповский Андрей Михайлович, </span><span
+lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+EN-US'>e</span><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>-mail: </span><b><span
+lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+EN-US'>bfchep@usa.net</span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt'> <o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0119.html">Andrei Klimov: "XML, &quot;holes&quot; and programming styles in R5 and R+"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0117.html">Leonid F. Belous: "Refal-5 (in Russian)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0220.html">йЧБО еЧФХИПЧЙЮ: "(no subject)"</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0105.html">Andrew Chepovski: "(no subject)"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

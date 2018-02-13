@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Alexander P. Konyshev (shura@hope.polnet.botik.ru)">
+<META NAME="Subject" CONTENT="News">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>News</H1>
+<HR>
+<P>
+<!-- received="Wed Feb  2 01:02:23 2000" -->
+<!-- isoreceived="20000201220223" -->
+<!-- sent="Wed, 2 Feb 2000 00:25:33 +0300" -->
+<!-- isosent="20000201212533" -->
+<!-- name="Alexander P. Konyshev" -->
+<!-- email="shura@hope.polnet.botik.ru" -->
+<!-- subject="News" -->
+<!-- id="001901bf6cfa$df8e4510$2de1d0c3@polnet.botik.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>News<BR>
+<STRONG>From: </STRONG>Alexander P. Konyshev (<EM>shura@hope.polnet.botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Feb 02 2000 - 00:25:33 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#96">[ date ]</A>
+<A HREF="index.html#96">[ thread ]</A>
+<A HREF="subject.html#96">[ subject ]</A>
+<A HREF="author.html#96">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0097.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0095.html">Leonid F. Belous: "XML-Validate"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0129.html">Alexander P. Konyshev: "News"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Об'явление.
+<BR>
+
+<BR>
+На страничке <A HREF="http://www.botik.ru/pub/local/scp/refal5/refal5.html">http://www.botik.ru/pub/local/scp/refal5/refal5.html</A>
+<BR>
+выложена новая версия Рефала 5:
+<BR>
+
+<BR>
+-- исправлены замеченные ранее ошибки;
+<BR>
+
+<BR>
+-- изменен формат RSL-файлов! ПЕРЕКОМПИРУЕЙТЕ все рефальские исходники.
+<BR>
+
+<BR>
+-- снято ограничение на длину имен переменных;
+<BR>
+
+<BR>
+-- снято ограничение на длину имен  функций;
+<BR>
+
+<BR>
+-- снято ограничение на длину имён идентификаторов;
+<BR>
+
+<BR>
+--  оптимизировано обращение к внешней функции (EXTERNAL).
+<BR>
+
+<BR>
+-- добавлены управляющие ключи для интерпретатора:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;-cnnn (или --code_limit=nnn)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;где nnn ограничение на размер RSL-модуля в Kb (килобайт)
+<BR>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;-Vnn (или --var_stack=nn)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;значения рефальских переменных заносятся в таблицу переменных
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;во  время отождествления.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Параметр nn умноженный на умолчательный размер таблицы определяет
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;её реальный размер. По умолчанию размер таблицы подобран так,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;что для большинство задач его не надо менять. Рекомендуемые
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;значения параметра nn от 1 до 10.
+<BR>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;-Cnn (или --call_stack=nn)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;параметр nn умножинный на умолчательное значение влияет на размер
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;стэка для вызовов рефальских функций и числа предложений в левых
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;частях функции (patterns). По умолчанию размер этого стэка подобран
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;так, что удолетворяет для большинства задач. Рекомендуемые значения
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;параметра nn от 1 до 10.
+<BR>
+
+<BR>
+-- добавлены встроенные функции:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ExistFile e.Name&gt; :: s.Boolean
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Функция-предикат проверяет наличие файла, заданного аргументом
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Name, как последовательность символов. Возвращает булевское
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;значение True или False, как рефал-символ, в зависимости от
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;наличия файла.
+<BR>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;GetCurrentDirectory&gt; :: e.DirName
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Функция возвращает абсолютный путь до текущей директории, как
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;рефальскую последовательность символов. Эта функция не принимает
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;аргументов.
+<BR>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;RemoveFile e.Name&gt; :: s.Boolean (e.Error)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Удаляет файл, указанный в аргумете, который состоит из рефальской
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;последовательности символов. Возвращает True или False (как
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;рефальский символ) и код ошибки удаления (e.Errors), если она
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;произошла, возвращенной операционной системой. e.Errors
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;представляет собой рефальскую последовательность символов. Если
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.Boolean является True, то e.Errors пустое выражение.
+<BR>
+
+<BR>
+Важное замечание:
+<BR>
+&nbsp;Начиная со следующей версии в синтаксис и сематику Рефала-5  будут  внесены
+<BR>
+изменения.
+<BR>
+
+<BR>
+Призываю Вас непрерывно подправлять синтаксис исходных текстов -- уложить их
+<BR>
+в пересечение старого и нового синтаксисов. Точно определение я здесь давать
+<BR>
+не буду, оно появится на одной из страничек. Приведу несколько важных
+<BR>
+принципиальных моментов &quot;пересечения&quot; двух синтаксисов:
+<BR>
+&nbsp;&nbsp;&nbsp;-- между типом и именем переменной обязательно должна стоять точка;
+<BR>
+&nbsp;&nbsp;&nbsp;-- идентификаторы, имена функций  и имена переменных считаются равными
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;только при условии ПОЛНОГО графического совпадения (например имена
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;функций Ff и FF не равны)
+<BR>
+&nbsp;&nbsp;&nbsp;-- существенно меняется семантика двойных кавычек &quot; -- ранее их семантика
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;совпадала с семантикой одинарных кавычек '  , т.е. замените все Ваши
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;двойные кавычки на одинарные;
+<BR>
+
+<BR>
+Александр Конышев.
+<BR>
+
+<BR>
+
+<BR>
+
+<BR>
+
+<BR>
+&nbsp;&nbsp;_ .     _______________________________________
+<BR>
+&nbsp;&nbsp;)`|-,                     Alexander P. Konyshev
+<BR>
+_/__|_)_                     shura@shura.botik.ru
+<BR>
+\______/                            UIN: 18750145
+<BR>
+
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0097.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0095.html">Leonid F. Belous: "XML-Validate"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0129.html">Alexander P. Konyshev: "News"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

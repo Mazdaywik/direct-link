@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Дмитрий Подкорытов (podkorytov@mail.ru)">
+<META NAME="Subject" CONTENT="Re[2]: Сравнение Рефала с другими языками">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re[2]: Сравнение Рефала с другими языками</H1>
+<HR>
+<P>
+<!-- received="Tue Mar 30 14:51:48 2004" -->
+<!-- isoreceived="20040330105148" -->
+<!-- sent="Tue, 30 Mar 2004 14:07:29 +0400" -->
+<!-- isosent="20040330100729" -->
+<!-- name="Дмитрий Подкорытов" -->
+<!-- email="podkorytov@mail.ru" -->
+<!-- subject="Re[2]: Сравнение Рефала с другими языками" -->
+<!-- id="E1B8G9Z-000B6K-00.podkorytov-mail-ru@f15.mail.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="004401c41638$b5e7bf20$8704000a@Swan" -->
+<STRONG>Subject: </STRONG>Re[2]: Сравнение Рефала с другими языками<BR>
+<STRONG>From: </STRONG>Дмитрий Подкорытов (<EM>podkorytov@mail.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Mar 30 2004 - 14:07:29 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#484">[ date ]</A>
+<A HREF="index.html#484">[ thread ]</A>
+<A HREF="subject.html#484">[ subject ]</A>
+<A HREF="author.html#484">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0485.html">Дмитрий Подкорытов: "параллельный РЕФАЛ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0483.html">Sergei Romanenko: "Re: Re[3]: Сравнение Рефала с другими языками"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0481.html">Arkady Klimov: "Re: Сравнение Рефала с другими языкам"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0486.html">Arkady Klimov: "Re: Re[2]: Сравнение Рефала с другими языкам"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0481.html">Дмитрий Подкорытов: "Re[2]: Сравнение Рефала с другими языками"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; | Шлю портированный на FreeBSD Рефал-2 и Refal-6 для гурманов на дегустацию и отлов багов.
+</EM><BR>
+<EM>&gt; | Выложите куда-нибудь , а то у меня стервер пока не доступен.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; У меня (автора рефала-6), к сожалению нет возможности (технической) проверить порт, но хочу понять, в какой мере удалось его
+</EM><BR>
+<EM>&gt; протестировать автору порта. В том числе:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; 1. Удается ли компилировать программы (из .ref в .rex) в рамках портированной версии.
+</EM><BR>
+<EM>&gt; 2. Удается ли прерывать выполнение через Ctrl-C (или что-то подобное) с выходом на диалог и возможностью последующего продолжения?
+</EM><BR>
+<P>Тестирования почти не было. За день два порта :Рефал-2 и Рефал-6, а спать то когдато нужно.
+<BR>
+В диалог система выходила. Чего-то делала, сейчас не помню.
+<BR>
+<P>Шлите методику тестирования и тесты-я её сделаю.
+<BR>
+На ^C должна быть такая же реакция как и в Linux т.к системные вызовы те же,
+<BR>
+<P>Кстати ^D и ^Z попробуйте на Linux\Win32. 
+<BR>
+Может вызывать зависания\переходы процесса в состояние зомби.
+<BR>
+&nbsp;
+<BR>
+<EM>&gt; |
+</EM><BR>
+<EM>&gt; | Нет ли желающих на разработку системы
+</EM><BR>
+<EM>&gt; | распределённых вычислений\параллельного программирования на РЕФАЛ ?
+</EM><BR>
+<EM>&gt; Тема вызывает ностальгические воспоминания и желание поучаствовать в обсуждении.
+</EM><BR>
+<EM>&gt; Основным предметом оного вижу спецификацию Параллельного рефала - диалекта
+</EM><BR>
+<EM>&gt; рефала, содержащего средства параллельного программирования, включая недетерминизм.
+</EM><BR>
+<EM>&gt; Не обязательно это введение в язык новых элементов, возможно изменение семантики старых.
+</EM><BR>
+<EM>&gt; Все старые диалекты не являются кандидатами в силу строгой детерминированности их модели вычислений. Возможности распараллеливания
+</EM><BR>
+<EM>&gt; в рамках внутренней инвариантности к порядку вычислений есть, но для практики этого маловато будет.
+</EM><BR>
+<EM>&gt; Какие есть идеи на это счет?
+</EM><BR>
+<P>ВСЕМИ ЧЕТЫРЬМЯ ЛАПАМИ-ЗА.
+<BR>
+<P>Только давайте договоримся постараться обходится без новых термов и без разделения:
+<BR>
+параллельная\последовательная ветка кода.
+<BR>
+Система на мой взгляд должна обладать 100% врождённым параллелизмом.
+<BR>
+Наличие последовательных веток кода согласно закону Амдала сведёт на нет все усилия 
+<BR>
+по распараллеливанию вычислений.
+<BR>
+<P>&nbsp;С Уважением Дм.Подкорытов
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0485.html">Дмитрий Подкорытов: "параллельный РЕФАЛ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0483.html">Sergei Romanenko: "Re: Re[3]: Сравнение Рефала с другими языками"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0481.html">Arkady Klimov: "Re: Сравнение Рефала с другими языкам"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0486.html">Arkady Klimov: "Re: Re[2]: Сравнение Рефала с другими языкам"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0481.html">Дмитрий Подкорытов: "Re[2]: Сравнение Рефала с другими языками"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:25:00 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

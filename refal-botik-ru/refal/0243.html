@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei Klimov (klimov@keldysh.ru)">
+<META NAME="Subject" CONTENT="Re: Компиляция Refal6 для Linu">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Компиляция Refal6 для Linu</H1>
+<HR>
+<P>
+<!-- received="Fri Oct 26 20:27:52 2001" -->
+<!-- isoreceived="20011026162752" -->
+<!-- sent="Fri, 26 Oct 2001 18:54:53 +0400" -->
+<!-- isosent="20011026145453" -->
+<!-- name="Andrei Klimov" -->
+<!-- email="klimov@keldysh.ru" -->
+<!-- subject="Re: Компиляция Refal6 для Linu" -->
+<!-- id="05c701c15e2e$e74c7a20$0100a8c0@piii" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="20011025223701.A288@BelCanto" -->
+<STRONG>Subject: </STRONG>Re: Компиляция Refal6 для Linu<BR>
+<STRONG>From: </STRONG>Andrei Klimov (<EM>klimov@keldysh.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Oct 26 2001 - 18:54:53 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#243">[ date ]</A>
+<A HREF="index.html#243">[ thread ]</A>
+<A HREF="subject.html#243">[ subject ]</A>
+<A HREF="author.html#243">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0244.html">Arkady Klimov: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0242.html">Ермолаев Дмитри: "откат и перебо"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0244.html">Arkady Klimov: "Re: Компиляция Refal6 для Linu"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Дмитрий, добрый день!
+<BR>
+<P>Большое спасибо за интерес к Рефалу вообще и к Рефалу6 в частности!
+<BR>
+<P>Детали реализаций Рефала у меня сейчас не &quot;в активе&quot;,
+<BR>
+потому к сожалению я не могу ответить конкретно на Ваш вопрос.
+<BR>
+Да и автор Рефала-6 не я, а Аркадий Климов.
+<BR>
+<P>Ваш вопрос вполне подходит для списка рассылки refal@botik.ru,
+<BR>
+а детали можно спросить непосредственно у авторов реализаций.
+<BR>
+Поэтому отвечаю Вам, включив в СС refal@botik.ru.
+<BR>
+Аркадий получит через него Ваше письмо, а с переносом под Юникс,
+<BR>
+может, поможет еще кто-нибудь из рефал-активистов.
+<BR>
+<P>Архив списков рассылки refal@botik.ru и refal-plus@botik.ru
+<BR>
+Вы можете посмотреть здесь:
+<BR>
+- <A HREF="index.html">http://www.botik.ru/mail-archive/refal/</A>
+<BR>
+- <A HREF="../refal-plus/index.html">http://www.botik.ru/mail-archive/refal-plus/</A>
+<BR>
+Если хотите, я Вас на них подпишу.
+<BR>
+<P>Всего наилучшего,
+<BR>
+<P>Андрей.
+<BR>
+<P>PS. Занятно, что я и не слышал, что Рефал был
+<BR>
+&quot;одним из базисных языков суперкомпьютеров серии Эльбрус&quot;.
+<BR>
+Это действительно так?
+<BR>
+<P>----- Original Message -----
+<BR>
+From: dmsidorov@mtu-net.ru
+<BR>
+To: klimov@keldysh.ru
+<BR>
+Sent: Thursday, 25 October 2001 22:37
+<BR>
+Subject: Компиляция Refal6 для Linux
+<BR>
+<P>Здравствуйте, Андрей Климов.
+<BR>
+<P>После статьи и интервью В.Ф. Турчина журналу &quot;Компьютерра&quot; я сильно
+<BR>
+заинтересовался языком Рефал. До этого он был мне известен лишь как
+<BR>
+один из базисных языков суперкомпьютеров серии &quot;Эльбрус&quot;. Мне хотелось
+<BR>
+бы попробовать Рефал и сделать пакет для его установки в системе Debian
+<BR>
+GNU/Linux, и при возможности включить его в стандартную поставку. К
+<BR>
+сожалению, компиляция завершилась неудачей со следующим сообщением
+<BR>
+об ошибке:
+<BR>
+<P>gcc rfstor.c -O -c -ggdb
+<BR>
+In file included from refcom.h:55,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from refgen.h:16,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from refint.h:14,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from rfstor.c:6:
+<BR>
+rfstor.h:43: initializer element is not constant
+<BR>
+<P>Строка 43 rfstor.h содержит определение нового потока вывода:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILE * stdtrc = stderr;
+<BR>
+<P>Для компиляции был использован компилятор gcc 2.95.2 с поставляемой вместе
+<BR>
+с ним библиотекой классов c++ и glibc 2.1.3. В качестве Makefile и config.h
+<BR>
+были взяты соответственно MAKEFILU и CONFIG3.H. Пожалуйста, помогите
+<BR>
+разобраться с ошибкой.
+<BR>
+<P>С уважением,
+<BR>
+Дмитрий Сидоров.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0244.html">Arkady Klimov: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0242.html">Ермолаев Дмитри: "откат и перебо"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0244.html">Arkady Klimov: "Re: Компиляция Refal6 для Linu"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

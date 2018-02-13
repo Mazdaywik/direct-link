@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.rinet.ru)">
+<META NAME="Subject" CONTENT="Refal -&gt; Java">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Refal -&gt; Java</H1>
+<HR>
+<P>
+<!-- received="Wed Dec  8 13:50:48 1999" -->
+<!-- isoreceived="19991208105048" -->
+<!-- sent="Tue, 07 Dec 1999 22:46:55 +0300" -->
+<!-- isosent="19991207194655" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.rinet.ru" -->
+<!-- subject="Refal -&gt; Java" -->
+<!-- id="384D642F.8C3FB7F6@bagirra.rinet.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>Refal -> Java<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.rinet.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Dec 07 1999 - 22:46:55 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#56">[ date ]</A>
+<A HREF="index.html#56">[ thread ]</A>
+<A HREF="subject.html#56">[ subject ]</A>
+<A HREF="author.html#56">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0057.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0055.html">S.D.Mechveliani: "FLAC , docs"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0057.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+
+Андрей, привет,
+<br>недавно мы обсуждали вопрос о реализации рефала на основе Java. Я имел
+в виду компиляцию рефала в Яву. Делались оценки эффективности (умственные).
+Я был оптимистом - говорил, что по сравнению с нынешними (имя в виду рефал-5/6)
+будет уступать не более чем в пять раз и это хорошо. Ты называл цифру 10.
+Так вот, сегодня я поставил решающий эксперимент. Результаты меня ошеломили.
+<p>Я взял тот самый тест - select - который мы обсуждали в Переславле.
+И руками, по прямому алгоритму с минимумом оптимизаций (даже сознательно
+не делая некоторых очевидных, но не совсем тривиальных оптимизаций) - перевел
+его в Яву так, как это сделал бы несложный компилятор, присобачил минимально
+необходимый runtime-support, и исполнил. Предлагаю сравнительную таблицу
+результатов (N - параметр задачи, время в секундах):
+<br>&nbsp;
+<br>&nbsp;
+<center><table BORDER COLS=4 WIDTH="100%" >
+<tr>
+<td>
+<center>N</center>
+</td>
+
+<td>
+<center>Рефал-6</center>
+</td>
+
+<td>
+<center>Refal->Java (byte-code)</center>
+</td>
+
+<td>
+<center>Refal->Java (JIT)</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>11</center>
+</td>
+
+<td>
+<center>5</center>
+</td>
+
+<td>
+<center>10.5</center>
+</td>
+
+<td>
+<center>1.22</center>
+</td>
+</tr>
+
+<tr>
+<td>
+<center>12</center>
+</td>
+
+<td>
+<center>29</center>
+</td>
+
+<td>
+<center>59</center>
+</td>
+
+<td>
+<center>6.5</center>
+</td>
+</tr>
+</table></center>
+
+<p>Выполнял на Sun-овской java из JDK 1.2.2. Режим байт-кода включал ключом
+-Xint.
+<br>Итак, в режиме байт-кода уступает рефалу-6 в 2 раза (а не в 10 и даже
+не в 5). Поскольку было установлено, что рефал-5 обгоняет 6-й в 1.5 раза,
+то рефалу-5 - в 3 раза. Но в режиме jit-компиляции скорость наоборот повышается
+более чем в 4 раза! А от рефала-5, значит, почти&nbsp; в 3. То есть эта
+скорость примерно соответствует Рефалу Плюс, который, помнится, в последнем
+тестировании показывал скорость где-то 2.5-3 по сравнению с рефалом-5.
+<p>Теперь немного о том, как выглядит отображение в Яву. Используется наиболее
+прямое, с моей точки зрения, отображение данных. Выражение - это массив,
+терм - любой объект, не массив и не null. Есть специальный объект "выражение
+в скобках", я назвал его Parenth. Слово = String. Символ-литера = Char.
+Символ-число = Integer или BigInteger и т.п.
+<br>Функция F формата ((e1) t2 e3)&nbsp; -> e компилируется сигнатуру:
+<p><font face="Lucida Console">&nbsp;&nbsp;&nbsp; static Object[] f(Object[]
+e1, Object t2, Object[] e3)</font>
+<p>Если выходной формат из нескольких перменных, то из них делается выражение
+(e-перменные берутся в скобки) и выдается один массив, у которого размер
+равен числу выходных переменных.
+<br>Все функции делаются рекурсивными, хвостовая рекурсия пока никак не
+оптимизируется, но можно будет оптимизировать. Подвыражения при передаче
+аргумента дублируются, чтобы они были целым массивом (а не его частью).
+Однако, в процессе отождествления, локальные переменные выражения указываются,
+возможнжо, как части массивов, со смещением для начала и конца.
+<br>Сравнение термов отрабатывается через метод equals класса Object.
+<br>Неуспех вырабатывается в форме null (очень удобно!). Error = Exception.
+<br>Переходы при неуспехах - прямые передачи управления (if, break, continue),
+удлинения = циклы. При формирование результатного выражения зараз захватывается
+массив нужной длины (длина подсчитывается из длин компонентов), а потом
+копируются компоненты. Также при отождествлении жесткая часть проверяется
+однократным сравнением длин. Например, отождествление e0 с образцом t1
+e2 t1, это проверка
+<p><font face="Lucida Console">(e0.length>2) &amp;&amp; e0[0].equals(e0(e0.length-1))</font>
+<p>Программу прикладываю: в подкатологе refal необходимый runtime-support.
+<br>В самом модуле Select "честно" оттранслированы только две функции,
+остальное обрамление написано просто на Яве. При вызове надо указывать
+список параметров вида:
+<p><font face="Lucida Console">java [-Xint] Select a b c d e f g h i j
+k</font>
+<p>Длина списка аргументов, начиная с "а" - это и есть параметр задачи.
+<p>Я все это так подробно описал, чтобы стало понятно, насколько будет
+это просто, хорошо и удобно. Нельзя медлить с реализацией!
+<br>Срочно ищем исполнителя на тему.
+<p>Аркадий.
+
+<HR>
+<UL>
+<LI>application/x-zip-compressed attachment: <A HREF="att-0056/01-Select.zip">Select.zip</A>
+</UL>
+<!-- attachment="01-Select.zip" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0057.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0055.html">S.D.Mechveliani: "FLAC , docs"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0057.html">Nikolai Kondratiev: "Re: Refal -&gt; Java"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

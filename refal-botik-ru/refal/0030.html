@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ abstract syntax">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ abstract syntax</H1>
+<HR>
+<P>
+<!-- received="Wed Nov 24 23:21:08 1999" -->
+<!-- isoreceived="19991124202108" -->
+<!-- sent="Tue, 23 Nov 1999 12:21:14 +0300" -->
+<!-- isosent="19991123092114" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: Refal+ abstract syntax" -->
+<!-- id="383A5C89.9B2CFA4C@msu.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="001b01bf357f$9f009f00$07aee8c1@rcms.botik.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal+ abstract syntax<BR>
+<STRONG>From: </STRONG>Andrey Slepuhin (<EM>pooh@msu.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Nov 23 1999 - 12:21:14 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#30">[ date ]</A>
+<A HREF="index.html#30">[ thread ]</A>
+<A HREF="subject.html#30">[ subject ]</A>
+<A HREF="author.html#30">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0031.html">Andrei P. Nemytykh: "ree semi-groups. Makanin's algorithm."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0029.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0029.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0032.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0029.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&quot;Sergei M. Abramov&quot; wrote:
+<BR>
+<P><EM>&gt; &gt;6) Просьба особенно обратить внимание на следующие моменты:
+</EM><BR>
+<EM>&gt; ...
+</EM><BR>
+<EM>&gt; &gt;   - действительно ли даннное описание однозначно позволяет
+</EM><BR>
+<EM>&gt; &gt;     произвести разбор программы? (т.е. не нужно ли где-нибудь
+</EM><BR>
+<EM>&gt; &gt;     добавить ключевые слова или лишние скобки)
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Мне кажется, что контроль за однозначностью разбора программы сильно
+</EM><BR>
+<EM>&gt; упростится, если нетерминалы снабдить рефальскими типами (s., t., v.,
+</EM><BR>
+<EM>&gt; e.). В этом случае однозначность разбора можно определить как
+</EM><BR>
+<EM>&gt; несовместность клэша двух разных алтернатив описания, что легко
+</EM><BR>
+<EM>&gt; проверяется и формально (можно написать программу), и визуально...
+</EM><BR>
+<P>Принято.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; Программа--терм, может быть считана одним &lt;Read ...&gt;
+</EM><BR>
+<P>Согласен.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; * e.Program ::= t.ProgramItem | t.ProgramItem e.Program--
+</EM><BR>
+<EM>&gt; * t.ProgramItem ::= t.FuncDef | t.BoxDef | t.TableDef | t.VectorDef
+</EM><BR>
+<EM>&gt; *                 | t.StringDef
+</EM><BR>
+<EM>&gt; +                 | t.ConstDef | t.Pragma | t.ImportDef | t.Export
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Пропущено:
+</EM><BR>
+<EM>&gt;    -- определение константы (тут возможна большая дискуссия--надо/не надо;
+</EM><BR>
+<P>Я считаю, что в AS все константы уже вставлены по местам.
+<BR>
+<P><EM>&gt;    -- прагмы ($trace, $traceall, думаю может быть полезна поддержка аналога
+</EM><BR>
+<EM>&gt;       #file/#line из Си--сохранять позиционирование на исходный текст, для
+</EM><BR>
+<EM>&gt;       поддержки серьеаных обработчиков/оптимайзеров и/или экранных
+</EM><BR>
+<EM>&gt;       отладчиков--трасировщиков с возможностью остановки брек-поинтов на &quot;,&quot;,
+</EM><BR>
+<EM>&gt;       &quot;=&quot;, &quot;{&quot; и т.п.;-),
+</EM><BR>
+<P>Ну, об этом я пока не заботился, думаю что добавить подобные
+<BR>
+возможности проблем не будет.
+<BR>
+<P><EM>&gt;    -- импорт/экспорт.
+</EM><BR>
+<P>Здесь надо подумать. Кстати, в Рефале+ нет спецификаций
+<BR>
+импорта/экспорта как таковых, а считать глобальным все, что лежит
+<BR>
+в .rfi-файле IMHO не есть правильно. И вообще модульность
+<BR>
+в Рефале+ это слабое место.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; * t.FuncDef ::= (&quot;Function&quot; s.FunctionName  (e.FunctionFormat)
+</EM><BR>
+<EM>&gt; *                            (t.FunctionBody))
+</EM><BR>
+<EM>&gt; *             | (&quot;Function?&quot; s.FunctionName (e.FunctionFormat)
+</EM><BR>
+<EM>&gt; *                            (t.FunctionBody))
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Можно опустить ВСЕ внутренние скобки (формат и так жесткий).
+</EM><BR>
+<EM>&gt; И не только в этом месте.  Это стало видно теперь, когда приписаны
+</EM><BR>
+<EM>&gt; рефальские типы...
+</EM><BR>
+<P>Ну, я иногда со скобками переусердствую :-)
+<BR>
+<P><EM>&gt; *
+</EM><BR>
+<EM>&gt; * e.PAltBody ::= t.Sentence | t.Sentence e.BlockBody
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; ? e.PAltBody : e.Empty может быть ?
+</EM><BR>
+<P>Думаю, что вполне. Кстати, тут Аркадий Климов заметил явную
+<BR>
+очепятку - вместо BlockBody естественно должно быть PAltBody
+<BR>
+<P><EM>&gt; # e.BlockBody ::= t.Path | t.Path e.BlockBody
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; ? e.BlockBody : e.Empty может быть ?
+</EM><BR>
+<P>Да.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; # e.ResultExpression ::= t.ResultTerm | t.ResultTerm e.ResultExpression
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; ? ResultExpression : e.Empty может быть ?  Кажется &quot;да&quot;...
+</EM><BR>
+<P>Угу.
+<BR>
+<P><EM>&gt; 
+</EM><BR>
+<EM>&gt; * t.ResultTerm ::= t.Symbol | (e.ResultExpression) | t.Variable |
+</EM><BR>
+<EM>&gt; *                  (&quot;Call&quot; s.FunctionName (e.ResultExpression))
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; ? конечно в этом месте Рефал-?? потребует возможности опускать имя функции:
+</EM><BR>
+<EM>&gt; ?    &lt; &lt;GetFname&gt; &lt;GetFarg&gt; &gt; .... ?
+</EM><BR>
+<P>А может быть это будет называться не &quot;Call&quot;, а как-нибудь еще?
+<BR>
+<P><EM>&gt; &gt;2) В файле не определены понятия Name - это по смыслу строка символов,
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; А мне кажется--это символ-слово ;-)
+</EM><BR>
+<P>А если кто-то будет генерировать программу в AS &quot;на лету&quot;?
+<BR>
+<P><EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;Буду крайне признателен за всяческую критику. Думаю, что до
+</EM><BR>
+<EM>&gt; &gt;семинара в понедельник можно успеть провести предварительное
+</EM><BR>
+<EM>&gt; &gt;обсуждение по почте, а на семинаре зафиксировать результаты.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Увы, я поздно дополз до текста.
+</EM><BR>
+<P>Это ничего. Все равно на семинаре не было общего обсуждения
+<BR>
+(тем более что Романенко отсутствовал) и дискуссию перенесли
+<BR>
+в mailing list.
+<BR>
+<P>Андрей.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0031.html">Andrei P. Nemytykh: "ree semi-groups. Makanin's algorithm."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0029.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0029.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0032.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0029.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

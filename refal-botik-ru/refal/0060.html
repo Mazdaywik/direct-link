@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Nikolai Kondratiev (Nikolai.Kondratiev@gmx.de)">
+<META NAME="Subject" CONTENT="Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !</H1>
+<HR>
+<P>
+<!-- received="Fri Dec 10 15:01:51 1999" -->
+<!-- isoreceived="19991210120151" -->
+<!-- sent="Fri, 10 Dec 1999 11:25:09 +0100" -->
+<!-- isosent="19991210102509" -->
+<!-- name="Nikolai Kondratiev" -->
+<!-- email="Nikolai.Kondratiev@gmx.de" -->
+<!-- subject="Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !" -->
+<!-- id="004b01bf42f8$db5ab220$c8c8ffc0@nk.de" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="006201bf42d8$5f5c0ae0$07aee8c1@rcms.botik.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal -> Java?  РефалАС-->АСАИЯ !<BR>
+<STRONG>From: </STRONG>Nikolai Kondratiev (<EM>Nikolai.Kondratiev@gmx.de</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Dec 10 1999 - 13:25:09 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#60">[ date ]</A>
+<A HREF="index.html#60">[ thread ]</A>
+<A HREF="subject.html#60">[ subject ]</A>
+<A HREF="author.html#60">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0061.html">Andrey Slepuhin: "Re: Refal -&gt; Java?   РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0059.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0059.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0061.html">Andrey Slepuhin: "Re: Refal -&gt; Java?   РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0059.html">Nikolai Kondratiev: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Сергей,
+<BR>
+<P>я хочу еще раз подчеркнуть именно важность интеграции с Явой. Я бы все рассматривал именно с этой точки зрения.
+<BR>
+<P>На мой взгляд даже сам принцип отображения функция -&gt; функия, выражение -&gt; массив важен именно потому, что интерфейс с Явой крайне упрощается. В Яве мы можем получить хороший &quot;тягач&quot; для рефала. Все, что будет мешать интегрировать рефал с Явой я бы безжалостно отбросил. Даже ценой потери универсальности отображения по отношению к другим императивным языкам.
+<BR>
+<P>Второе, что бы я безжалостно отбросил - это преемственность по отношению с существующим и существовавшим реализациям рефала. Версию языка необходимо определить заново. Если она войдет в противоречие с существующими реализациями на уровне АС, тем хуже для этих реализаций и для АС.
+<BR>
+<P>Это не означает, что новая версия не возьмет ничего от старых, но мы не должны быть связаны никакими нашими исторически сложившимися предпочтениями. Версия рефала для Явы (Refal-J) должна на мой взгляд разрабатываться так, чтобы быть наиболее естественной для знатоков Явы, а не рефала.
+<BR>
+<P>Эта тематика мне кажется важной, как относящаяся к первому уровню иерархии целей.
+<BR>
+<P>Николай Кондратьев
+<BR>
+&nbsp;&nbsp;----- Original Message ----- 
+<BR>
+&nbsp;&nbsp;From: Sergei M. Abramov 
+<BR>
+&nbsp;&nbsp;To: Arkady Klimov ; Andrei Klimov 
+<BR>
+&nbsp;&nbsp;Cc: refal ; ; Lyuda Solovskaya ; Mikhail Kovtun 
+<BR>
+&nbsp;&nbsp;Sent: Friday, December 10, 1999 7:32 AM
+<BR>
+&nbsp;&nbsp;Subject: Re: Refal -&gt; Java? РефалАС--&gt;АСАИЯ !
+<BR>
+<P><P>&nbsp;&nbsp;День добрый, всем!
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Позвольте краткую реплику, по поводу:
+<BR>
+<P>&nbsp;&nbsp;Date: 7 декабря 1999 г. 22:45
+<BR>
+&nbsp;&nbsp;Subject: Refal -&gt; Java
+<BR>
+<P><P>&nbsp;&nbsp;================
+<BR>
+&nbsp;&nbsp;(0) Блестящая идея!
+<BR>
+&nbsp;&nbsp;================
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Идея компилировать Рефал(ы) в императивный язык (функция--&gt;в функцию, развилки--&gt;в &quot;IF&quot;, вызовы--&gt;в CALL, циклы--в циклы) как убедительно показал Алик, достояна самого пристального внимания...
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Я давно (с лета!) не испытывал такого Рефал-удовлетворения и Рефал-подъема!
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;===================
+<BR>
+&nbsp;&nbsp;(1) Давно забытое старое
+<BR>
+&nbsp;&nbsp;===================
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Конечно, идея старая.  И даже был ведь компилятор Рефала Плюс в Си.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Правда, идея Алика--намного глубше ТОГО компилятора--там был все-таки виртуальный код.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Основная мысль у Алика (и именно ее надо не потерять), в том, что: виртуальный код НЕ НУЖЕН, ОН ТОЛЬКО МЕШАЕТ (!!!).  
+<BR>
+<P>&nbsp;&nbsp;Нужна прямая синтаксическая компиляция из АС в императивный язык (и Ява тут не причем):
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;1    функция--&gt;в функцию; 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;арность--&gt;в арность; 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;коарность--&gt;хотелось бы в коарность, (но можно выкрутиться и массивом, хотя надо честно себе сказать--это именно &quot;выкрутиться&quot;, кривое решение,  по хорошему надо возвращать раздельно).
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;2    переменные--&gt;в переменные;
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;3    развилки--&gt;в &quot;IF&quot;; 
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;4    вызовы--&gt;в CALL; 
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;5    циклы--в циклы (хочу в императивном языке иметь метки и GOTO внутри тела функции!  Не знаю, в Яве-то они есть?);
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;6    &quot;::&quot; в присваивания;
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;7    &quot;:&quot; в цепочку конструкций, с широкой эксплуатацией преимуществ массивного представления списков:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(а) прямое обращение к термам по индексу;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(б) проверка длинны массива, прежде чегм ковыраться в термах.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Ради исторической справедливости скажу, что даже в такой формулировке (1--7) идея у нас была уже давно.  А именно, 
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*    я четко помню, что Рутик и СеРгей обсуждали такую компиляция (по крайней мере, раздел &quot;2. переменные--&gt;в переменные;&quot; мне помнится четко);
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*    и в своих играх в НИЦЭВТе (Рефал--&gt;ПЛ/1-МДА) я выписывал (но не реализовал!) использование &quot;7.б Проверка длинны массива, прежде чегм ковыраться в термах&quot;;
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*    а в понедельник идя из МГУ в метро (за день !!!, когда я от Алика узнал о его письме!) с Андреем Слепухиным мы именно такую реализацию обсуждали ;-)
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Сказанное выше не умалаяет исторического значения сделанного Аликом шага--надо было не просто обсуждать, надо было вспомнить это самое &quot;давно забытое старое&quot; и не побояться ярко показать, что оно красиво и НАСТОЛЬКО эффективно (надо было попрограммировать и замерить эффективность!)
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;СПАСИБО!
+<BR>
+<P>&nbsp;&nbsp;=============================
+<BR>
+&nbsp;&nbsp;(2) Надо делать быстро и качественно
+<BR>
+&nbsp;&nbsp;=============================
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Это общий мотив всех откликов на Аликино письмо.  И я присоединяююсь к этому.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Ну так и давайте от общих слов попробуем перейти к конкретному обсуждению (прежде чем перейти к делу ;-).  Тем более (по результатом восторженной реакции и после локального обсуждения со Светланой Пономаревой) кажется могут быть волонтиры, которые возможно до 15 января будут иметь &quot;дырку&quot; для написания такого компилятора.  Сложного-то в нем ничего ведь нету!
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Так что значит &quot;делать быстро и качественно&quot; (чтобы по возможности потом не переделывать)?  Мне кажется, это осначает:
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*    Компилировать надо из АС
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*    А при чем тут Ява? Компилировать надо в АСАИЯ (в Абстрактный Синтаксис Абстрактного Императивного Языка)
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;=======================
+<BR>
+&nbsp;&nbsp;(3) Компилировать надо из АС
+<BR>
+&nbsp;&nbsp;=======================
+<BR>
+<P>&nbsp;&nbsp;Думаю, с этим тезисом все согласятся.
+<BR>
+&nbsp;&nbsp;Тем самым, после выступления Алика можно сделать два адмнистративных заявления:
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-а- работа в направлении &quot;уметь выдавать виртуальный код из РефалПлюс компилятора&quot;--имеет низкий приоритет, так как для промышленной реализации Аликовой идеи:
+<BR>
+<EM>          &gt;...виртуальный код НЕ НУЖЕН, ОН ТОЛЬКО МЕШАЕТ (!!!)
+</EM><BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-б- работа в направлении &quot;уметь выдавать АС из РефалПлюс компилятора&quot;--имеет ВЫСОКИЙ приоритет.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;========================
+<BR>
+&nbsp;&nbsp;(4) А при чем тут Ява?
+<BR>
+&nbsp;&nbsp;Компилировать надо в АСАИЯ
+<BR>
+&nbsp;&nbsp;========================
+<BR>
+<P>&nbsp;&nbsp;Объяснюсь.  Ставя задачу именно так &quot;компилировать надо в АСАИЯ&quot;  мы легко получаем:
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1- не только компилятор Рефал в Яву (я согласен, он весьма интересен!) но и компиляторы Рефал-&gt;Си/Си++, и Рефал-&gt;Т-язык (пардон за шкурный интерес ;-);
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-2- возможность привлечь к разработке волонтеров, которые не знают (не хотят спешно изучать) Яву (например: Абрамов, Пономарева);
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-3- да и вообще, это выделение разумной независимой фазы ;-)
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Ну а фаза &quot;АСАИЯ --&gt;Ява&quot; будет задачей на полчаса, для знатоков Явы...
+<BR>
+&nbsp;&nbsp;Впрочем как и фазы &quot;АСАИЯ --&gt;Си&quot;, &quot;АСАИЯ --&gt;Си++&quot;, &quot;АСАИЯ --&gt;Т-язык&quot;.
+<BR>
+<P>&nbsp;&nbsp;Вот и все, что я хотел бы сказать по Аликовму письму.
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Самый важный лично для меня тезис: 
+<BR>
+&nbsp;&nbsp;========================
+<BR>
+&nbsp;&nbsp;Андрей Слепухин!  Срочно 
+<BR>
+&nbsp;&nbsp;захотелось иметь отдельную 
+<BR>
+&nbsp;&nbsp;фазу:  Рефал Плюс--&gt;АС
+<BR>
+&nbsp;&nbsp;========================
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Всего всем доброго,
+<BR>
+&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;Сергей
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0061.html">Andrey Slepuhin: "Re: Refal -&gt; Java?   РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0059.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0059.html">Sergei M. Abramov: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0061.html">Andrey Slepuhin: "Re: Refal -&gt; Java?   РефалАС--&gt;АСАИЯ !"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0059.html">Nikolai Kondratiev: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

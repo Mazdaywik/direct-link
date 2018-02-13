@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="A.A.Vladimirov (vladimi@mech.math.msu.su)">
+<META NAME="Subject" CONTENT="Re: Test">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Test</H1>
+<HR>
+<P>
+<!-- received="Mon Dec 29 21:35:30 2003" -->
+<!-- isoreceived="20031229183530" -->
+<!-- sent="Mon, 29 Dec 2003 15:03:49 +0300" -->
+<!-- isosent="20031229120349" -->
+<!-- name="A.A.Vladimirov" -->
+<!-- email="vladimi@mech.math.msu.su" -->
+<!-- subject="Re: Test" -->
+<!-- id="200312291503.49200.vladimi@mech.math.msu.su" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="001301c3cd49$488a5d80$32e1d0c3@polnet.botik.ru" -->
+<STRONG>Subject: </STRONG>Re: Test<BR>
+<STRONG>From: </STRONG>A.A.Vladimirov (<EM>vladimi@mech.math.msu.su</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Dec 29 2003 - 15:03:49 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#394">[ date ]</A>
+<A HREF="index.html#394">[ thread ]</A>
+<A HREF="subject.html#394">[ subject ]</A>
+<A HREF="author.html#394">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0395.html">Sergei M. Abramov: "Re: Test"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0393.html">Mike Potanin: "Re: Test"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0391.html">Sergei M. Abramov \(home\): "Test"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0396.html">Sergei M. Abramov: "Re: Test"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0391.html">A.A.Vladimirov: "Re: Test"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+В сообщении от 28 Декабрь 2003 16:48 вы написали:
+<BR>
+<EM>&gt; День добрый, всем!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; К статье про компиляцию синт. отождествления я написал
+</EM><BR>
+<EM>&gt; примерчик (приложена программа, исходник и EXE) -- функцию,
+</EM><BR>
+<EM>&gt; которая проверяет, что ее аргумент имеет вид e.Y e.Y e.Y:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; IsTriplet eX = {
+</EM><BR>
+<EM>&gt;    eX : e.Y e.Y e.Y = True;
+</EM><BR>
+<EM>&gt;                     = False;
+</EM><BR>
+<EM>&gt; };
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; В старом ДОС-рефале-плюс один шаг выполнения этой функции (при
+</EM><BR>
+<EM>&gt; длине аргумента 49152) занимает (на моей машине) 74.26 секунд.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; У меня просьбы:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; (1) Люба!  Пожалуйста, прогони на одной и той же машине этот
+</EM><BR>
+<EM>&gt; пример на всех существующих рефалах (старый Рефал Плюс, новый
+</EM><BR>
+<EM>&gt; Рефал Плюс, Рефал Ява, если возможно, Рефал 5 и т.п.)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; (2) Вне зависимости от (1) у меня владельцам рзных рефалов
+</EM><BR>
+<EM>&gt; (Р6/Ява, Р5 и прочее) -- если можно, выполните на одной
+</EM><BR>
+<EM>&gt; платформе приложенный test.exe и затем IsTriplet (или ее
+</EM><BR>
+<EM>&gt; аналог)на всех доступных Вам рефалах -- зарание спасибо!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<P>Результаты трёх прогонов TEST.EXE:
+<BR>
+<P>49152
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 45 ':' 20 '.' 42
+<BR>
+TRUE
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 46 ':' 4 '.' 14
+<BR>
+<P>49152
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 46 ':' 10 '.' 34
+<BR>
+TRUE
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 46 ':' 53 '.' 68
+<BR>
+<P>49152
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 47 ':' 36 '.' 8
+<BR>
+TRUE
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 48 ':' 21 '.' 23
+<BR>
+<P>Примечание: ввиду отсутствия у меня Всеми Любимой Операционной 
+<BR>
+Системы (TM), файл TEST.EXE запускался под Linux через эмулятор 
+<BR>
+dosemu.
+<BR>
+<P>Результаты трёх прогонов откомпилированного под Linux (gcc-3.2.2, 
+<BR>
+glibc-2.3.2) рефалом-плюс версии 1.8.7 исходника test.rf:
+<BR>
+<P>49152
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 26 ':' 46 '.' 5
+<BR>
+&quot;True&quot;
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 27 ':' 37 '.' 60
+<BR>
+<P>49152
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 27 ':' 40 '.' 34
+<BR>
+&quot;True&quot;
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 28 ':' 30 '.' 79
+<BR>
+<P>49152
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 28 ':' 52 '.' 22
+<BR>
+&quot;True&quot;
+<BR>
+29 ' ' &quot;Dec&quot; ' ' 2003 ' ' 14 ':' 29 ':' 41 '.' 4
+<BR>
+<P>Результаты трёх прогонов написанного на рефале-5 аналога test.rf:
+<BR>
+<P>49152
+<BR>
+Mon Dec 29 14:31:56 2003
+<BR>
+True
+<BR>
+Mon Dec 29 14:32:37 2003
+<BR>
+<P>49152
+<BR>
+Mon Dec 29 14:32:39 2003
+<BR>
+True
+<BR>
+Mon Dec 29 14:33:22 2003
+<BR>
+<P>49152
+<BR>
+Mon Dec 29 14:33:47 2003
+<BR>
+True
+<BR>
+Mon Dec 29 14:34:28 2003
+<BR>
+<P><P><EM>&gt; При прогоне можно выкинуть/переписать разные мелочи...  Мне
+</EM><BR>
+<EM>&gt; интересует одно:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;         (а) Что напечатал &quot;test.exe&quot; на Вашей машине;
+</EM><BR>
+<EM>&gt;         (б) Время счета &quot;IsTriplet&quot;  в Вашей машине на всех
+</EM><BR>
+<EM>&gt; иных доступных Вам рефалах -- при длине аргумента 49152
+</EM><BR>
+<EM>&gt; (делится на 3), аргумент ' ААААА....ААААА', результат -- TRUE.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; (3) Всем вопрос: кузявое ли имя функции &quot;IsTriplet&quot;?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Удачи
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Сергей
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+И Вам того же.
+<BR>
+<P>Антон.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0395.html">Sergei M. Abramov: "Re: Test"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0393.html">Mike Potanin: "Re: Test"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0391.html">Sergei M. Abramov \(home\): "Test"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0396.html">Sergei M. Abramov: "Re: Test"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0391.html">A.A.Vladimirov: "Re: Test"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

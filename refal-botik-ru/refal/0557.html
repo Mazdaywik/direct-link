@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei Romanenko (roman@integrum.ru)">
+<META NAME="Subject" CONTENT="Hughes.-.Type.Specialisation.for.the.Lambda-Calculus.(1996).djvu">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Hughes.-.Type.Specialisation.for.the.Lambda-Calculus.(1996).djvu</H1>
+<HR>
+<P>
+<!-- received="Sat Jul 31 20:34:15 2004" -->
+<!-- isoreceived="20040731163415" -->
+<!-- sent="Tue, 15 Jun 2004 15:35:49 +0400" -->
+<!-- isosent="20040615113549" -->
+<!-- name="Sergei Romanenko" -->
+<!-- email="roman@integrum.ru" -->
+<!-- subject="Hughes.-.Type.Specialisation.for.the.Lambda-Calculus.(1996).djvu" -->
+<!-- id="011e01c452cc$e9f685f0$0a3aa8c0@shipil.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>Hughes.-.Type.Specialisation.for.the.Lambda-Calculus.(1996).djvu<BR>
+<STRONG>From: </STRONG>Sergei Romanenko (<EM>roman@integrum.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Jun 15 2004 - 15:35:49 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#557">[ date ]</A>
+<A HREF="index.html#557">[ thread ]</A>
+<A HREF="subject.html#557">[ subject ]</A>
+<A HREF="author.html#557">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0558.html">Sergei Romanenko: "Abramov - Obobshhenny`j algoritm otozhdestvleniya dlya.yazy`ka Refal (1979)(ru).djvu"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0556.html">Sergei Romanenko: "Thiemann.-.Continuation-based.Partial.Evaluation.without.Continuations.(2003).djvu"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый день!
+<BR>
+<P>Интересно было бы разобраться, как &quot;тИповая специализация&quot; (или
+<BR>
+&quot;специализация типов&quot;, или &quot;специализация по типам&quot;) соотносится с
+<BR>
+суперкомпиляцией:
+<BR>
+<P>ed2k://|file|[Functional.Programming,.Partial.Evaluation].Hughes.-.An.Introd
+<BR>
+uction.to.Program.Specialisation.by.Type.Inference.(1996).djvu|49176|CC1513B
+<BR>
+AC951AAF204E697F7DB4010FA|/
+<BR>
+<P>ed2k://|file|[Functional.Programming,.Partial.Evaluation].Hughes.-.A.Type.Sp
+<BR>
+ecialisation.Tutorial.(1998).djvu|126136|55724CBEA735E9B3023B1C837ABE1809|/
+<BR>
+<P>ed2k://|file|[Functional.Programming,.Partial.Evaluation].Hughes.-.Type.Spec
+<BR>
+ialisation.for.the.Lambda-Calculus.(1996).djvu|136118|BA52B3919D8FCDCD0491D3
+<BR>
+08CC652104|/
+<BR>
+<P>Понятно, что &quot;простые&quot; специализаторы не делают &quot;ретипирование&quot;: т.е.
+<BR>
+&quot;статические&quot; выражения полностью вычисляются и превращаются в константы, а
+<BR>
+&quot;динамические&quot; выражения вываливаются в остаточную программу, и при этом
+<BR>
+представление &quot;динамических&quot; данных, остается таким же, как и в исходной
+<BR>
+программе. (С соответствующими неприятными последствиями при специализации
+<BR>
+интерпретаторов.)
+<BR>
+<P>И &quot;повышатель арности&quot;
+<BR>
+<P>ed2k://|file|[Functional.Programming,.Partial.Evaluation].Romanenko.-.Arity.
+<BR>
+Raiser.and.its.Use.in.Program.Specialization.(1990).djvu|170908|EDC6CB5E6BD0
+<BR>
+A6944FBDD3F22DAF81FE|/
+<BR>
+<P>ed2k://|file|[Functional.Programming,.Partial.Evaluation].Romanenko.-.Povy`s
+<BR>
+hatel`.arnosti.i.ego.ispol`zovanie.pri.specializacii.programm.(1990)(ru).djv
+<BR>
+u|122357|5A4B5C9F5303F439B3635C7609C60D47|/
+<BR>
+<P>был присобачен к такому специализатору, чтобы частично снять остроту этой
+<BR>
+проблемы (особенно при самоприменении таких специализаторов).
+<BR>
+<P>А при работе Суперкомпилятора представление данных в остаточной программе
+<BR>
+может отличаться от оного в исходной программе. Т.е. и вычисления над
+<BR>
+константами, и &quot;ретипирование&quot; происходят одновременно. При этом, хотя сам
+<BR>
+Рефал является &quot;бестиповым&quot; (в смысле, языком с &quot;динамической типизацией&quot;),
+<BR>
+при работе Суперкомпилятора &quot;типы&quot; появляются на метауровне, в виде
+<BR>
+&quot;образцов&quot;, &quot;окрестностей&quot; и др. При этом информация о константах в
+<BR>
+Суперкомпиляторе именно в &quot;типах&quot; и хранится...
+<BR>
+<P>А у Хьюза как раз происходит одновременное преобразование фрагмента
+<BR>
+программы вместе с &quot;типом&quot; этого фрагмента.
+<BR>
+<P>Интересно, имеет ли то, что делает Хьюз какое-то отношение к &quot;смешанным
+<BR>
+вычислениям&quot;. В свое время общественность пыталась разобраться в разнице
+<BR>
+между &quot;частичными&quot; и &quot;смешанными&quot; вычислениями, но вопрос так и остался
+<BR>
+темным. (Может быть из-за того, что имевшиеся определения как &quot;частичных&quot;,
+<BR>
+так и &quot;смешанных&quot; вычислений были такими &quot;резиновыми&quot;, что их можно было без
+<BR>
+большого труда &quot;натягивать&quot; одно на другое... :-) )
+<BR>
+<P>Еще одна интересная особенность подхода Хьюза в том, что информация о
+<BR>
+&quot;типах&quot; может течь и в &quot;прямом&quot; и в &quot;обратном&quot; направлении. Это - вполне
+<BR>
+естественно в его парадигме, поскольку при типизации в духе Хиндли-Милнера
+<BR>
+&quot;проверка типов&quot; (type checking), которая на самом-то деле является
+<BR>
+&quot;выявлением типов&quot; (type inference), основана на решении системы уравнений.
+<BR>
+А методы решения таких уравнений основаны на унификации с последующим
+<BR>
+распространением информации по всей системе уравнений. (Кстати, эти методы
+<BR>
+фактически были придуманы еще Диафантом, но он их применял для решения
+<BR>
+систем линейных уравнений в целых числах.)
+<BR>
+<P>А одна из особенностей Суперкомпилятора в том, что в нем информация может
+<BR>
+течь и в &quot;прямом&quot; и в &quot;обратном&quot; направлении. Например, стоят рядом два
+<BR>
+(невложенных друг в друга) вызова функций. Начинаем раскрывать один из них.
+<BR>
+При этом выполняются сужения, из-за которых аргумент другого вызова
+<BR>
+становится более &quot;конкретным&quot;, что дает возможность выполнить какие-то
+<BR>
+&quot;статические&quot; вычисления.
+<BR>
+<P>В общем, возникает ощущение, что Хьюз забрел в ту же степь, где находится и
+<BR>
+Суперкомпилятор. Однако, степь - она большая, и насколько близко он
+<BR>
+находится от Суперкомпилятора - сразу неочевидно.
+<BR>
+<P>Сергей Романенко
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0558.html">Sergei Romanenko: "Abramov - Obobshhenny`j algoritm otozhdestvleniya dlya.yazy`ka Refal (1979)(ru).djvu"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0556.html">Sergei Romanenko: "Thiemann.-.Continuation-based.Partial.Evaluation.without.Continuations.(2003).djvu"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:25:01 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

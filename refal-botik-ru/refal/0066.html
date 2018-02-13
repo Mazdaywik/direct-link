@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ !">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ !</H1>
+<HR>
+<P>
+<!-- received="Fri Dec 10 21:22:23 1999" -->
+<!-- isoreceived="19991210182223" -->
+<!-- sent="Fri, 10 Dec 1999 19:58:57 +0300" -->
+<!-- isosent="19991210165857" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ !" -->
+<!-- id="00ed01bf432f$d96593e0$07aee8c1@rcms.botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Refal -&gt; Java?         РефалАС--&gt;АСАИЯ !" -->
+<STRONG>Subject: </STRONG>Re: Refal -> Java?         РефалАС-->АСАИЯ !<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Dec 10 1999 - 19:58:57 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#66">[ date ]</A>
+<A HREF="index.html#66">[ thread ]</A>
+<A HREF="subject.html#66">[ subject ]</A>
+<A HREF="author.html#66">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0067.html">Arkady Klimov: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0065.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P><P>&nbsp;&nbsp;&nbsp;&nbsp;Я не разделяю Сережиного оптимизма по поводу того, что ЯваАС без труда
+<BR>
+может быть отображен в любой язык...
+<BR>
+<P>Это основной мотив возражений.  Значит я что-то пропустил или не понимаю
+<BR>
+проблемы.
+<BR>
+Попробую &quot;объясниться&quot; еще раз.
+<BR>
+Я считаю, что больше всего сил уйдет на проработку алгоритмов компиляции
+<BR>
+простых но неэлементарных (не разложенных в виртуальный код)
+<BR>
+Рефал-конструкций в последовательность императивных действий.  Кто-то
+<BR>
+возможно считает что &quot;это-то как раз просто&quot;, а я так не считаю.
+<BR>
+В первую очередь я думаю о компиляции конструкции &quot;Источник:Образец&quot; в
+<BR>
+ПРИЛИЧНУЮ (эффективную) цепочку проверок длин, прямых доступов к термам,
+<BR>
+прямым вырезкам подмассивов, и т.п.
+<BR>
+<P>И эти общие (для всех вариантов отображения Рефла в различные языки и
+<BR>
+различные варианты отображения в Яву--с разлиным представлением выражений:
+<BR>
+массив или Collection?) алгоритмы мне видятся как отдельная общая для всех
+<BR>
+фаза.
+<BR>
+<P>Можно компилировать например в такой язык императивный:
+<BR>
+<P>e.JProgram = e.RefConstDefs eFuncDefs
+<BR>
+<P>t.FuncDef = (FDEF t.Name (e.ArgVars) (e.ResVars) (e.AuxVars) e.Ops)
+<BR>
+<P>e.Ops = /* empty */ | (LABEL t.LabelName) e.Ops | t.Op e.Ops
+<BR>
+<P>t.Op = (CALL e.Vars &quot;&lt;==&quot; tName (e.Vars) IF-FAIL-JUMP t.LabelName)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  (IF-GOTO t.Cond t.LabelName)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  (ASSIGN t.Var t.RefOp)
+<BR>
+<P>t.Cond = (AND t.Cond t.Cond) | (OR t.Cond t.Cond) | (NOT t.Cond)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  (INT-COMPARE t.IntCompOp t.Int t.Int),
+<BR>
+&quot;&lt;&quot; &quot;&gt;&quot; &quot;=&quot; &quot;&gt;=&quot; &quot;=&lt;&quot; &quot;&lt;&gt;&quot; : e t.IntCompOp e
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  (EXP-COMPARE t.Var t.Var)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  (TERM-IS-BR t.Var)
+<BR>
+<P>t.Int = (&quot;+&quot; t.Int t.Int) | s.Integer, &lt;INT? s Integer&gt; | (LENGTH t.Var)
+<BR>
+<P>t.RefExp = t.Var
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (CONST t.Var) /* t.Var из e.RefConstDefs */
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (TERM t.Var t.Int)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (SUB-EXP t.Var t.Int t.Int)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (UN-BR t.Var)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|(BR t.Var)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|(CONCAT e.Vars)
+<BR>
+<P>t.Var = (E t.Name) | (T t.Name)
+<BR>
+<P>Наверное я что-то пропустил.  Но это близко к тому, что я имел в виду в
+<BR>
+качестве ЯваАС.
+<BR>
+<P>Повторюсь, мне представляется, что:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-1- больше всего сил уйдет на разработку компиляции конструкции
+<BR>
+&quot;Источник:Образец&quot; в ПРИЛИЧНУЮ (эффективную) цепочку проверок длин, прямых
+<BR>
+доступов к термам, прямым вырезкам подмассивов, и т.п.  Конструкции &quot;::&quot; и
+<BR>
+рефальские &quot;управления&quot; (переходы) вызывают меньше опасений.  А вызовы
+<BR>
+функций, конечно, надо полностью выносить (экскакация);
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-2- Главное решить -1-.  Результат (этот самый смешной ЯваАС) можно
+<BR>
+выдавать в любой язык (Ява, Си, С++, Т-язык) и при любом варианте
+<BR>
+отображения данных (массивы, Collection, коарность как выдача массива или
+<BR>
+оут-аргументы и т.п.).  При этом во всех вариантах это будет задачка вида
+<BR>
+&quot;напишите красивую выдачу в конкретный синтаксис&quot;.
+<BR>
+<P>Сергей
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0067.html">Arkady Klimov: "Re: Refal -&gt; Java?         РефалАС--&gt;АСАИЯ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0065.html">Mikhail Kovtun: "Re: Refal -&gt; Java?  РефалАС--&gt;АСАИЯ !"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

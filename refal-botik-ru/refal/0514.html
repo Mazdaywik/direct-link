@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei Klimov (klimov@keldysh.ru)">
+<META NAME="Subject" CONTENT="Re: суперкомпилято">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: суперкомпилято</H1>
+<HR>
+<P>
+<!-- received="Sat Apr 24 10:47:33 2004" -->
+<!-- isoreceived="20040424064733" -->
+<!-- sent="Mon, 19 Apr 2004 13:27:16 +0400" -->
+<!-- isosent="20040419092716" -->
+<!-- name="Andrei Klimov" -->
+<!-- email="klimov@keldysh.ru" -->
+<!-- subject="Re: суперкомпилято" -->
+<!-- id="01a801c425f0$8a1a88b0$0200a8c0@p4" -->
+<!-- charset="windows-1251" -->
+<!-- inreplyto="163807515.20040419081140@mail.ru" -->
+<STRONG>Subject: </STRONG>Re: суперкомпилято<BR>
+<STRONG>From: </STRONG>Andrei Klimov (<EM>klimov@keldysh.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Apr 19 2004 - 13:27:16 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#514">[ date ]</A>
+<A HREF="index.html#514">[ thread ]</A>
+<A HREF="subject.html#514">[ subject ]</A>
+<A HREF="author.html#514">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0515.html">Andrei Klimov: "Fw: [Computer_algebra] Meeting on April 28"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0513.html">Корныхин Евгени: "суперкомпилято"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0513.html">Корныхин Евгени: "суперкомпилято"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0513.html">Andrei Klimov: "Re: суперкомпилято"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Евгений, добрый день!
+<BR>
+<P>Спасибо за вопрос и интерес к суперкомпиляторам.
+<BR>
+На сколько мне известно, сейчас ведутся такие
+<BR>
+работы по суперкомпиляторам:
+<BR>
+<P>- Суперкомпилятор Рефала -- Андрей Немытых
+<BR>
+&nbsp;&nbsp;<A HREF="http://botik.ru/pub/local/scp/refal5/refal5.html">http://botik.ru/pub/local/scp/refal5/refal5.html</A>
+<BR>
+<P>- Суперкомпилятор Явы -- наша группа:
+<BR>
+&nbsp;&nbsp;Аркадий Климов, Антон Корж, Артем Шворин и я.
+<BR>
+&nbsp;&nbsp;<A HREF="http://www.supercompilers.ru">http://www.supercompilers.ru</A>
+<BR>
+<P>- Модельный функциональный язык XSG и
+<BR>
+&nbsp;&nbsp;суперкомпилятор для него -- Сергей Абрамов,
+<BR>
+&nbsp;&nbsp;Юрий Климов, Антон Орлов и другие.
+<BR>
+<P>Есть еще родственный проект -- частичные вычисления
+<BR>
+для Common Intermediate Language (CIL или MSIL)
+<BR>
+платформы Microsoft.Net.
+<BR>
+<P>Через неделю, 28 апреля (16:20, комн. 782, ВМиК МГУ),
+<BR>
+я расскажу о суперкомпиляции на семинаре по компьютерной алгебре:
+<BR>
+<A HREF="http://theory.sinp.msu.ru/CA/">http://theory.sinp.msu.ru/CA/</A>
+<BR>
+Заходите. Задавайте вопросы.
+<BR>
+<P><P>--- По суперкомпилятору Явы JScp ---
+<BR>
+<P>Нынешний суперкомпилятор Явы находится на стадии,
+<BR>
+когда с ним можно экспериментировать, но получать
+<BR>
+хорошие результаты (&quot;хорошие&quot; -- в смысле:
+<BR>
+соответствующие ожиданиям тех, кто понимает, что
+<BR>
+можно ждать от суперкомпиляции) удается лишь на
+<BR>
+небольших примерах. Некоторые из них описаны в статье
+<BR>
+<A HREF="http://www.supercompilers.com/white_paper.shtml">http://www.supercompilers.com/white_paper.shtml</A>
+<BR>
+<P>Мы характеризуем его как &quot;первый уровень суперкомпиляции&quot;
+<BR>
+для Явы, основную идею которого выразить так:
+<BR>
+- драйвинг достаточно полон; не доведены до ума лишь
+<BR>
+некоторые конструкции Явы (try, например)
+<BR>
+- конфигурационный анализ -- минимальный, чтобы
+<BR>
+вместе с драйвингом его можно было использовать
+<BR>
+для обкатки на задачах.
+<BR>
+<P>Интересно, что во время экспериментов основной
+<BR>
+проблемой ощущаются не недостатки &quot;интеллекта&quot; JScp,
+<BR>
+а отсутствие погружения в какую-нибудь студию, чтобы
+<BR>
+ускорить работу экспериментатора, и средств диалога с
+<BR>
+JScp, показывающих процесс суперкомпиляции.
+<BR>
+Дело в том, что работа JScp управляется многими опциями,
+<BR>
+задаваемыми относительно точек исходной программы.
+<BR>
+Их подбор -- деятельность достаточно интеллектуальная и
+<BR>
+времениемкая. Ее нужно облегчить и автоматизировать.
+<BR>
+<P>Последняя версия JScp лежит на сайте
+<BR>
+<A HREF="http://www.supercompilers.ru">http://www.supercompilers.ru</A>
+<BR>
+<P><P>--- По суперкомпилятору Рефала Scp4 ---
+<BR>
+<P>Об этом может подробнее ответить Андрей Немытых.
+<BR>
+Со своей стороны хочу только обратить внимание
+<BR>
+на его последнюю статью, в которой обобщается опыт
+<BR>
+экспериментов с Рефал-суперкомпилятором, проведенных
+<BR>
+им совместно с Александром Корлюковым. На странице
+<BR>
+<A HREF="http://www.botik.ru/pub/local/scp/refal5/nemytykh_cv.html">http://www.botik.ru/pub/local/scp/refal5/nemytykh_cv.html</A>
+<BR>
+см. статью:
+<BR>
+<P>Nemytykh A.P. Playing on REFAL., In: Proceedings of International
+<BR>
+Workshop on Program Understanding, pp:29-39, July 2003,
+<BR>
+A.P. Ershov Institute of Informatics Systems, Syberian Branch of
+<BR>
+Russian Academy of Sciences, Novosibirsk - Altai Mountains, Russia.
+<BR>
+<A HREF="ftp://www.botik.ru/pub/local/scp/refal5/nemytykh_PU03.ps.gz">ftp://www.botik.ru/pub/local/scp/refal5/nemytykh_PU03.ps.gz</A>
+<BR>
+<P>Андрей Климов
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0515.html">Andrei Klimov: "Fw: [Computer_algebra] Meeting on April 28"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0513.html">Корныхин Евгени: "суперкомпилято"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0513.html">Корныхин Евгени: "суперкомпилято"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0513.html">Andrei Klimov: "Re: суперкомпилято"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:25:00 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

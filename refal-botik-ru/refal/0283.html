@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Leonid Belous (belous@ilt.kharkov.ua)">
+<META NAME="Subject" CONTENT="Re: Re: Re: Готовность кода Рефал-">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Re: Re: Готовность кода Рефал-</H1>
+<HR>
+<P>
+<!-- received="Thu, 25 Apr 2002 19:14:35 +0300" -->
+<!-- isoreceived="20020425161435" -->
+<!-- sent="Thu, 25 Apr 2002 19:14:35 +0300" -->
+<!-- isosent="20020425161435" -->
+<!-- name="Leonid Belous" -->
+<!-- email="belous@ilt.kharkov.ua" -->
+<!-- subject="Re: Re: Re: Готовность кода Рефал-" -->
+<!-- id="001c01c1ec74$ecf00940$013b7cc1@ilt.kharkov.ua" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="3CC7DF0B.5000304@cnt.ru" -->
+<STRONG>Subject: </STRONG>Re: Re: Re: Готовность кода Рефал-<BR>
+<STRONG>From: </STRONG>Leonid Belous (<EM>belous@ilt.kharkov.ua</EM>)<BR>
+<STRONG>Date: </STRONG>Thu Apr 25 2002 - 20:14:35 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#283">[ date ]</A>
+<A HREF="index.html#283">[ thread ]</A>
+<A HREF="subject.html#283">[ subject ]</A>
+<A HREF="author.html#283">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0284.html">Dmitry Kostin: "Re: Re: Re: Re: Готовность кода Рефал-5"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0282.html">Mike Potanin: "Re: Re: Re: Готовность кода Рефал-5"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0281.html">Dmitry Kostin: "Re: Re: Re: Готовность кода Рефал-5"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0284.html">Dmitry Kostin: "Re: Re: Re: Re: Готовность кода Рефал-5"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0281.html">Leonid Belous: "Re: Re: Re: Готовность кода Рефал-"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Здравствуйте, Дмитрий!
+<BR>
+<P>Давно я с Вами не ощался. По моему прошло порядка двух лет. Помните, как мы приступали к созданию репозитрия (CVS) для Рефалов? Однако, развалилось это дело не по нашей вине. В жизни все оказалось сложнее :(.
+<BR>
+&nbsp;&nbsp;Andrei P. Nemytykh wrote:
+<BR>
+<P>Я сам никогда не собирал под операционными системами не объявленнымина странице Рефала-5, но без всяких изменений в коде Рефала-5 собирал подBSDЛеонид Белоус. Он собирал с makefile.lin, правда там возможно нужноисправитьназвание make на какое то другое ... Может быть Белоус сам Вам ответит.
+<BR>
+&nbsp;&nbsp;&nbsp;mv makefile.lin Makefile
+<BR>
+&nbsp;&nbsp;&nbsp;gmake  (не обычный make)
+<BR>
+&nbsp;&nbsp;&nbsp;Работает !
+<BR>
+Да, действительно, под FreeBSD 4.3-RELEASE #4, я собирал именно таким образом, когда посылал Андрею Немытых свой тест проверки живучести Рефала-5 на разных платформах. Выдается, конечно, куча предупреждений-советов (не смертельных) типа заменить устаревшие includes на более современные, но все собирается и работает на примере test.ref. Тестированием XML я не занимался.
+<BR>
+<P>&nbsp;&nbsp;Благодаря тому что меня &quot;засоветовали&quot;  буквально со всех сторон :-) , а особенно Михаил Потанин, который просто прислал библиотеки для FreeBSD, извлеченную из &quot;закромов Родины&quot;, задача решена - есть система работающая под native *BSD. Время реакции составило не более получаса после моего вопля.
+<BR>
+&nbsp;&nbsp;&nbsp;ОГРОМНОЕ спасибо !
+<BR>
+&nbsp;&nbsp;&nbsp;Осадок незаконченности остался, исходников этих библиотек, равно как и описания работы с XML подробного, насколько мне известно, нет. Было бы хорошо и ревизию так называемых недокументированных функций провести ;-) System(E1), например.
+<BR>
+<P>Я тоже давно &quot;откопал&quot; эту функцию и взял ее на вооружение.  Конечно, ее стоит описать наряду с другими функциями. Если интересуют подробности ее использования, то могу об этом написать по e-mail. Сам же я учился ее использованию по исходникам Scp4 Андрея Немытых.
+<BR>
+&nbsp;&nbsp;А на столе стоит и плачет Palm Pilot и хочется иметь систему в нем, ведь ничего нет невозможного для российских программистов !
+<BR>
+&nbsp;&nbsp;(Это провокация и на данную фразу можно никак не реагировать :) 
+<BR>
+<P><P>&nbsp;&nbsp;С резко улучшившимся настроением,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Дмитрий Костин.
+<BR>
+<P>&nbsp;&nbsp;P.S. Может на доведение исходных текстов до &quot;товарного&quot; вида, тестирование, портирование, выпуск документации скинемся в адрес &quot;Ботика&quot;, например ? Пара специально обученных студентов/аспирантов спасут положение ? Лично готов привезти С.М.Абрамову свою мзду :=)
+<BR>
+Дмитрий, если Вы занимаетесь подготовкой таких &quot;каскадеров&quot;, то это очень хорошо :-)
+<BR>
+Только я вижу выход в привлечении более широкой аудитории к Рефалу-5.
+<BR>
+<P>С уважением,
+<BR>
+--Леонид Белоус
+<BR>
+----- Original Message -----From: &quot;Dmitry Kostin&quot; &lt;dik@cnt.ru&gt;To: &quot;Andrei P. Nemytykh&quot; &lt;nemytykh@whu.edu.cn&gt;Sent: Thursday, April 25, 2002 2:09 AMSubject: Re: Re: Готовность кода Рефал-5
+<BR>
+Andrei P. Nemytykh wrote:
+<BR>
+Добрый день!Воспользуйтесь makefile.lin для сборки и все Ваши проблемы, видимо, будутрешены ...Буду благодарен, если сообщите что получилось.
+<BR>
+Увы, это не проходит
+<BR>
+С уважением,     Андрей Немытых.
+<BR>
+&nbsp;&nbsp;----- Original Message ----- 
+<BR>
+&nbsp;&nbsp;From: Dmitry Kostin 
+<BR>
+&nbsp;&nbsp;To: refal 
+<BR>
+&nbsp;&nbsp;Sent: Thursday, April 25, 2002 1:48 PM
+<BR>
+&nbsp;&nbsp;Subject: Re: Re: Re: Готовность кода Рефал-5
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0284.html">Dmitry Kostin: "Re: Re: Re: Re: Готовность кода Рефал-5"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0282.html">Mike Potanin: "Re: Re: Re: Готовность кода Рефал-5"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0281.html">Dmitry Kostin: "Re: Re: Re: Готовность кода Рефал-5"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0284.html">Dmitry Kostin: "Re: Re: Re: Re: Готовность кода Рефал-5"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0281.html">Leonid Belous: "Re: Re: Re: Готовность кода Рефал-"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

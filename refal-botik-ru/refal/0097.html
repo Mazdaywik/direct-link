@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei P. Nemytykh (nemytykh@math.botik.ru)">
+<META NAME="Subject" CONTENT="Scp4's news.">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Scp4's news.</H1>
+<HR>
+<P>
+<!-- received="Tue Feb  8 22:28:15 2000" -->
+<!-- isoreceived="20000208192815" -->
+<!-- sent="Wed, 2 Feb 2000 01:14:23 +0300" -->
+<!-- isosent="20000201221423" -->
+<!-- name="Andrei P. Nemytykh" -->
+<!-- email="nemytykh@math.botik.ru" -->
+<!-- subject="Scp4's news." -->
+<!-- id="00c201bf6d01$b790fab0$0ee1d0c3@polnet.botik.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>Scp4's news.<BR>
+<STRONG>From: </STRONG>Andrei P. Nemytykh (<EM>nemytykh@math.botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Feb 02 2000 - 01:14:23 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#97">[ date ]</A>
+<A HREF="index.html#97">[ thread ]</A>
+<A HREF="subject.html#97">[ subject ]</A>
+<A HREF="author.html#97">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0098.html">Andrei Klimov: "Seminar on Rеfal and supercompilation, 11 February 2000"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0096.html">Alexander P. Konyshev: "News"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0101.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0010.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Об'явление.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;На страничке <A HREF="http://www.botik.ru/pub/local/scp/refal5/">http://www.botik.ru/pub/local/scp/refal5/</A>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( синоним:
+<BR>
+&nbsp;&nbsp;<A HREF="http://www.botik.ru/pub/local/scp/refal5/refal5.html">http://www.botik.ru/pub/local/scp/refal5/refal5.html</A> )
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Можно найти ссылку на обнавлённую версию Scp4.
+<BR>
+<P>Что нового:
+<BR>
+_______________________________________________________________
+<BR>
+&nbsp;&nbsp;-  исправлено несколько ошибок;
+<BR>
+<P>&nbsp;&nbsp;- введено понятие псевдокомментария в Рефал модуле.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Псевдокомментарии объявляют ключи суперкомпиляции.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Вы можете описать любой ключ, который ранее фиксировался изменениями в
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;KEY.REF (прежние возможности указания ключей через этот файл сохранены)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;( см. файл DOC/INREF4.TXT для дополнительных пояснений).
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- появилась возможность объявлять задачу на суперкомпиляцию по-умолчанию
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(без mst-модуля).  Если в ref-модуле присутствует нижеследующий
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;псевдо-комментарий
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*$MST_FROM_ENTRY ;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;тогда задачами на суперкомпиляцию считаются тривиальные mst-схемы,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;соответствующие ENTRY-функциям данного модуля (например, &lt;Go e.1&gt;; )
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В остаточной программе соответсвующие входные точки будут иметь те же
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;самые имена и будут объявлены как ENTRY.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Описанный режим позволяет указывать bat-файлам
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SCPWHOLE и SCPWHOLP  только один аргумент - имя Рефал-модуля
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(без mst-модуля)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;( см. файлы DOC/USE.TXT,  DOC/INREF4.TXT для дополнительных пояснений).
+<BR>
+<P>&nbsp;&nbsp;&nbsp;- расширен язык описания MST-схем:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- допускаются многоуровневые mst-схемы;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- введён новый тип переменных %.Var
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Значение переменной этого типа должно быть описано в файле
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;выше  первого использования этой переменной.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Описание значения производится через следующее объявление
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$DEFINE Var e.definition.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Значение переменной является последовательностью
+<BR>
+ascii-символов.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Имеются ситаксические средства позволяющие указать
+<BR>
+преобразование
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;данной последовательности в момент компиляции mst-схемы во
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;внутреннее представление. (В данный момент преобразователем
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;последовательности-значения  может быть только INREF4)
+<BR>
+<P>&nbsp;Андрей Немытых.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0098.html">Andrei Klimov: "Seminar on Rеfal and supercompilation, 11 February 2000"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0096.html">Alexander P. Konyshev: "News"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0101.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<LI><STRONG>Maybe reply:</STRONG> <A HREF="0010.html">Andrei P. Nemytykh: "Scp4's news."</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

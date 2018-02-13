@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ 1.8.3 released">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ 1.8.3 released</H1>
+<HR>
+<P>
+<!-- received="Wed May 10 16:03:04 2000" -->
+<!-- isoreceived="20000510120304" -->
+<!-- sent="Wed, 10 May 2000 16:02:04 +0400" -->
+<!-- isosent="20000510120204" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: Refal+ 1.8.3 released" -->
+<!-- id="39194FBC.1C05070E@msu.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="XFMail.000510152650.dik@cnt.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal+ 1.8.3 released<BR>
+<STRONG>From: </STRONG>Andrey Slepuhin (<EM>pooh@msu.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed May 10 2000 - 16:02:04 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#117">[ date ]</A>
+<A HREF="index.html#117">[ thread ]</A>
+<A HREF="subject.html#117">[ subject ]</A>
+<A HREF="author.html#117">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0118.html">Vladimir A. Roganov: "Refal+ for FreeBSD ?!"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0116.html">Dmitry Kostin: "RE: Refal+ 1.8.3 released"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0116.html">Dmitry Kostin: "RE: Refal+ 1.8.3 released"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0116.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Dmitry Kostin wrote:
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt;  Приятно, что и в пять утра в субботу в поте лица
+</EM><BR>
+<EM>&gt; трудится Рефал-сообщество !
+</EM><BR>
+<EM>&gt; On 06-May-00 Andrey Slepuhin wrote:
+</EM><BR>
+<EM>&gt; &gt; День добрый всем!
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; У меня дошли руки поковырять старую реализацию Рефала+.
+</EM><BR>
+<EM>&gt; &gt; В итоге там появились поддержка fork и предварительная
+</EM><BR>
+<EM>&gt; &gt; поддержка TCP-сокетов. Скачать новую версию можно со
+</EM><BR>
+<EM>&gt;  Здорово !
+</EM><BR>
+<EM>&gt; &gt; страницы
+</EM><BR>
+<EM>&gt; &gt;   <A HREF="http://glade.nmd.msu.ru/~pooh/refal-plus">http://glade.nmd.msu.ru/~pooh/refal-plus</A>
+</EM><BR>
+<EM>&gt; &gt; Там же лежит пример использования. Под Linux'ом вроде бы
+</EM><BR>
+<EM>&gt; &gt; все работает. Когда появится версия под CygWin - пока не
+</EM><BR>
+<EM>&gt;  Скачал и получил странный результат.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt;  Правда, сразу оговорюсь - у меня не Линукс, а FreeBSD 3.4
+</EM><BR>
+<EM>&gt; EXE-шники скомпилировались нормально, как всегда
+</EM><BR>
+<EM>&gt; а вот с библиотеками получил облом.
+</EM><BR>
+<EM>&gt; ----------------------------------------
+</EM><BR>
+<EM>&gt; gcc -g -Wall -pipe -m486 -c -o rl_main.o rl_main.c
+</EM><BR>
+<EM>&gt; In file included from rl_main.c:5:
+</EM><BR>
+<EM>&gt; /usr/include/malloc.h:2: warning: #warning &quot;this file includes &lt;malloc.h&gt; which
+</EM><BR>
+<EM>&gt; is deprecated, use &lt;stdlib.h&gt; instead&quot;
+</EM><BR>
+<EM>&gt; rl_main.c: In function `vpr':
+</EM><BR>
+<EM>&gt; rl_main.c:126: warning: long unsigned int format, rlptr arg (arg 2)
+</EM><BR>
+<EM>&gt; rl_main.c: In function `main':
+</EM><BR>
+<EM>&gt; rl_main.c:260: structure has no member named `sa_restorer'
+</EM><BR>
+<EM>&gt; rl_main.c:262: `SA_SIGINFO' undeclared (first use this function)
+</EM><BR>
+<EM>&gt; rl_main.c:262: (Each undeclared identifier is reported only once
+</EM><BR>
+<EM>&gt; rl_main.c:262: for each function it appears in.)
+</EM><BR>
+<EM>&gt; rl_main.c:263: structure has no member named `sa_sigaction'
+</EM><BR>
+<EM>&gt; rl_main.c: In function `inithole':
+</EM><BR>
+<EM>&gt; rl_main.c:444: warning: implicit declaration of function `isdigit'
+</EM><BR>
+<EM>&gt; gmake[1]: *** [rl_main.o] Error 1
+</EM><BR>
+<EM>&gt; gmake[1]: Leaving directory `/usr/0/refal+/refal-plus-1.8.3/lib'
+</EM><BR>
+<EM>&gt; gmake: *** [all] Error 2
+</EM><BR>
+<P>Ну, насчет warning'ов можно особо не беспокоиться, хотя
+<BR>
+надо как-нибудь на досуге это наследие прошлого убрать,
+<BR>
+а вот насчет sa_restorer и sa_sigaction - похоже у FreeBSD
+<BR>
+этих полей в struct sigaction нет. Странно, особенно в отношении
+<BR>
+sa_sigaction - уж без этого-то поля struct sigaction не должно
+<BR>
+быть. Вообще - все вещи стандартные. Можно попробовать
+<BR>
+закомментарить присваивания к sa_restorer и sa_sigaction,
+<BR>
+а вместо присваивания NULL к sa_handler раскомментарить
+<BR>
+строчку выше.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0118.html">Vladimir A. Roganov: "Refal+ for FreeBSD ?!"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0116.html">Dmitry Kostin: "RE: Refal+ 1.8.3 released"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0116.html">Dmitry Kostin: "RE: Refal+ 1.8.3 released"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0116.html">Andrey Slepuhin: "Re: Refal+ 1.8.3 released"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Wed May 10 2000 - 16:03:05 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

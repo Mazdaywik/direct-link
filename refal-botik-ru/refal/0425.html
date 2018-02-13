@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Anton Orlov (orlov@mccme.ru)">
+<META NAME="Subject" CONTENT="Re: Conditions in Refal-5.">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Conditions in Refal-5.</H1>
+<HR>
+<P>
+<!-- received="Sat Feb 07 21:43:14 2004" -->
+<!-- isoreceived="20040207184314" -->
+<!-- sent="Sat, 7 Feb 2004 01:50:49 +0300" -->
+<!-- isosent="20040206225049" -->
+<!-- name="Anton Orlov" -->
+<!-- email="orlov@mccme.ru" -->
+<!-- subject="Re: Conditions in Refal-5." -->
+<!-- id="20040206225049.GA497@mccme.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="002901c3ec97$97a69740$2322140a@home37h2h4mjct" -->
+<STRONG>Subject: </STRONG>Re: Conditions in Refal-5.<BR>
+<STRONG>From: </STRONG>Anton Orlov (<EM>orlov@mccme.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Feb 07 2004 - 01:50:49 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#425">[ date ]</A>
+<A HREF="index.html#425">[ thread ]</A>
+<A HREF="subject.html#425">[ subject ]</A>
+<A HREF="author.html#425">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0426.html">Sergei M. Abramov: "рефал или Рефа"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0424.html">Savtchenko Maxim: "Conditions in Refal-5."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0424.html">Savtchenko Maxim: "Conditions in Refal-5."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0428.html">Arkady Klimov: "Re: Conditions in Refal-5."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0424.html">Anton Orlov: "Re: Conditions in Refal-5."</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Добрый вечер!
+<BR>
+<P>On Fri, Feb 06, 2004 at 12:56:59 +0300, Savtchenko Maxim wrote:
+<BR>
+<EM>&gt; Andrei Klimov &lt;klimov@keldysh.ru&gt; wrote:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &gt; А по существу (если я правильно понял, что Вы имеете в виду),
+</EM><BR>
+<EM>&gt; &gt; я могу только заметить, что подобная работа по &quot;регуляризации&quot;
+</EM><BR>
+<EM>&gt; &gt; синтаксиса Рефала была проделана на рубеже 80-х и 90-х
+</EM><BR>
+<EM>&gt; &gt; при разработке Рефала Плюс, а затем шлифовалась дальше
+</EM><BR>
+<EM>&gt; &gt; в Рефале-6 (теперь это Refal-J -- Рефал над Явой).
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Андрей, вы наверное обратили основное внимание на фразу:
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; &quot;... в нашем случае последнее БП функционально ничем не отличается от
+</EM><BR>
+<EM>&gt; остальных, и поэтому его не стоит выделять синтаксически.&quot;
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Вопрос синтаксиса в моей идее наименее существенен, замеченное вами имело
+</EM><BR>
+<EM>&gt; целью просто чуть-чуть упростить БНФ и никакой смысловой нагрузки не несло.
+</EM><BR>
+<EM>&gt; Мне интересно иное - пробовал ли кто-нибудь взглянуть на СЕМАНТИКУ
+</EM><BR>
+<EM>&gt; предложений немного с другой стороны. Рассмотреть работу предложения не как
+</EM><BR>
+<EM>&gt; &quot;сопоставляем вход с левой частью и заменяем на правую, если выполняются все
+</EM><BR>
+<EM>&gt; условия&quot;, а как на работу соединённых в последовательную цепочку &quot;базовых
+</EM><BR>
+<EM>&gt; предложений&quot;.
+</EM><BR>
+<P>Мне кажется, что семантикой рефал-предложения разумно называть
+<BR>
+функцию из множества рефал-выражений + таблиц означенных
+<BR>
+переменных в множество рефал-выражений.
+<BR>
+<P>Если я правильно понимаю, семантика каждого Вами описанного
+<BR>
+предложения определяется как семантика рефал5-предложения,
+<BR>
+которое получается из Вашего заменой каждого базового предложения
+<BR>
+на [pattern, arg] и формированием последовательности
+<BR>
+соответствующих условий (перестроек) [arg : pattern].  Это так?
+<BR>
+<P>То есть Вы, по сути, предлагаете другой вариант не семантики, а
+<BR>
+синтаксиса предложения, чему и соответствует другая запись в виде
+<BR>
+БНФ.
+<BR>
+<P>Работа по упрощению (регуляризации) синтаксиса Рефала идёт уже
+<BR>
+давно, про что и написал Андрей Валентинович.  Как результат (или
+<BR>
+часть) этой работы был создан так называемый Абстрактный
+<BR>
+Синтаксис (АС), включающий элементы для адекватного отображения
+<BR>
+программ на всех современных диалектах Рефала.
+<BR>
+<P>Некоторую версию АС можно посмотреть по адресу:
+<BR>
+<A HREF="http://skif.pereslavl.ru/skif/index.cgi?module=chap&action=getpage&data=refal">http://skif.pereslavl.ru/skif/index.cgi?module=chap&action=getpage&data=refal</A>\as-syntax.html
+<BR>
+<P>Часть АС, соответствующая рефал5-предложению, выглядит
+<BR>
+так:
+<BR>
+<P>e.Sentence ::= /*Empty*/ | t.Action e.Sentence
+<BR>
+t.Action   ::= t.Pattern | t.Result | t.Block
+<BR>
+t.Block    ::= (BLOCK e.Branches)
+<BR>
+e.Branches ::= /*Empty*/ | t.Branch e.Branches
+<BR>
+t.Branch   ::= (BRANCH e.Sentence)
+<BR>
+<P>t.Result здесь -- это результатное выражение.  У Вас оно названо
+<BR>
+expression.
+<BR>
+<P><EM>&gt; Признаюсь в том, что я долго пытался придумать
+</EM><BR>
+<EM>&gt; осмысленный пример предложения, которое в новой семантике проще чем в
+</EM><BR>
+<EM>&gt; традиционной, но увы, видимо я слишком привык думать по старому :-(. Может
+</EM><BR>
+<EM>&gt; вы чем поможете.
+</EM><BR>
+<P>Это неудивительно, потому что семантика Ваших предложений слишком
+<BR>
+просто выражается через семантику обычных рефал5-предложений.
+<BR>
+<P>С другой стороны, приведённая выше часть АС позволяет записывать
+<BR>
+предложения, которые выразить на Рефале-5 уже не так просто.
+<BR>
+<P>Например (в синтаксисе Рефала Плюс):
+<BR>
+<P>F e1 =
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;e1 : {
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(s2) = s2;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2 = s2;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;} : {
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 = &quot;Refal is cool!&quot;;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 = &quot;Refal is very cool!&quot;;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;};
+<BR>
+<P>Чтобы записать это на Рефале-5, придётся использовать либо
+<BR>
+вспомогательную функцию, либо две копии последнего блока.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Антон.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0426.html">Sergei M. Abramov: "рефал или Рефа"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0424.html">Savtchenko Maxim: "Conditions in Refal-5."</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0424.html">Savtchenko Maxim: "Conditions in Refal-5."</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0428.html">Arkady Klimov: "Re: Conditions in Refal-5."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0424.html">Anton Orlov: "Re: Conditions in Refal-5."</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="A.A.Vladimirov (vladimi@mech.math.msu.su)">
+<META NAME="Subject" CONTENT="Re: Re[2]: RAFAL &amp; JAVA">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Re[2]: RAFAL &amp; JAVA</H1>
+<HR>
+<P>
+<!-- received="Mon Jan 17 13:08:14 2005" -->
+<!-- isoreceived="20050117100814" -->
+<!-- sent="Mon, 17 Jan 2005 13:07:40 +0300" -->
+<!-- isosent="20050117100740" -->
+<!-- name="A.A.Vladimirov" -->
+<!-- email="vladimi@mech.math.msu.su" -->
+<!-- subject="Re: Re[2]: RAFAL &amp; JAVA" -->
+<!-- id="1105956460.4395.29.camel@shkal" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="002401c4faf8$bb838a90$0a3aa8c0@shipil.ru" -->
+<STRONG>Subject: </STRONG>Re: Re[2]: RAFAL & JAVA<BR>
+<STRONG>From: </STRONG>A.A.Vladimirov (<EM>vladimi@mech.math.msu.su</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Jan 17 2005 - 13:07:40 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#648">[ date ]</A>
+<A HREF="index.html#648">[ thread ]</A>
+<A HREF="subject.html#648">[ subject ]</A>
+<A HREF="author.html#648">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0649.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0647.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0647.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0649.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0643.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0647.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0649.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0657.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Leonid Belous писал(а):
+<BR>
+<P><EM>&gt; Антон, если не секрет, почему нужен именно
+</EM><BR>
+<EM>&gt; &quot;интерпретатор&quot;?
+</EM><BR>
+<EM>&gt; Ведь на самом деле компиляторы с языка Рефал 
+</EM><BR>
+<EM>&gt; переводят исходную программу на специальный 
+</EM><BR>
+<EM>&gt; промежуточный язык, который потом интерпретируется. 
+</EM><BR>
+<EM>&gt; При этом соотношение между фазой компиляции и 
+</EM><BR>
+<EM>&gt; интерпретации таково, что фаза компиляции не есть 
+</EM><BR>
+<EM>&gt; доминирующий участок этого процесса. 
+</EM><BR>
+<P>Хотелось бы, в первую очередь, иметь расширяемую реализацию. А то в том
+<BR>
+же Рефале-5 громких фраз о метасистемном переходе много, а вот
+<BR>
+возможностей для добавления встроенных функций (без вбивания их в
+<BR>
+основные исходники с последующей перекомпиляцией оных) похоже, не
+<BR>
+наблюдается :(
+<BR>
+<P>Что же касается собственно интерпретатора - то ведь ясно, что Рефал, в
+<BR>
+силу своей структуры, заведомо способен исполнить роль скриптового языка
+<BR>
+ничуть не хуже тех же tcl, perl или python. Однако возможность сия,
+<BR>
+похоже, не используется.
+<BR>
+<P>Sergei Romanenko писал(а):
+<BR>
+<P><EM>&gt; По поводу Рефала-2 я понял пожелание насчет &quot;интерпретатора&quot; так: нельзя ли
+</EM><BR>
+<EM>&gt; компилировать Рефал-программу сразу в основную память, не делая генерацию
+</EM><BR>
+<EM>&gt; объектных модулей. Действительно, было бы глупо заниматься линкованием
+</EM><BR>
+<EM>&gt; объектных модулей в мобильнике... :-)
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<P>Ну, разумеется, под &quot;интерпретацией&quot; в данном случае следует понимать
+<BR>
+компиляцию &quot;на лету&quot; - иначе эффективность реализации будет мизерной.
+<BR>
+<P><P><EM>&gt; Ну, а в случае Рефала-2 все обстоит наоборот! С модульностью и раздельной
+</EM><BR>
+<EM>&gt; компиляцией - все в порядке, а на режим &quot;интерактивной&quot; работы (когда
+</EM><BR>
+<EM>&gt; программа вводится в процессе работы) сам язык не рассчитан... В те времена
+</EM><BR>
+<EM>&gt; вычислительные мощности компьютеров были просто смехотворными (по сравнению
+</EM><BR>
+<EM>&gt; с нынешними мобилами), поэтому вопрос раздельной компиляции стоял ОЧЕНЬ
+</EM><BR>
+<EM>&gt; остро! А &quot;интерактивность&quot; (в смысле SML) пользователей Рефала не очень
+</EM><BR>
+<EM>&gt; волновала.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Поэтому, для создания &quot;интерактивной&quot; версии Рефала, нужно как-то
+</EM><BR>
+<EM>&gt; &quot;подкручивать&quot; сам язык...
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<P>Ладно уж, выложу карты на стол... От нечего делать я попробовал заняться
+<BR>
+написанием такого рода интерпретатора. Результат - в присоединённом tgz-
+<BR>
+файле (под Linux точно собирается; под *BSD - не проверял, но причины,
+<BR>
+которые мешали бы сборке, мне неизвестны; про Windows(TM) ничего не могу
+<BR>
+сказать). Всем желающим предлагается посмотреть, что получится, если:
+<BR>
+1) сделать присоединённый ref-файл исполняемым;
+<BR>
+2) запустить его;
+<BR>
+3) ввести с консоли несколько непустых строк;
+<BR>
+4) провести &quot;горячее&quot; перетаскивание знака &quot;#&quot; на одну строку вверх,
+<BR>
+после чего ввести __пустую__ строку;
+<BR>
+5) снова попытаться вводить с консоли непустые строки.
+<BR>
+<P>С уважением,
+<BR>
+Антон Владимиров
+<BR>
+<P><P><HR>
+<UL>
+<LI>application/x-compressed-tar attachment: <A HREF="att-0648/01-refal-20050115.tgz_">refal-20050115.tgz_</A>
+</UL>
+<!-- attachment="01-refal-20050115.tgz_" -->
+<P><P>
+#!/usr/bin/refal
+<BR>
+$use 'stdio'
+<BR>
+$use 'interp'
+<BR>
+<P>$start k/funk/ k/gets/ ('utf-8')..
+<BR>
+<P>funk = k/puts/ 10 'Zamena fajla' 10. k/interp/ 'zamena.ref'.\
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k/funk/ k/gets/ ('utf-8')..
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e/1/ = k/puts/ e/1/ 10. k/funk/k/gets/('utf-8')..
+<BR>
+#	e/1/ = k/puts/ e/1/ 10 'Vyhod iz programmy' 10.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0649.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0647.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0647.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0649.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0643.html">Sergei Romanenko: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0647.html">A.A.Vladimirov: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0649.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0657.html">Leonid Belous: "Re: Re[2]: RAFAL &amp; JAVA"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Jan 17 2005 - 13:08:20 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.net)">
+<META NAME="Subject" CONTENT="Re: Компиляция Refal6 для Linu">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Компиляция Refal6 для Linu</H1>
+<HR>
+<P>
+<!-- received="Mon Oct 29 13:14:32 2001" -->
+<!-- isoreceived="20011029101432" -->
+<!-- sent="Sun, 28 Oct 2001 18:24:25 +0300" -->
+<!-- isosent="20011028152425" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.net" -->
+<!-- subject="Re: Компиляция Refal6 для Linu" -->
+<!-- id="004801c15fc5$0337d030$110d040a@Bagirra" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="20011028002637.B1615@BelCanto" -->
+<STRONG>Subject: </STRONG>Re: Компиляция Refal6 для Linu<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.net</EM>)<BR>
+<STRONG>Date: </STRONG>Sun Oct 28 2001 - 18:24:25 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#247">[ date ]</A>
+<A HREF="index.html#247">[ thread ]</A>
+<A HREF="subject.html#247">[ subject ]</A>
+<A HREF="author.html#247">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0248.html">Andrey Slepuhin: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0246.html">dmsidorov@mtu-net.ru: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0246.html">dmsidorov@mtu-net.ru: "Re: Компиляция Refal6 для Linu"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0248.html">Andrey Slepuhin: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0246.html">Arkady Klimov: "Re: Компиляция Refal6 для Linu"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+----- Original Message -----
+<BR>
+From: &lt;dmsidorov@mtu-net.ru&gt;
+<BR>
+To: Arkady Klimov &lt;klark@bagirra.net&gt;
+<BR>
+Cc: refal &lt;refal@botik.ru&gt;
+<BR>
+Sent: Saturday, October 27, 2001 11:26 PM
+<BR>
+Subject: Re: Компиляция Refal6 для Linux
+<BR>
+<P><P>| On Fri, Oct 26, 2001 at 08:28:50PM +0400, Arkady Klimov wrote:
+<BR>
+| &gt; Здравствуйте, Дмитрий,
+<BR>
+| &gt; с указанной Вами ошибкой я в некоторой растерянности. (На С
+<BR>
+| &gt; я уже более 5 лет не работаю). Почему-то до сих пор ни один
+<BR>
+| &gt; компилятор в этом месте не брыкался. Что сие означает? Верно
+<BR>
+| &gt; ли, что по стандарту языка правая часть инициализатора обязана
+<BR>
+| &gt; быть константой? И почему stderr - не константа?
+<BR>
+|
+<BR>
+| Здравствуйте, Аркадий.
+<BR>
+|
+<BR>
+| Мои познания в C++ весьма невелики, как инженер всегда старался
+<BR>
+| использовать Паскаль или что-нибудь скриптовое, но вот что написано
+<BR>
+| в FAQ к gcc2.95:
+<BR>
+<P>Рефал-система написана на С (а не С++). Поэтому у меня возникает вопрос,
+<BR>
+указали ли Вы компилятору, что это С, а не С++ (или он понимает это
+<BR>
+автоматически по расширению имени файла?)
+<BR>
+<P>|
+<BR>
+| Why can't I initialize a static variable with stdin?
+<BR>
+|    This has nothing to do with gcc, but people ask us about it a lot.
+<BR>
+|    Code like this:
+<BR>
+|
+<BR>
+|    #include &lt;stdio.h&gt;
+<BR>
+|    FILE *yyin = stdin;
+<BR>
+|
+<BR>
+|    will not compile with GNU libc (Linux libc6), because stdin is not a
+<BR>
+|    constant. This was done deliberately, in order for there to be no
+<BR>
+|    limit on the number of open FILE objects. It is surprising for people
+<BR>
+|    used to traditional Unix C libraries, but it is permitted by the C
+<BR>
+|    standard.
+<BR>
+|
+<BR>
+| Так что, получается, под Linux это будет считаться ошибкой как минимум
+<BR>
+| до выхода новой glibc, а может, и дальше.
+<BR>
+| Кроме того, glibc теперь включает в себя определения myulong и myushort
+<BR>
+| (заголовок &lt;sys/types.h&gt;, включаемый через &lt;stdlib.h&gt;), полностью
+<BR>
+| идентичные тем, что в исходниках Рефала, поэтому ошибки не возникает,
+<BR>
+| но выдаются предупреждения об их переопределении. Чтобы избежать
+<BR>
+| двойного определения, возможно, следует использовать препроцессорную
+<BR>
+| директиву вроде
+<BR>
+|
+<BR>
+| #if __GLIBC__ &gt;= 2
+<BR>
+|
+<BR>
+| но я пока не смотрел, начиная с какой версии это появилось.
+<BR>
+<P>Спасибо за информацию
+<BR>
+<P>|
+<BR>
+| &gt; В принципе, можно, наверно, поступить и так:
+<BR>
+| &gt;
+<BR>
+| &gt; 1.удалить эту строку 43 rfstor.h
+<BR>
+| &gt;
+<BR>
+| &gt; 2.заменить строку 40 rfstor.h на строку:
+<BR>
+| &gt; EXT FILE *    stdtrc;           /* File for debug information       */
+<BR>
+| &gt; (было:
+<BR>
+| &gt; extern FILE *    stdtrc;           /* File for debug information       */
+<BR>
+| &gt; )
+<BR>
+| &gt;
+<BR>
+| &gt; 3. Вставить инициализацию
+<BR>
+| &gt;     stdtrc = stderr;
+<BR>
+| &gt; первым оператором в функцию initstor (файл rfstor.c, строка 256)
+<BR>
+| &gt; (эта функция вызывается первой в функции main).
+<BR>
+|
+<BR>
+| Этот способ сработал, после исправлений rfstor.c скомпилировался
+<BR>
+| нормально. Теперь остались нескомпилированы rfarm.c и rbarm.c.
+<BR>
+| В rbarm.c строка 252 содержит определение matherr, конфликтующее с
+<BR>
+| аналогичным в &lt;math.h&gt;:
+<BR>
+|
+<BR>
+| # ifdef __cplusplus
+<BR>
+| extern int matherr __P ((struct __exception *__exc));
+<BR>
+| # else
+<BR>
+| extern int matherr __P ((struct exception *__exc));
+<BR>
+| # endif
+<BR>
+|
+<BR>
+matherr - это, как говорят, callback-функция для перехвата арифметических ошибок
+<BR>
+(типа деления на 0). Она должна иметь определенный заголовок.
+<BR>
+Можете попробовать поставить тот, который тут написан (вероятно, нижний,
+<BR>
+поскольку используется С, а не С++).
+<BR>
+<P>| Сообщение об ошибке в rfarm.c совершенно непонятно:
+<BR>
+|
+<BR>
+| rfarm.c: In function `rf_cgetnumb':
+<BR>
+| rfarm.c:289: Unable to generate reloads for:
+<BR>
+| (insn 45 43 47 (parallel[
+<BR>
+|             (set (reg:SI 0 %eax)
+<BR>
+|                 (fix:SI (fix:SF (reg/v:SF 0 %eax))))
+<BR>
+|             (clobber (mem:HI (plus:SI (reg:SI 6 %ebp)
+<BR>
+|                         (const_int -2 [0xfffffffe])) 0))
+<BR>
+|             (clobber (mem:HI (plus:SI (reg:SI 6 %ebp)
+<BR>
+|                         (const_int -4 [0xfffffffc])) 0))
+<BR>
+|             (clobber (mem:SI (plus:SI (reg:SI 6 %ebp)
+<BR>
+|                         (const_int -8 [0xfffffff8])) 0))
+<BR>
+|             (clobber (scratch:HI))
+<BR>
+|         ] ) 145 {fix_truncsfsi2+1} (insn_list 92 (nil))
+<BR>
+|     (expr_list:REG_EQUIV (mem:SI (reg/v:SI 3 %ebx) 0)
+<BR>
+|         (expr_list:REG_DEAD (reg/v:SF 0 %eax)
+<BR>
+|             (expr_list:REG_UNUSED (scratch:HI)
+<BR>
+|                 (nil)))))
+<BR>
+| make: *** [rfarm.o] Error 1
+<BR>
+|
+<BR>
+| Что делать с определением matherr в rbarm.c, я еще мог бы попробовать
+<BR>
+| докопаться, но насчет rfarm.c никаких идей нет. Я еще не подписан, поэтому,
+<BR>
+| если есть что подсказать, пишите не только в рассылку, но и на мой адрес.
+<BR>
+|
+<BR>
+<P>Мне это тоже непонятно. Больше похоже на ошибку внутри компилятора С.
+<BR>
+Поскольку сообщение привязано к последней строке
+<BR>
+определения функции rf_cgetnumb, истинная причина может быть где-угодно
+<BR>
+внутри нее. Поэтому попробуйте руками найти проблемный оператор путем
+<BR>
+закомментирования различных частей ее кода. А там попробуем найти обход.
+<BR>
+Аркадий.
+<BR>
+<P>| С уважением, Дмитрий.
+<BR>
+|
+<BR>
+|
+<BR>
+| &gt; | ----- Original Message -----
+<BR>
+| &gt; | From: dmsidorov@mtu-net.ru
+<BR>
+| &gt; | To: klimov@keldysh.ru
+<BR>
+| &gt; | сожалению, компиляция завершилась неудачей со следующим сообщением
+<BR>
+| &gt; | об ошибке:
+<BR>
+| &gt; |
+<BR>
+| &gt; | gcc rfstor.c -O -c -ggdb
+<BR>
+| &gt; | In file included from refcom.h:55,
+<BR>
+| &gt; |                  from refgen.h:16,
+<BR>
+| &gt; |                  from refint.h:14,
+<BR>
+| &gt; |                  from rfstor.c:6:
+<BR>
+| &gt; | rfstor.h:43: initializer element is not constant
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0248.html">Andrey Slepuhin: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0246.html">dmsidorov@mtu-net.ru: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0246.html">dmsidorov@mtu-net.ru: "Re: Компиляция Refal6 для Linu"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0248.html">Andrey Slepuhin: "Re: Компиляция Refal6 для Linu"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0246.html">Arkady Klimov: "Re: Компиляция Refal6 для Linu"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

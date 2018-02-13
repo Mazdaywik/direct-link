@@ -1,0 +1,99 @@
+$use Dos Convert Stdio Arithm;
+
+$func INV-PROG tX tY = tZ;
+$func F1 s.210 t.211 e.212 t.213 t.219 = t.16;
+$func F2 e.436 (e.437) = t.7;
+
+$func To-Bin sX = t.Bx;
+
+To-Bin sX = 
+   sX : {
+      0 = ("ATOM" ("NIL"));
+      s = ("CONS" ("ATOM" (1)) <To-Bin <"-" sX 1>>);
+   };
+
+Main =
+   {  * read args, then run:
+         <ARG 1> : vX,
+         <ARG 2> : vY,
+         <To-Bin <TO-INT vX>>::t.Bx,
+         <To-Bin <TO-INT vY>>::t.By,
+         <Print "### Arg 1 = ">, <PrintLN t.Bx>,
+         <Print "### Arg 2 = ">, <PrintLN t.By>,
+         <INV-PROG t.Bx tBy>::t.Res,
+         <Print "### Res   = ">, <PrintLN t.Res>;
+      * inv. args:
+         <PrintLN "\nUsage:\n\nr_ura <int1> <int2>\n\n" >;
+   };
+
+*===============================================================
+
+INV-PROG t.2 t.3,
+	<F1 "XE" 1  t.3 t.2> :: t.9
+	= t.9;
+
+F1 s.2 t.4 e.6 (s.8 t.9 e.10) t.12,
+	{
+		e.10 : t.13,
+		s.8 : "CONS",
+		<F1 "CONS" ("ATOM" (1)) (s.2 t.4 e.6) t.13 t.12> :: t.15
+		= t.15;
+
+		e.10 : ,
+		{
+			s.8 : "ATOM",
+			t.9 : (s.17),
+			<F2 ((s.2 t.4 e.6) t.12) ()> :: t.20
+			= t.20;
+
+			s.8 : "XA",
+			t.9 : s.21,
+			<F2 ((s.2 t.4 e.6) t.12) ()> :: t.20
+			= t.20;
+		};
+	};
+
+F2 e.2 (e.4),
+	{
+		e.2 : ,
+		e.4 : (("XE" 1) t.5) e.6
+		= t.5;
+
+		e.2 : ((s.8 t.9 e.10) t.11) e.12,
+		{
+			e.10 : t.13,
+			s.8 : "CONS",
+			t.11 : ("CONS" t.14 t.15),
+			<F2 (t.9 t.14) (t.13 t.15) e.12 (e.4)> :: t.16
+			= t.16;
+
+			e.10 : ,
+			{
+				s.8 : "ATOM",
+				t.9 : (s.17),
+				t.11 : ("ATOM" (s.18)),
+				s.17 : s.18,
+				<F2 e.12 (e.4)> :: t.19
+				= t.19;
+
+				s.8 : "XA",
+				t.9 : s.20,
+				t.11 : ("ATOM" (s.21)),
+				<F2 e.12 ((("XA" s.20) ("ATOM" (s.21))) e.4)> :: t.22
+				= t.22;
+
+				s.8 : "XA",
+				t.9 : s.23,
+				t.11 : ("XA" s.24),
+				<F2 e.12 ((("XA" s.23) ("XA" s.24)) e.4)> :: t.25
+				= t.25;
+
+				s.8 : "XE",
+				t.9 : s.26,
+				<F2 e.12 ((("XE" s.26) t.11) e.4)> :: t.27
+				= t.27;
+			};
+		};
+	};
+
+

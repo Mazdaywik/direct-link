@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Leonid Belous (belous@ilt.kharkov.ua)">
+<META NAME="Subject" CONTENT="Re: Refal-J: first release">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal-J: first release</H1>
+<HR>
+<P>
+<!-- received="Fri Apr 25 22:04:29 2003" -->
+<!-- isoreceived="20030425180429" -->
+<!-- sent="Fri, 25 Apr 2003 17:39:38 +0300" -->
+<!-- isosent="20030425143938" -->
+<!-- name="Leonid Belous" -->
+<!-- email="belous@ilt.kharkov.ua" -->
+<!-- subject="Re: Refal-J: first release" -->
+<!-- id="006101c30b38$db3d2f00$013b7cc1@ilt.kharkov.ua" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="000901c309d7$047e4ab0$8704000a@Bagirra" -->
+<STRONG>Subject: </STRONG>Re: Refal-J: first release<BR>
+<STRONG>From: </STRONG>Leonid Belous (<EM>belous@ilt.kharkov.ua</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Apr 25 2003 - 18:39:38 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#307">[ date ]</A>
+<A HREF="index.html#307">[ thread ]</A>
+<A HREF="subject.html#307">[ subject ]</A>
+<A HREF="author.html#307">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0308.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0306.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0306.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0308.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0306.html">Leonid Belous: "Re: Refal-J: first release"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Привет, всем!
+<BR>
+<P><P><EM>&gt; Леня,
+</EM><BR>
+<EM>&gt; у меня остались еще вопросы насчет Рефал-PHP, спрашиваю через группу,
+</EM><BR>
+<EM>&gt; так как может это еще и другим интересно. См. ниже.
+</EM><BR>
+[...]
+<BR>
+<EM>&gt; | Именно так, ошибаешься. Обмен возможен в обоих направлениях. Но здесь я
+</EM><BR>
+не
+<BR>
+<EM>&gt; | могу (пока) состязаться в уровне интеграции с тем, что делается у тебя,
+</EM><BR>
+в
+<BR>
+<EM>&gt; | смысле эффективности реализации. Однако эта задача и не стояла у меня на
+</EM><BR>
+<EM>&gt; | первом месте.
+</EM><BR>
+<EM>&gt; Дело не в состязании: все-таки делались разные вещи. Но хотелось бы лучше
+</EM><BR>
+<EM>&gt; понимать особенности каждой. Я хотел бы уточнить свое понимание
+</EM><BR>
+<EM>&gt; системы Рефал-PHP (мне же надо будет ее упомянуть, сказав в двух
+</EM><BR>
+<EM>&gt; словах об отличиях). Вот мои вопросы:
+</EM><BR>
+<EM>&gt; 1. Верно ли, что связка Рефал-PHP выполнена на основе *реализации*
+</EM><BR>
+Рефал-5?
+<BR>
+<EM>&gt; Или там своя или значительно измененная (типа: подогнанная под структуры
+</EM><BR>
+<EM>&gt; данных PHP) реализация.
+</EM><BR>
+<P>Никаких изменений и подгонок не делалось. Используется последний дистрибутив
+<BR>
+Рефала-5 с официального сайта
+<BR>
+<A HREF="http://botik.ru/pub/local/scp/refal5/refal5.html">http://botik.ru/pub/local/scp/refal5/refal5.html</A> .
+<BR>
+Собственно все мои разработки выполнены в виде двух библиотек rphplib.ref и
+<BR>
+rphplib.php на языках refal-5 и php соответственно. На уровень языка &quot;C&quot; я
+<BR>
+пока не спускался.
+<BR>
+<P><EM>&gt; 2. Возвращаюсь к вопросу об обмене выражениями. Мой вопрос был не столько
+</EM><BR>
+<EM>&gt; о возможности обмена &quot;в обоих направлениях&quot;, сколько о структурах
+</EM><BR>
+<EM>&gt; передаваемых при этом данных. Так все-таки, можно вызвать
+</EM><BR>
+<EM>&gt; из рефала PHP-функцию и передать ей в качестве аргумента что-то вроде
+</EM><BR>
+<EM>&gt;         (A (B '*' 1) (()))
+</EM><BR>
+<EM>&gt; ? И как это увидит функция на PHP? Как массив из трех элементов, где
+</EM><BR>
+второй
+<BR>
+<EM>&gt; и третий элементы - тоже массивы? Соответственно, может ли функция
+</EM><BR>
+<EM>&gt; на PHP вызвать функцию рефала с такого рода аргументом? (Из беглого
+</EM><BR>
+взгляда
+<BR>
+<EM>&gt; на описание PHP и его системы типов, мне показалось, что массив PHP - это
+</EM><BR>
+<EM>&gt; наверно самое близкое, из того, что там имеется, к рефальскому выражению).
+</EM><BR>
+<P>Наверное проще всего рассмотреть и прокомментировать реальный короткий
+<BR>
+пример
+<BR>
+(Пример 2.5-1 Машинная арифметика. Из руководства по Refal-PHP
+<BR>
+<A HREF="http://www.refal.net/~belous/rphprdoc.htm">http://www.refal.net/~belous/rphprdoc.htm</A> ).
+<BR>
+Для того, чтобы не ссылаться на библиотеки, в пример включен и текст одной
+<BR>
+из библиотечных функций.
+<BR>
+<P>*--------------------------------------------------------------------------
+<BR>
+$EXTRN Php;
+<BR>
+$ENTRY Go { =
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Print &lt;Evalf 'sin(0.235)+cos(1/3)'&gt;&gt;
+<BR>
+}
+<BR>
+* Evalf - evaluation type real expressions
+<BR>
+Evalf {
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.expression = &lt;Php '$Evalf = ' e.expression '; echo $Evalf;'&gt;;
+<BR>
+}
+<BR>
+*---------------------------------------------------------------------------
+<BR>
+Эта программа печатает в результате число 1.1777999318272.
+<BR>
+<P>Пример показывает технику расширения возможностей языка Рефал-5, не имеющего
+<BR>
+в последней редакции плавающей арифметики, введением таковой из языка PHP.
+<BR>
+Интерфейсная рефал-функция &lt;Php e.expression&gt; не занимается исследованием
+<BR>
+структуры выражения  e.expression, а передает его AS IS интерпретатору PHP,
+<BR>
+а уж, что он с ним будет делать ..... , естественно зависит от автора
+<BR>
+программы, пишущего текст как на Рефале, так и на PHP.
+<BR>
+<P>Я могу передать твое выражение (A (B '*' 1) (()))  статически (в виде строки
+<BR>
+символов) или динамически, как e.expression, интерпретатору PHP, но ничего,
+<BR>
+кроме ругани на фазе парсинга PHP мы не получим.
+<BR>
+<P>Я, как автор предыдущей программы, передаю PHP из Рефала синтаксически
+<BR>
+правильное (в языке PHP) арифметическое выражение, НО  не в голом виде, а
+<BR>
+формирую два  оператора - оператор присваивания и оператор вывода результата
+<BR>
+этого присваивания (имена переменных в PHP начинаются со знака $).
+<BR>
+<P>Поток вывода перехватывается и выдается Рефалу как результат.
+<BR>
+<P>Естественно, никто не мешает мне написать на PHP программу, которая будет
+<BR>
+заниматься осмысленным анализом твоего выражения, и передавать его ЕЙ  (а не
+<BR>
+просто интерпретатору PHP) в качестве аргумента для обработки.
+<BR>
+<P>Рефал-функция &lt;Php e.expression&gt; не обладает никаким дополнительным
+<BR>
+встроенным интеллектом, а служит только двусторонним мостом для передачи
+<BR>
+данных  и управления между  Refal и PHP интерпретаторами.
+<BR>
+<P>Вызов Рефала из PHP также возможен,  но боюсь, что это уже оффтопик.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; Пока все.
+</EM><BR>
+<EM>&gt; Заранее спасибо.
+</EM><BR>
+Алик, если я не совсем правильно понял вопросы, то заранее прошу прощения.
+<BR>
+Готов продолжить обсуждение.
+<BR>
+<P><EM>&gt; С уважением,
+</EM><BR>
+<EM>&gt;  Аркадий
+</EM><BR>
+С уважением,
+<BR>
+--Леонид
+<BR>
+<P>[...]
+<BR>
+<P>----- Исходное сообщение -----
+<BR>
+От: &quot;Arkady Klimov&quot; &lt;arklimov@keldysh.ru&gt;
+<BR>
+Кому: &lt;refal@botik.ru&gt;
+<BR>
+Отправлено: 23 апреля 2003 г. 23:28
+<BR>
+Тема: Re: Refal-J: first release
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0308.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0306.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0306.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0308.html">Arkady Klimov: "Re: Refal-J: first release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0306.html">Leonid Belous: "Re: Refal-J: first release"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

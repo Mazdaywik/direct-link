@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re: Re[3]: параллельный РЕФА">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Re[3]: параллельный РЕФА</H1>
+<HR>
+<P>
+<!-- received="Sun Apr 04 19:56:35 2004" -->
+<!-- isoreceived="20040404155635" -->
+<!-- sent="Sun, 4 Apr 2004 17:56:58 +0400" -->
+<!-- isosent="20040404135658" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re: Re[3]: параллельный РЕФА" -->
+<!-- id="00de01c41a4c$b2baf4d0$07aee8c1@botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="002301c4170a$0db08300$8704000a@Swan" -->
+<STRONG>Subject: </STRONG>Re: Re[3]: параллельный РЕФА<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sun Apr 04 2004 - 17:56:58 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#499">[ date ]</A>
+<A HREF="index.html#499">[ thread ]</A>
+<A HREF="subject.html#499">[ subject ]</A>
+<A HREF="author.html#499">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0500.html">Sergei Romanenko: "Re: Re[2]: параллельный РЕФАЛ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0498.html">Andrei Klimov: "Re: Re[2]: параллельный РЕФА"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0493.html">Arkady Klimov: "Re: Re[3]: параллельный РЕФА"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0492.html">Arkady Klimov: "Re: Re[2]: параллельный РЕФА"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0493.html">Sergei M. Abramov: "Re: Re[3]: параллельный РЕФА"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+<EM>&gt; Нет ли у вас чего-нибудь на буржуинском языке по Т++ ?
+</EM><BR>
+<P>Дмитрий, переслал запрос на группу товарищей.  Возможно они дадут ссылки
+<BR>
+хотя бы на старые стьтьи или статьи прикладников (Чижонков...).  Ваш вопрос
+<BR>
+актуальный--это то, что спрашивают в последнее время часто (контакты с
+<BR>
+забугорьем растут...)
+<BR>
+<P>А на русском языке собрал все в разумную кучку:
+<BR>
+<P><A HREF="../../~abram/temp-T-system/index.html">http://www.botik.ru/~abram/temp-T-system/</A>
+<BR>
+<P><P><EM>&gt; Совершенно верно. По большому счет есть два семантически различных (!)
+</EM><BR>
+<EM>&gt; варианта: 1 и 2. Вариант 2 семантически равносилен стандартному
+</EM><BR>
+последовательному.
+<BR>
+<EM>&gt; Вариант 1 - нет.
+</EM><BR>
+<P>Если во время предстартовой подготовки не делать ортпгонализацию левых
+<BR>
+частей.
+<BR>
+<P><EM>&gt; ... Более того, вариант 1 вносит в семантику недериминизм.
+</EM><BR>
+...
+<BR>
+<EM>&gt; (Кстати, важно, чтобы автор кода мог указать, какие ветвления могут
+</EM><BR>
+<EM>&gt; так параллелиться. По умолчанию, чтобы все было по-стандартному.)
+</EM><BR>
+<P>Так точно.
+<BR>
+<P><EM>&gt; И все же, возвращаюсь к исходному вопросу - этого ли мы хотим?
+</EM><BR>
+<P>Ответ зависит от того, как мы понимаем слово &quot;мы&quot; (пардон за замкнытый
+<BR>
+круг).
+<BR>
+<P>Я описал, что я хочу (для первого раза): паралелизм в духе Т-системы, на
+<BR>
+уровне -- одна функция == одна гранула, и не всякая рефал-фция есть
+<BR>
+Т-функция.
+<BR>
+<P>Тем самым, я бы не стал эксплуатировать кажущийся параллелизм в якобы
+<BR>
+параллельных ветках (паралельизм в различных предложениях) -- это мелко (в
+<BR>
+смысле гранул и лоад-балансинга), бо;ьше потеряется на пересылках и
+<BR>
+переключениях контекста.
+<BR>
+<P>И последнее (всеми пропущенное):
+<BR>
+<P><EM>&gt; &gt;(3) Parallel subexpressions inside one pattern, e.g. (P1)(P2), as well as
+</EM><BR>
+<EM>&gt; &gt; various orders of matching.
+</EM><BR>
+<P>Как написано в статье (давал ссылку на PDF), я не склонен перестройку
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;(Ое1)(Ое2):(P1)(P2)
+<BR>
+<P>двумя паралельными перестройками.  Это СИСТЕМА перестроек, и в каком порядке
+<BR>
+оно будет выполняться--зависит от многого.  Например:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;(еOld1)(eOld2) : (e1 eX) (eX eX eX)
+<BR>
+<P>я бы компилировал бы вот в такой последовательный код:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;L = length(eOld2);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if !(L mod 3 == 0) then goto fail;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;еX = subexpr(eOld2, 0, L/3);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (еX != subexpr(eOld2, L/3, L/3)) then goto fail;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (еX != subexpr(eOld2, 2*L/3, L/3)) then goto fail;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;L1 = length(eOld1);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if !(L1 &gt;= L2) then goto fail;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if (еX != subexpr(eOld1, L1-L/3, L/3)) then goto fail;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;е1 = subexpr(eOld1, 0, L1-L/3);
+<BR>
+<P>Не вижу здесь никаких основаниой для параллелизма...
+<BR>
+<P>Удачи
+<BR>
+<P>С.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0500.html">Sergei Romanenko: "Re: Re[2]: параллельный РЕФАЛ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0498.html">Andrei Klimov: "Re: Re[2]: параллельный РЕФА"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0493.html">Arkady Klimov: "Re: Re[3]: параллельный РЕФА"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0492.html">Arkady Klimov: "Re: Re[2]: параллельный РЕФА"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0493.html">Sergei M. Abramov: "Re: Re[3]: параллельный РЕФА"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:25:00 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

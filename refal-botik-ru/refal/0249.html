@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.net)">
+<META NAME="Subject" CONTENT="Re: Компиляция Refal6 для Linux (commens on data striucrture">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Компиляция Refal6 для Linux (commens on data striucrture</H1>
+<HR>
+<P>
+<!-- received="Fri Nov  2 11:18:56 2001" -->
+<!-- isoreceived="20011102081856" -->
+<!-- sent="Thu, 1 Nov 2001 17:32:47 +0300" -->
+<!-- isosent="20011101143247" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.net" -->
+<!-- subject="Re: Компиляция Refal6 для Linux (commens on data striucrture" -->
+<!-- id="000301c162e4$985ef4f0$110d040a@Bagirra" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="20011031213006.A303@BelCanto" -->
+<STRONG>Subject: </STRONG>Re: Компиляция Refal6 для Linux (commens on data striucrture<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.net</EM>)<BR>
+<STRONG>Date: </STRONG>Thu Nov 01 2001 - 17:32:47 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#249">[ date ]</A>
+<A HREF="index.html#249">[ thread ]</A>
+<A HREF="subject.html#249">[ subject ]</A>
+<A HREF="author.html#249">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0250.html">Nikolai Kondratiev: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0248.html">Andrey Slepuhin: "Re: Компиляция Refal6 для Linu"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0250.html">Nikolai Kondratiev: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Посылаю ответ также в группу refal для архива, так как здесь содержится
+<BR>
+полезная информация о структурах данных реализации Рефала-6 и
+<BR>
+ее использовании на уровне С.
+<BR>
+<P>----- Original Message -----
+<BR>
+From: &lt;dmsidorov@mtu-net.ru&gt;
+<BR>
+To: Arkady Klimov &lt;klark@bagirra.net&gt;; Andrey Slepuhin &lt;pooh@msu.ru&gt;
+<BR>
+Sent: Wednesday, October 31, 2001 9:30 PM
+<BR>
+Subject: Re: Компиляция Refal6 для Linux
+<BR>
+<P><P>| On Sun, Oct 28, 2001 at 06:24:25PM +0300, Arkady Klimov wrote:
+<BR>
+| &gt; matherr - это, как говорят, callback-функция для перехвата арифметических ошибок
+<BR>
+| &gt; (типа деления на 0). Она должна иметь определенный заголовок.
+<BR>
+| &gt; Можете попробовать поставить тот, который тут написан (вероятно, нижний,
+<BR>
+| &gt; поскольку используется С, а не С++).
+<BR>
+|
+<BR>
+| On Mon, Oct 29, 2001 at 01:13:00PM +0300, Andrey Slepuhin wrote:
+<BR>
+| &gt; То есть использовать эту функцию не рекомендуется. Вместо этого
+<BR>
+| &gt; предлагается использовать стандартные механизмы обработки сигналов -
+<BR>
+| &gt; при исключительных ситуациях во время операций с плавающей точкой
+<BR>
+| &gt; вырабатывается сигнал SIGFPE.
+<BR>
+|
+<BR>
+| Замена в строке 252 _exception на exception позволила скомпилировать файл,
+<BR>
+| но хотелось бы знать, что Вы думаете насчет предложения Andrey Slepuhin
+<BR>
+| о перехвате сигнала ошибки арифметической операции вместо использования
+<BR>
+| matherr? Насколько я понимаю, в DOS сигналов нет. Но, может, в компиляторах
+<BR>
+| DOS есть функция назначения обработчиков сигналов signal, тогда какой у нее
+<BR>
+| интерфейс?
+<BR>
+<P>Что-то в этом роде, кажется там есть. И даже, если мне не изменяет память, этот вариант
+<BR>
+у меня в системе когда-то был, возможно сделанный еще начальным автором - Николаем
+<BR>
+Кондратьевым. Потом я сделал почему-то иначе, но уже не помню почему. Сейчас можно
+<BR>
+тоже переделать, главное, чтобы со знанием дела.
+<BR>
+<P><P>|
+<BR>
+| On Mon, Oct 29, 2001 at 01:13:00PM +0300, Andrey Slepuhin wrote:
+<BR>
+| &gt; &gt; Сообщение об ошибке в rfarm.c совершенно непонятно:
+<BR>
+| &gt; &gt;
+<BR>
+| &gt; &gt; rfarm.c: In function `rf_cgetnumb':
+<BR>
+| &gt; &gt; rfarm.c:289: Unable to generate reloads for:
+<BR>
+| &gt; &gt; (insn 45 43 47 (parallel[
+<BR>
+| &gt; &gt;             (set (reg:SI 0 %eax)
+<BR>
+| &gt; &gt;                 (fix:SI (fix:SF (reg/v:SF 0 %eax))))
+<BR>
+| &gt; &gt;             (clobber (mem:HI (plus:SI (reg:SI 6 %ebp)
+<BR>
+| &gt; &gt;                         (const_int -2 [0xfffffffe])) 0))
+<BR>
+| &gt; &gt;             (clobber (mem:HI (plus:SI (reg:SI 6 %ebp)
+<BR>
+| &gt; &gt;                         (const_int -4 [0xfffffffc])) 0))
+<BR>
+| &gt; &gt;             (clobber (mem:SI (plus:SI (reg:SI 6 %ebp)
+<BR>
+| &gt; &gt;                         (const_int -8 [0xfffffff8])) 0))
+<BR>
+| &gt; &gt;             (clobber (scratch:HI))
+<BR>
+| &gt; &gt;         ] ) 145 {fix_truncsfsi2+1} (insn_list 92 (nil))
+<BR>
+| &gt; &gt;     (expr_list:REG_EQUIV (mem:SI (reg/v:SI 3 %ebx) 0)
+<BR>
+| &gt; &gt;         (expr_list:REG_DEAD (reg/v:SF 0 %eax)
+<BR>
+| &gt; &gt;             (expr_list:REG_UNUSED (scratch:HI)
+<BR>
+| &gt; &gt;                 (nil)))))
+<BR>
+| &gt; &gt; make: *** [rfarm.o] Error 1
+<BR>
+| &gt; &gt;
+<BR>
+| &gt;
+<BR>
+| &gt; Здесь однозначно ошибка компилятора, который не смог справиться с перегрузкой
+<BR>
+| &gt; значений регистров (в силу малого их количества в x86 архитектуре). В качестве
+<BR>
+| &gt; воркэраунда вокруг таких ситуаций обычно достаточно немного потасовать код
+<BR>
+| &gt; функции, не меняя ее смысл. Хотя лично я посоветовал бы переходить на
+<BR>
+| &gt; gcc-3.0.2. По крайней мере многие вещи там сделаны идеологически намного более
+<BR>
+| &gt; правильно.
+<BR>
+|
+<BR>
+| Функция rf_cgetnumb оказалось весьма интересной. Посмотрев определения
+<BR>
+| использованных в ней макросов IS_REF, IS_REAL, IS_SNUMB, CVAL, CTYPE
+<BR>
+| CREF00 в refelem.h, я не понял, что они делают. Наверно, тут виновато
+<BR>
+| мое плохое знание C, но каков смысл выражения типа
+<BR>
+| int t = ((unsigned short) (unsigned) (cc))
+<BR>
+| в отношении нетипизированной ссылки cc? Какое назначение у всех
+<BR>
+| этих макросов и у rf_cgetnumb? Без этого непонятно, как ее нужно
+<BR>
+| перекраивать, чтобы скормить компилятору.
+<BR>
+<P>Аргумент здесь - значение звена (терма) типа cvalue, которое представляет собой упакованное
+<BR>
+в одно слово размеченное объединение, включающее указатели (скобки или символы ссылки),
+<BR>
+числа,  слова, литеры, ... .В качестве дискриминанта используются последние два бита, которые
+<BR>
+в указателях на звено всегда нулевые. Отсюда мнемоника CREF00 - взять (из cvalue) значение указателя,
+<BR>
+с обнулением младших двух битов. Вышенаписанное выражение, похоже, использовано для
+<BR>
+извлечения младшей (содержащей тег) двухбайтной части значение (CTYPE(cc)).
+<BR>
+Функция rf_getnumb проверяет, что терм есть символ-число
+<BR>
+и вырабатывает значение этого числа (типа long, то есть с усечением до 32-разрядов). Применяется
+<BR>
+в системе обычно для извлечения значений, которые заведомо невелики - номера каналов,
+<BR>
+индексы элементов и т.п.
+<BR>
+elemptr p - указатель на звено (типа elem или elemstr), содержащее 32-разрядное значение info
+<BR>
+и пару ссылок вперед и назад.
+<BR>
+DATA(p) выдает значение info, типизированное как cvalue.
+<BR>
+Абстрактно, значение cvalue состоит из типа и собственно значения.
+<BR>
+TYPE(p), CTYPE(c) выдают типовую часть t значения в виде short.
+<BR>
+Перечисленные макросы вида IS_...(t) служат для распознания категорий символов, запакованных
+<BR>
+в значении.
+<BR>
+VAL(p), CVAL(c) выдает само значение в виде short, при условии, что оно туда помещается
+<BR>
+(например, короткое целое - IS_SNUMB).
+<BR>
+Более крупные значения извлекаются специфическими макросами, типа CREF00, SWDBODY,
+<BR>
+или функциями, типа rf_cgetnumb.
+<BR>
+Важно заметить, что система допускает генерацию с несколькими различными вариантами
+<BR>
+представления звена и адреса звена, поэтому, чтобы не нарушить этого свойства, ковыряться
+<BR>
+в звеньях нужно только через упомянутые макросы и функции. К сожалению, компилятор С
+<BR>
+не защищает от ошибок в этом деле. Фактическое расположение частей значения зависит
+<BR>
+также от архитектуры компьютера - big endian или little endian.
+<BR>
+<P>Обращаю внимание, что большие числа с произвольной разрядностью представляются
+<BR>
+в системе как массивы коротких 16-разрядных чисел (short) - макроцифр: x[0]- младшая часть,
+<BR>
+x[l-1] - знак (0 или -1), где l- длина массива (l&gt;=1). Учитывая зависимость от архитектуры,
+<BR>
+следует заметить, что пара младших макроцифр не обязательно образует вместе
+<BR>
+младшую часть типа long, но ее всегда можно получить выражением x[1]&lt;&lt;16+x[0], которое
+<BR>
+и используется при реализации функции rf_cgetnumb (для длинных чисел).
+<BR>
+<P>Аркадий
+<BR>
+<P><P>|
+<BR>
+| Дмитрий
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0250.html">Nikolai Kondratiev: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0248.html">Andrey Slepuhin: "Re: Компиляция Refal6 для Linu"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0250.html">Nikolai Kondratiev: "Re: Компиляция Refal6 для Linux (commens on data striucrture"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

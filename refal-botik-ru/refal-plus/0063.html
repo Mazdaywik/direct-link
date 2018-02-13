@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Во сколько раз Рефал+/32 быстрее Рефала/16 (на задаче select )">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Во сколько раз Рефал+/32 быстрее Рефала/16 (на задаче select )</H1>
+<HR>
+<P>
+<!-- received="Tue Oct 26 17:30:50 1999 MSD" -->
+<!-- sent="Tue, 26 Oct 1999 17:29:44 +0300" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Во сколько раз Рефал+/32 быстрее Рефала/16 (на задаче select )" -->
+<!-- id="003601bf1fbe$8c539b40$07aee8c1@rcms.botik.ru" -->
+<!-- inreplyto="" -->
+<STRONG>Sergei M. Abramov</STRONG> (<A HREF="mailto:abram@botik.ru?subject=Re:%20Во%20сколько%20раз%20Рефал%2B/32%20быстрее%20Рефала/16%20(на%20задаче%20select%20)"><EM>abram@botik.ru</EM></A>)<BR>
+<EM>Tue, 26 Oct 1999 17:29:44 +0300</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#63">[ date ]</A>
+<A HREF="index.html#63">[ thread ]</A>
+<A HREF="subject.html#63">[ subject ]</A>
+<A HREF="author.html#63">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0064.html">Andrey Slepuhin: "Re: Во сколько раз Рефал+/32 быстрее Рефала+/16  (на задаче select )?"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0062.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0064.html">Andrey Slepuhin: "Re: Во сколько раз Рефал+/32 быстрее Рефала+/16  (на задаче select )?"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0064.html">Andrey Slepuhin: "Re: Во сколько раз Рефал+/32 быстрее Рефала+/16  (на задаче select )?"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0065.html">Alexander P. Konyshev: "Re: Во сколько раз Рефал+/32 быстрее Реала+/16 (на задаче select )"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0068.html">Arkady Klimov: "Re: Во сколько раз Рефал+/32 быстрее Реала+/16 (на задаче select )"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P>Во сколько раз Рефал+/32 быстрее Рефала+/16 (на задаче select) ? -- Ответ
+<BR>
+ниже.
+<BR>
+<P>==========Предыстория=============
+<BR>
+<P>Летом (во время семинара) я написал 4 рефал-плюс-программы решения задачи от
+<BR>
+Арк.Климова: select, select1, select2, select3 -- каждая последущая -- все
+<BR>
+плюсовее и плюсовее (первая--по сути Рефал-пять-ная).
+<BR>
+<P>Почти все эти программы выполнялись на машине Андрея Немытых
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;о    select (модифицированный) -- на рефале-5;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;о    select, select1, select2 -- на рефале+/16
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;бит (а другого не было тогда под рукой ;-)
+<BR>
+<P>Время счета Р+-ных версий (&quot;&quot;, &quot;1&quot;, &quot;2&quot;) падало, и приближалось к
+<BR>
+Рефал-5-ому времени, все еще уступая  Рефалу-5.
+<BR>
+<P>select3 гонялся только на моей машине, и я предсказывал (сравнивая времена
+<BR>
+на одной моей машине версий &quot;2&quot; и &quot;3&quot;), что при прогоне на машине Андрея
+<BR>
+Немытых select3 обгонит select/Рефал-5.  Но чуть-чуть. (Такой замер не был
+<BR>
+сделан--руки не дошли...)
+<BR>
+<P>Короче, для меня тогда было ясно, что select3/Р+/16 бит сравним с
+<BR>
+select/Рефал-5 -- чуть-чуть лучше или чуть-чуть хуже...  чуть-чуть не
+<BR>
+считается!
+<BR>
+<P>==========Конец предыстории========
+<BR>
+<P>И вот недавно, мне хватило смелости (и сноровки) поставить и своить
+<BR>
+Рефал+/32бит под Виндовс 95...
+<BR>
+<P>/* ОБМЕН ОПЫТОМ:
+<BR>
+<P>У меня было много психологического ступора перед установкой Рефал+/32.  Но
+<BR>
+когда решился, особой сноровки при установке Рефал+/32бит под Вин'95 просто
+<BR>
+не потребовалось:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;-- Дважды нажал кнопку ОК (один раз для Цигвина, один раз для
+<BR>
+Рефала-Плюс);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;-- Ни разу не правил AUTOEXEC.BAT, CONFIG.SYS -- см. дальше ;-)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;-- Вставил в конце C:\REFAL-PLUS\REFINIT.BAT одну строчку:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;NC.EXE
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;-- На Десктоп вытащил Shortcut C:\REFAL-PLUS\REFINIT.BAT и как
+<BR>
+результат, получил Shortcut на Нортон Коммандер, в котором Рефал+
+<BR>
+32-битовый!
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;-- Когда насладился этим всласть, не удержался, сделал примитивную
+<BR>
+иконку (прилагаю) для этого &quot;Нортон Коммандера, в котором Рефал+
+<BR>
+32-битовый&quot;.
+<BR>
+<P>Ранее у меня был (и остался) Shortcut на Нортон Коммандер, в котором Рефал+
+<BR>
+был (и остался) 16 битовый.  Теперь, открыв два окна -- два этих &quot;разных&quot;
+<BR>
+Нортонов-коммандеров,-- я собираю рефал программы то так, то этак ;-)
+<BR>
+<P>*/
+<BR>
+<P>При использовании, неожидано для себа, я заметил, что Рефал+/32бит/Вин
+<BR>
+оказался БЫСТРЕЕ Рефал+/16бит/ДОС!
+<BR>
+<P>/*    Если никого это не удивляет, то меня удивило.  Я точно помню (был
+<BR>
+трезвым!), что первые версии Рефал+/32бит/ДОС ПМ были МЕДЛЕННЕЕ чем
+<BR>
+Рефал+/16бит/ДОС. */
+<BR>
+<P>А на сколько Рефал+/32бит/Вин оказался БЫСТРЕЕ Рефал+/16бит/Дос?  Интересно
+<BR>
+ведь, правда?
+<BR>
+<P>Я достал свои программки select, select1, select2, select3 и прогнал их под
+<BR>
+Рефалом+/16ДОС и Рефалом+/32Вин на одной и той же своей машине (P-II-266,
+<BR>
+RAM 128MB).  Результат--неожиданный:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;На задаче select
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Рефал+/32 Вин быстрее Рефала+/16 ДОС
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;не &quot;на чуть-чуть&quot;,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;а примерно в ТРИ РАЗА!
+<BR>
+<P>Я не могу себе объяснить, почему это так, но это так.  Подробности--ниже в
+<BR>
+таблицах.
+<BR>
+<P>Спасибо ребятам (А.Слепухин, С.Битюков) за Рефал+/32 Вин!
+<BR>
+<P>Удачи,
+<BR>
+<P>Сергей
+<BR>
+<P>Астрономическое время выполнения Рефал+ ных программ select, select1,
+<BR>
+select2, select3.
+<BR>
+<P>---------------------------------------------------
+<BR>
+Аргумент      select select1 select2 select3
+<BR>
+---------------------------------------------------
+<BR>
+1234567890      3.63    3.19    3.02    2.47  R+/16
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.76    1.09    1.05    0.82  R+/32
+<BR>
+1234567890     19.22   16.98   16.42   12.91  R+/16
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.03    5.77    5.55    4.45  R+/32
+<BR>
+1234567890ab  107.65   95.85   92.61   71.13  R+/16
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;38.94   32.25   31.58   24.61  R+/32
+<BR>
+1234567890abc 631.15  564.63  547.17  411.11  R+/16
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;228.00  190.92  182.57  143.85  R+/32
+<BR>
+---------------------------------------------------
+<BR>
+<P>Во сколько раз Рефал+/32 быстрее Рефала+/16 на задаче select? Вот, смотрите:
+<BR>
+---------------------------------------------
+<BR>
+Аргумент      select select1 select2 select3
+<BR>
+---------------------------------------------
+<BR>
+1234567890       2.1     2.9     2.9     3.0
+<BR>
+1234567890       2.7     2.9     3.0     2.9
+<BR>
+1234567890ab     2.8     3.0     2.9     2.9
+<BR>
+1234567890abc    2.8     3.0     3.0     2.9
+<BR>
+---------------------------------------------
+<BR>
+<P>Свертки:
+<BR>
+&nbsp;min (по всей таблице)      -- 2.1
+<BR>
+&nbsp;average  (по всей таблице) -- 2.8
+<BR>
+&nbsp;average' (по всей таблице) -- 2.9
+<BR>
+&nbsp;max                        -- 3.0
+<BR>
+<P>/*  average'(по всей таблице) =
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(время-всего-пакета-тестов-Р+16бит)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;=  -----------------------------------
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(время-всего-пакета-тестов-Р+32бит)
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сумма-всех-16-времен(по всей таблице)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;=  -------------------------------------
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сумма-всех-32-времен(по всей таблице)
+<BR>
+*/
+<BR>
+<P><!-- attachment="Refal_Plus_Win32.pif" -->
+<HR>
+<UL>
+<LI>application/octet-stream attachment: <A HREF="http://www.botik.ru/mail-archive/refal-plus/Refal_Plus_Win32.pif">Refal_Plus_Win32.pif</A>
+</UL>
+<!-- attachment="Rfp-32.ico" -->
+<HR>
+<UL>
+<LI>image/x-win-bitmap attachment: <A HREF="http://www.botik.ru/mail-archive/refal-plus/Rfp-32.ico">Rfp-32.ico</A>
+</UL>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0064.html">Andrey Slepuhin: "Re: Во сколько раз Рефал+/32 быстрее Рефала+/16  (на задаче select )?"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0062.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0064.html">Andrey Slepuhin: "Re: Во сколько раз Рефал+/32 быстрее Рефала+/16  (на задаче select )?"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0064.html">Andrey Slepuhin: "Re: Во сколько раз Рефал+/32 быстрее Рефала+/16  (на задаче select )?"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0065.html">Alexander P. Konyshev: "Re: Во сколько раз Рефал+/32 быстрее Реала+/16 (на задаче select )"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0068.html">Arkady Klimov: "Re: Во сколько раз Рефал+/32 быстрее Реала+/16 (на задаче select )"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Tue Oct 26 1999 - 17:30:51 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

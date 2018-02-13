@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=KOI8-R">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="Re: Re: Как следует компилировать рефальскую  операцию отождествления">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Re: Как следует компилировать рефальскую  операцию отождествления</H1>
+<HR>
+<P>
+<!-- received="Wed Dec  6 12:36:21 2000" -->
+<!-- isoreceived="20001206093621" -->
+<!-- sent="Wed, 06 Dec 2000 11:05:03 +0300" -->
+<!-- isosent="20001206080503" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="Re: Re: Как следует компилировать рефальскую  операцию отождествления" -->
+<!-- id="3A2DF32F.2060201@msu.ru" -->
+<!-- charset="KOI8-R" -->
+<!-- inreplyto="000001c05ef2$e40b5b60$929943c2@swan" -->
+<STRONG>Subject: </STRONG>Re: Re: Как следует компилировать рефальскую  операцию отождествления<BR>
+<STRONG>From: </STRONG>Andrey Slepuhin (<EM>pooh@msu.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Dec 06 2000 - 11:05:03 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#153">[ date ]</A>
+<A HREF="index.html#153">[ thread ]</A>
+<A HREF="subject.html#153">[ subject ]</A>
+<A HREF="author.html#153">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0154.html">Arkady Klimov: "Re: Re: Как следует компилировать рефалскую  операцию отождествлени"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0152.html">Arkady Klimov: "Re: Как следует компилировать рефальску операцию отождествлени"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0152.html">Arkady Klimov: "Re: Как следует компилировать рефальску операцию отождествлени"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0154.html">Arkady Klimov: "Re: Re: Как следует компилировать рефалскую  операцию отождествлени"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0152.html">Andrey Slepuhin: "Re: Re: Как следует компилировать рефальскую  операцию отождествления"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Arkady Klimov wrote:
+<BR>
+<P><EM>&gt; Сергей Михайлович, привет,
+</EM><BR>
+<EM>&gt; привет участникам дискуссии!
+</EM><BR>
+<EM>&gt; Спасибо за инициативу и интересные материалы.
+</EM><BR>
+<EM>&gt; Прошу прощения, что долго не включался, отвечать было недосуг, но я все
+</EM><BR>
+<EM>&gt; читал и более-менее разбирался. Все очень интересно. Для Р+ и вообще
+</EM><BR>
+<EM>&gt; отображение в массивное представление это то, что надо. Но в первом письме
+</EM><BR>
+<EM>&gt; ты писал, что эти методы будут также интересны для реализаторов Р-5 и т.п.,
+</EM><BR>
+<EM>&gt; то есть рефалов на списковом представлении. У меня есть в этом сомнения,
+</EM><BR>
+<EM>&gt; попробуй их развеять. Ты справедливо замечаешь, что сложность операций может быть
+</EM><BR>
+<EM>&gt; (и будет для списков) O(L). Но дальше ты писал, что алгоритм от этого не зависит.
+</EM><BR>
+<EM>&gt; Согласен, алгоритм не зависит, но сложность его зависит и возможно радикально.
+</EM><BR>
+<EM>&gt; Рассмотрим пример такого образца (из функции доступа к копилке):
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; (e.name) (e.1 (e.name '=' e.value) e2)
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; При существующей реализации его сложность - это объем символов из содержимого
+</EM><BR>
+<EM>&gt; правого списка, которые надо просмотреть при поиске. Когда сравнение неудачное,
+</EM><BR>
+<EM>&gt; это обычно 1-2 символа на одно имя. То есть время будет грубо пропорционально
+</EM><BR>
+<EM>&gt; количеству имен. Если же перед сравнением мы будет сначала вычислять длину,
+</EM><BR>
+<EM>&gt; тратя O(L), то время поиска резко увеличится в разы - пропорционально средней
+</EM><BR>
+<EM>&gt; длине имени.
+</EM><BR>
+<P>С моей точки зрения правильная списковая реализация для рефал-выражений
+<BR>
+должна отслеживать их длину при конкатенациях и отщеплениях - это
+<BR>
+не вносит никакого оверхеда. Также могут существуют другие полезные
+<BR>
+инварианты, следить за которыми не мешало бы. Так, в новом рантайме
+<BR>
+рефала+ реализован флаг, указывающий, что выражение является &quot;flat&quot;,
+<BR>
+т.е. не содержит скобочных термов.
+<BR>
+Андрей(С)
+<BR>
+<P><PRE>
+-- 
+A right thing should be simple (tm)
+</PRE>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0154.html">Arkady Klimov: "Re: Re: Как следует компилировать рефалскую  операцию отождествлени"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0152.html">Arkady Klimov: "Re: Как следует компилировать рефальску операцию отождествлени"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0152.html">Arkady Klimov: "Re: Как следует компилировать рефальску операцию отождествлени"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0154.html">Arkady Klimov: "Re: Re: Как следует компилировать рефалскую  операцию отождествлени"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0152.html">Andrey Slepuhin: "Re: Re: Как следует компилировать рефальскую  операцию отождествления"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

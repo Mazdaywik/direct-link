@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="korlyukov (korlyukov@grsu.grodno.by)">
+<META NAME="Subject" CONTENT="Re: Ленивость, бесконечные структура и супекомпиляция">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Ленивость, бесконечные структура и супекомпиляция</H1>
+<HR>
+<P>
+<!-- received="Sun Aug 19 18:55:40 2001" -->
+<!-- isoreceived="20010819145540" -->
+<!-- sent="Fri, 10 Aug 2001 08:59:29 +0300" -->
+<!-- isosent="20010810055929" -->
+<!-- name="korlyukov" -->
+<!-- email="korlyukov@grsu.grodno.by" -->
+<!-- subject="Re: Ленивость, бесконечные структура и супекомпиляция" -->
+<!-- id="000b01c12162$513ba6e0$335ca8c0@home" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Pine.LNX.4.21.0108021153370.26542-100000@mccme.ru" -->
+<STRONG>Subject: </STRONG>Re: Ленивость, бесконечные структура и супекомпиляция<BR>
+<STRONG>From: </STRONG>korlyukov (<EM>korlyukov@grsu.grodno.by</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Aug 10 2001 - 09:59:29 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#221">[ date ]</A>
+<A HREF="index.html#221">[ thread ]</A>
+<A HREF="subject.html#221">[ subject ]</A>
+<A HREF="author.html#221">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0222.html">Mikhail Kovtun: "О типизации рефальских выражений"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0220.html">Иван Евтухович: "(no subject)"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0219.html">Mike Potanin: "Ленивость, бесконечные структура и суперкопиляция"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0219.html">korlyukov: "Re: Ленивость, бесконечные структура и супекомпиляция"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Я всегда думал и говорил, что суперкомпиляция - это не просто оптимизация
+<BR>
+программ с целью ускорения их исполнения, а гораздо более большее.
+<BR>
+<P>Данный пример показывает, что разумная с математической точки зрения, но не
+<BR>
+исполняемая программа, обрабатывается суперкомпилятором содержательно.
+<BR>
+<P>Я попробовал повторить предлагаемые программы в варианте унарной системы
+<BR>
+счисления (прибавление единицы - это приписывание одного символа). Все
+<BR>
+отмеченное в письме сохранилось.
+<BR>
+<P>Думаю, что  Андрей Немытых ответит на поставленные в письме вопросы чуть
+<BR>
+позже.
+<BR>
+<P>Александр Корлюков
+<BR>
+<P>----- Original Message -----
+<BR>
+From: &quot;Mike Potanin&quot; &lt;potanin@mccme.ru&gt;
+<BR>
+To: &lt;refal@botik.ru&gt;
+<BR>
+Sent: Thursday, 02 August 2001 11:23
+<BR>
+Subject: Ленивость, бесконечные структура и суперкомпиляция.
+<BR>
+<P><P><EM>&gt;
+</EM><BR>
+<EM>&gt;  Здравствуйте!
+</EM><BR>
+<EM>&gt;  Как известно ленивые вычисления позволяют работать с бесконечными
+</EM><BR>
+<EM>&gt; структурами в промежуточных результатах. Хотя это и не всегда проходит.
+</EM><BR>
+<EM>&gt; Так в haskell операция filter (\x -&gt; (x&lt;100)) [1..] как и следует ожидать
+</EM><BR>
+<EM>&gt; сама не завершается. В refal ленивые вычисления не поддерживаются (к
+</EM><BR>
+<EM>&gt; сожалению) и программа
+</EM><BR>
+<EM>&gt; *$ENTRY Go { = &lt;Prout &lt;Filt &lt;Inf 1&gt;&gt;&gt;; };
+</EM><BR>
+<EM>&gt; Inf {
+</EM><BR>
+<EM>&gt;  e.1 s.2 = &lt;Inf e.1 s.2 &lt;+ s.2 1&gt;&gt;;
+</EM><BR>
+<EM>&gt; }
+</EM><BR>
+<EM>&gt; Filt {
+</EM><BR>
+<EM>&gt;  5 e.1 = 5;
+</EM><BR>
+<EM>&gt;  s.1 e.2 = s.1 &lt;Filt e.2&gt;;
+</EM><BR>
+<EM>&gt; }
+</EM><BR>
+<EM>&gt; естественно зависает.
+</EM><BR>
+<EM>&gt; Суперкомпилятор на этой программе тоже зацикливается.
+</EM><BR>
+<EM>&gt; Однако если переписать функцию Inf с остаточной рекурсией
+</EM><BR>
+<EM>&gt; Inf {
+</EM><BR>
+<EM>&gt;  e.1 s.2 = e.1 s.2 &lt;Inf &lt;+ s.2 1&gt;&gt;;
+</EM><BR>
+<EM>&gt; }
+</EM><BR>
+<EM>&gt; то суперкомпилятор эту программу обработает &quot;правильно&quot;, хотя сама
+</EM><BR>
+<EM>&gt; программа работать естественно не начнет.
+</EM><BR>
+<EM>&gt; Если бы суперкомпилятор сам перевел рекурсию на остаточную, он мог бы
+</EM><BR>
+<EM>&gt; обработать и начальную программу? На сколько я понимаю рано или поздно он
+</EM><BR>
+<EM>&gt; проводит преобразование в остаточную рекурсию - это естественная
+</EM><BR>
+<EM>&gt; оптимизация для функциональных языков. Почему бы не проводить ее сразу?
+</EM><BR>
+<EM>&gt; Кстати, чтобы гипотетический суперкомпилятор для haskell обработал
+</EM><BR>
+<EM>&gt; приведенное выше выражение, он должен &quot;знать&quot; математику - то есть
+</EM><BR>
+<EM>&gt; учитывать что x &lt; x+1. Вообще имеет ли смысл наделять суперкомпилятор
+</EM><BR>
+<EM>&gt; такими знаниями (как с идеологической, так и с практической точки зрения)?
+</EM><BR>
+<EM>&gt; Мне кажется что он мог бы проволить более эфективную оптимизацию, если бы
+</EM><BR>
+<EM>&gt; &quot;знал&quot; алгебраические соотношения для встроеных функций, и мог бы работать
+</EM><BR>
+<EM>&gt; быстрее, если бы пользователь мог эту базу знаний расширить.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0222.html">Mikhail Kovtun: "О типизации рефальских выражений"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0220.html">Иван Евтухович: "(no subject)"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0219.html">Mike Potanin: "Ленивость, бесконечные структура и суперкопиляция"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Reply:</STRONG> <A HREF="0219.html">korlyukov: "Re: Ленивость, бесконечные структура и супекомпиляция"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

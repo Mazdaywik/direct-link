@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Leonid Belous (belous@ilt.kharkov.ua)">
+<META NAME="Subject" CONTENT="Re: Ошибка в Рефал-5">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Ошибка в Рефал-5</H1>
+<HR>
+<P>
+<!-- received="Thu Nov 13 17:52:25 2003" -->
+<!-- isoreceived="20031113145225" -->
+<!-- sent="Wed, 12 Nov 2003 18:43:54 +0200" -->
+<!-- isosent="20031112164354" -->
+<!-- name="Leonid Belous" -->
+<!-- email="belous@ilt.kharkov.ua" -->
+<!-- subject="Re: Ошибка в Рефал-5" -->
+<!-- id="006101c3a93c$816f6900$013b7cc1@ilt.kharkov.ua" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="200311111254.39917.vladimi@mech.math.msu.su" -->
+<STRONG>Subject: </STRONG>Re: Ошибка в Рефал-5<BR>
+<STRONG>From: </STRONG>Leonid Belous (<EM>belous@ilt.kharkov.ua</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Nov 12 2003 - 19:43:54 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#360">[ date ]</A>
+<A HREF="index.html#360">[ thread ]</A>
+<A HREF="subject.html#360">[ subject ]</A>
+<A HREF="author.html#360">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0361.html">Евгений  Корныхин: "работа В.Ф.Турчина"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0359.html">A.A.Vladimirov: "Ошибка  Рефал-"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0359.html">A.A.Vladimirov: "Ошибка  Рефал-"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0362.html">Leonid Belous: "Re: Ошибка в Рефал-5"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0359.html">Leonid Belous: "Re: Ошибка в Рефал-5"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+<EM>&gt; Поддерживается ли в настоящее время Рефал-5 вообще идистрибутив
+</EM><BR>
+<A HREF="ftp://ftp.botik.ru/pub/local/scp/refal5/ref5_000925.zipв">ftp://ftp.botik.ru/pub/local/scp/refal5/ref5_000925.zipв</A> частности?
+<BR>
+<P>Уважаемый А.А.Владимиров,
+<BR>
+<P>Этот вопрос уже поднимался на этой конференции
+<BR>
+<A HREF="0258.html">http://www.botik.ru/mail-archive/refal/0258.html</A>
+<BR>
+и ответы на него можно посмотреть здесь
+<BR>
+<A HREF="0259.html">http://www.botik.ru/mail-archive/refal/0259.html</A>
+<BR>
+<A HREF="0260.html">http://www.botik.ru/mail-archive/refal/0260.html</A>
+<BR>
+<P>К сожалению, с того времени ситуация не изменилась в лучшую сторону :(.
+<BR>
+<P><EM>&gt; Вопрос не праздный, ибо файл arithm.c вышеупомянутого архивасодержит
+</EM><BR>
+грубую ошибку, а именно: в строке 637 вместоправильного оператора x = k %
+<BR>
+MAX_SHORT стоит оператор x = k.Данная &quot;мелочь&quot; приводит к тому, что средние
+<BR>
+разрядыпроизведения многозначных (в смысле макроцифр) чиселоказываются,
+<BR>
+вообще говоря, далеки от реальности.
+<BR>
+<EM>&gt; В качестве примера можно привести операции
+</EM><BR>
+<EM>&gt; &lt;Mul (5510 725908503 2714696811 3558488906 2579862466) 54333205256691
+</EM><BR>
+396761401 3151792086 1004175019 0&gt;
+<BR>
+<EM>&gt; и
+</EM><BR>
+<EM>&gt; &lt;Mul (5510 725908503 2714696811 3558488906 2579862466) 54333205256691
+</EM><BR>
+396761401 3151792086 1004175018 4294967295&gt;.
+<BR>
+<EM>&gt; Результат этих операций наглядно показывает, что при УМЕНЬШЕНИИодного из
+</EM><BR>
+сомножителей на единицу &quot;произведение&quot; может чудеснымобразом УВЕЛИЧИВАТЬСЯ.
+<BR>
+<P>Спасибо за локализацию ошибки.
+<BR>
+Поведение зависит еще от конкретной платформы.
+<BR>
+Я попробовал ваш второй пример в чуть усложненном контексте. Добавил
+<BR>
+операцию Sub и исследовал разницу исходного и измененного чисел. Заодно
+<BR>
+выводил значения этих чисел. У меня получилось, что при увеличении последней
+<BR>
+цифры на единицу (5 заменил на 6), результат уменьшился
+<BR>
+(см. snapshot с моего экрана
+<BR>
+<A HREF="http://www.refal.org/~belous/download/for_vladimirov.jpg">http://www.refal.org/~belous/download/for_vladimirov.jpg</A> ).
+<BR>
+<P>Произвольно-разрядная арифметика в Рефале-5, насколько я знаю, не проходила
+<BR>
+испытаний на реальных задачах с длинными числами (более одной макроцифры).
+<BR>
+Арифметика же типа real, которая была в языке ранее, исключена в последней
+<BR>
+реализации Рефала-5.
+<BR>
+<P>Лично я считаю Рефал-5 достаточно стабильной и отлаженной системой. Из
+<BR>
+подобных ситуаций выхожу через интерфейс с PHP. Например, в системе
+<BR>
+Refal-PHP произвольно-разрядная арифметика типа real доступна из Рефала-5
+<BR>
+следующим образом
+<BR>
+<A HREF="http://www.refal.net/~belous/rphprdoc.htm#2.5.%20Вычисление%20математических%20функций">http://www.refal.net/~belous/rphprdoc.htm#2.5.%20Вычисление%20математических%20функций</A>
+<BR>
+<P>Еще раз спасибо за точное место указания ошибки. Надеюсь, что в очередном
+<BR>
+дистрибутиве Рефала-5 эта ошибка будет исправлена.
+<BR>
+<P>С уважением,
+<BR>
+--Леонид Белоус
+<BR>
+<P><EM>&gt;
+</EM><BR>
+----- Исходное сообщение ----- 
+<BR>
+От: &quot;A.A.Vladimirov&quot; &lt;vladimi@mech.math.msu.su&gt;
+<BR>
+Кому: &lt;refal@botik.ru&gt;
+<BR>
+Отправлено: 11 ноября 2003 г. 11:54
+<BR>
+Тема: Ошибка в Рефал-5
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0361.html">Евгений  Корныхин: "работа В.Ф.Турчина"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0359.html">A.A.Vladimirov: "Ошибка  Рефал-"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0359.html">A.A.Vladimirov: "Ошибка  Рефал-"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0362.html">Leonid Belous: "Re: Ошибка в Рефал-5"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0359.html">Leonid Belous: "Re: Ошибка в Рефал-5"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

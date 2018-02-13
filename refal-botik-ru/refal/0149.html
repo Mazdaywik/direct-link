@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei Klimov (Andrei.Klimov@supercompilers.com)">
+<META NAME="Subject" CONTENT="Re: Evolution of programming languages Was: Об отсечениях внутри блока.">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Evolution of programming languages Was: Об отсечениях внутри блока.</H1>
+<HR>
+<P>
+<!-- received="Fri Dec  1 20:03:23 2000" -->
+<!-- isoreceived="20001201170323" -->
+<!-- sent="Fri, 1 Dec 2000 10:24:05 -0500" -->
+<!-- isosent="20001201152405" -->
+<!-- name="Andrei Klimov" -->
+<!-- email="Andrei.Klimov@supercompilers.com" -->
+<!-- subject="Re: Evolution of programming languages Was: Об отсечениях внутри блока." -->
+<!-- id="020801c05baa$e1ed09f0$2b00a8c0@scp1" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="3A27AC37.48D7AA71@mccme.ru" -->
+<STRONG>Subject: </STRONG>Re: Evolution of programming languages Was: Об отсечениях внутри блока.<BR>
+<STRONG>From: </STRONG>Andrei Klimov (<EM>Andrei.Klimov@supercompilers.com</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Dec 01 2000 - 18:24:05 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#149">[ date ]</A>
+<A HREF="index.html#149">[ thread ]</A>
+<A HREF="subject.html#149">[ subject ]</A>
+<A HREF="author.html#149">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0150.html">Arkady Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0148.html">Leonid F. Belous: "Re: Some links"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0147.html">Anton Yu. Orlov: "Re: Evolution of programming languages (Was:  Об отсечениях внутри блока.)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0150.html">Arkady Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0147.html">Andrei Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Антон, добрый день!
+<BR>
+<P>Позвольте с Вами немножко не согласиться. Вы пишете:
+<BR>
+<P><EM>&gt;     Это действительно вопрос реализации, так как подобные ограничения,
+</EM><BR>
+<EM>&gt; конечно, никак не влияют на синтаксис.
+</EM><BR>
+<P>Это вопрос не &quot;реализации&quot;, а *семантики*.
+<BR>
+<P>Как это может ни странно прозвучать, когда речь идет об АС
+<BR>
+(=абстрактном синтаксисе), то я легко отношусь к деталям синтаксиса
+<BR>
+(где какую &quot;запятую&quot; поставить), поскольку это все равно
+<BR>
+не &quot;для человека&quot;, а &quot;для машины&quot; -- для обработки внутри компьютера.
+<BR>
+Представления АС влияет на алгоритмы его обработки,
+<BR>
+а их может быть много и разных. Поэтому естественно
+<BR>
+появятся вариации АС и перекодировщики из одного в другой.
+<BR>
+Но, конечно, о каком-то &quot;каноническом представлении АС&quot;
+<BR>
+для обмена информации договориться нужно. Но можно
+<BR>
+не спешить -- надо сначала его опробовать.
+<BR>
+<P>А вот семантика -- это как раз то, что должно быть тщательно
+<BR>
+проговорено и сформулировано для АС. Благо, детали дизайна
+<BR>
+(&quot;запятые&quot;) не отвлекают, как в случае какого-нибудь из реальных Рефалов.
+<BR>
+<P>Поэтому хочу повторить свое предложение, которые
+<BR>
+проскочило в форме &quot;кстати&quot;, но оно серьезное:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;...Правильнее было бы называть
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;АСС -- абстрактный синтаксис и *семантика*,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ибо нам нужна формальная система, в которой
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;был бы определен не только синтаксис, но и все.
+<BR>
+<P><P>Можно даже сказать так:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Синтаксис -- это только &quot;форма&quot; для семантики. ;-)
+<BR>
+<P>(Извините, если кому-то вспомнился марксизм-ленинизм.;-)
+<BR>
+<P>Андрей.
+<BR>
+<P><P><EM>&gt;         Добрый день, всем!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;     Отвечаю на вопрос о соответствии AC своей цели ;-).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Arkady Klimov wrote:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; Теперь было бы интересно узнать, как обстоят дела с отсечениями в АС и его реализации?
+</EM><BR>
+<EM>&gt; &gt; Нет ли там ограничения, исходящего от рефала Плюс: что нет переходов по отсечениям изнутри
+</EM><BR>
+<EM>&gt; &gt; блока в роли источника. Надеюсь, что нет, иначе о перспективе переводе с Рефала-6
+</EM><BR>
+<EM>&gt; &gt; в АС можно будет забыть.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;     Это действительно вопрос реализации, так как подобные ограничения,
+</EM><BR>
+<EM>&gt; конечно, никак не влияют на синтаксис. В данный момент работа
+</EM><BR>
+<EM>&gt; над реализацией еще далека от завершения, но перехват неуспехов
+</EM><BR>
+<EM>&gt; уже сделан, и данного ограничения на использование отсечений там нет.
+</EM><BR>
+<EM>&gt; Я предлагал такую трактовку отсечений в блоках (не зная, что именно
+</EM><BR>
+<EM>&gt; это решение принято в Рефале-6) лишь в качестве приятного
+</EM><BR>
+<EM>&gt; расширения Рефала+, но так как это оказывается необходимым для
+</EM><BR>
+<EM>&gt; выражения понятий Рефала-6, я думаю можно быть уверенным, что так оно и
+</EM><BR>
+<EM>&gt; останется в окончательной реализации.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;     И, поскольку с разными Рефалами так все, оказывается, не просто,
+</EM><BR>
+<EM>&gt; у меня есть вопрос по Рефалу-6. Как обстоят дела с отсечениями
+</EM><BR>
+<EM>&gt; внутри источника, к которому применяется отрицание? В Рефале+
+</EM><BR>
+<EM>&gt; они, как и внутри любого источника, должны быть сбалансированны
+</EM><BR>
+<EM>&gt; заборами. Кроме того, отрицание в Рефале+ перехватывает неуспехи,
+</EM><BR>
+<EM>&gt; идущие после знака равенства. Как я понимаю, в Рефале-6 это не так?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;         С уважением,
+</EM><BR>
+<EM>&gt;                 Антон.
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0150.html">Arkady Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0148.html">Leonid F. Belous: "Re: Some links"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0147.html">Anton Yu. Orlov: "Re: Evolution of programming languages (Was:  Об отсечениях внутри блока.)"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0150.html">Arkady Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0147.html">Andrei Klimov: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

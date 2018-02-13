@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Mike Potanin (potanin@mccme.ru)">
+<META NAME="Subject" CONTENT="Re: Сравнение по производительности Рефалас другими языкам">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Сравнение по производительности Рефалас другими языкам</H1>
+<HR>
+<P>
+<!-- received="Fri Feb 27 15:28:08 2004" -->
+<!-- isoreceived="20040227122808" -->
+<!-- sent="Fri, 27 Feb 2004 12:25:43 +0300 (MSK)" -->
+<!-- isosent="20040227092543" -->
+<!-- name="Mike Potanin" -->
+<!-- email="potanin@mccme.ru" -->
+<!-- subject="Re: Сравнение по производительности Рефалас другими языкам" -->
+<!-- id="Pine.LNX.4.58.0402271213360.18035@mccme.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="001301c3fc8e$5a015c20$0a3aa8c0@shipil.ru" -->
+<STRONG>Subject: </STRONG>Re: Сравнение по производительности Рефалас другими языкам<BR>
+<STRONG>From: </STRONG>Mike Potanin (<EM>potanin@mccme.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Feb 27 2004 - 12:25:43 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#464">[ date ]</A>
+<A HREF="index.html#464">[ thread ]</A>
+<A HREF="subject.html#464">[ subject ]</A>
+<A HREF="author.html#464">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0465.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0463.html">Mikhail Kovtun: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0462.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0465.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0462.html">Mike Potanin: "Re: Сравнение по производительности Рефалас другими языкам"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+On Thu, 26 Feb 2004, Sergei Romanenko wrote:
+<BR>
+<P>Добрый день!
+<BR>
+<EM>&gt; Преимущества объектного стиля програмирования начинают реально сказываться
+</EM><BR>
+<EM>&gt; только когда сооружение раздувается до значительных размеров. А ядро
+</EM><BR>
+<EM>&gt; операционной системы - это как раз компактная штука (по сравнению со всем
+</EM><BR>
+<EM>&gt; остальным), но, в то же время, есть смысл сидеть и его тщательно вылизывать.
+</EM><BR>
+<EM>&gt; И некоторые спецы посвящают свою жизнь именно этой, одной-единственной
+</EM><BR>
+<EM>&gt; задаче: сидят и годами полируют одно ядро одной системы. При таких условиях
+</EM><BR>
+<EM>&gt; становится уже не очень важно, на чем это ядро писать. Если ядро живет 30
+</EM><BR>
+<EM>&gt; лет, оно, по-определению, должно быть написано на языке 30-летней свежести.
+</EM><BR>
+<P>Монолитное ядро, каким оно является в большенстве современных систем -
+<BR>
+сооружение очень большое. Более того - объектно-ориентированное. Там явно
+<BR>
+используются все ОО-приемы, включая множественное насследование (в
+<BR>
+частности в реализации) файловых систем в FreeBSD. Более того, реализация
+<BR>
+наследования в VFS менее эффективна, чем это делает компилятор C++.
+<BR>
+Отказ от C++ был мотивирован соображениями стиля. Хорошую программу на C++
+<BR>
+написать в 4 раза легче, чем на plan C. Плохую - в 32. FreeBSD Core Team
+<BR>
+испугались именно легкости, с которой пишутся плохие программы.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; Кроме того, система понятий, заложенная в Unix (или в вариацию на его тему -
+</EM><BR>
+<EM>&gt; Win32), не является объектной. Поэтому как бы и не возникает потребности в
+</EM><BR>
+<EM>&gt; языке, который бы позволял в этих понятиях работать.
+</EM><BR>
+<P>Сама концепция файла уже шаг в сторону ООП. Общий интерфейс поддерживают
+<BR>
+самые разные объекты, начиная от дисковых файлов и кончас сетевыми
+<BR>
+соединениями и терминалами.
+<BR>
+<P>Михаил
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0465.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0463.html">Mikhail Kovtun: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0462.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0465.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0462.html">Mike Potanin: "Re: Сравнение по производительности Рефалас другими языкам"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

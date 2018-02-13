@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Mike Potanin (potanin@mccme.ru)">
+<META NAME="Subject" CONTENT="Re: Ядро Рефал">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Ядро Рефал</H1>
+<HR>
+<P>
+<!-- received="Fri Nov  2 15:05:28 2001" -->
+<!-- isoreceived="20011102120528" -->
+<!-- sent="Fri, 2 Nov 2001 14:36:59 +0300 (MSK)" -->
+<!-- isosent="20011102113659" -->
+<!-- name="Mike Potanin" -->
+<!-- email="potanin@mccme.ru" -->
+<!-- subject="Re: Ядро Рефал" -->
+<!-- id="Pine.LNX.4.21.0111021424320.24289-100000@mccme.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="004801c16390$14b744c0$110d040a@Bagirra" -->
+<STRONG>Subject: </STRONG>Re: Ядро Рефал<BR>
+<STRONG>From: </STRONG>Mike Potanin (<EM>potanin@mccme.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Nov 02 2001 - 14:36:59 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#255">[ date ]</A>
+<A HREF="index.html#255">[ thread ]</A>
+<A HREF="subject.html#255">[ subject ]</A>
+<A HREF="author.html#255">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0256.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0254.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0254.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0256.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0254.html">Mike Potanin: "Re: Ядро Рефал"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+On Fri, 2 Nov 2001, Arkady Klimov wrote:
+<BR>
+<P><EM>&gt; Замечу только, что все, что до сих пор называлось &quot;реализациями рефала&quot; -
+</EM><BR>
+<EM>&gt; это были в том или ином смысле интерпретаторы (исполнители буквально),
+</EM><BR>
+<EM>&gt; то есть отладчики. Эффективная компиляция возникает только
+</EM><BR>
+<EM>&gt; как отображение после суперкомпилятора. И там (и только там) об удобствах
+</EM><BR>
+<EM>&gt; отладки речи уже не идет.
+</EM><BR>
+Вот именно по этому и хочется иметь вычищенное ядро. Это позволит отделить
+<BR>
+компилятор от отладчика.
+<BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; | &gt;
+</EM><BR>
+<EM>&gt; | &gt; Ящики? Да без них рефал никто не станет использовать, хотя это и внешняя
+</EM><BR>
+<EM>&gt; | &gt; по отношению к языку сущность. В рефале-6, на мой взгляд, они доведены до
+</EM><BR>
+<EM>&gt; | &gt; некоторой завершенности. Суперкомпилятору они, конечно, мешают, но
+</EM><BR>
+<EM>&gt; | &gt; объектно-ориентированная парадигма &quot;мешает&quot; куда больше, тем не менее
+</EM><BR>
+<EM>&gt; | &gt; отбрасывать ее - значит уклоняться от решения проблем, которые ставит
+</EM><BR>
+<EM>&gt; | &gt; сама жизнь.
+</EM><BR>
+<EM>&gt; | Кто-нибудь занимался анализом использования ящиков? Наверняка есть
+</EM><BR>
+<EM>&gt; | небольшое число ситуаций, в которых они полезны. И разработав методологию
+</EM><BR>
+<EM>&gt; | их обхождения можно обойтись и без ящиков. Здесь аналогия скорее не с ОО,
+</EM><BR>
+<EM>&gt; | а с GOTO. Когда-то казалось что без него ни как - пока Дейкстра не показал
+</EM><BR>
+<EM>&gt; | обратное.
+</EM><BR>
+<EM>&gt; 
+</EM><BR>
+<EM>&gt; Если кто-то когда-то использовал &quot;ящики&quot; не по существу, - это еще не повод
+</EM><BR>
+Не ясно какое их использование будет &quot;по существу&quot;. Возможно то для чего
+<BR>
+нужны ящики проще запрограмировать на другом языке, а из него вызвать
+<BR>
+Рефал. Сам я на Рефале писал мало и мне ящики ни разу не понадобились.
+<BR>
+Задачи я выбирал простые и ориентированые на Рефал, и придумать случай в
+<BR>
+котором ящик уместен я не могу.
+<BR>
+По моему анализ был бы очень полезен для развития языка.
+<BR>
+<EM>&gt; для их изгнания из языка. Насчет GOTO тоже не все так просто. В результате
+</EM><BR>
+<EM>&gt; суперкомпиляции например, как и специализации, получаются существенно
+</EM><BR>
+<EM>&gt; &quot;goto-ориентированные&quot; программы, и еще неизвестно, во что нам обойдется
+</EM><BR>
+<EM>&gt; отсутствие GOTO в базовом языке их отображения (Яве).
+</EM><BR>
+Для Явы ни кто не мешает порождать не текст на Яве, а сразу байт-код.
+<BR>
+Или еще какое-нибудь промежуточное представление. Получение Ява-текста
+<BR>
+ценно только своей наглядностью (в том числе и для инвесторов :-)).
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0256.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0254.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0254.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0256.html">Arkady Klimov: "Re: Ядро Рефал"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0254.html">Mike Potanin: "Re: Ядро Рефал"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

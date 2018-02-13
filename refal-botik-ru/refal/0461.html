@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Mike Potanin (potanin@mccme.ru)">
+<META NAME="Subject" CONTENT="Re: Сравнение по производительности Рефала  другим языкам">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Сравнение по производительности Рефала  другим языкам</H1>
+<HR>
+<P>
+<!-- received="Thu Feb 26 20:30:58 2004" -->
+<!-- isoreceived="20040226173058" -->
+<!-- sent="Thu, 26 Feb 2004 18:44:54 +0300 (MSK)" -->
+<!-- isosent="20040226154454" -->
+<!-- name="Mike Potanin" -->
+<!-- email="potanin@mccme.ru" -->
+<!-- subject="Re: Сравнение по производительности Рефала  другим языкам" -->
+<!-- id="Pine.LNX.4.58.0402261805120.7151@mccme.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Pine.LNX.4.53L.0402261745370.6352@book.intranet" -->
+<STRONG>Subject: </STRONG>Re: Сравнение по производительности Рефала  другим языкам<BR>
+<STRONG>From: </STRONG>Mike Potanin (<EM>potanin@mccme.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Thu Feb 26 2004 - 18:44:54 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#461">[ date ]</A>
+<A HREF="index.html#461">[ thread ]</A>
+<A HREF="subject.html#461">[ subject ]</A>
+<A HREF="author.html#461">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0462.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0460.html">crocodil@croco.net: "Re: Сравнение по производительности Рефала  другим языкам"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0460.html">crocodil@croco.net: "Re: Сравнение по производительности Рефала  другим языкам"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0462.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0460.html">Mike Potanin: "Re: Сравнение по производительности Рефала  другим языкам"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+On Thu, 26 Feb 2004 crocodil@croco.net wrote:
+<BR>
+<P><EM>&gt; &gt; Чем Cyclone хуже? Еще был Aleph, но маркетинговые соображения его
+</EM><BR>
+<EM>&gt; &gt; задавили.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Не знаю, не видел. Про Cyclone я слышу впервые от тебя. Кстати,
+</EM><BR>
+<EM>&gt; возможно, этим он и хуже ;-) Для перехода от одного языка к
+</EM><BR>
+<EM>&gt; другому этот другой должен быть не просто &quot;не хуже&quot;, он должен
+</EM><BR>
+<EM>&gt; быть лучше, притом гораздо лучше. И, кстати, _такая_ инертность
+</EM><BR>
+<EM>&gt; индустрии мне вполне понятна; я бы не сказал, что это плохо.
+</EM><BR>
+<P><A HREF="http://www.cs.cornell.edu/projects/cyclone/">http://www.cs.cornell.edu/projects/cyclone/</A>
+<BR>
+Модифицированный язык C с типизацией в стиле ML. В частности система типов
+<BR>
+умеет замечать попытку вернуть неявно указатель на локальную переменную.
+<BR>
+<P><EM>&gt; &gt; OCaml не проигровывает C++ во всех областях, кроме тех, где
+</EM><BR>
+<EM>&gt; &gt; предпочтительнее plain C. (В OCaml хорошо развита и императивная и ОО
+</EM><BR>
+<EM>&gt; &gt; составляющая.)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; OCaml - язык _заведомо_ высокого уровня. Он, насколько я помню,
+</EM><BR>
+<EM>&gt; чисто интерпретируемый. Какая бы ни была там развита
+</EM><BR>
+<EM>&gt; составляющая, а, однако же, для написания ядра операционной
+</EM><BR>
+<EM>&gt; системы (например) C++ подходит, а OCaml - нет. При этом, imho,
+</EM><BR>
+<EM>&gt; сознательно ограничивать себя plain C в тех областях, где plain C
+</EM><BR>
+<EM>&gt; &quot;предпочтительнее&quot; - несколько странно, т.к. есть C++.
+</EM><BR>
+<P>В свое время было обсуждение, почему бы не переписать ядро FreeBSD на C++.
+<BR>
+В Core Team это предложение очень быстро отвергли, решив что C++ для ядер
+<BR>
+не приспособлен. Я не знаю ни одного рабочего (индустриального) ядра,
+<BR>
+написанного на C++ (возможно в winxp, но все равно сомниваюсь).
+<BR>
+Теоритически написать можно, но на практике мало реально.
+<BR>
+<P>OCaml доступен в 2 вариантах - native и bytecode. Native по
+<BR>
+производительности практически не уступает C++ (утверждается что
+<BR>
+привосходит, но я в это не верю). Байткод позволяет делать динамическую
+<BR>
+загрузку модулей. Интерпретатор на самом деле компилирует в байткод
+<BR>
+налету. Сборка мусора не отключается - то есть ядро и реальное время
+<BR>
+отпадают. Но в этих областях пока доминирует plain C.
+<BR>
+<P><EM>&gt; Не знаю, как ты, а я еще ни разу не видел, чтобы менеджеры
+</EM><BR>
+<EM>&gt; выбирали для программистов средства разработки. Где-то такое,
+</EM><BR>
+<EM>&gt; возможно, и есть. Не видел.
+</EM><BR>
+<P>Сплошь и рядом. Типичный аргумент - &quot;ты уволишься, где я программиста на
+<BR>
+OCaml найду?&quot;.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0462.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0460.html">crocodil@croco.net: "Re: Сравнение по производительности Рефала  другим языкам"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0460.html">crocodil@croco.net: "Re: Сравнение по производительности Рефала  другим языкам"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0462.html">Sergei Romanenko: "Re: Сравнение по производительности Рефала с другими языками"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0460.html">Mike Potanin: "Re: Сравнение по производительности Рефала  другим языкам"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:59 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

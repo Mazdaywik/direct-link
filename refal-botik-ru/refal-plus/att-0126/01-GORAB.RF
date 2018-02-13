@@ -1,0 +1,77 @@
+$use DOS;
+$use RF5LIB;
+$use Xml-ref;
+$func S1 e = e ;
+$func F385 e = e ;
+$func F523 e = e ;
+$func VT1 e = e ;
+$func T e = e ;
+* govt.ref
+* Программа, которую приписываем к
+* результату SCP4
+
+
+
+* ENTRY 
+MAIN { 
+ = <"rf5OPEN" 'w' 4 <ARG 2>>
+   <"rf5OPEN" 'w' 5 <ARG 3>>
+   <T >
+   <"rf5PUTOUT" 4 <REF-XML <VT1  <XML-REF > <T > > <T > > <T > > <T >;
+ };
+
+T { = <"rf5PUTOUT" 5 (' '         ' ') ' ' <TIME > >; };
+*
+***************************************************************************
+* This file was created at Thu May 25 22:10:06 2000
+* Here is a residual program of the last supercompilation by the SCP4.
+* A task from VT.mst was supercompiled.
+* The residual program is in Refal5.
+* You have to change the parametrs of the calls of VT with data,
+*          as well as to choose a call to run.
+* Please, be carefull: 
+*         a) the order of the parametrs can be incorrect;
+***************************************************************************
+
+/*
+$ENTRY Go {
+ = <Prout <VT1 e.XML >> ;
+}
+*/
+
+* InputFormat: <VT1 e.1 >
+VT1 {
+ ((PLAY ) ((TITLE ) e.661 ) ((FM ) e.662 ) ((PERSONAE ) ((TITLE ) e.668 
+                                             ) ((s.678 ) e.669 ) e.663 )
+ ((SCNDESCR ) e.664 ) e.101 ) e.1  = ((0 ) ('<html>' ) ('<head>' ) ('<title>PLAY</title>'
+                                       ) ('</head>' ) ('<body>' ) ('<p>PLAY</p>'
+ )) ((0 ) ('<p>PERSONAE</p>' )) ((0 ) ('<p>' )) <S1 e.663 (e.669 ) s.678 
+                                                 > ((0 ) ('</body>' ) ('</html>'
+ )) ;
+};
+
+* InputFormat: <F523 e.131 >
+F523 {
+  = ;
+ ((PGROUP ) ((PERSONA ) ((0 ) e.357 ) e.355 ) e.289 ) e.131  = ((0 ) ('<p>'
+ )) e.357 ((0 ) ('</p>' )) ((0 ) ('<p>' )) <F385 e.289 > <F523 e.131 > ;
+ ((PERSONA ) ((0 ) e.393 ) e.289 ) e.131  = ((0 ) ('<p>' )) e.393 ((0 ) 
+('</p>' )) <F523 e.131 > ;
+};
+
+* InputFormat: <F385 e.154 >
+F385 {
+ ((PERSONA ) ((0 ) e.227 ) e.195 ) e.154  = e.227 ((0 ) ('</p>' )) ((0 )
+ ('<p>' )) <F385 e.154 > ;
+ ((GRPDESCR ) ((0 ) e.264 ) e.195 )  = e.264 ((0 ) ('</p>' )) ;
+};
+
+* InputFormat: <S1 e.131 (e.154 ) s.156 >
+S1 {
+ e.131 (((PERSONA ) ((0 ) e.402 ) e.400 ) e.154 ) PGROUP  = e.402 ((0 ) 
+('</p>' )) ((0 ) ('<p>' )) <F385 e.154 > <F523 e.131 > ;
+ e.131 (((0 ) e.441 ) e.154 ) PERSONA  = e.441 ((0 ) ('</p>' )) <F523 e.131 
+> ;
+};
+
+****************************** The End ************************************

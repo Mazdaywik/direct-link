@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Re[3]: параллельный РЕФА">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re[3]: параллельный РЕФА</H1>
+<HR>
+<P>
+<!-- received="Wed Mar 31 09:47:10 2004" -->
+<!-- isoreceived="20040331054710" -->
+<!-- sent="Wed, 31 Mar 2004 07:23:26 +0400" -->
+<!-- isosent="20040331032326" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Re[3]: параллельный РЕФА" -->
+<!-- id="000d01c416cf$87dff7e0$07aee8c1@botik.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="E1B8Vcd-000CYA-00.podkorytov-mail-ru@f7.mail.ru" -->
+<STRONG>Subject: </STRONG>Re[3]: параллельный РЕФА<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Mar 31 2004 - 07:23:26 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#490">[ date ]</A>
+<A HREF="index.html#490">[ thread ]</A>
+<A HREF="subject.html#490">[ subject ]</A>
+<A HREF="author.html#490">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0491.html">Andrei Klimov: "Re: параллельный РЕФАЛ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0489.html">Дмитрий Подкорытов: "Re[2]: параллельный РЕФАЛ"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0489.html">Дмитрий Подкорытов: "Re[2]: параллельный РЕФАЛ"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0493.html">Arkady Klimov: "Re: Re[3]: параллельный РЕФА"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0489.html">Sergei M. Abramov: "Re[3]: параллельный РЕФА"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Дмитрий,
+<BR>
+<P><EM>&gt; Да простят меня люди, знающие английский.
+</EM><BR>
+<P>Аркадий им владеет в совершенстве.  Но вопрос в другом:
+<BR>
+<P># (2) Parallel use of sentences for matching,
+<BR>
+! Паралельное сопоставление выражений с образцом
+<BR>
+<P>Что это значит?  Имеем правила:
+<BR>
+<P>F   L1 = R1;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;L2 = R2;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;...
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;LN = RN;
+<BR>
+<P>Имеем вызов &lt;F Oe&gt;
+<BR>
+<P>В параллель запускаем вычисление N клэшей:
+<BR>
+<P>pmK == ( Oe : LK --&gt; { substK | $fail } )
+<BR>
+<P>Вопросы Алика безусловно правильные:
+<BR>
+<P><EM>&gt; имелось ли здесь в виду изменение семантики, а именно что сработает
+</EM><BR>
+произвольное
+<BR>
+<EM>&gt; применимое предложение (скажем, которое раньше других вернет успешный
+</EM><BR>
+результат),
+<BR>
+<EM>&gt; не обязательно самое первое по порядку написания из применимых(?).
+</EM><BR>
+<P>(вариант 1) Если pmK успешно (не $fail) завершилось раньше других, заменяем
+<BR>
+ли мы &lt;F Oe&gt; на RK/substK (делая убиения всех иных pmJ)?
+<BR>
+<P>(* О, как любилось в студентчестве каждую функцию завершать предложением:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eX = ...
+<BR>
+*)
+<BR>
+<P>(вариант 1+) Если pmK успешно (не $fail) завершилось раньше других, то мы
+<BR>
+заменяем &lt;F Oe&gt; на RK/substK но не убиваем вычисления и всех остальных
+<BR>
+веток? (ну, кто вспомнил функ-логическое программирование, XSG, справедливую
+<BR>
+семантику и т.п.).
+<BR>
+<P>Общее замечание про 1 и 1+: Алик!  Вспомним про ортогонализацию левых частей
+<BR>
+предложений. Правда она делается таким приемем, что не ясно, что можно
+<BR>
+параллелить в дереве отождествления (спуск по дереву выборов)?
+<BR>
+<P>(вариант 2) Мы всегда ждем завершения ВСЕХ pmI (I=1..N), затем выбираем
+<BR>
+K=min{ I : pmI =/= $fail } и заменяем &lt;F Oe&gt; на RK/substK.
+<BR>
+<P>(вариант 2+) Мы всегда ждем завершения ВСЕХ pmI (I=1..N), затем выбираем
+<BR>
+K=min{ I : pmI =/= $fail } и заменяем &lt;F Oe&gt; на RK/substK.  Однако в работе
+<BR>
+pmI делаем усовершенствования: (a) приоритет (на захват процессоров) pmI
+<BR>
+падает при росте I; (2) если некоторый pmI завершился с результатом не $fail
+<BR>
+то он делает убивство всем незавершенным pmJ (I&lt;J&lt;=N).
+<BR>
+<P>Про варианты 2* Алик сказал:
+<BR>
+<P><EM>&gt; ... И тогда получается, что этот параллелизм здесь порождает
+</EM><BR>
+<EM>&gt; много лишней работы: нормально надо вычислять лишь образцы до первого
+</EM><BR>
+применимого,
+<BR>
+<EM>&gt; а при параллелизме - всегда все.
+</EM><BR>
+<P>или почти все (см. 2+).  Алик!  В паралельном мире на это идут.  &quot;Если
+<BR>
+процессоры все равно простаивают, почему бы не...&quot;  и т.д.  Называется
+<BR>
+&quot;спекулятивные вычисления&quot;.  Эйсымонт их любит упоминать...
+<BR>
+<P>Удачи
+<BR>
+<P>С.
+<BR>
+PS.  По мне не в этом счастье.  Параллелить надо не мелкие операции -- pmI,
+<BR>
+а вызовы функций.  Причем все, не обязательно те, у которых аргумент
+<BR>
+&quot;готов&quot;.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0491.html">Andrei Klimov: "Re: параллельный РЕФАЛ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0489.html">Дмитрий Подкорытов: "Re[2]: параллельный РЕФАЛ"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0489.html">Дмитрий Подкорытов: "Re[2]: параллельный РЕФАЛ"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0493.html">Arkady Klimov: "Re: Re[3]: параллельный РЕФА"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0489.html">Sergei M. Abramov: "Re[3]: параллельный РЕФА"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:25:00 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

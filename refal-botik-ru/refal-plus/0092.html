@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrey Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="About new Refal+ release">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>About new Refal+ release</H1>
+<HR>
+<P>
+<!-- received="Wed Dec  8 19:21:06 1999 MSK" -->
+<!-- sent="Wed, 08 Dec 1999 19:20:05 +0300" -->
+<!-- name="Andrey Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="About new Refal+ release" -->
+<!-- id="384E8535.2C730D6A@msu.ru" -->
+<!-- inreplyto="" -->
+<STRONG>Andrey Slepuhin</STRONG> (<A HREF="mailto:pooh@msu.ru?subject=Re:%20About%20new%20Refal%2B%20release"><EM>pooh@msu.ru</EM></A>)<BR>
+<EM>Wed, 08 Dec 1999 19:20:05 +0300</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#92">[ date ]</A>
+<A HREF="index.html#92">[ thread ]</A>
+<A HREF="subject.html#92">[ subject ]</A>
+<A HREF="author.html#92">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0093.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0091.html">Andrey Slepuhin: "Re: Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0093.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0093.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0094.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0095.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0096.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0097.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый всем!
+<BR>
+<P>Я закончил работу над очередной версией Рефала+. То есть
+<BR>
+дистрибутив под Linux можно выложить в любое время. Однако
+<BR>
+я хочу задержать выкладывание дистрибутива до тех пор, пока
+<BR>
+Сергей (Битюков) не проверит, что под Windows все работает
+<BR>
+нормально. Заодно я хочу сделать анонс того, что я добавил,
+<BR>
+чтобы было время все осмыслить и высказать замечания (если
+<BR>
+таковые имеются).
+<BR>
+<P>1) Case-sensitivity.
+<BR>
+&nbsp;&nbsp;&nbsp;Новая версия Рефала+ по умолчанию является case-sensitive.
+<BR>
+&nbsp;&nbsp;&nbsp;Старые программы можно компилировать с ключиком -u (поднять
+<BR>
+&nbsp;&nbsp;&nbsp;имена в верхний регистр). Для новых программ есть два варианта
+<BR>
+&nbsp;&nbsp;&nbsp;работы со стандартными модулями:
+<BR>
+&nbsp;&nbsp;&nbsp;а) Имена стандартных модулей и имена функций записываются
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;большими буквами;
+<BR>
+&nbsp;&nbsp;&nbsp;б) Имена стандартных модулей и имена функций записываются
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;в mixed-case в соответствии с тем, как было описано в
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;одном из моих предыдущих писем.
+<BR>
+&nbsp;&nbsp;&nbsp;Никаких опций компилятору задавать не требуется - имена
+<BR>
+&nbsp;&nbsp;&nbsp;распознаются автоматически. При этом нельзя, скажем, писать
+<BR>
+&nbsp;&nbsp;&nbsp;имена модулей большими буквами, а имена функций в mixed-case.
+<BR>
+<P>2) Генерация виртуального кода.
+<BR>
+&nbsp;&nbsp;&nbsp;Новая версия Рефала+ может генерировать виртуальный код. Для
+<BR>
+&nbsp;&nbsp;&nbsp;этого нужно указать опцию -vc. Сгенерированный виртуальный код
+<BR>
+&nbsp;&nbsp;&nbsp;будет выведен в файл с расширением .rvc (Refal Virtual Code) в
+<BR>
+&nbsp;&nbsp;&nbsp;виде объектного выражения, которое может затем быть считано
+<BR>
+&nbsp;&nbsp;&nbsp;одним вызовом функции Read. Виртуальный код соответствует описанию
+<BR>
+&nbsp;&nbsp;&nbsp;в  статье &quot;Принципы реализации Рефала+&quot;) со следующими расширениями:
+<BR>
+&nbsp;&nbsp;&nbsp;а) Новые команды LEIS/LVIS/LES,REIS/RVIS/RES - семантика
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;следующая (на примере LEIS/LVIS/LES):
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; LEIS m : LES : C, S, D, E &gt;  =&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ S/m = Oe и Oe : S =S' } &lt; C, S', (LES : C, S') : D, E&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; LVIS m : LES : C, S, D, E &gt;  =&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ S/m = Oe } &lt; LES : C, Oe : S, D, E&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; LES : C, OtOe' : S, D, E &gt;  =&gt; { Oe' : S = S' } &lt; C, S', (LES :
+<BR>
+C : S') D, E&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; LES : C, p : S, D, E &gt;  =&gt; &lt; FAIL : [], S, D, E&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;б) Новые команды:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PUSHEMP == PUSHQ []
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PUSHBR m == PUSH m; BR
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVE - 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; MOVE m n : C, Oe_0 : ... : Oe_n : S, D, E &gt; =&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; C, Oe_0 : ... : S/m : S, D, E &gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEQ - 
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; MOVEQ n Oe : C, Oe_0 : ... : Oe_n : S, D, E &gt; =&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; C, Oe_0 : ... : Oe : S, D, E &gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOVEEMP == MOVEQ []
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWAP -
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; SWAP m n : C, Oe_0 : ... : Oe_m : ... : Oe_n : S, D, E &gt; =&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; C, Oe_0 : ... : S/n : ... : S/m : S, D, E &gt;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FUNFAIL Fname == PUSHQ Fname &quot;Unexpected fail&quot;; ERROR
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FUNEND == NOP , но всегда в конце функции.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;в) Директивы:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMPORT/EXPORT/LOCAL FUNC/BOX/TABLE/VECTOR/STRING/CHANNEL -
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;семантика очевидна.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<BR>
+3) Функции ввода-вывода теперь правильно работают с символами-ссылками
+<BR>
+<P>4) Подключен &quot;дырявый&quot; рефал и исправлены в нем ошибки. &quot;Дырявость&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;контролируется переменной среды RFP_HOLECTRL, значение которой
+<BR>
+&nbsp;&nbsp;&nbsp;имеет вид
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RFP_HOLECTRL=l;r;s
+<BR>
+&nbsp;&nbsp;&nbsp;где l - процент дырок слева, r - процент дырок справа, s -
+<BR>
+&nbsp;&nbsp;&nbsp;минимальная длина результирующего выражения, для которой дырки
+<BR>
+&nbsp;&nbsp;&nbsp;разрешены. По умолчанию Рефал+ работает в &quot;не дырявом&quot; режиме.
+<BR>
+<P>5) Теперь любую откомпилированную рефал-программу можно запускать
+<BR>
+&nbsp;&nbsp;&nbsp;со следующими опциями:
+<BR>
+&nbsp;&nbsp;&nbsp;-rfp-heapsize &lt;n&gt;    - задает размер heap'а в байтах
+<BR>
+&nbsp;&nbsp;&nbsp;-rfp-stacksize &lt;n&gt;   - задает размер стека в байтах
+<BR>
+&nbsp;&nbsp;&nbsp;-rfp-lholes &lt;n&gt;   \
+<BR>
+&nbsp;&nbsp;&nbsp;-rfp-rholes &lt;n&gt;   |  - задают &quot;дырявость&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;-rfp-minholes &lt;n&gt; /
+<BR>
+&nbsp;&nbsp;&nbsp;-rfp-memstat         - разрешают печать статистики использования
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;памяти после окончания программы.
+<BR>
+<P>6) Разрешены комментарии, начинающиеся на //
+<BR>
+<P>Всего доброго,
+<BR>
+Андрей.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0093.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0091.html">Andrey Slepuhin: "Re: Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0093.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0093.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0094.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0095.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0096.html">Andrey Slepuhin: "Re: About new Refal+ release"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0097.html">Arkady Klimov: "Re: About new Refal+ release"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Wed Dec 08 1999 - 19:21:09 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.rinet.ru)">
+<META NAME="Subject" CONTENT="Re: Urgent!!! Help needed! Refal+ &amp; virtual code">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Urgent!!! Help needed! Refal+ &amp; virtual code</H1>
+<HR>
+<P>
+<!-- received="Tue Dec  7 16:51:36 1999 MSK" -->
+<!-- sent="Tue, 7 Dec 1999 16:52:28 +0300" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.rinet.ru" -->
+<!-- subject="Re: Urgent!!! Help needed! Refal+ &amp; virtual code" -->
+<!-- id="005301bf40ba$4d2665c0$97925bc3@bagirra.rinet.ru" -->
+<!-- inreplyto="384B91FC.F50E515A@msu.ru" -->
+<STRONG>Arkady Klimov</STRONG> (<A HREF="mailto:klark@bagirra.rinet.ru?subject=Re:%20Urgent!!!%20Help%20needed!%20Refal%2B%20&amp;%20virtual%20code"><EM>klark@bagirra.rinet.ru</EM></A>)<BR>
+<EM>Tue, 7 Dec 1999 16:52:28 +0300</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#90">[ date ]</A>
+<A HREF="index.html#90">[ thread ]</A>
+<A HREF="subject.html#90">[ subject ]</A>
+<A HREF="author.html#90">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0091.html">Andrey Slepuhin: "Re: Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0089.html">Andrey Slepuhin: "Re: Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0087.html">Andrey Slepuhin: "Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0091.html">Andrey Slepuhin: "Re: Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+----- Original Message -----
+<BR>
+From: Andrey Slepuhin &lt;<A HREF="mailto:pooh@msu.ru?subject=Re:%20Urgent!!!%20Help%20needed!%20Refal%2B%20&amp;%20virtual%20code">pooh@msu.ru</A>&gt;
+<BR>
+To: Arkady Klimov &lt;<A HREF="mailto:klark@bagirra.rinet.ru?subject=Re:%20Urgent!!!%20Help%20needed!%20Refal%2B%20&amp;%20virtual%20code">klark@bagirra.rinet.ru</A>&gt;
+<BR>
+Cc: Refal Plus mailing list &lt;<A HREF="mailto:refal-plus@botik.ru?subject=Re:%20Urgent!!!%20Help%20needed!%20Refal%2B%20&amp;%20virtual%20code">refal-plus@botik.ru</A>&gt;
+<BR>
+Sent: Tuesday, December 07, 1999 1:41 PM
+<BR>
+Subject: Re: Urgent!!! Help needed! Refal+ &amp; virtual code
+<BR>
+<P><P><EM>&gt; Arkady Klimov wrote:
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; ----- Original Message -----
+</EM><BR>
+<EM>&gt; &gt; From: Andrey Slepuhin &lt;<A HREF="mailto:pooh@msu.ru?subject=Re:%20Urgent!!!%20Help%20needed!%20Refal%2B%20&amp;%20virtual%20code">pooh@msu.ru</A>&gt;
+</EM><BR>
+<EM>&gt; &gt; To: Refal Plus mailing list &lt;<A HREF="mailto:refal-plus@botik.ru?subject=Re:%20Urgent!!!%20Help%20needed!%20Refal%2B%20&amp;%20virtual%20code">refal-plus@botik.ru</A>&gt;
+</EM><BR>
+<EM>&gt; &gt; Sent: Monday, December 06, 1999 1:37 PM
+</EM><BR>
+<EM>&gt; &gt; Subject: Urgent!!! Help needed! Refal+ &amp; virtual code
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; День добрый всем!
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; Я практически закончил генерацию виртуального кода в текущем
+</EM><BR>
+<EM>&gt; &gt; Рефале+.
+</EM><BR>
+<EM>&gt; &gt; &gt; Есть одна _большая_ проблема: хочется выдавать виртуальный код
+</EM><BR>
+<EM>&gt; &gt; &gt; в виде объектного выражения, которое может быть потом опять считано.
+</EM><BR>
+<EM>&gt; &gt; &gt; Однако в выводе есть символы-ссылки, например команда виртуального
+</EM><BR>
+<EM>&gt; &gt; кода
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt;   PUSHQ &amp;Some-Box
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; запихивает на стек объектное выражение, состоящее из символа-ссылки
+</EM><BR>
+<EM>&gt; &gt; &gt; Some-Box. Объектное выражение, содержащее символы-ссылки, в текущей
+</EM><BR>
+<EM>&gt; &gt; &gt; реализации считано быть не может. Более того, я пока не очень хорошо
+</EM><BR>
+<EM>&gt; &gt; &gt; представляю, во что это может быть преобразовано при вводе.
+</EM><BR>
+<EM>&gt; &gt; &gt; Если есть какие-нибудь идеи на этот счет - просьба высказываться,
+</EM><BR>
+<EM>&gt; &gt; &gt; я очень не хочу тянуть с выкладыванием новой версии.
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; &gt; Всего доброго,
+</EM><BR>
+<EM>&gt; &gt; &gt; Андрей.
+</EM><BR>
+<EM>&gt; &gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Думаю, я могу предложить вариант решения - по прямой аналогии с тем,
+</EM><BR>
+<EM>&gt; &gt; как это сделано в Рефале-6. Там ведь тоже есть эта проблема - в
+</EM><BR>
+<EM>&gt; &gt; виртуальном коде (языке сборки) рефала-6 тоже константы записываются
+</EM><BR>
+<EM>&gt; &gt; сами собой, виртуальный код является выражением, которое выводится в
+</EM><BR>
+<EM>&gt; &gt; файл (текстовый) средствами вывода объектных выражений.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Символы ссылки выводятся так, как они записываются на рефале, в данном
+</EM><BR>
+<EM>&gt; &gt; случае -
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; PUSHQ &amp;Some-Box
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt; Речь идет о выводе функцией WRITE. Чтобы это было возможно функция
+</EM><BR>
+<EM>&gt; &gt; вывода должна иметь доступ к информации об имени, ассоциированном с
+</EM><BR>
+<EM>&gt; &gt; символом ссылкой. В рефале-6 эта ассоциация устанавливается при помощи
+</EM><BR>
+<EM>&gt; &gt; таблицы, где в качестве основного ключа выступает слово (имя), а
+</EM><BR>
+<EM>&gt; &gt; значение - символ-ссылка. Особенностью таблиц в Рефале-6 является то,
+</EM><BR>
+<EM>&gt; &gt; что они работают в обе стороны: позволяют как узнавать по имени
+</EM><BR>
+<EM>&gt; &gt; значение, так и по значению находить имя (первое попавшееся). При
+</EM><BR>
+<EM>&gt; &gt; выводе таблица используется для определения имени по значению.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; В Рефале+ таких таблиц нет и в этом вся проблема.
+</EM><BR>
+Их несложно реализовать на ящиках. В рефале-6 эти таблицы реализуются
+<BR>
+просто списком пар: k1 v1 k2 v2 ... . Как я понял из нижеследующего, что-то
+<BR>
+подобное ты уже сделал сам. Еще более проблематично, видимо, было то, что
+<BR>
+пришлось, наверно, весь ввод писать самому на Рефале Плюс, не пользуясь
+<BR>
+функцией READ, а пользуясь READ_LINE или READ_CHAR, да? Или эту проблему
+<BR>
+удалось иначе обойти?
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; Теперь рассмотрим ввод.
+</EM><BR>
+<EM>&gt; &gt; В идеале,нужно для ввода иметь под рукой ту же таблицу, которая была
+</EM><BR>
+<EM>&gt; &gt; использована при выводе - тогде нет проблем.
+</EM><BR>
+<EM>&gt; &gt; Но даже если этой таблицы нет, все равно остается возможность
+</EM><BR>
+<EM>&gt; &gt; осуществить ввод так, чтобы одинаково поименованные внешние
+</EM><BR>
+<EM>&gt; &gt; символы-ссылки превратились в одинаковые
+</EM><BR>
+<EM>&gt; &gt; внутренние символы-ссылки и наоборот. Для этого будем осуществлять
+</EM><BR>
+<EM>&gt; &gt; ввод по следующему алгоритму.
+</EM><BR>
+<EM>&gt; &gt; Вначале для ввода создается свежая пустая таблица (или в нее
+</EM><BR>
+<EM>&gt; &gt; помещаются ассоциации, соответствующие окружению данного модуля).
+</EM><BR>
+<EM>&gt; &gt; Затем, когда вводится модуль и вводится очередной символ-ссылка, в
+</EM><BR>
+<EM>&gt; &gt; таблице ищется вхождение с этим именем. Если есть, все в порядке,
+</EM><BR>
+<EM>&gt; &gt; берем соответствующее значение. Если же нет, то создаем новую ссылку
+</EM><BR>
+<EM>&gt; &gt; (через &lt;NEW&gt;), помещаем информацию о ней в таблицу под своим именем, и
+</EM><BR>
+<EM>&gt; &gt; помещаем ее в результат.
+</EM><BR>
+<EM>&gt; &gt; В конце ввода в наших руках остается таблица, содержащая сведения о
+</EM><BR>
+<EM>&gt; &gt; всех введенных символах-ссылках.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Вот-вот-вот. Пришлось примерно то же самое реализовывать в Рефале+.
+</EM><BR>
+<EM>&gt; Теперь вроде все работает, но время пришлось потратить. Я-то надеялся,
+</EM><BR>
+<EM>&gt; что может быть удастся обойтись без этого - не повезло :-(
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt; Возможная проблема будет в том, что при вводе ссылки неизвестен ее
+</EM><BR>
+<EM>&gt; &gt; тип: BOX, STRING, FUNC или что еще. В рефале-6 она решается тем, что
+</EM><BR>
+<EM>&gt; &gt; есть универсальный тип символа-ссылки, символа, который, уже после его
+</EM><BR>
+<EM>&gt; &gt; создания (функцией &lt;NEW&gt;), может быть преобразован (без изменения
+</EM><BR>
+<EM>&gt; &gt; значения самой ссылки) в ссылку любого типа. Что-то подобное, наверно,
+</EM><BR>
+<EM>&gt; &gt; надо обеспечить и для Рефала Плюс, если это возможно.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Здесь я пока не стал возиться с преобразованиями. Для работы с
+</EM><BR>
+<EM>&gt; виртуальным
+</EM><BR>
+<EM>&gt; кодом это реально не понадобится - нужно только ввести функцию, которая
+</EM><BR>
+<EM>&gt; по ссылке достает ее имя.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Всего доброго,
+</EM><BR>
+<EM>&gt; Андрей.
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0091.html">Andrey Slepuhin: "Re: Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0089.html">Andrey Slepuhin: "Re: Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0087.html">Andrey Slepuhin: "Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0091.html">Andrey Slepuhin: "Re: Urgent!!! Help needed! Refal+ &amp; virtual code"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Tue Dec 07 1999 - 16:51:37 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

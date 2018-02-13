@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Как следует компилировать рефальскую операцию отождествления">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Как следует компилировать рефальскую операцию отождествления</H1>
+<HR>
+<P>
+<!-- received="Thu Nov 23 11:35:02 2000" -->
+<!-- isoreceived="20001123083502" -->
+<!-- sent="Tue, 21 Nov 2000 19:53:51 +0300" -->
+<!-- isosent="20001121165351" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Как следует компилировать рефальскую операцию отождествления" -->
+<!-- id="002901c053db$a0514dc0$07aee8c1@rcms.botik.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>Как следует компилировать рефальскую операцию отождествления<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Tue Nov 21 2000 - 19:53:51 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#137">[ date ]</A>
+<A HREF="index.html#137">[ thread ]</A>
+<A HREF="subject.html#137">[ subject ]</A>
+<A HREF="author.html#137">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0138.html">Anna Mileiko: "cats"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0136.html">Sergei M. Abramov (at home): "Re: News of www.refal.net"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0140.html">Sergei M. Abramov: "Re: Как следует компилировать рефальскую операцию отождествления"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый, всем!
+<BR>
+<P>Позвольте данной репликой начать дискуссию на тему:
+<BR>
+<P>&lt;&lt;Как следует компилировать рефальскую операцию отождествления:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;RefalResExp : RefalPattern &gt;&gt;
+<BR>
+<P>Казалось бы, про это написано в куче книг--читай да программируй!
+<BR>
+Однако, если добавить ровно одну вводную:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&lt;&lt;представление рефал-данных таково, что дешевы операции вычисления
+<BR>
+&nbsp;&nbsp;&nbsp;длины и прямого доступа (по индексам) к термам и подвыражениям
+<BR>
+&nbsp;&nbsp;&nbsp;(вырезки) рефальского выражения&gt;&gt;
+<BR>
+<P>ответ становится не столь очевидным.
+<BR>
+<P>Ребята из Рефал-5 команды! То, что я предлагаю обсудить имеет смысл
+<BR>
+(имеет эффект) не только для случая, когда слова &lt;&lt;дешевы операции&gt;&gt;
+<BR>
+понимаются как:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;*  &lt;&lt;время исполнения есть О(1)&gt;&gt;       (* R+ run-time *)
+<BR>
+<P>но и для случая:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;*  &lt;&lt;время исполнения есть О(length)&gt;&gt;  (* R5 run-time *)
+<BR>
+<P>Сегодня делаются (замечательные и нужные) усилия по компиляции в Си как
+<BR>
+Рефала Плюс, так и Рефала 5.  Я утверждаю, что ПОРА ЗАНОВО И СОВМЕСТНО
+<BR>
+ПЕРЕСМОТРЕТЬ АЛГОРИТМЫ РЕАЛИЗАЦИИ ОТОЖДЕСТВЛЕНИЯ С ОБРАЗЦОМ В РЕФАЛЕ, с
+<BR>
+учетом указанной выше вводной и с учетом того, что это нужно для любого
+<BR>
+Рефала (и для Рефала Плюс, и для Рефала-5) при его компиляции в Си.
+<BR>
+<P>А поэтому, хочется привлечь к дискуссии все рефал-головы и на выходе
+<BR>
+поиметь один, обсужденный всеми алгоритм эффективной компиляции в Си
+<BR>
+операции вида:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RefalResExp : RefalPattern
+<BR>
+<P>Причем я утверждаю, что этот алгоритм мало зависит от того, какую
+<BR>
+сложность /* О(1) или О(length) */ имеют такие базовые операции
+<BR>
+&quot;доступа&quot;:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;int   L  = length(ref_expr);
+<BR>
+&nbsp;&nbsp;&nbsp;rexp  eX = subexpr(eOld, index_start, L);
+<BR>
+&nbsp;&nbsp;&nbsp;rterm tY = subterm(eOld, index);
+<BR>
+<P>&nbsp;&nbsp;&nbsp;и т.п. /* см. например Р+ модуль ACCESS */
+<BR>
+<P>========================================================================
+<BR>
+А теперь один маленький примерчик, который показывает, что многое в этой
+<BR>
+кухне надо делать ЗАНОВО. И в Р+, и в Р5.
+<BR>
+<P>Спросим себя, какую сложность имеет такая перестройка и во что она
+<BR>
+должна компилироваться:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eOld : e1 e1,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...и дальше...
+<BR>
+<P>Насколько я понимаю, по классике и во всех (ВО ВСЕХ, включая Р5--&gt;Си)
+<BR>
+сегодняшних реализациях эта штука имеет сложность О(L*L). А хочется
+<BR>
+видеть вот такую компиляцию в C/C++ этого фрагмента:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;{  int L;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rexpr e1;
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  rexpr е1_1;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L    = length(eOld);
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (L % 2) /* если не делится на 2 */
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto &lt;&lt;current_label_if_fail&gt;&gt;;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L    = L / 2;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e1   = subexp(eOld, 0, L);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e1_1 = subexp(eOld, L, L);
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!(is_equal_exp(e1,e1_1))
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto &lt;&lt;current_label_if_fail&gt;&gt;;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt;Си код компиляции &quot;...и дальше...&quot;&gt;&gt;
+<BR>
+&nbsp;&nbsp;&nbsp;}
+<BR>
+<P>Данный код работает со сложностью О(L) /* как для Р5, так и для Р+
+<BR>
+реализации примитивов &quot;subexp&quot;, &quot;length&quot;, &quot;is_equal_exp&quot; */.
+<BR>
+<P>Задачка: скомпилировать такие
+<BR>
+<P>&nbsp;&nbsp;&nbsp;(1) eSrc : e1 A e1
+<BR>
+&nbsp;&nbsp;&nbsp;(2) eSrc : A e1 B e1 C e1 D
+<BR>
+<P>Все это--безвариантные (беспереборные, O(L)) образцы. Квази-закрытые
+<BR>
+е-переменные, обобщающие случай старой/доброй закрытой переменной...
+<BR>
+<P>Скажут--на практике такое редко... Да дело не в этом, дело в том, что
+<BR>
+при реализации в run-time примитивов
+<BR>
+<P>&nbsp;&nbsp;&nbsp;length(...), subexpr(..., index, len), и т.п.
+<BR>
+<P>мне кажется компиляция в такие примитивы должна идти немного подругому,
+<BR>
+нежели это описано в классике.
+<BR>
+<P>========================================================================
+<BR>
+<P>Позволю перед сообществом поставить вопрос о том, чтобы совместными
+<BR>
+усилиями разработать общий новый алгоритм компиляции фрагмента
+<BR>
+<P>&nbsp;&lt;&lt;RefalResExp : RefalPattern&gt;&gt;
+<BR>
+<P>такой, чтобы в частном случае &lt;&lt;eOld : e1 e1&gt;&gt; он давал бы алгоритм,
+<BR>
+приведенный выше...
+<BR>
+<P>&nbsp;&nbsp;&nbsp;/* то есть, написать текст, не обязательно на языке
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;программирования--можно на псевдокоде, статью, в конце
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;концов */
+<BR>
+<P>Лично я не имею сейчас в голове &gt;&gt;точного досконального описания&lt;&lt;
+<BR>
+такого алгоритма. А кто-нибудь имеет?
+<BR>
+<P>Сейчас я предприму попытку выписать ДРАФТ такого алгоритма, а всех
+<BR>
+приглашаю его чиркать и дополнять, пока не появится посмотренный всеми,
+<BR>
+почирканный и вылизанный всеми алгоритм.
+<BR>
+<P>Для удобства чиркания, я предлагаю работать с текстовым файлом
+<BR>
+(прилагаю), вставляя в него свои абзацы.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;/* и отмечая реплики как-то, например в таком стиле:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&lt;СА: 21.11.2000 12:00
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.... реплика: добавить, удалить, переформулировать....
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;СА: 21.11.2000 12:00&gt;&gt;
+<BR>
+<P>&nbsp;&nbsp;&nbsp;*/
+<BR>
+<P>Или кардинально правя файл и присылая новые версии...  Спасибо!
+<BR>
+<P>Удачи
+<BR>
+<P>Сергей
+<BR>
+<P><P><HR>
+<UL>
+<LI>text/plain attachment: <A HREF="att-0137/01-pm.txt">pm.txt</A>
+</UL>
+<!-- attachment="01-pm.txt" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0138.html">Anna Mileiko: "cats"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0136.html">Sergei M. Abramov (at home): "Re: News of www.refal.net"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0140.html">Sergei M. Abramov: "Re: Как следует компилировать рефальскую операцию отождествления"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

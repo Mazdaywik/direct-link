@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrey.Slepuhin (pooh@msu.ru)">
+<META NAME="Subject" CONTENT="New Refal+ errors">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>New Refal+ errors</H1>
+<HR>
+<P>
+<!-- received="Tue Sep 28 20:49:30 1999 MSD" -->
+<!-- sent="Tue, 28 Sep 1999 20:47:56 +0400" -->
+<!-- name="Andrey.Slepuhin" -->
+<!-- email="pooh@msu.ru" -->
+<!-- subject="New Refal+ errors" -->
+<!-- id="37F0F13C.2568BD25@msu.ru" -->
+<!-- inreplyto="" -->
+<STRONG>Andrey.Slepuhin</STRONG> (<A HREF="mailto:pooh@msu.ru?subject=Re:%20New%20Refal%2B%20errors"><EM>pooh@msu.ru</EM></A>)<BR>
+<EM>Tue, 28 Sep 1999 20:47:56 +0400</EM>
+<P>
+<UL>
+<LI><STRONG>Messages sorted by:</STRONG> 
+<A HREF="date.html#59">[ date ]</A>
+<A HREF="index.html#59">[ thread ]</A>
+<A HREF="subject.html#59">[ subject ]</A>
+<A HREF="author.html#59">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0060.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0058.html">Andrey.Slepuhin: "refal+ CVS"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0060.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0060.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0061.html">Andrei Klimov: "Re: New Refal+ errors"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0062.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+День добрый всем!
+<BR>
+<P>При попытке собрать FLAC под Linux'ом были выявлены
+<BR>
+следующие ошибки в Рефале+:
+<BR>
+<P>1) Функция rleq() (проверка на равенство объектных выражений;
+<BR>
+используется,
+<BR>
+в частности, при вычислении перестроек /оператор &quot;:&quot;/) работает
+<BR>
+некорректно для символов типа WORD. Насколько я понимаю, причина в
+<BR>
+том, что если слово коротокое, то за терминирующим строку нулем
+<BR>
+может лежать мусор, который вызывает различия при вызове memcmp().
+<BR>
+Я исправил ошибку, подставив в rleq() вызов rlcmp(), которая работает
+<BR>
+правильно и написана гораздо более аккуратно. По идее, никаких
+<BR>
+особых потерь производительности быть не должно. Будет время -
+<BR>
+может быть исправлю ошибку по месту.
+<BR>
+<P>2) Наблюдаются глюки со входными форматами. Мне с большим трудом
+<BR>
+удалось локализовать ошибку, имея под рукой лишь автоматически
+<BR>
+сгенерированные из FLAC'а рефальские тексты. В итоге получился следующий
+<BR>
+пример:
+<BR>
+<P>====================8&lt;========================
+<BR>
+$use Stdio;
+<BR>
+<P>$func F (e.lc) (e.lr) t.p (e.ls) t.u = e.res ;
+<BR>
+* $func F e = e ;
+<BR>
+$func G e = e ;
+<BR>
+<P>Main =
+<BR>
+&nbsp;&nbsp;1 :: t.p,
+<BR>
+&nbsp;&nbsp;2 :: e.l,
+<BR>
+&nbsp;&nbsp;3 :: t.u,
+<BR>
+&nbsp;&nbsp;&lt;G t.p e.l t.u&gt;;
+<BR>
+<P>G {
+<BR>
+&nbsp;&nbsp;t.p e.l t.u,
+<BR>
+&lt;WriteLN t.p&gt;
+<BR>
+&lt;WriteLN e.l&gt;
+<BR>
+&lt;WriteLN t.u&gt;
+<BR>
+&nbsp;&nbsp;&lt;F (e.l) ( ) t.p (e.l) t.u&gt;;
+<BR>
+};
+<BR>
+<P>F {
+<BR>
+&nbsp;&nbsp;(e.lc) (e.lr) t.p (e.ls) t.u,
+<BR>
+&lt;WriteLN e.lr&gt;,
+<BR>
+&lt;WriteLN e.ls&gt;;
+<BR>
+};
+<BR>
+====================8&lt;========================
+<BR>
+<P>pooh@thicket:~/work/flac$ rfp test.rf 
+<BR>
+Refal Plus Compiler  Version 1.8.00.8b-32bit  1991 R.F.Gurin,
+<BR>
+S.A.Romanenko
+<BR>
+&nbsp;and RCMS PSI AS RUSSIA, Pereslavl-Zalessky,1993 Copyright (c)
+<BR>
+/usr/bin/gcc -g -c test.s 
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dynamic memory 6708
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max dynamic memory 12076
+<BR>
+test : No errors
+<BR>
+/usr/bin/gcc -g  test.o /usr/refal-plus/inc/rfp.a  -o test.out
+<BR>
+<P>File test.out created
+<BR>
+<P>pooh@thicket:~/work/flac$ ./test.out 
+<BR>
+1
+<BR>
+2
+<BR>
+3
+<BR>
+<P>3
+<BR>
+pooh@thicket:~/work/flac$
+<BR>
+<P>Должно быть (получается, если использовать закомментированное
+<BR>
+объявление функции F):
+<BR>
+<P>pooh@thicket:~/work/flac$ ./test.out 
+<BR>
+1
+<BR>
+2
+<BR>
+3
+<BR>
+<P>2
+<BR>
+pooh@thicket:~/work/flac$
+<BR>
+<P>Более подробно на код я еще не смотрел. Если у кого-нибудь есть идеи -
+<BR>
+буду очень благодарен.
+<BR>
+<P>Когда эта ошибка будет исправлена - выложу обновленные RPM'ы.
+<BR>
+<P>Всего доброго,
+<BR>
+Андрей.
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0060.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0058.html">Andrey.Slepuhin: "refal+ CVS"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0060.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0060.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0061.html">Andrei Klimov: "Re: New Refal+ errors"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0062.html">Andrey.Slepuhin: "Re: New Refal+ errors"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.landfield.com/hypermail/">hypermail 2.0b3</A> 
+on <EM>Tue Sep 28 1999 - 20:49:31 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

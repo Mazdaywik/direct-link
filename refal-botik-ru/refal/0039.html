@@ -1,0 +1,776 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Arkady Klimov (klark@bagirra.rinet.ru)">
+<META NAME="Subject" CONTENT="Re: Refal+ abstract syntax">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal+ abstract syntax</H1>
+<HR>
+<P>
+<!-- received="Fri Nov 26 16:37:43 1999" -->
+<!-- isoreceived="19991126133743" -->
+<!-- sent="Fri, 26 Nov 1999 14:30:24 +0300" -->
+<!-- isosent="19991126113024" -->
+<!-- name="Arkady Klimov" -->
+<!-- email="klark@bagirra.rinet.ru" -->
+<!-- subject="Re: Refal+ abstract syntax" -->
+<!-- id="004101bf3801$a1c6b420$97925bc3@bagirra.rinet.ru" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="003e01bf37e9$bdfac860$07aee8c1@rcms.botik.ru" -->
+<STRONG>Subject: </STRONG>Re: Refal+ abstract syntax<BR>
+<STRONG>From: </STRONG>Arkady Klimov (<EM>klark@bagirra.rinet.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Nov 26 1999 - 14:30:24 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#39">[ date ]</A>
+<A HREF="index.html#39">[ thread ]</A>
+<A HREF="subject.html#39">[ subject ]</A>
+<A HREF="author.html#39">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0040.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0038.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0036.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0044.html">Sergei M Abramov at home: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0036.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый день и спасибо всем учасникам дискуссии!
+<BR>
+<P>----- Original Message -----
+<BR>
+From: Sergei M. Abramov &lt;abram@botik.ru&gt;
+<BR>
+To: &lt;refal@botik.ru&gt;
+<BR>
+Sent: Friday, November 26, 1999 11:39 AM
+<BR>
+Subject: Re: Refal+ abstract syntax
+<BR>
+<P><P><EM>&gt; День добрый, всем!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;    2. Путь последовательность операторов вытянут по-
+</EM><BR>
+<EM>&gt; &gt;       горизонтали через конкатенацию, а не через cons .
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Не говоря &quot;ЗА&quot; или &quot;ПРОТИВ&quot; просто подчеркну разницу: разница такая
+</EM><BR>
+же, как
+<BR>
+<EM>&gt; между
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;    (x+y)*(z+w)   и   (* + z w + x y)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; С этой точки зрения с репликой:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; From: Andrey Slepuhin &lt;pooh@msu.ru&gt;
+</EM><BR>
+<EM>&gt; &gt;2) Предлагаемый синтаксис несколько ближе к виртуальному коду. По
+</EM><BR>
+<EM>&gt; &gt;   крайней мере конструкций типа &quot;Label s&quot; в абстрактном синтаксисе
+</EM><BR>
+<EM>&gt; &gt;   иметь не хотелось бы.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; я согласен.
+</EM><BR>
+<P>Аркадий:
+<BR>
+Я согласен в общем, что в новом АС код как бы более еlaborated, но это
+<BR>
+все-таки чисто синтаксическое преобразование, и оно все же так же
+<BR>
+далеко от виртуального кода, как высокогорное плато от околоземной
+<BR>
+орбиты (по сравнению с уровнем равнины). Но с плато выходить на
+<BR>
+орбиту, по-видимому, чуть легче.
+<BR>
+Данное преобразование мотивировано прежде всего тем, что теперь мы
+<BR>
+избавлены от проблем однозначности, которые приходилось решать в
+<BR>
+конкретном синтаксисе.
+<BR>
+А другой мотив состоит в том, что для нас ведь AS - это не просто
+<BR>
+внутренний образ, синтаксическое дерево построенное парсером. Это еще
+<BR>
+и исходная общая точка для нескольких платформ, и в ней, на мой
+<BR>
+взгляд, следует исключить все, что может быть отнесено к специфичности
+<BR>
+того или иного диалекта Рефала или его реализации, если, конечено, это
+<BR>
+может быть исключено, например (как для Iter) путем отображения в
+<BR>
+более общие и устойчивые понятия. Ксати, я сейчас склонен к тому,
+<BR>
+чтобы то же сделать и с Not, как уже писал ранее, тем более, что для
+<BR>
+этого не требуется никаких новых понятий.
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;    3. Все скобки, включая образующие термы, имеют впереди теги.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;    4. Я не стал здесь брать теги в кавычки.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Вообще говоря--&quot;Form&quot; и Form--эквивалентны
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;     (* Сегодня и в Рефала+ я надеюсь они уже эквивалентны? Или еще
+</EM><BR>
+нет?
+<BR>
+<EM>&gt;        Ну, по крайней мере, в длиннющей дискуссии про &quot;кавычки&quot; и
+</EM><BR>
+<EM>&gt;        &quot;крики души&quot;--около 80 писем с 30/08/1999 по
+</EM><BR>
+10/09/1999,--было
+<BR>
+<EM>&gt;        это устаканено и ЭТО НАДО ДЕЛАТЬ В Рефале+.
+</EM><BR>
+<EM>&gt;      *)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Однако (дело вкуса!!!) мне кажется, что чисто визуально в двух
+</EM><BR>
+эквивалентных
+<BR>
+<EM>&gt; текстах:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;t.ProgramFile       ::= (Program t.Source t.Import e.Program)
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;t.Import            ::= (Use e.Names)
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;t.Source            ::= (Source s.FileName)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; и
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;t.ProgramFile       ::= (&quot;Program&quot; t.Source t.Import e.Program)
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;t.Import            ::= (&quot;Use&quot; e.Names)
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;t.Source            ::= (&quot;Source&quot; s.FileName)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; выигрывает по читабельности второй--лучше (контрастнее) отличаются
+</EM><BR>
+нетерминалы и
+<BR>
+<EM>&gt; терминалы...
+</EM><BR>
+<EM>&gt; Еще раз--это дело вкуса.
+</EM><BR>
+<P>Аркадий:
+<BR>
+Действительно, это дело вкуса. На мой взгляд отличие между терминалом
+<BR>
+и нетерминалом уже присутствует в форме точки после указателя типа. А
+<BR>
+когда имеются два обозначения для выражения какого-то одного свойства
+<BR>
+(здесь: быть терминалом или нетерминалом), то возникает сомнение: а
+<BR>
+вдруг это неспроста? И начинаешь искать разгадку, которой нет.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; (* ------------------------------------------------------------
+</EM><BR>
+<EM>&gt; Для справки и обмена Рефал+ опытом: а я в своих разработках делаю
+</EM><BR>
+еще и так:
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;t.ProgramFile       ::= (&amp;Program t.Source t.Import e.Program)
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;t.Import            ::= (&amp;Use e.Names)
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;t.Source            ::= (&amp;Source s.FileName)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Обычно я завожу Рефал+ модуль tаgs.rfi:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; $const Program = &quot;Program&quot;, Use = &quot;Use&quot;, Source=&quot;Source&quot;;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; (замечу, что tаgs.rf при этом ПУСТОЙ, интересно, правда?)  Во время
+</EM><BR>
+отладки
+<BR>
+<EM>&gt; важно, чтобы теги печатались читабельно--поэтому тег==слово
+</EM><BR>
+(звено+рюкзак для
+<BR>
+<EM>&gt; хранения тела слова...).  При этом (в сегодняшнем рефале+) сравнение
+</EM><BR>
+слов не
+<BR>
+<EM>&gt; сводится к сравнению только звеньев--делается еще сравнение
+</EM><BR>
+рюкзаков... А после
+<BR>
+<EM>&gt; отладки  я имею возможность переопределить:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; $const Program = 1, Use = 2, Source=3;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; что экономит память (тег==звено) и время сравнения тэгов
+</EM><BR>
+(сравниваются только
+<BR>
+<EM>&gt; звенья)...
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; ------------------------------------------------------------ *)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;    5. Сложные конструкции (перестройки, присваивания) разбиты на
+</EM><BR>
+<EM>&gt; &gt;       составляющие действия.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;    6. Семантика действия состоит в пополнении среды и выработке
+</EM><BR>
+<EM>&gt; &gt;       нового форматного значения (объектного выражения со
+</EM><BR>
+<EM>&gt; &gt;       статическим форматом). Действия бывают простые (образцы,
+</EM><BR>
+<EM>&gt; &gt;       результаты, форматы) и сложные (блоки).
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;    7. Есть отдельный оператор NoFail, непроницаемый для $Fail, и
+</EM><BR>
+<EM>&gt; &gt;       CUTALL, выражающий семантику равенства рефала +.
+</EM><BR>
+<EM>&gt; &gt;       Непрозрачный блок выражается так: NoFail
+</EM><BR>
+<EM>&gt; &gt;       (Block e.Branches).
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;    8. $iter может быть разложен в более элементарные понятия
+</EM><BR>
+<EM>&gt; &gt;       (Label sl) и (Loop sl) см.ниже. В операторе Loop метка
+</EM><BR>
+<EM>&gt; &gt;       sl должна быть определенной (оператором Label) выше на
+</EM><BR>
+<EM>&gt; &gt;       пути от начала функции к данному оператору Loop.
+</EM><BR>
+<EM>&gt; &gt;       Ищется ближайшая точка Label с тем же символом-меткой.
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;    9. Вместо трех понятий: Tail, Path, Source одно: e.Sentence.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Пункты 5, 6, 7, 8 связаны все (являются следствием) с п. 2. См.
+</EM><BR>
+замечание на п.2
+<BR>
+<EM>&gt; (и реплику &lt;pooh@msu.ru&gt;).
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;   10. Констант нет: они уже подставлены.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Вот!  Я же говорил, что это требует дискуссии!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Важное завоевание рефала+ (как и рефала-6) -- введение понятий
+</EM><BR>
+&quot;разделяемое
+<BR>
+<EM>&gt; данное&quot;.  Конструкции &quot;$const X = ... &quot; и &quot;&amp;X&quot; позволяют выражать
+</EM><BR>
+эти понятия на
+<BR>
+<EM>&gt; уровне констант.  Пример:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; $const X   = '1234567890',
+</EM><BR>
+<EM>&gt;        X1  = (&amp;X)  (&amp;X),
+</EM><BR>
+<EM>&gt;        X2  = (&amp;X1) (&amp;X1),
+</EM><BR>
+<EM>&gt;        X3  = (&amp;X2) (&amp;X2),
+</EM><BR>
+<EM>&gt;        .....
+</EM><BR>
+<EM>&gt;        X64 = (&amp;X65) (&amp;X65);
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; F = &amp;X64;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Ну а теперь к экспертам--расскажите:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;     -1- Как это выглядит сегодня в реализации Рефала+? Около 138
+</EM><BR>
+звеньев в
+<BR>
+<EM>&gt; сегменте данных, не правда ли?;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;     -2- И как это будет выглядить в абстрактном синтаксисе, если
+</EM><BR>
+принять
+<BR>
+<EM>&gt; концепцию &quot;Констант нет: они уже подставлены&quot;?
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;     -3- Отдельное пожелание: хотелось бы, чтобы кто-нибудь выписал и
+</EM><BR>
+прислал на
+<BR>
+<EM>&gt; список рассылки файл с сегодняшним абстрактным синтаксисом функции F
+</EM><BR>
+в условии
+<BR>
+<EM>&gt; &quot;Констант нет: они уже подставлены&quot; ;-)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; (* только мне не присылайте--у меня маленький диск--по моим оценкам
+</EM><BR>
+будет:
+<BR>
+<EM>&gt;    10*2^64 байт == 160 миллионов Террабайт текста ;-)
+</EM><BR>
+<EM>&gt;  *)
+</EM><BR>
+Аркадий:
+<BR>
+Да, забавно! Очень интересный контрпример. Кстати, в своем предыдущем
+<BR>
+письме я тоже отметил вопрос о константах как спорный, а теперь вижу,
+<BR>
+что даже очень. Что ж, склоняюсь к тому, чтобы константы не были
+<BR>
+подставлены.
+<BR>
+Правильно ли я понимаю, что скобки в определениях констант здесь
+<BR>
+существенны? Если их убрать, то константы будут подставлены
+<BR>
+компилятором по их прочтении, да?
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;       Но вопрос: что такое
+</EM><BR>
+<EM>&gt; &gt;       имя функции? И как выглядит внутри выражения ссылка на
+</EM><BR>
+<EM>&gt; &gt;       функцию? Другие символы ссылки? Возможный ответ: как (Ref
+</EM><BR>
+<EM>&gt; &gt;       s.Word). Определяющие вхождения задаются просто как s.Word.
+</EM><BR>
+В
+<BR>
+<EM>&gt; &gt;       вызове функции используется (Ref s.Word)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Да! И это важное место для существенной дискуссии...
+</EM><BR>
+Аркадий:
+<BR>
+Для меня она начинается открытым вопросом: если ввести в АС константы,
+<BR>
+то использовать ли для обозначения ссылок имена констант, или все
+<BR>
+равно нужно дать свое обозначение для &quot;значений&quot; ссылок?
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;   11. Определения символов-ссылок должна быть возможность
+</EM><BR>
+<EM>&gt; &gt;       расширять список типов ссылок.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Да! И это важное место для существенной дискуссии...
+</EM><BR>
+Аркадий:
+<BR>
+А что, есть возражения против расширябельности?
+<BR>
+Я под возможностью расширения понимал одно: мы просто
+<BR>
+&quot;договариваемся&quot;, что в этом месте могут быть расширения. Естественно,
+<BR>
+что компилятор, который не понимает какого-то расширения вправе данную
+<BR>
+программу отвергнуть. Но хотелось бы, чтобы синтаксический анализатор
+<BR>
+тут не накладывал своих ограничений. То есть хотелось бы, чтобы на
+<BR>
+входе допускалось бы произвольное
+<BR>
+$ ПроизвольноеСлово Имя1, Имя2, ... ;
+<BR>
+которое бы транслировалось в АС в форме:
+<BR>
+(ПроизвольноеСлово Имя1) (ПроизвольноеСлово Имя2)...
+<BR>
+Проверка допустимости ПроизвольногоСлова - на совести компилятора из
+<BR>
+АС. В этом случае парсер не должен говорить, что какие-то имена не
+<BR>
+определены. Они определены, но ошибочен их &quot;определитель&quot;.
+<BR>
+<P>Кстати, общее замечание. Решая вопрос об АС мы сейчас также должны
+<BR>
+решать, какие проверки должен делать парсер, а какие он должен
+<BR>
+оставлять на последующий (семантический) анализ, который может
+<BR>
+отличаться в разных реализациях.
+<BR>
+<P>&nbsp;12. Объектные символы (в отличие от символов-ссылок)
+<BR>
+<EM>&gt; &gt;       представляются сами собой, а не как (Symbol s)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Это можно сделать если ВСЕ рефальские круглые скобки будут
+</EM><BR>
+представлены с тэгом
+<BR>
+<EM>&gt; (&quot;Par&quot; ....).  Это сделано в определении &quot;t.HardTerm&quot;, но пропущено
+</EM><BR>
+(я не
+<BR>
+<EM>&gt; ошибаюсь-ли?) в
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;t.PatternTerm       ::= t.Symbol
+</EM><BR>
+<EM>&gt; &gt;                      | (e.PatternExpression)
+</EM><BR>
+<EM>&gt;                           ^ Par?
+</EM><BR>
+<EM>&gt; &gt;                      | t.Variable
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+Аркадий:
+<BR>
+Да, это осталось по недосмотру. Спасибо, что заметил.
+<BR>
+<EM>&gt; Ок...
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;   13. Операторы Error и Trap имеют неявный дополнительный
+</EM><BR>
+<EM>&gt; &gt;       аргумент продолжение справа от оператора.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Это опять про п.2.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;   14. Остаток после операторов Fail и Loop игнорируется.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Это опять про п.2.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;   15. Конкретная реализация может не поддерживать какие-то
+</EM><BR>
+<EM>&gt; &gt;       элементы (или сочетания элементов) абстрактного синтаксиса.
+</EM><BR>
+В
+<BR>
+<EM>&gt; &gt;       этом случае должно выдаваться внятное сообщение.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Да.
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;=====================================================================
+</EM><BR>
+=
+<BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;t.ProgramFile       ::= (Program t.Source t.Import e.Program)
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;t.Import            ::= (Use e.Names)
+</EM><BR>
+<EM>&gt; &gt;
+</EM><BR>
+<EM>&gt; &gt;t.Source            ::= (Source s.FileName)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Алик!
+</EM><BR>
+<EM>&gt;     (1) Хотелось бы каких-то пояснений...
+</EM><BR>
+<EM>&gt;     (2) Модульность требует существенных дискуссий
+</EM><BR>
+<EM>&gt;     (3) Вижу &quot;импорт&quot;, не вижу &quot;экспорта&quot;...
+</EM><BR>
+Аркадий:
+<BR>
+Да, я сверялся со структурой файла .rf, и забыл, что есть еще .rfi.
+<BR>
+Начнем дискуссию с вопроса: следует ли информацию из файла rfi
+<BR>
+включать в этот же программный терм, или ее следует представлять в
+<BR>
+отдельном терме?
+<BR>
+Спасибо.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;e.Program           ::= t.ProgramItem
+</EM><BR>
+<EM>&gt; &gt;                      | e.Program t.ProgramItem
+</EM><BR>
+<EM>&gt; &gt;                      | t.Line
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;     (1) кажется тело программы может быть пустым;
+</EM><BR>
+<EM>&gt;     (2) не понял, что значит, что значит, что тело состоит только из
+</EM><BR>
+t.Line?
+<BR>
+<EM>&gt; Может быть имелось в виду, что есть алтернатива у &quot;t.ProgramItem :==
+</EM><BR>
+..... |
+<BR>
+<EM>&gt; t.Line&quot; ?
+</EM><BR>
+Аркадий:
+<BR>
+Да, конечно, именно это я и хотел написать. Спасибо.
+<BR>
+<P><EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;t.ProgramItem       ::= t.FuncDef | t.ObjectDef | t.Initializer
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt;     (1) Да, симпатично, понравился t.Initializer ;-)  А зачем он?
+</EM><BR>
+Аркадий:
+<BR>
+В рефале-6 он есть. Пишется
+<BR>
+<P>$EXEC FunName argument;
+<BR>
+<P>Результат вычисления игнорируется (отправляется в мусор).
+<BR>
+Очень полезная вещь. С ним можно забыть про то, что еще надо указывать
+<BR>
+какую-то там входную точку. При загрузке исполняется initializer,
+<BR>
+который может делать всю работу.
+<BR>
+Можно говорить: &quot;исполнить такой-то модуль&quot;. С другой стороны, иногда
+<BR>
+хочется заполнение переменных (ящиков и т.п.) выполнить как бы &quot;при
+<BR>
+загрузке&quot;.
+<BR>
+Замечу, что существенно, где стоит initializer. В нем доступны для
+<BR>
+исполнения только те функции, которые определены выше. А если это
+<BR>
+другие модули, то они должны быть загружены ранее. Отсюда - запрет на
+<BR>
+циклический import. Возражения будут?
+<BR>
+<P><EM>&gt;     (2) Следует добавить альтернативу | t.Pragma
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Я бы сделал так:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; -а- в текущем тексте Алика заменил бы глобально t.Line --&gt; t.Pragma,
+</EM><BR>
+а вместо
+<BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; &gt;t.Line              ::= (Line s.LineNumber s.PosNumber)
+</EM><BR>
+<EM>&gt; &gt;                      | (Line s.LineNumber)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; -б- и написал бы:
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; t.Pragma             ::= (Pragma e.Pragma)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; e.Pragma             ::= t.Line
+</EM><BR>
+<EM>&gt;                        | &quot;Traseall&quot;
+</EM><BR>
+<EM>&gt;                        | &quot;Trase&quot; e.Fnames
+</EM><BR>
+<EM>&gt;                        ......
+</EM><BR>
+<EM>&gt;                        | e.OtherPragma
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; t.Line              ::= (Line s.LineNumber s.PosNumber)
+</EM><BR>
+<EM>&gt;                       | (Line s.LineNumber)
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+Аркадий:
+<BR>
+Согласен, это правильно. Скобки с (Line...) тогда можно убрать.
+<BR>
+Естественно, должен соблюдаться принцип: если некая реализация не
+<BR>
+понимает каких-то прагм, то она их молча (!) игнорирует.
+<BR>
+<P><EM>&gt; Ну, кажется и все (пока--при первом просмотре) замечания...
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Удачи!
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<EM>&gt; Сергей
+</EM><BR>
+<EM>&gt;
+</EM><BR>
+<P>Всего наилучшего!
+<BR>
+Аркадий.
+<BR>
+<P>PS. По мере продвижения дискуссии я правлю свой rtf файл, поэтому могу
+<BR>
+через какое-то время снова вбросить его плоскую копию.
+<BR>
+<EM>&gt;
+</EM><BR>
+<P><EM>&gt;
+</EM><BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0040.html">Andrey Slepuhin: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0038.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0036.html">Sergei M. Abramov: "Re: Refal+ abstract syntax"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0044.html">Sergei M Abramov at home: "Re: Refal+ abstract syntax"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0036.html">Arkady Klimov: "Re: Refal+ abstract syntax"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

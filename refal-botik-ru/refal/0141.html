@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Andrei Klimov (Andrei.Klimov@supercompilers.com)">
+<META NAME="Subject" CONTENT="Evolution of programming languages (Was Об отсечениях внутри блока.">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Evolution of programming languages (Was Об отсечениях внутри блока.</H1>
+<HR>
+<P>
+<!-- received="Tue Nov 28 00:59:43 2000" -->
+<!-- isoreceived="20001127215943" -->
+<!-- sent="Mon, 27 Nov 2000 13:50:44 -0500" -->
+<!-- isosent="20001127185044" -->
+<!-- name="Andrei Klimov" -->
+<!-- email="Andrei.Klimov@supercompilers.com" -->
+<!-- subject="Evolution of programming languages (Was Об отсечениях внутри блока." -->
+<!-- id="016e01c058a3$2cab9610$2b00a8c0@scp1" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>Evolution of programming languages (Was Об отсечениях внутри блока.<BR>
+<STRONG>From: </STRONG>Andrei Klimov (<EM>Andrei.Klimov@supercompilers.com</EM>)<BR>
+<STRONG>Date: </STRONG>Mon Nov 27 2000 - 21:50:44 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#141">[ date ]</A>
+<A HREF="index.html#141">[ thread ]</A>
+<A HREF="subject.html#141">[ subject ]</A>
+<A HREF="author.html#141">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0142.html">Sergei Romanenko: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0140.html">Sergei M. Abramov: "Re: Как следует компилировать рефальскую операцию отождествления"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0142.html">Sergei Romanenko: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Добрый день!
+<BR>
+<P>[Я переношу эту линию дискуссии из списка refal-plus@botik.ru в refal@botik.ru,
+<BR>
+так как меня &quot;понесло&quot; на обобщения, выходящие за рамки Рефала Плюс.;-)
+<BR>
+Можете посмотреть архив по адресам:
+<BR>
+<A HREF="index.html">http://www.botik.ru/mail-archive/refal/</A>
+<BR>
+<A HREF="../refal-plus/index.html">http://www.botik.ru/mail-archive/refal-plus/</A>
+<BR>
+соответственно.]
+<BR>
+<P>...Очень приятно, что дискуссия, обозначила разные и интересные
+<BR>
+точки зрения. Но занятно, что я хотел бы дальше выступать с позиции
+<BR>
+&quot;большего католика, чем папа Римский&quot; и готов продолжать защищать
+<BR>
+решения Рефала Плюс от его автора  -- Сергея Романенко --
+<BR>
+<A HREF="../refal-plus/0137.html">http://www.botik.ru/mail-archive/refal-plus/0137.html</A>
+<BR>
+-- в том числе включение в язык механизма возвратов.
+<BR>
+<P>Причем, часть моих аргументов в защиту нынешнего
+<BR>
+Рефала Плюс совпадет с теми, которыми он объяснил
+<BR>
+преимущества SML-я, -- &quot;богатство языка&quot;.
+<BR>
+Также соглашусь с ним в вопросе, что SML более богатый язык,
+<BR>
+чем Рефал Плюс (по числу понятий, считаемых штуками или
+<BR>
+попугаями -- кто как хочет;-) -- именно поэтому я сейчас
+<BR>
+делаю большой проект на SML-е, а не на Рефале.
+<BR>
+Но, заметим, и Рефал Плюс становится &quot;богаче&quot; от включения в него возвратов.
+<BR>
+<P>Однако, &quot;богатство&quot; языка надо считать, конечно, не &quot;попугаями&quot;,
+<BR>
+а сопоставляя языковые механизмы и понятия с *целями языка*.
+<BR>
+<P>Но проблема здесь в том, что целей у языков всегда *много*.
+<BR>
+(В частности, у авторов и пользователей они часто не совпадают. ;-)
+<BR>
+Если бы была одна цель, то не было бы никаких трудностей решить: &quot;это нужно, а это нет&quot;.
+<BR>
+<P>Углубляясь в эту проблему по-хорошему, надо бы:
+<BR>
+&nbsp;&nbsp;- во-первых, сделать цели явными, выразив их словами
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(насколько это удастся нашему слабому интеллекту),
+<BR>
+&nbsp;&nbsp;- во-вторых, раскидать решения по целям:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;это для этого, а то -- для того, а это для того и другого&quot;.
+<BR>
+<P>Пункт &quot;во-первых&quot; -- самый трудный, так как по жизни все время
+<BR>
+наблюдается такая картина, что идет страстная дискуссия, а
+<BR>
+один имеет в виду одну цель, а другой другую.
+<BR>
+(И самое занятное, что люди не любят эксплицировать цели... --
+<BR>
+но это уже из области психологии).
+<BR>
+<P>Я не берусь сейчас сразу копнуть этот вопрос на подобающую глубину,
+<BR>
+а ограничусь лишь первой конкретизацией &quot;с птичьего полета&quot;.
+<BR>
+<P>Цели создания формальных языков -- как математических, так и программирования --
+<BR>
+грубо можно подразделить на два класса:
+<BR>
+&nbsp;&nbsp;- Внешние:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;для каких видов деятельности предназначен язык?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;как он их удовлетворяет?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;какая у языка парадигма (=методы решения задач)? и т.п.;
+<BR>
+&nbsp;&nbsp;- Внутренние:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;как состыкованы &quot;колесики&quot; языка?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;насколько его понятия ортогонализированы?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;каким формальным свойствам удовлетворяют?
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;как их &quot;крутить&quot;? -- в смысле делать *формальные* преобразования и т.п.
+<BR>
+<P>Зададим провокационный вопрос:
+<BR>
+<P>&nbsp;&nbsp;- А могут ли у этих целей быть приоритеты по отношению друг к другу?
+<BR>
+<P>С одной стороны, мне кажется, что
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;авторы языков заметно разделяются на приверженцев
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;либо &quot;внешних&quot;, либо &quot;внутренних&quot; целей
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(по крайней мере в момент создания языка, а потом,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;как любые нормальные люди, могут менять точку зрения).
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(Первые -- это как бы &quot;физики-лирики&quot;, а вторые -- &quot;математики&quot;.;-)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;И это отражается на их созданиях!
+<BR>
+<P>С другой стороны, я все больше укрепляюсь в уверенности, что
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;(искусственные) языки в процессе своей эволюции
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;должны переходить от стадии приоритетности внешних целей
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;к стадии приоритетности внутренних целей:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;- сначала создаем язык, подгоняя под некоторые основные виды
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;деятельности, для которых мы (считаем, что) его придумываем;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;- а потом шлифуем колесики языка, чтобы они образовывали
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;стройную формальную систему.
+<BR>
+<P>Замечание 1:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Второе -- это не блажь, а способ *расширения числа целей*,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;для которых можно использовать язык. А это всегда благо!
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;В частности: язык становится объектом *формального* анализа,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;преобразований и т.п.
+<BR>
+<P>Замечание 2:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Сразу перейти от одной стадии к другой пока еще никому не удавалось.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Такая эволюция наблюдается у *всех* (формальных) языков.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(Это не трудно объяснить: возрастает число целей, ради которых
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;используется язык. Автор не в силах предусмотреть сразу все --
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;да и не нужно это ему.;-)
+<BR>
+<P>Замечание 3:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Первая стадия создания языка -- это &quot;искусство&quot;, &quot;акт прозрения&quot;, вторая -- &quot;ремесло&quot;.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;В нынешние времена (после 40 лет активного творчества языков
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;программирования) уже, пожалуй, можно говорить о &quot;профессионализме&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;в области языкотворчества и задавать такие вопросы:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;Профессионально ли (=достаточно ли 'ремесленно') сделан данный язык?&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Еще лет через 40 методики &quot;ремесленного&quot; создания формальных
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;языков войдут в &quot;классические&quot; университетские курсы.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Это уже наблюдается, но еще должны пройти процессы
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;естественного отбора&quot; между ними и &quot;матерения&quot;.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Пока еще не созданы ни &quot;общая теория методов создания языков&quot;,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ни &quot;общая теория объединения языковых парадигм&quot;,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(как и в физике нет &quot;общей теории объединения элементарных частиц&quot;;-).
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Это не случайно: в частности, языки должны еще пройти
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;испытание на прочность метавычислениями, которые
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;сами далеки от &quot;матерого состояния&quot;.
+<BR>
+<P>Теперь мне пора спуститься &quot;с небес&quot; и высказаться &quot;поименно&quot;:
+<BR>
+<P>&nbsp;&nbsp;- От ранний Рефалов к Рефалу-5  -- это линия развития,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;когда, как мне кажется, внешние цели имеют приоритет над внутренними.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Лакмусова бумажка определения этой стадии:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Часто ли приходится слышать такие аргументы:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;Это не будем включать в язык, так как это 'никому не нужно'&quot;.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;Поставим 'запятую' здесь, так как это 'удобнее для человека'&quot;.
+<BR>
+<P>&nbsp;&nbsp;- Рефал Плюс -- как мне кажется -- это язык, находящийся
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;на стадии развития, когда уже шлифуются внутренние понятия.
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;Наша последняя дискуссия, проходящее через 10 лет после
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;его создания, очередное тому подтверждение:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Мы обсуждаем не вопрос &quot;удобно ли 'для человека' то, что
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;по формальной семантике 'уровень отсечения источника равен 0'?&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;-- понятно, что &quot;простым пользователям&quot; на это наплевать, --
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;а вопросы: &quot;как это согласуется с другими понятиями?&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;какие *формальные* свойства при этом сохраняются или нарушаются?&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;какие *формальные* преобразования удобно или неудобно делать?&quot;
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;и т.п.
+<BR>
+<P>Упражнения:
+<BR>
+&nbsp;&nbsp;- На какой из указанных стадий развития находятся SML, Haskell, XSLT, C#?
+<BR>
+&nbsp;&nbsp;- Попытайтесь угадать &quot;из общих соображений&quot; про C#,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;не читая его описания, а только зная, какие лозунги произносит Билл Гейтс,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;а также историю фирмы Майкрософт.
+<BR>
+&nbsp;&nbsp;- Добавьте в этот список свои любимые языки и определите их стадию.
+<BR>
+<P>Успехов!
+<BR>
+<P>Андрей.
+<BR>
+<P>PS. А частный вопрос, который заварил эту дискуссию:
+<BR>
+&quot;Быть или не быть в 'функциональном языке' механизму возвратов?&quot; --
+<BR>
+пусть останется на другой раз. Он достаточно интересен и сам по себе. ;-)
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0142.html">Sergei Romanenko: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0140.html">Sergei M. Abramov: "Re: Как следует компилировать рефальскую операцию отождествления"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0142.html">Sergei Romanenko: "Re: Evolution of programming languages Was: Об отсечениях внутри блока."</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:24:58 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

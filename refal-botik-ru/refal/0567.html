@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei M. Abramov (abram@botik.ru)">
+<META NAME="Subject" CONTENT="Маленькая компьютерная алгебр">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Маленькая компьютерная алгебр</H1>
+<HR>
+<P>
+<!-- received="Fri Oct 01 01:22:27 2004" -->
+<!-- isoreceived="20040930212227" -->
+<!-- sent="Sat, 28 Aug 2004 10:23:51 +0400" -->
+<!-- isosent="20040828062351" -->
+<!-- name="Sergei M. Abramov" -->
+<!-- email="abram@botik.ru" -->
+<!-- subject="Маленькая компьютерная алгебр" -->
+<!-- id="006601c48cc7$9c2f42a0$083aa8c0@botik.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>Маленькая компьютерная алгебр<BR>
+<STRONG>From: </STRONG>Sergei M. Abramov (<EM>abram@botik.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Sat Aug 28 2004 - 10:23:51 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#567">[ date ]</A>
+<A HREF="index.html#567">[ thread ]</A>
+<A HREF="subject.html#567">[ subject ]</A>
+<A HREF="author.html#567">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0568.html">Sergei M. Abramov: "Re: хГБМХРЕ, ГЮ  К╦ЦЙХИ НТТРНОХЙ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0566.html">Sergei Romanenko: "Gurin,.Romanenko.-.Yazy`k.programmirovaniya.Refal.Plyus.(INTERTEX,.1991)(300dpi)(ru).djvu"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Друзья!
+<BR>
+<P>В приложении маленькая система компьютерной алгебры -- реализованны операции
+<BR>
+с полиномами (&quot;+&quot;, &quot;*&quot;, &quot;^&quot;, &quot;//&quot; -- последнее -- это подстановка полинома в
+<BR>
+полином вместо переменной). Всего лишь.
+<BR>
+<P>В исходном тексте есть комментарии про историю создания системы и про разные
+<BR>
+другие штуки (например, одно правило оптимизирующего эквивалентного
+<BR>
+преобразования Рефал-Плюс-программ...)
+<BR>
+<P>Зачем я посылаю это все?
+<BR>
+<P>(1) Мне кажется, история данного кода (см. комментарии) -- забавный пример
+<BR>
+преподавания Рефала Плюс (жаль, я не сохранял -- CVS -- версии, историю
+<BR>
+изменений исходного файла)...
+<BR>
+<P>(2) Мне кажется, программа может использоваться как тест или демо в
+<BR>
+дистрибутивах Рефалов.  И как тест, для сравнений различных версий одного и
+<BR>
+того же диалекта Рефала, или разных диалектов (правда, тогда ее надо
+<BR>
+садаптировать под эти диалекты).
+<BR>
+<P>Отдельно про &quot;демо&quot;.  Наличие читабельных, миниатюрные и зрелищных &quot;демо&quot; в
+<BR>
+дистрибутиве много значит для пропаганды языка (мое мнение).  Самый яркий
+<BR>
+пример?  Я отсылаю всех своих студентов читать и наслаждаться демо из
+<BR>
+поставки Хаскеля/Хакса.
+<BR>
+<P>Недавно посмотрел &quot;демо&quot; в Refal 6/Java.  Многое понравилось. В Рефале Плюс
+<BR>
+были отличные &quot;демо&quot;, как мне помнится.  Но, все равно, для успеха Рефала
+<BR>
+нужны новые симпатичные, читабельные, миниатюрные и зрелищные демо.
+<BR>
+<P>Я не говорю, что мне это удалось ;-), но я сделал попытку.
+<BR>
+<P>(3) Мне кажется, что программа может спровоцировать обсуждение стилей
+<BR>
+программирования и шаблонов (идиоматических оборотов) реализации различных
+<BR>
+типичных случаев.
+<BR>
+<P>Например, (либо у меня склероз, либо я действительно не знал такого шаблона)
+<BR>
+надо проверить (написать функцию &quot;$func? IsPoly e.P = ;&quot;), что все термы t.M
+<BR>
+из e.P удовлетворяют условию &quot;$func? IsMon t.M = ;&quot;... Решение:
+<BR>
+<P>*      \forall t.M \in e.P, &lt;IsMon? t.M&gt;
+<BR>
+* &lt;==&gt; \not ( \exists t.M \in e.P, #&lt;IsMon? t.M&gt;))
+<BR>
+<P>IsPoly? e.P, #\{ e.P : e t.M e,  #&lt;IsMon? t.M&gt; = ; };
+<BR>
+<P>(4) В любом разе, программа -- хороший тест для Рефала Плюс. Мой добрый,
+<BR>
+надежный Рефал Плюс для ДОСа 16 бит от 28.02.1994 -- я до сих пор работаю на
+<BR>
+нем, поскольку не знаю, где есть иной дистрибутив, который я мог бы
+<BR>
+бесхлопотно поставить под Виндовс -- так вот, мой старый Рефал Плюс
+<BR>
+откровенно &quot;бузит&quot; на некоторых входных данных (описано ниже).
+<BR>
+<P>Разве плохой тест для новой (новых) реализаций Рефала Плюс?
+<BR>
+<P>Файлы:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;==&gt; pol.rf и pol.exe -- исходный код программы и исполняемый файл
+<BR>
+(собран тем самым старым Рефалом Плюс).
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;==&gt; p-test.txt -- поток &quot;трехадресных команд&quot; над полиномами -- там
+<BR>
+все читаемо и есть комментарии в стиле Рефала Плюс. Программа читает и
+<BR>
+исполняет этот поток команд и на стандартный выход выдает протокол и
+<BR>
+результаты вычислений...
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;==&gt; res.txt -- как раз содержит результат: &quot;pol.exe &gt; res.txt&quot;.
+<BR>
+<P>Можно написать свой поток трехадресных команд и посчитать результаты.
+<BR>
+<P>Удачи
+<BR>
+<P>С.
+<BR>
+===========================================================================
+<BR>
+<P>Теперь об ошибках старого Рефала Плюс...
+<BR>
+<P>В строке 5 колонке 33 файла p-test.txt написано число 3.
+<BR>
+<P>Видно, вычисления построены так, что полиномы с именами P6 и &quot;(1-1) ^ k&quot;
+<BR>
+должны получаться равными нулю, если мы это число 3 заменим на любое иное
+<BR>
+число k &gt; 0.
+<BR>
+<P>Так вот, для k = 1, 2, 3 -- все работает нормально.  Дальше --  начинается
+<BR>
+чехарда --- то P6 не равно &quot;0&quot;, то сбои поиска в таблице значения ранее
+<BR>
+посчитанных полиномов случается (&quot;The variable (poly) is undefined ...&quot;)
+<BR>
+<P>В файлах
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-test1.txt == p-test.txt
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-test2.txt
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-test3.txt
+<BR>
+<P>в принципе одни и те же вычисления... Только имена полиномов разные (и в
+<BR>
+p-test3.txt промежуточные результаты затираются &quot;в памяти&quot;).
+<BR>
+<P>И вот результат: разные файлы правильно считаются при разных k:
+<BR>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-test1.txt k=1..3
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-test2.txt k=1..8
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-test3.txt k=1..11 (замысловато грохается при 12)
+<BR>
+<P><P><HR>
+<UL>
+<LI>application/x-zip-compressed attachment: <A HREF="att-0567/01-small-ca.zip">small-ca.zip</A>
+</UL>
+<!-- attachment="01-small-ca.zip" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0568.html">Sergei M. Abramov: "Re: хГБМХРЕ, ГЮ  К╦ЦЙХИ НТТРНОХЙ"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0566.html">Sergei Romanenko: "Gurin,.Romanenko.-.Yazy`k.programmirovaniya.Refal.Plyus.(INTERTEX,.1991)(300dpi)(ru).djvu"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:25:01 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

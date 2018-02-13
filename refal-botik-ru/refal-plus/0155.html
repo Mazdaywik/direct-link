@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal-plus@botik.ru -- Discussing the Refal+ programming langua</TITLE>
+<META NAME="Author" CONTENT="Andrey V Stolyarov (croco@croco.net)">
+<META NAME="Subject" CONTENT="Рефал и Лисп на Си++ (was: Re: интерпритатор)">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Рефал и Лисп на Си++ (was: Re: интерпритатор)</H1>
+<HR>
+<P>
+<!-- received="Fri Oct 19 20:07:10 2001" -->
+<!-- isoreceived="20011019160710" -->
+<!-- sent="Fri, 19 Oct 2001 20:06:39 +0400 (MSD)" -->
+<!-- isosent="20011019160639" -->
+<!-- name="Andrey V Stolyarov" -->
+<!-- email="croco@croco.net" -->
+<!-- subject="Рефал и Лисп на Си++ (was: Re: интерпритатор)" -->
+<!-- id="Pine.LNX.4.05.10110191939020.247-100000@home.croco.net" -->
+<!-- charset="koi8-r" -->
+<!-- inreplyto="Pine.LNX.4.21.0110191206520.18025-100000@mccme.ru" -->
+<STRONG>Subject: </STRONG>Рефал и Лисп на Си++ (was: Re: интерпритатор)<BR>
+<STRONG>From: </STRONG>Andrey V Stolyarov (<EM>croco@croco.net</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Oct 19 2001 - 20:06:39 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#155">[ date ]</A>
+<A HREF="index.html#155">[ thread ]</A>
+<A HREF="subject.html#155">[ subject ]</A>
+<A HREF="author.html#155">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0156.html">Victor L. Kistlerov: "RE: интерпритато"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0154.html">Mike Potanin: "Re: интерпритато"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0154.html">Mike Potanin: "Re: интерпритато"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0162.html">Sergei M. Abramov: "Re: Рефал и Лисп на Си++ (was: Re: интерприатор"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0154.html">Andrey V Stolyarov: "Рефал и Лисп на Си++ (was: Re: интерпритатор)"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0162.html">Sergei M. Abramov: "Re: Рефал и Лисп на Си++ (was: Re: интерприатор"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+On Fri, 19 Oct 2001, Mike Potanin wrote:
+<BR>
+<P><EM>&gt; интерпретатор (как TCL или более распространенные Perl и Python) по моему
+</EM><BR>
+<EM>&gt; действительно полезен. Например Рефал силен в обработке текста вообще и
+</EM><BR>
+<EM>&gt; XML вчастности. А в серверах приложений с этим часто приходится иметь
+</EM><BR>
+<EM>&gt; дело. Возможность создавать эту часть приложения на Рефале и подменять на
+</EM><BR>
+<EM>&gt; лету мне кажется перспективной.
+</EM><BR>
+<P>Я сейчас в рамках диссертации делаю нечто из смежной области, которое,
+<BR>
+возможно, заинтересует общественность в этом ключе. У меня Рефал (причем
+<BR>
+полный Рефал-5, со всеми WHERE/WITH) реализован как надстройка над Лиспом.
+<BR>
+С эффективностью, конечно, полнейший швах, ибо лисповские односвязные
+<BR>
+списки как средство хранения рефал-выражений исключают сопоставление &quot;с
+<BR>
+обоих концов&quot; со всеми вытекающими последствиями (так, в сопоставлении
+<BR>
+<P>&nbsp;&nbsp;&nbsp;'a' e.1 'c' : 'abc'
+<BR>
+<P>переменная e.1 будет открытой, что, конечно, с точки зрения эффективности
+<BR>
+исполнения просто чудовищно). Но есть и плюс в виде всех достоинств Лиспа
+<BR>
+(функции высоких порядков, замыкания, генерация кода на лету и т.д.)
+<BR>
+<P>В добавок все это реализовано как библиотека классов Си++ и
+<BR>
+предназначается к применению в проектах, где основным языком является
+<BR>
+Си++. Лисповские S-выражения представляются в виде иерархии классов Си++,
+<BR>
+для которых для удобства перекрыты стандартные операции, включая операцию
+<BR>
+&quot;запятая&quot; (используется для построения списков). Например, если
+<BR>
+рассмотреть функцию 
+<BR>
+<P>&nbsp;&nbsp;(defun isomorphic (tree1 tree2)
+<BR>
+&nbsp;&nbsp;&nbsp;(cond ((atom tree1) (atom tree2))
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((atom tree2) NIL)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(t (and (isomorphic (car tree1)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(car tree2))
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(isomorphic (cdr tree1)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cdr tree2))))))
+<BR>
+<P>то аналогичный код на Си++ будет выглядеть так:
+<BR>
+<P>#include &quot;intelib.h&quot;
+<BR>
+LSymbol ISOMORPHIC(&quot;ISOMORPHIC&quot;);
+<BR>
+void LispInit_isomorphic() {
+<BR>
+&nbsp;&nbsp;static LSymbol TREE1(&quot;TREE1&quot;);
+<BR>
+&nbsp;&nbsp;static LSymbol TREE2(&quot;TREE2&quot;);
+<BR>
+&nbsp;&nbsp;(L|DEFUN, ISOMORPHIC, (L|TREE1, TREE2),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(L|COND,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L|(L|ATOM, TREE1), (L|ATOM, TREE2)),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L|(L|ATOM, TREE2), NIL),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L|T, (L|AND,
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L|ISOMORPHIC, (L|CAR, TREE1),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L|CAR, TREE2)),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L|ISOMORPHIC, (L|CDR, TREE1),
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(L|CDR, TREE2)))))).Evaluate();
+<BR>
+}
+<BR>
+<P><P>Подчеркну, это обычный модуль Си++, не требующий никакого дополнительного
+<BR>
+препроцессирования. Компилируется обычным компилятором Си++ (я пользуюсь
+<BR>
+gcc 2.95.2)
+<BR>
+<P>Реализованный диалект Лиспа сильно усечен (массивов и структур, например,
+<BR>
+в нем нет и не предвидится), но основные возможности Лиспа - замыкания,
+<BR>
+функционалы, лексическое и динамическое связывание и т.п. в этот диалект
+<BR>
+вошли. Есть, кстати, и транслятор из традиционного лисповского синтаксиса
+<BR>
+в такой вот код на Си++. Транслятор написан на Лиспе и самоприменен.
+<BR>
+Успешно.
+<BR>
+<P><P>Синтаксис Рефала посложнее, пришлось пофантазировать. В итоге функция
+<BR>
+&quot;палиндром&quot;, приведенная в качестве примера в руководстве по Рефалу-5,
+<BR>
+выглядит в переложении так:
+<BR>
+<P>RFUNC(MYREFUN) [(L)                ^ (L| &quot;True&quot;)]
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(L| s_1)           ^ (L| &quot;True&quot;)]
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(L| s_1, e_2, s_1) ^ (L| (R| MYREFUN, e_2))]
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(L| e_1)           ^ (L| &quot;False&quot;)] ;
+<BR>
+<P><P>Библиотека сейчас долизывается, планирую сделать пререлиз где-то через
+<BR>
+месяц. Пойдет, видимо, под GNU GPL (не путать с LGPL). Транслятор для
+<BR>
+Рефала тоже планируется, но пока его нет.
+<BR>
+<P>Еще в планах есть, в качестве побочного эффекта от создания библиотеки,
+<BR>
+некий новый язык (рабочее название - &quot;Ситуационный Лисп&quot;), представляющий
+<BR>
+собой парадигматический гибрид Лиспа и Рефала.
+<BR>
+<P>&nbsp;
+<BR>
+Интересно ли такое кому-нибудь?
+<BR>
+<P><P><P>С уважением,
+<BR>
+Андрей Столяров
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0156.html">Victor L. Kistlerov: "RE: интерпритато"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0154.html">Mike Potanin: "Re: интерпритато"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0154.html">Mike Potanin: "Re: интерпритато"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0162.html">Sergei M. Abramov: "Re: Рефал и Лисп на Си++ (was: Re: интерприатор"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0154.html">Andrey V Stolyarov: "Рефал и Лисп на Си++ (was: Re: интерпритатор)"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0162.html">Sergei M. Abramov: "Re: Рефал и Лисп на Си++ (was: Re: интерприатор"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Fri Oct 19 2001 - 20:07:11 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

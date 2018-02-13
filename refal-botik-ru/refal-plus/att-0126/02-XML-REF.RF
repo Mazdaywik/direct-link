@@ -1,0 +1,308 @@
+$use CONVERT;
+$use STDIO;
+$use DOS;
+$use RF5LIB;
+$func ZM e = e ;
+$func PARAM2 e = e ;
+$func PARAM1 e = e ;
+$func PARAM e = e ;
+$func NAME e = e ;
+$func ZAKR e = e ;
+$func REF1 e = e ;
+$func OUT1 e = e ;
+$func PROV e = e ;
+$func OUT e = e ;
+$func ZAMPC1 e = e ;
+$func ZAMPC2 e = e ;
+$func ZAMPC e = e ;
+$func ZAM e = e ;
+$func IT e = e ;
+$func IMPLODETAG2 e = e ;
+$func IMPLODETAG1 e = e ;
+$func TAG2 e = e ;
+$func DELL1 e = e ;
+$func DELL e = e ;
+$func DEL1 e = e ;
+$func C e = e ;
+$func DEL e = e ;
+$func TAG1 e = e ;
+$func TAG e = e ;
+$func SPARTAG e = e ;
+$func XMLINPUT e = e ;
+*  xml-ref.ref  Парсер в рефал-выражение.
+*               Возможны изменениja/
+*   01.05.2000.   For XML
+
+/*
+ Экспериментальный парсер XML в рефал и обратно.
+ Рефал-результат - рефал-выражение, 
+ в котором      <TAG...> ... </TAG>
+ заменено на    ((TAG...) ...     )
+*/
+
+
+
+
+
+
+
+* ENTRY 
+XML-REF {
+   = <"rf5OPEN" 'r' 1 <ARG 1>>
+     <XML-REFa <XmlInput <"rf5GET" 1>>>;
+ };
+
+XmlInput {
+     e.1 0 = <DelL e.1>;
+     e.1   = <DelL e.1> 1 <XmlInput <"rf5GET" 1>>;
+ };
+
+* ENTRY 
+XML-REFa {
+   e.1 = <SparTag ( 5 )  e.1>;
+ };
+
+*  Предполагаем, что '<' , '>' все же в наличии парами.
+
+SparTag {
+    ( 5 e.1) = e.1; 
+*                                    - незакрытый тэг в конце - закрываем
+    ((e.1) e.2) = <SparTag (e.1 (e.2))>;
+*                                    - уже спаренный тэг 
+    (e.1) ((e.2) e.a) e.3 = <SparTag (e.1 ((e.2) e.a) ) e.3>; 
+*                                    - закрывающий тэг
+    ((e.1) (e.2) e.a) ('/' e.2) e.3 = <SparTag (e.1 ((e.2) e.a)) e.3>; 
+    ((e.1) (e.2 e.x) e.a) ('/' e.2) e.3 = 
+           <SparTag (e.1 ((e.2 e.x) e.a)) e.3>; 
+*                                    - незакрытый тэг - закрываем
+    ((e.1) (e.7) e.a) ('/' e.2) e.3 = 
+           <SparTag (e.1 ((e.7) e.a)) ('/' e.2) e.3>; 
+*                                    - нет открывающего тэга
+    ( 5 e.1) ('/' e.2) e.3 = 
+           <PRINTLN '     !!!  No open TAG !!!     '>
+           <SparTag ( 5 e.1
+           ('    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!    ')
+           ('/' e.2)) e.3>; 
+*                                     - открывающий тэг
+    (e.1) (e.2)   e.3 = <SparTag ((e.1) (e.2)) e.3>; 
+
+    (e.1) e.2 '<' e.3 = <SparTag (e.1 <ZamPC e.2> ) 
+                        <Tag '<' e.3>>;
+    (e.1) e.2         = <SparTag (e.1 <Zam e.2> ) >;
+ };
+
+
+* Замена <TAG ...>  и  </TAG>
+*     на (TAG ...)  и  (/TAG)  
+* Могут быть такие тэги:
+*       <!-- ... --> - комментарии,
+*       <! ....... > - элементы DTD,
+*       <? ...... ?> - заголовки, которые всегда незакрытые.
+* Их делаем пока без обработки.
+*  Уже спаренные открывающий и закрывающий тэги имеют вид ((e.1) e.2)
+
+Tag {
+    '<!--' e.2 '-->' e.3 = e.3;
+    '<!' e.2 '>'     e.3 = e.3;
+    '<?' e.2 '?>'    e.3 = e.3;
+    '<' e.2 '>'      e.3 = <Tag1 e.2> e.3;
+                     e.1 = e.1;
+ };
+
+* Преобразование к стандартному виду
+
+Tag1 {
+*                                 закрывающий тэг
+        '/' e.1 =  ('/' <Tag2 ( ) <Del e.1>> );
+*                                 закрытый тэг
+        e.1 '/' = ((    <Tag2 ( ) <Del e.1>> ));
+*                                 открывающий тэг
+            e.1 =  (    <Tag2 ( ) <Del e.1>> );
+ };
+
+*        убирание пробелов, табулиров., конца строки - справа и слева
+Del  { e.1 = <Del1 <C > e.1>;  };
+C    {  = ( ' ' <BYTES-TO-CHARS 9> ); };
+Del1 {
+    (e.a s.b e.c) s.b e.1 = <Del1 (e.a s.b e.c) e.1>;
+    (e.a s.b e.c) e.1 s.b = <Del1 (e.a s.b e.c) e.1>;
+    (e.a) 1  e.1 = <Del1 (e.a) e.1>;
+    (e.a) e.1  1 = <Del1 (e.a) e.1>;
+    (e.a) e.1 = e.1;
+ };
+
+DelL {  e.1 = <DelL1 <C > e.1>;  };
+DelL1 {
+    (e.a s.b e.c) e.1 s.b = <DelL1 (e.a s.b e.c) e.1>;
+    (e.a s.b e.c) s.b e.1 = <DelL1 (e.a s.b e.c) e.1>;
+    (e.a) e.1 = e.1;
+ };
+
+*        выделение имени тэга
+Tag2  {
+    (e.1) ' ' e.2 = <ImplodeTag1 e.1> <ImplodeTag2 <Del e.2>>;
+    (e.1)  1  e.2 = <ImplodeTag1 e.1> <ImplodeTag2 <Del e.2>>;
+    (e.1) s.a e.2 = <Tag2 (e.1 s.a) e.2>;
+    (e.1)         = <ImplodeTag1 e.1>;
+ };
+
+* !!! xsl: ... - обрабатываем иначе
+*  ":" в имени тэга,
+* решил представлjaть его двумja составными символами.
+
+ImplodeTag1 {
+    'xsl:' e.2 = <TO-WORD 'Xsl'> <TO-WORD e.2>;
+    e.1 ':' e.2 = <TO-WORD e.1> <TO-WORD e.2>;
+    e.1 = <TO-WORD e.1>;
+ };
+
+ImplodeTag2 {
+     e.1 '=' e.2 = <IT (e.1) <Del e.2>>;
+          = ;
+      e.1 = (e.1);
+ };
+
+IT {
+*                 Is вставил по привычке 
+    (e.1) '\'' e.2 '\'' e.3 = (<ImplodeTag1 <Del e.1>>  Is  <Zam e.2>)
+                           <ImplodeTag2 <Del e.3>>;
+    (e.1) '\"' e.2 '\"' e.3 = (<ImplodeTag1 <Del e.1>>  Is  <Zam e.2>)
+                           <ImplodeTag2 <Del e.3>>;
+   };
+
+*  Замены: 
+*     1 - разделитель строк - убираем.
+Zam  {
+       1       e.1 =     <Zam e.1>;
+      '&lt;'   e.1 = '<' <Zam e.1>;
+      '&gt;'   e.1 = '>' <Zam e.1>;
+      '&amp;'  e.1 = '&' <Zam e.1>;
+      '&quot;' e.1 = '\"' <Zam e.1>;
+       s.a     e.1 = s.a <Zam e.1>;
+       (e.1) e.2 = (<Zam e.1>) <Zam e.2>;
+            =  ;
+      };
+
+ZamPC { e.1 = <ZamPC1 <ZamPC2 e.1>>; };
+ZamPC2  {
+*  e.1 = e.1;
+       1       e.1 =     <ZamPC2 e.1>;
+      '&lt;'   e.1 = '<' <ZamPC2 e.1>;
+      '&gt;'   e.1 = '>' <ZamPC2 e.1>;
+      '&amp;'  e.1 = '&' <ZamPC2 e.1>;
+      '&quot;' e.1 = '\"' <ZamPC2 e.1>;
+       s.a     e.1 = s.a <ZamPC2 e.1>;
+       (e.1) e.2 = (<ZamPC2 e.1>) <ZamPC2 e.2>;
+            =  ;
+  };
+
+ZamPC1 {
+       = ;
+   e.1 = (( 0 ) e.1);
+  };
+
+* ------------------------------------------------------------------
+*   Преобразование из рефала в XML.
+*   Исходное выражение - в поле зрениja,
+*   результат - печатаем.
+*   Не понjaтно, когда может понадобитьсja что-то иное.
+*   На всjaкий случай, ввожу функцию Out, в которой путем
+*   убираниja звездочки результирующее выражение останетсja
+*   в поле зрениja. 
+
+Out { 
+*     e.1 = e.1;
+          = ;
+      e.1 = <Out1 <Prov <C > e.1>>;
+ };
+
+*  Здесь - попытка учесть имеющиесja пробелы и отступы
+Prov {
+    (e.a s.b e.c) s.b e.1 = s.b <Prov (e.a s.b e.c) e.1>;
+    (e.a) e.1 = (e.1);
+ };
+
+Out1 {
+      e.1 ( )   = <"rf5BR" LineXML '=' <"rf5DG" LineXML> e.1>;
+      e.1 (e.2) = <"rf5PUTOUT" 4 <"rf5DG" LineXML> e.1 e.2>;
+ };
+
+* ENTRY 
+REF-XML {
+   e.1 (e.2) e.3 = <Out <Zm e.1>>
+                   <Ref1 (e.2)>
+                   <REF-XML e.3>;
+   e.1 = <Out <Zm e.1>>;
+ };
+
+Ref1 {
+    (( 0 ) (e.3) e.4) = <Out e.3> <Ref1 (( 0 ) e.4)>;
+    (( 0 )) = ;
+    (( 0 ) e.3) = <Out e.3>;
+    ((e.2)) = <Zakr e.2>;
+*    Если нижний уровень скобочной структуры, то выводим в одну строку
+       ((s.a s.b e.2) e.3), <Name s.a s.b>: e.n
+                          , <Param e.2>: e.p
+       , e.3: { e.4 (e.5) e.6 = <Out '<' e.n e.p '>' >
+                                <REF-XML e.3>
+                                <Out '</' e.n '>' >;
+               e.4            = <Out '<' e.n e.p '>' <Zm e.3> '</' e.n '>' >;
+        }; 
+
+*       (( 0 ) e.3) = <Zm e.3>;
+
+       ((s.a e.2) e.3), <Name s.a>: e.n
+                      , <Param e.2>: e.p
+       , e.3: { e.4 (e.5) e.6 = <Out '<' e.n e.p '>' >
+                                <REF-XML e.3>
+                                <Out '</' e.n '>' >;
+               e.4            = <Out '<' e.n e.p '>' <Zm e.3> '</' e.n '>' >;
+        }; 
+   e.1 = <Zm e.1>;
+ };
+
+Zakr {
+        '!' e.1 = <Out '<!' <Zm e.1> '>' >;
+        '?' e.1 = <Out '<?' <Zm e.1> '>' >;
+        e.1 (e.2) e.3 = <Out '<' <Name e.1> <Param (e.2) e.3> '/>' >;  
+        e.1           = <Out '<' <Name e.1> '/>' >;
+ };
+
+*         Обработка имени тэга
+Name {
+    s.a s.b = <TO-CHARS s.a> ':' <TO-CHARS s.b>;
+    s.a     = <TO-CHARS s.a>;
+ };
+
+*         Обработка параметров тэга
+Param {
+   (e.1) e.2 = ' ' <Param1 e.1> <Param e.2>;
+             = ;
+ };
+
+Param1 {
+   e.1 Is e.2 = <Name e.1> '=' <Param2 e.2>;
+ };
+
+Param2 {
+     e.1 '\"' e.2 = '\'' e.1 '\"' e.2 '\'' ;
+     e.1 = '\"' e.1 '\"' ;
+  };
+
+*  Замены: 
+*    '&lt;'        <-      '<'
+*    '&gt;'        <-      '>'
+*    '&amp;'       <-      '&'
+*    '&quot;'      <-      '"'
+Zm  {
+* e.1 = e.1;
+     '<' e.1 = '&lt;'   <Zm e.1>;
+     '>' e.1 = '&gt;'   <Zm e.1>;
+     '&' e.1 = '&amp;'  <Zm e.1>;
+     '\"' e.1 = '&quot;' <Zm e.1>;
+     s.a e.1 = s.a <Zm e.1>;
+     (e.1) e.2 = (<Zm e.1>) <Zm e.2>;
+            =  ;
+  };
+
+

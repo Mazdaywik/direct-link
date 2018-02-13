@@ -1,0 +1,21 @@
+$use  Access Dos Stdio;
+$func IsTriplet e = s;
+$func Exp (eCount) eX = eY;
+
+Main = {
+   =  <Exp ('..............') 'AAA'> :: eX,
+      <WriteLn <Length eX > >,
+      <WriteLn <Time>>,
+      <WriteLn <IsTriplet eX>>,
+      <WriteLn <Time>>;
+};
+
+IsTriplet eX = {
+   eX : e.Y e.Y e.Y = True;
+                    = False;
+};
+
+Exp (eCount) eX = {
+   e.Count : t eCount-- = <Exp (eCount--) eX eX>;
+                        = eX ;
+};

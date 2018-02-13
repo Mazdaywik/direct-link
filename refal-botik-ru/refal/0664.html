@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=KOI8-R">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="A.A.Vladimirov (vladimi@mech.math.msu.su)">
+<META NAME="Subject" CONTENT="Re: Refal interpreter">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Re: Refal interpreter</H1>
+<HR>
+<P>
+<!-- received="Fri Jan 21 16:39:57 2005" -->
+<!-- isoreceived="20050121133957" -->
+<!-- sent="Fri, 21 Jan 2005 16:39:08 +0300" -->
+<!-- isosent="20050121133908" -->
+<!-- name="A.A.Vladimirov" -->
+<!-- email="vladimi@mech.math.msu.su" -->
+<!-- subject="Re: Refal interpreter" -->
+<!-- id="1106314748.4835.46.camel@shkal" -->
+<!-- charset="KOI8-R" -->
+<!-- inreplyto="018a01c4ffa6$da64a720$914c7cc1@copernik" -->
+<STRONG>Subject: </STRONG>Re: Refal interpreter<BR>
+<STRONG>From: </STRONG>A.A.Vladimirov (<EM>vladimi@mech.math.msu.su</EM>)<BR>
+<STRONG>Date: </STRONG>Fri Jan 21 2005 - 16:39:08 MSK
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#664">[ date ]</A>
+<A HREF="index.html#664">[ thread ]</A>
+<A HREF="subject.html#664">[ subject ]</A>
+<A HREF="author.html#664">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0665.html">дЛХРПХИ оНДЙНПШРНБ: "Re[2]: Refal interpreter"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0663.html">Andrei Klimov: "Re: Refal interpreter (реплика по koi-rvs unicode"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0661.html">Leonid Belous: "Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0665.html">дЛХРПХИ оНДЙНПШРНБ: "Re[2]: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0661.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0665.html">дЛХРПХИ оНДЙНПШРНБ: "Re[2]: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0668.html">Leonid Belous: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+<EM>&gt; 1. Что представляет реализуемое Вами подмножество языка Рефал и его синтаксис.
+</EM><BR>
+Если в общих чертах, то реализуется нечто типа первоначального Рефала, а
+<BR>
+именно:
+<BR>
+1) типы переменных - e, s, и w; имена состоят из произвольного числа
+<BR>
+букв и заключаются в &quot;/&quot;;
+<BR>
+2) функции пишутся через &quot;k&quot; и &quot;.&quot;;
+<BR>
+3) красивостей (вроде where- и with-выражений) не предусмотрено.
+<BR>
+4) комментарии начинаются с &quot;#&quot; (вместо &quot;*&quot;), строки &quot;склеиваются&quot;
+<BR>
+посредством &quot;\&quot; (вместо &quot;+&quot;);
+<BR>
+5) строки делятся на:
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1) пустые (состоят только из пробелов и табуляций) - игнорируются.
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2) начинающиеся с символа &quot;$&quot; - это &quot;команды интерпретатора&quot; (см.
+<BR>
+ниже)
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3) начинающиеся с буквы - определения функций; должны состоять из
+<BR>
+имени функции и первой формулы подстановки
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.4) начинающиеся с пробела или табуляции - продолжение определения
+<BR>
+функции; состоит из формулы подстановки.
+<BR>
+6) $-команды: $use (подключение библиотеки встроенных функций); $include
+<BR>
+(включение в программу другого рефал-файла; аналогично команде из C);
+<BR>
+$start (определение начального поля зрения).
+<BR>
+7) кодировкой, на которой пишется скрипт, является UTF-8 (в частности,
+<BR>
+можно применять чистый ASCII).
+<BR>
+8) все символы - натуральные числа (начиная с нуля и заканчивая
+<BR>
+переполнением ОЗУ). Соответственно, строка типа 'ля-ля-ля' с внутренней
+<BR>
+точки зрения представляет собой последовательность номеров входящих в
+<BR>
+неё букв.
+<BR>
+<P>Например, всеми любимое оборачивание строк, берущихся из файла
+<BR>
+'1.txt' (и записанных в любой однобайтовой кодировке), с записью
+<BR>
+результата в '2.txt' (в той же кодировке) может выглядеть так, как это
+<BR>
+сделано в программе из вложенного архива. Надеюсь, синтаксис
+<BR>
+используемых функций интуитивно понятен :)
+<BR>
+<P><EM>&gt; 2. Вы обещали поменять комментарии на более читабельный (нежели &quot;ломаный Эсперанто&quot; :-) )
+</EM><BR>
+<EM>&gt;  язык. Но относится ли это намерение к идентификаторам в программе? Глядя на имя
+</EM><BR>
+<EM>&gt;   &quot;nterp_preni_nomon&quot;, возникает какая-то ассоцияция с интерпретацией, но не более.
+</EM><BR>
+<P>Ну, комментарии - это вопрос понятный. А идентификаторы - неужели же они
+<BR>
+действительно столь нечитаемы? Лексика-то всё же интернациональная (хотя
+<BR>
+чаще - романская, а не германская)...
+<BR>
+<P><EM>&gt;  Кстати, мне часто попадалось имя &quot;kuranta&quot;, что оно означает?
+</EM><BR>
+<P>&quot;Текущий&quot;. Обычно указывает на обрабатываемый в данный момент элемент
+<BR>
+списка.
+<BR>
+<P>С уважением,
+<BR>
+Антон Владимиров
+<BR>
+<P><P><P><HR>
+<UL>
+<LI>application/x-compressed-tar attachment: <A HREF="att-0664/01-palindrom.tar.gz_">palindrom.tar.gz_</A>
+</UL>
+<!-- attachment="01-palindrom.tar.gz_" -->
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0665.html">дЛХРПХИ оНДЙНПШРНБ: "Re[2]: Refal interpreter"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0663.html">Andrei Klimov: "Re: Refal interpreter (реплика по koi-rvs unicode"</A>
+<LI><STRONG>In reply to:</STRONG> <A HREF="0661.html">Leonid Belous: "Refal interpreter"</A>
+<!-- nextthread="start" -->
+<LI><STRONG>Next in thread:</STRONG> <A HREF="0665.html">дЛХРПХИ оНДЙНПШРНБ: "Re[2]: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0661.html">A.A.Vladimirov: "Re: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0665.html">дЛХРПХИ оНДЙНПШРНБ: "Re[2]: Refal interpreter"</A>
+<LI><STRONG>Reply:</STRONG> <A HREF="0668.html">Leonid Belous: "Re: Refal interpreter"</A>
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Fri Jan 21 2005 - 16:39:57 MSK</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>

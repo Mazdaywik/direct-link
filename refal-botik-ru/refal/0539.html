@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=koi8-r">
+<TITLE>refal@botik.ru -- Discussing the Refal programming language, Re</TITLE>
+<META NAME="Author" CONTENT="Sergei Romanenko (roman@integrum.ru)">
+<META NAME="Subject" CONTENT="Стандарты на транслитерацию ГОСТ 16876-71 и ГОСТ 7.79-2000">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+<H1 ALIGN=CENTER>Стандарты на транслитерацию ГОСТ 16876-71 и ГОСТ 7.79-2000</H1>
+<HR>
+<P>
+<!-- received="Wed Jun 02 16:49:48 2004" -->
+<!-- isoreceived="20040602124948" -->
+<!-- sent="Wed, 2 Jun 2004 16:26:32 +0400" -->
+<!-- isosent="20040602122632" -->
+<!-- name="Sergei Romanenko" -->
+<!-- email="roman@integrum.ru" -->
+<!-- subject="Стандарты на транслитерацию ГОСТ 16876-71 и ГОСТ 7.79-2000" -->
+<!-- id="001201c4489c$d84c3eb0$0a3aa8c0@shipil.ru" -->
+<!-- charset="koi8-r" -->
+<STRONG>Subject: </STRONG>Стандарты на транслитерацию ГОСТ 16876-71 и ГОСТ 7.79-2000<BR>
+<STRONG>From: </STRONG>Sergei Romanenko (<EM>roman@integrum.ru</EM>)<BR>
+<STRONG>Date: </STRONG>Wed Jun 02 2004 - 16:26:32 MSD
+<P>
+<UL>
+<LI><STRONG>sorted by:</STRONG> 
+<A HREF="date.html#539">[ date ]</A>
+<A HREF="index.html#539">[ thread ]</A>
+<A HREF="subject.html#539">[ subject ]</A>
+<A HREF="author.html#539">[ author ]</A>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0540.html">Sergei Romanenko: "Исправленный список ссылок на документы по Рефалу"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0538.html">Sergei Romanenko: "Операции shift и reduce"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<HR>
+<!-- body="start" -->
+<P>
+Уважаемые коллеги!
+<BR>
+<P>Как сказал еще Святослав Сергеевич Лавров в своей &quot;Клятве&quot;:
+<BR>
+&quot;Клянусь не нарушать ни одну из пяти кодировок русских букв _предписанных_
+<BR>
+ГОСТами!&quot;
+<BR>
+<P>Слава Богу, до недавнего времени у нас существовал только один стандарт на
+<BR>
+транслитерацию русских слов латинскими буквами: ГОСТ 16876-71.
+<BR>
+<P><A HREF="http://global-net.ru/~bm/docs/translit.html">http://global-net.ru/~bm/docs/translit.html</A>
+<BR>
+<P>&nbsp;&nbsp;а - a     к - k     х - kh
+<BR>
+&nbsp;&nbsp;б - b     л - l     ц - c
+<BR>
+&nbsp;&nbsp;в - v     м - m   ч - ch
+<BR>
+&nbsp;&nbsp;г - g     н - n     ш - sh
+<BR>
+&nbsp;&nbsp;д - d     о - o    щ - shh
+<BR>
+&nbsp;&nbsp;е - e     п - p    ъ - &quot;
+<BR>
+&nbsp;&nbsp;ё - jo    р - r     ы - y
+<BR>
+&nbsp;ж - zh   с - s      ь - '
+<BR>
+&nbsp;&nbsp;з - z     т - t      э - eh
+<BR>
+&nbsp;&nbsp;и - i     у - u     ю - ju
+<BR>
+&nbsp;&nbsp;й - jj    ф - f     я - ja
+<BR>
+<P>Одно из главных требований к транслитерации - обратимость. Например, если
+<BR>
+&quot;ц&quot; закодировать как &quot;ts&quot;, то обратимость будет нарушена, поскольку
+<BR>
+&quot;советский&quot; превращается в &quot;sovetskij&quot;, и обратно восстанавливается как
+<BR>
+&quot;совецкий&quot;. (Этим, кстати, &quot;транслитерация&quot; принципиально отличается от
+<BR>
+&quot;транскрипции&quot;.)
+<BR>
+<P>Требованию обратимости ГОСТ 16876-71 отвечает. С точки зрения программистов
+<BR>
+его главный недостаток - использование небуквенных знаков (апостроф, двойная
+<BR>
+кавычка). Это создает проблемы при использовании транслитерации в именах
+<BR>
+файлов и в идентификаторах в текстах программ. Ну, еще &quot;jj&quot; для &quot;й&quot; - это
+<BR>
+слишком длинно, поэтому практически все писали просто &quot;j&quot;, что нарушало
+<BR>
+обратимость в словах типа &quot;йод&quot; (&quot;йод&quot; -&gt; &quot;jod&quot; -&gt; &quot;ёд&quot;).
+<BR>
+<P>Однако, стандартописатели на ГОСТ 16876-71 не успокоились, и
+<BR>
+придумали еще один стандарт! Называется ГОСТ 7.79-2000.
+<BR>
+<P><A HREF="http://gsnti-norms.ru/norms/common/doc.asp?2&/norms/stands/7_79.htm">http://gsnti-norms.ru/norms/common/doc.asp?2&/norms/stands/7_79.htm</A>
+<BR>
+<P>&nbsp;&nbsp;а - a     к - k     х - kh
+<BR>
+&nbsp;&nbsp;б - b     л - l     ц - cz,c
+<BR>
+&nbsp;&nbsp;в - v     м - m   ч - ch
+<BR>
+&nbsp;&nbsp;г - g     н - n     ш - sh
+<BR>
+&nbsp;&nbsp;д - d     о - o    щ - shh
+<BR>
+&nbsp;&nbsp;е - e     п - p    ъ - ``
+<BR>
+&nbsp;&nbsp;ё - yo   р - r     ы - y'
+<BR>
+&nbsp;&nbsp;ж - zh   с - s     ь - `
+<BR>
+&nbsp;&nbsp;з - z     т - t      э - e`
+<BR>
+&nbsp;&nbsp;и - i     у - u     ю - yu
+<BR>
+&nbsp;&nbsp;й - j     ф - f     я - ya
+<BR>
+<P>Т.е. &quot;j&quot; перестали использовать для йотирования гласных, поэтому появилась
+<BR>
+возможность &quot;й&quot; всегда кодирвоать как &quot;j&quot;.
+<BR>
+<P>А прямой апостроф заменили на обратный (что хорошо с точки зрения
+<BR>
+djvu-документов, поскольку прямой апостроф создает проблемы при их открытии,
+<BR>
+а обратный - не создает). Непонятно, правда, почему &quot;ы&quot; решили закодировать
+<BR>
+как &quot;y'&quot;, а не как &quot;y`&quot;?
+<BR>
+<P>В общем, ГОСТ 7.79-2000 - вполне удовлетворительный. Единственная претензия
+<BR>
+к нему в том, что это фактически новый стандарт, а не реформа предыдущего
+<BR>
+стандарта. Т.е. имели один стандарт на транслитерацию, а теперь имеем два...
+<BR>
+<P>Например, одни операторы сотовой связи склоняются к новому стандарту, а
+<BR>
+другие - к старому (см. странички &quot;Билайн&quot; и &quot;МТС&quot;):
+<BR>
+<P><A HREF="http://www.beeonline.ru/portal/help/faqs/list?page_id=2&group_id=281&group_name=Как%20отправить%20SMS?">http://www.beeonline.ru/portal/help/faqs/list?page_id=2&group_id=281&group_name=Как%20отправить%20SMS?</A>
+<BR>
+<P><A HREF="http://www.mts-life.ru/services/index.jsp?pageId=38a9c2-f59b741acd--8000">http://www.mts-life.ru/services/index.jsp?pageId=38a9c2-f59b741acd--8000</A>
+<BR>
+<P>В общем, исходя из того, что хоть какой-то стандарт все же лучше, чем
+<BR>
+никакой, и принимая во внимание, что ныне действующим стандартом является
+<BR>
+ГОСТ 7.79-2000, представляется разумным впредь использовать в именах
+<BR>
+документов по Рефалу, выставленных в p2p, ГОСТ 7.79-2000 (с точностью до
+<BR>
+замены &quot;y'&quot; на &quot;y`&quot;).
+<BR>
+<P>С точки зрения поиска по ключевым словам в eDonkey прямой и обратный
+<BR>
+апострофы эквивалентны (оба эквивалентны пробелу).
+<BR>
+<P>Сейчас составлю список ed2k-ссылок документов по Рефалу, в котором имена
+<BR>
+файлов приведены к ГОСТ 7.79-2000 и вышлю в следующем послании...
+<BR>
+<P>Сергей Романенко
+<BR>
+<P><!-- body="end" -->
+<HR>
+<P>
+<UL>
+<!-- next="start" -->
+<LI><STRONG>Next message:</STRONG> <A HREF="0540.html">Sergei Romanenko: "Исправленный список ссылок на документы по Рефалу"</A>
+<LI><STRONG>Previous message:</STRONG> <A HREF="0538.html">Sergei Romanenko: "Операции shift и reduce"</A>
+<!-- nextthread="start" -->
+<!-- reply="end" -->
+</UL>
+<!-- trailer="footer" -->
+<HR>
+<P>
+<SMALL>
+<EM>
+This archive was generated by <A HREF="http://www.fts.frontec.se/~dast/hypermail/">hypermail 2b25</A> 
+: <EM>Mon Oct 25 2004 - 21:25:00 MSD</EM>
+</EM>
+</SMALL>
+</BODY>
+</HTML>
