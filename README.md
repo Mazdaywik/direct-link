@@ -10,3 +10,4 @@
 * [matbalance.png](matbalance.png)
 * [refal-botik-ru](refal-botik-ru)
 * [dybvig-disser.pdf](dybvig-disser.pdf)
+* [The Concept of a Supercompiler.pdf](The Concept of a Supercompiler.pdf)
