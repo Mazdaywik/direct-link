@@ -18,3 +18,4 @@
 * [Adele Goldberg and David Robson. Smalltalk-80. The language and its implementation (ru).pdf](Adele Goldberg and David Robson. Smalltalk-80. The language and its implementation (ru).pdf)
 * [Язык и компилятор Рефал-5λ.pdf](Язык и компилятор Рефал-5λ.pdf)
 * [Т. Кормен, Ч. Лейзерсон, Р. Ривест «Алгоритмы: построение и анализ» М.: МЦНМО, 2001. — 960 с., 263 ил.](kormen-t-leyzerson-ch-rivest-r-algoritmy-postroenie-i-analiz.djvu)
+* [Книги с названиями из четырёх букв](4.pdf)
