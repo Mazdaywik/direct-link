@@ -1,11 +1,12 @@
 (
   echo $(date): 'Prepare directory ~/.local/share/refal-5-lambda'
-  find ! -name c-plus-plus.conf.sh -delete
   mkdir -p ~/.local/share/refal-5-lambda
   pushd ~/.local/share/refal-5-lambda
+  find ! -name c-plus-plus.conf.sh -delete
 
   echo $(date): Starting download distributive, wait few minutes...
-  wget -q -O - https://github.com/bmstu-iu9/refal-5-lambda/releases/download/2.2.1/bootstrap-refal-5-lambda-2.2.1.tar.gz | tar xzf -
+  DISTRIB=https://github.com/bmstu-iu9/refal-5-lambda/releases/download/2.2.1/bootstrap-refal-5-lambda-2.2.1.tar.gz
+  ( curl -L $DISTRIB || wget -q -O - $DISTRIB ) | tar xzf -
   chmod +x bootstrap.sh bin/srefc bin/srmake
   sed -i 's/\r//' *.sh */*.sh bin/srefc bin/srmake
   echo $(date): Downloading is finished
