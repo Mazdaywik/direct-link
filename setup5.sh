@@ -1,6 +1,6 @@
 (
   echo $(date): 'Prepare directory ~/.local/share/refal-5-lambda'
-  rm -rf ~/.local/share/refal-5-lambda
+  find ! -name c-plus-plus.conf.sh -delete
   mkdir -p ~/.local/share/refal-5-lambda
   pushd ~/.local/share/refal-5-lambda
 
