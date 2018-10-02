@@ -8,7 +8,7 @@
   ./bootstrap.sh
 
   CONFIG=~/.bashrc
-  if [ $(UNAME) == Darwin ]; then
+  if [ $(uname) == Darwin ]; then
     CONFIG=~/.bash_profile
   fi
   if ! grep -qE 'PATH=.*/.local/share/refal-5-lambda/bin' $CONFIG; then
