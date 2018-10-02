@@ -1,7 +1,8 @@
 (
   echo $(date): 'Prepare directory ~/.local/share/refal-5-lambda'
+  rm -rf ~/.local/share/refal-5-lambda
   mkdir -p ~/.local/share/refal-5-lambda
-  cd ~/.local/share/refal-5-lambda
+  pushd ~/.local/share/refal-5-lambda
 
   echo $(date): Starting download distributive, wait few minutes...
   wget -q -O - https://github.com/bmstu-iu9/refal-5-lambda/releases/download/2.2.1/bootstrap-refal-5-lambda-2.2.1.tar.gz | tar xzf -
@@ -22,5 +23,6 @@
     echo $(date): Updated file $CONFIG, check if you need
   fi
 
+  popd
   echo $(date): Installation finished
 )
