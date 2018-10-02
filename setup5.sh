@@ -1,9 +1,13 @@
 (
+  echo $(date): 'Prepare directory ~/.local/share/refal-5-lambda'
   mkdir -p ~/.local/share/refal-5-lambda
   cd ~/.local/share/refal-5-lambda
-  wget -q -O - https://github.com/bmstu-iu9/refal-5-lambda/releases/download/2.2.1/bootstrap-refal-5-lambda-2.2.1.tar.gz | tar xzvf -
+
+  echo $(date): Starting download distributive, wait few minutes...
+  wget -q -O - https://github.com/bmstu-iu9/refal-5-lambda/releases/download/2.2.1/bootstrap-refal-5-lambda-2.2.1.tar.gz | tar xzf -
   chmod +x bootstrap.sh bin/srefc bin/srmake
   sed -i 's/\r//' *.sh */*.sh bin/srefc bin/srmake
+  echo $(date): Downloading is finished
 
   echo $(date): Compiling sources, wait few minutes...
   ./bootstrap.sh
@@ -15,6 +19,8 @@
   fi
   if ! grep -qE 'PATH=.*/.local/share/refal-5-lambda/bin' $CONFIG; then
     echo 'export PATH=$PATH:~/.local/share/refal-5-lambda/bin' >> $CONFIG
-    echo Updated file $CONFIG, check if you need
+    echo $(date): Updated file $CONFIG, check if you need
   fi
+
+  echo $(date): Installation finished
 )
