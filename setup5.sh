@@ -1,7 +1,7 @@
 (
   echo $(date): 'Prepare directory ~/.local/share/refal-5-lambda'
   mkdir -p ~/.local/share/refal-5-lambda
-  pushd ~/.local/share/refal-5-lambda
+  cd ~/.local/share/refal-5-lambda
   find ! -name c-plus-plus.conf.sh -delete
 
   echo $(date): Starting download distributive, wait few minutes...
@@ -24,6 +24,5 @@
     echo $(date): Updated file $CONFIG, check if you need
   fi
 
-  popd
   echo $(date): Installation finished
 )
