@@ -22,3 +22,4 @@
 * [Письмо в <refal@botik.ru> со сравнениями реализаций Рефала](refal-compare.md)
 * [Data Representation and Assembly Language.pdf](Data Representation and Assembly Language.pdf) —
   статья (рукопись) Скоробогатова о векторно-списковом представлении.
+* [Записки и рецензии дипломников 2019](Diploma-2019)
