@@ -1,0 +1,152 @@
+$ENTRY Go {
+  = <Forth
+      define Fact (
+        DUP (0) '=' if (
+          DROP (1)
+        ) else (
+          DUP (1) '-' Fact '*'
+        )
+      )
+      define Gcd (
+        OVER (0) '=' if (
+          SWAP DROP
+        ) else (
+          OVER MOD SWAP Gcd
+        )
+      )
+      (6) Fact '.'
+      (30) (48) Gcd '.'
+      (30) (48) Gcd Fact '.'
+    >
+
+    <Prout 'Run ' <Symb <COUNT>> ' times'>
+    <Benchmark <COUNT> { = <GcdFact 30 48> : e.Res = }>
+    <Prout 'Time: ' <TimeElapsed> ' seconds'>
+}
+
+COUNT { = 100000 }
+
+Benchmark {
+  0 s.Func = ;
+  s.Count s.Func = <s.Func> <Benchmark <Sub s.Count 1> s.Func>;
+}
+
+GcdFact {
+  s.X s.Y
+    = <Forth
+        define Fact (
+          DUP (0) '=' if (
+            DROP (1)
+          ) else (
+            DUP (1) '-' Fact '*'
+          )
+        )
+        define Gcd (
+          OVER (0) '=' if (
+            SWAP DROP
+          ) else (
+            OVER MOD SWAP Gcd
+          )
+        )
+        (s.X) (s.Y) Gcd Fact
+      >
+}
+
+
+$INLINE Forth;
+
+Forth {
+  e.Program = <Loop /* пустой стек */ (e.Program) (/* пустой словарь */)>;
+}
+
+$SPEC Loop e.stack (e.CODE) (e.DICT);
+
+Loop {
+  e.Stack (e.Code_) (e.Dict)
+    , e.Code_
+    : {
+        /* empty */ = e.Stack;
+
+        DUP e.Code
+          = e.Stack : e.Stack^ t.Top
+          = <Loop e.Stack t.Top t.Top (e.Code) (e.Dict)>;
+
+        DROP e.Code
+          = e.Stack : e.Stack^ t.Top
+          = <Loop e.Stack (e.Code) (e.Dict)>;
+
+        SWAP e.Code
+          = e.Stack : e.Stack^ (e.X) (e.Y)
+          = <Loop e.Stack (e.Y) (e.X) (e.Code) (e.Dict)>;
+
+        OVER e.Code
+          = e.Stack : e.Stack^ (e.X) (e.Y)
+          = <Loop e.Stack (e.X) (e.Y) (e.X) (e.Code) (e.Dict)>;
+
+        '-' e.Code
+          = e.Stack : e.Stack^ (e.X) (e.Y)
+          = <Loop e.Stack (<Sub (e.X) e.Y>) (e.Code) (e.Dict)>;
+
+        '*' e.Code
+          = e.Stack : e.Stack^ (e.X) (e.Y)
+          = <Loop e.Stack (<Mul (e.X) e.Y>) (e.Code) (e.Dict)>;
+
+        MOD e.Code
+          = e.Stack : e.Stack^ (e.X) (e.Y)
+          = <Loop e.Stack (<Mod (e.X) e.Y>) (e.Code) (e.Dict)>;
+
+        (e.Const) e.Code = <Loop e.Stack (e.Const) (e.Code) (e.Dict)>;
+
+        '.' e.Code
+          = e.Stack : e.Stack^ (e.Top)
+          = <Prout e.Top>
+            <Loop e.Stack (e.Code) (e.Dict)>;
+
+        '=' e.Code
+          = e.Stack
+          : {
+              e.Stack^ (s.Eq) (s.Eq) = e.Stack (1);
+              e.Stack^ (s.X) (s.Y) = e.Stack (0);
+            }
+          : e.Stack^
+          = <Loop e.Stack (e.Code) (e.Dict)>;
+
+        if (e.True) else (e.False) e.Code
+          , e.Stack
+          : {
+              e.Stack^ (0)
+                = <Loop
+                    <Loop e.Stack (e.False) (e.Dict)>
+                    (e.Code) (e.Dict)
+                  >;
+
+              e.Stack^ (e.NotZero)
+                = <Loop
+                    <Loop e.Stack (e.True) (e.Dict)>
+                    (e.Code) (e.Dict)
+                  >;
+            };
+
+        define e.Code
+          = <TransferBodyToDict e.Code (e.Dict)> : e.Code^ (e.Dict^)
+            /* Функция TransferBodyToDict нужна, чтобы избежать зацикливания */
+          = <Loop e.Stack (e.Code) (e.Dict)>;
+
+        s.Callee e.Code
+          = <Loop
+              <Loop e.Stack (<Lookup s.Callee e.Dict>) (e.Dict)>
+              (e.Code) (e.Dict)
+            >;
+      };
+}
+
+$INLINE TransferBodyToDict, Lookup;
+
+TransferBodyToDict {
+  s.FuncName (e.Body) e.Code (e.Dict) = e.Code ((s.FuncName e.Body) e.Dict);
+}
+
+Lookup {
+  s.Func (s.Func e.Code) e.Dict = e.Code;
+  s.Func (s.OtherFunc e.Code) e.Dict = <Lookup s.Func e.Dict>;
+}
