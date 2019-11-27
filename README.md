@@ -31,7 +31,6 @@
   напишите <https://mazdaywik.github.io/direct-link/script.md> в адресной
   строке браузера.
 * [math-script.md](math-script.md) — файл Markdown с MathJax’ом.
-* [refal-compare.txt](refal-compare.txt)
 
 Здесь лежат файлы, которые Александр Коновалов aka Маздайщик выложил ради того,
 чтобы или расшарить их между разными своими компьютерами, или дать кому-то
