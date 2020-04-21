@@ -13,10 +13,6 @@ function makeTOC() {
       const h = a.parentNode.tagName;
       const target = a.hash;
 
-      if (target == "") {
-        return "";
-      }
-
       const text = a.parentNode.innerHTML.toString().trim()
         .replace(/<a [^>]*>/g, "!!")
         .replace(/<\/a>/g, "??");
