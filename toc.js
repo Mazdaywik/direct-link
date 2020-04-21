@@ -8,7 +8,7 @@ function makeTOC() {
   let parent = tree;
   let last = null;
 
-  Array.from(document.querySelectorAll('h1 > a, h2 > a, h3 > a, h4 > a, h5 > a')).map((a) => {
+  document.querySelectorAll('h1 > a, h2 > a, h3 > a, h4 > a, h5 > a').forEach((a) => {
     const h = a.parentNode.tagName;
     const target = a.hash;
 
@@ -53,16 +53,16 @@ function makeTOC() {
     --prev_level;
   }
 
-  let childrenstr = (children) => {
+  let makelist = (children) => {
     children = children.map((tree) => (
-      `<li>${tree.href}<br>${childrenstr(tree.children)}</li>`;
+      `<li>${tree.href}<br>${makelist(tree.children)}</li>`
     )).join('');
 
     if (children) {
       children = `<ul>${children}</ul>`;
     }
   };
-  let list = childrenstr(tree.children);
+  let list = makelist(tree.children);
 
   let tocdiv = document.getElementById("toc");
   tocdiv.innerHTML = list;
