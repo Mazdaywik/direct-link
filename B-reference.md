@@ -4,7 +4,7 @@
 <div id="toc"></div>
 <script src="toc.js"></script>
 <script>
-makeTOC.localizedTOCHeader = "Содержание"
+makeTOC.localizedHeader = "Содержание"
 makeTOC.localizedShow = "Пакозать";
 makeTOC.localizedHide = "Ксрыть";
 </script>
@@ -13,7 +13,8 @@ makeTOC.localizedHide = "Ксрыть";
 и инструментах командной строки для разработки.
 
 #### Превед!
-Медвед!
+Медвед! Самый первый заголовок, четвёртого уровня. Оглавлялка должна
+на нём не упасть.
 
 Установка и настройка
 ---------------------
