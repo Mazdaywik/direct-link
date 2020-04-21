@@ -90,10 +90,25 @@ function makeTOC() {
   const list = makelist(root.children);
 
   document.getElementById("toc").innerHTML = `
-    <h1>${makeTOC.localizedTOCHeader}</h1>
-    ${list}`;
+    <p><b>${makeTOC.localizedTOCHeader}</b> <a id="showHideTOC">Show</a></p>
+    <div id="tocGenerated" hidden=false>${list}</div>`;
+
+  const showHideTOC = document.getElementById("showHideTOC");
+  showHideTOC.onlick = () => {
+    const toc = document.getElementById("tocGenerated");
+    if (toc.hidden) {
+      toc.hidden = false;
+      showHideTOC.innerText = makeTOC.localizedHide;
+    } else {
+      toc.hidden = true;
+      showHideTOC.innerText = makeTOC.localizedShow;
+    }
+  };
+  showHideTOC.innerText = makeTOC.localizedShow;
 }
 
 makeTOC.localizedTOCHeader = "Table of Contents";
+makeTOC.localizedShow = "Show";
+makeTOC.localizedHide = "Hide";
 
 document.body.onload = makeTOC;
