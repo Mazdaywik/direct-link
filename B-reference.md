@@ -3,7 +3,10 @@
 
 <div id="toc"></div>
 <script src="toc.js"></script>
-<script>makeTOC.localizedTOCHeader = "Содержание"</script>
+<script>
+makeTOC.localizedTOCHeader = "Содержание"
+makeTOC.localizedShow = "Пакозать";
+</script>
 
 В этом приложении содержатся краткие сведения о расширениях языка Рефала-5λ
 и инструментах командной строки для разработки.

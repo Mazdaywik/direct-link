@@ -90,11 +90,14 @@ function makeTOC() {
   const list = makelist(root.children);
 
   document.getElementById("toc").innerHTML = `
-    <p><b>${makeTOC.localizedTOCHeader}</b> <a id="showHideTOC">Show</a></p>
+    <p>
+      <b>${makeTOC.localizedTOCHeader}</b>
+      <a id="showHideTOC" href="#">Show</a>
+    </p>
     <div id="tocGenerated" hidden=false>${list}</div>`;
 
   const showHideTOC = document.getElementById("showHideTOC");
-  showHideTOC.onlick = () => {
+  showHideTOC.onclick = () => {
     const toc = document.getElementById("tocGenerated");
     if (toc.hidden) {
       toc.hidden = false;
