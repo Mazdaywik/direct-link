@@ -17,6 +17,8 @@ function makeTOC() {
     const level = 0 + h.substr(1);
     const href = `${h} : <a href="${target}">${text}</a>`;
 
+    console.log(`h: ${h}, text: ${text}`);
+
     while (level > prev_level) {
       parent = last;
       last = {
