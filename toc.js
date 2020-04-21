@@ -56,6 +56,8 @@ function makeTOC() {
     if (children) {
       children = `<ul>${children}</ul>`;
     }
+
+    return children;
   };
   let list = makelist(tree.children);
 
