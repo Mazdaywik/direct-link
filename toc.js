@@ -12,10 +12,12 @@ function makeTOC() {
     Array.from(document.querySelectorAll('h1 > a, h2 > a, h3 > a, h4 > a, h5 > a')).map((a) => {
       const h = a.parentNode.tagName;
       const target = a.hash;
-      const text = a.parentNode.innerHTML.trim();
+      const text = a.parentNode.innerHTML.toString().trim().replace('a', "!!!").replace(/h/g, "???");
       const level = 0 + h.substr(1);
 
       let diff = "";
+
+      console.log("h: ", h, "text:", text);
 
       while (level > prev_level) {
         diff += "<li><ul>";
@@ -26,7 +28,7 @@ function makeTOC() {
           href: parent.href,
           parent: parent,
           children: Array.from(parent.children),
-        }
+        };
       }
 
       while (level < prev_level) {
@@ -41,7 +43,7 @@ function makeTOC() {
 
       const node = {
         href: href,
-        parent: null,
+        parent: parent,
         children: [],
       };
       parent.children.push(node);
@@ -54,6 +56,15 @@ function makeTOC() {
     tocstr += "</ul></li>";
     --prev_level;
   }
+
+  let treestr = (tree) => {
+    let children = tree.children.map(treestr).join('');
+    if (children) {
+      children = `<ul>${children}</ul>`;
+    }
+    return `<li>${tree.href}<br>${children}</li>`;
+  }
+  tree = treestr(tree);
 
   let tocdiv = document.getElementById("toc");
   tocdiv.innerHTML = `<ul>${tocstr}</ul> ${tree}`;
