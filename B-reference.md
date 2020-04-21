@@ -6,7 +6,7 @@
 <script>
 makeTOC.localizedTOCHeader = "Содержание"
 makeTOC.localizedShow = "Пакозать";
-makeTOC.localizedHide = "Пакозать";
+makeTOC.localizedHide = "Ксрыть";
 </script>
 
 В этом приложении содержатся краткие сведения о расширениях языка Рефала-5λ
