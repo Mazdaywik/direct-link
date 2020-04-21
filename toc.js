@@ -8,6 +8,10 @@ function makeTOC() {
   let parent = root;
   let last = null;
 
+  // Источник вдохновения:
+  // https://github.com/isaacs/github/issues/215#issuecomment-456598835
+  // Оттуда, в частности, взят querySelectorAll.
+
   document.querySelectorAll('h1 > a, h2 > a, h3 > a, h4 > a, h5 > a').forEach((a) => {
     const h = a.parentNode.tagName;
     const target = a.hash;
@@ -15,17 +19,13 @@ function makeTOC() {
       .replace(/<a [^>]*>/g, "")
       .replace(/<\/a>/g, "");
     const level = 1 * h.substr(1);
-    const href = `${h} : <a href="${target}">${text}</a>`;
+    const href = `<a href="${target}">${text}</a>`;
 
     if (! target) {
       return;
     }
 
-    console.log(`h: ${h}, text: ${text}`);
-
     while (level > prev_level) {
-      console.log(`level: ${level}, prev_level: ${prev_level}`);
-
       if (! last) {
         last = {
           href: parent.href,
@@ -57,18 +57,6 @@ function makeTOC() {
     last = node;
   })
 
-  let makelist = (children) => {
-    children = children.map((tree) => (
-      `<li>${tree.href}<br>${makelist(tree.children)}</li>`
-    )).join('');
-
-    if (children) {
-      children = `<ul>${children}</ul>`;
-    }
-
-    return children;
-  };
-
   while (root.href == null && root.children.length == 1) {
     root = root.children[0];
   }
@@ -83,11 +71,27 @@ function makeTOC() {
 
   fixup_href(root);
 
-  console.log(root.children);
-  let list = makelist(root.children);
+  let makelist = (children) => {
+    children = children.map((tree) => (
+      `<li>${tree.href}<br>${makelist(tree.children)}</li>`
+    )).join('');
 
-  let tocdiv = document.getElementById("toc");
-  tocdiv.innerHTML = list;
+    if (children) {
+      children = `<ul>${children}</ul>`;
+    }
+
+    return children;
+  };
+
+  const list = makelist(root.children);
+
+  document.getElementById("toc").innerHTML = `
+    <details>
+      <summary><b>${makeTOC.localizedTOCHeader}</b></summary>
+      ${list}
+    </details>`;
 }
+
+makeTOC.localizedTOCHeader = "Table of Contents";
 
 document.body.onload = makeTOC;
