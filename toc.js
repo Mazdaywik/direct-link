@@ -1,7 +1,7 @@
 function makeTOC() {
   let prev_level = 1;
   let root = {
-    href:"no level",
+    href: null,
     parent: null,
     children: []
   };
@@ -68,6 +68,19 @@ function makeTOC() {
 
     return children;
   };
+
+  while (root.href == null && root.children.length == 1) {
+    root = root.children[0];
+  }
+
+  let fixup_href = (tree) => {
+    if (! tree.href) {
+      tree.href = fixup_href(tree.children[0]);
+    }
+
+    return tree.href;
+  };
+
   console.log(root.children);
   let list = makelist(root.children);
 
