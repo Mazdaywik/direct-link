@@ -26,6 +26,7 @@ function makeTOC() {
         parent: parent,
         children: Array.from(parent.children),
       };
+      parent.children.push(last);
 
       ++prev_level;
     }
