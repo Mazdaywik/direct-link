@@ -12,7 +12,10 @@ function makeTOC() {
   // https://github.com/isaacs/github/issues/215#issuecomment-456598835
   // Оттуда, в частности, взят querySelectorAll.
 
-  document.querySelectorAll('h1 > a, h2 > a, h3 > a, h4 > a, h5 > a').forEach((a) => {
+  document
+    .querySelectorAll('h1 > a, h2 > a, h3 > a, h4 > a, h5 > a')
+    .forEach((a) =>
+  {
     const h = a.parentNode.tagName;
     const target = a.hash;
     const text = a.parentNode.innerHTML.toString().trim()
@@ -55,7 +58,7 @@ function makeTOC() {
     };
     parent.children.push(node);
     last = node;
-  })
+  });
 
   while (root.href == null && root.children.length == 1) {
     root = root.children[0];
@@ -91,8 +94,8 @@ function makeTOC() {
 
   document.getElementById("toc").innerHTML = `
     <p>
-      <b>${makeTOC.localizedTOCHeader}</b>
-      <a id="showHideTOC" href="#">Show</a>
+      <b>${makeTOC.localizedHeader}</b>
+      <a id="showHideTOC" href="#">[${makeTOC.localizedShow}]</a>
     </p>
     <div id="tocGenerated" hidden=false>${list}</div>`;
 
@@ -101,16 +104,15 @@ function makeTOC() {
     const toc = document.getElementById("tocGenerated");
     if (toc.hidden) {
       toc.hidden = false;
-      showHideTOC.innerText = makeTOC.localizedHide;
+      showHideTOC.innerText = `[${makeTOC.localizedHide}]`;
     } else {
       toc.hidden = true;
-      showHideTOC.innerText = makeTOC.localizedShow;
+      showHideTOC.innerText = `[${makeTOC.localizedShow}]`;
     }
   };
-  showHideTOC.innerText = makeTOC.localizedShow;
 }
 
-makeTOC.localizedTOCHeader = "Table of Contents";
+makeTOC.localizedHeader = "Table of Contents";
 makeTOC.localizedShow = "Show";
 makeTOC.localizedHide = "Hide";
 
