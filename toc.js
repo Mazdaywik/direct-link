@@ -48,11 +48,6 @@ function makeTOC() {
     last = node;
   })
 
-  while (prev_level > 1) {
-    tocstr += "</ul></li>";
-    --prev_level;
-  }
-
   let makelist = (children) => {
     children = children.map((tree) => (
       `<li>${tree.href}<br>${makelist(tree.children)}</li>`
