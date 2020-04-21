@@ -15,7 +15,7 @@ function makeTOC() {
       let h = a.parentNode.tagName;
       let target = a.hash;
       let text = a.parentNode.innerHTML.trim();
-      let escaped = replaceAll(text, '&', "&amp;");
+      let escaped = text;
       escaped = replaceAll(escaped, '<', "&lt;");
       escaped = replaceAll(escaped, '>', "&gt;");
 
