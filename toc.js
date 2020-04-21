@@ -12,7 +12,14 @@ function makeTOC() {
     Array.from(document.querySelectorAll('h1 > a, h2 > a, h3 > a, h4 > a, h5 > a')).map((a) => {
       const h = a.parentNode.tagName;
       const target = a.hash;
-      const text = a.parentNode.innerHTML.toString().trim().replace('a', "!!!").replace(/h/g, "???");
+
+      if (target == "") {
+        return "";
+      }
+
+      const text = a.parentNode.innerHTML.toString().trim()
+        .replace(/<a [^>]*>/g, "!!")
+        .replace(/<\/a>/g, "??");
       const level = 0 + h.substr(1);
 
       let diff = "";
