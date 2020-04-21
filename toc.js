@@ -14,7 +14,7 @@ function makeTOC() {
     const text = a.parentNode.innerHTML.toString().trim()
       .replace(/<a [^>]*>/g, "")
       .replace(/<\/a>/g, "");
-    const level = 0 + h.substr(1);
+    const level = 1 * h.substr(1);
     const href = `${h} : <a href="${target}">${text}</a>`;
 
     if (! target) {
@@ -32,11 +32,11 @@ function makeTOC() {
           parent: parent,
           children: [],
         };
+        parent.children.push(last);
       }
 
       parent = last;
       last = null;
-      parent.children.push(last);
 
       ++prev_level;
     }
@@ -68,6 +68,7 @@ function makeTOC() {
 
     return children;
   };
+  console.log(root.children);
   let list = makelist(root.children);
 
   let tocdiv = document.getElementById("toc");
