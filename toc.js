@@ -1,7 +1,12 @@
 function makeTOC() {
   let prev_level = 1;
-  let tree = { children: [] };
+  let tree = {
+    href:"no level",
+    parent: null,
+    children: []
+  };
   let parent = tree;
+  let last = null;
 
   let tocstr =
     Array.from(document.querySelectorAll('h1 > a, h2 > a, h3 > a, h4 > a, h5 > a')).map((a) => {
@@ -15,21 +20,32 @@ function makeTOC() {
       while (level > prev_level) {
         diff += "<li><ul>";
         ++prev_level;
+
+        parent = last;
+        last = {
+          href: parent.href,
+          parent: parent,
+          children: Array.from(parent.children),
+        }
       }
 
       while (level < prev_level) {
         diff += "</ul></li>";
         --prev_level;
+
+        last = parent;
+        parent = last.parent;
       }
 
       const href = `${h} : <a href="${target}">${text}</a>`;
 
       const node = {
         href: href,
-        parent: parent,
+        parent: null,
         children: [],
       };
       parent.children.push(node);
+      last = node;
 
       return diff + `<li>${href}<br></li>`
     }).join('\n');
