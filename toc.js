@@ -61,6 +61,10 @@ function makeTOC() {
     root = root.children[0];
   }
 
+  if (root.children.length == 0) {
+    return;
+  }
+
   let fixup_href = (tree) => {
     if (! tree.href) {
       tree.href = fixup_href(tree.children[0]);
@@ -86,10 +90,8 @@ function makeTOC() {
   const list = makelist(root.children);
 
   document.getElementById("toc").innerHTML = `
-    <details>
-      <summary><b>${makeTOC.localizedTOCHeader}</b></summary>
-      ${list}
-    </details>`;
+    <h1>${makeTOC.localizedTOCHeader}</h1>
+    ${list}`;
 }
 
 makeTOC.localizedTOCHeader = "Table of Contents";
