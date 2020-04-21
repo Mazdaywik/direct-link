@@ -81,6 +81,8 @@ function makeTOC() {
     return tree.href;
   };
 
+  fixup_href(root);
+
   console.log(root.children);
   let list = makelist(root.children);
 
