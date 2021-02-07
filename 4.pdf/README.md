@@ -7,3 +7,4 @@
 * [sicp.pdf](sicp.pdf) — Structure and Interpretation of Computer Programs
 * [tapl.pdf](tapl.pdf) — Types And Programming Languages
 * [tata.pdf](tata.pdf) — Tree Automata Techniques and Applications
+* [asap.pdf](asap.pdf) — Raphaël L. Proust «ASAP As Static As Possible memory management»
