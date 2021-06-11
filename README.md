@@ -37,6 +37,7 @@
 * [the-essence-of-computation-2002.pdf](the-essence-of-computation-2002.pdf)
 * [Типизация для Рефала](Типизация для Рефала.md)
 * [Мой доклад в ИПМ 17.05.2021](2021-05-17-Konovalov-Closures-and-Optimizations-Refal-5-lambda.pdf)
+* [Мой доклад на семинаре ruSTEP 11.06.2021](2021-06-11-Konovalov-Introduction-to-Refal.pdf)
 
 Здесь лежат файлы, которые Александр Коновалов aka Маздайщик выложил ради того,
 чтобы или расшарить их между разными своими компьютерами, или дать кому-то
