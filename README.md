@@ -31,8 +31,6 @@
   напишите <https://mazdaywik.github.io/direct-link/script.md> в адресной
   строке браузера.
 * [math-script.md](math-script.md) — файл Markdown с MathJax’ом.
-* [ИУ9-612 2018.pdf](ИУ9-612 2018.pdf)
-* [ИУ9-612 2019.pdf](ИУ9-612 2019.pdf)
 * **[1966.Алгол W/](1966.Алгол W)**
 * [the-essence-of-computation-2002.pdf](the-essence-of-computation-2002.pdf)
 * [Типизация для Рефала](Типизация для Рефала.md)
